@@ -1,0 +1,303 @@
+.connectwallet {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  padding: 12px 40px;
+  border-radius: 30px;
+  border: 0.5px solid #00ffff;
+  background: #2b285445;
+  width: 100%;
+  font-weight: 400;
+  font-size: 15px;
+  letter-spacing: 1px;
+  font-family: "Poppins";
+  cursor: pointer;
+  color: #00ffffb2;
+  box-shadow: 0px 4px 17.8px 0px #0000002e inset;
+  text-shadow: 5px 2px 20px #00ffffa8;
+}
+.chainName {
+  font-weight: 400;
+  font-size: 15px;
+  letter-spacing: 1px;
+  font-family: "Poppins";
+  color: #00ffffb2;
+  text-shadow: 5px 2px 20px #00ffffa8;
+}
+.connectwallet:hover {
+  background: white;
+  color: #9747ff;
+  text-shadow: none;
+  border: 0.5px solid #9747ff;
+}
+.connectaccount {
+  z-index: 1;
+  padding: 10px 20px;
+  border-radius: 30px;
+  border: 0.5px solid #00ffff;
+  background: #2b285445;
+  width: 230px;
+  font-weight: 400;
+  font-size: 15px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  display: flex;
+  color: #00ffffb2;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 4px 17.8px 0px #0000002e inset;
+  text-shadow: 5px 2px 20px #00ffffa8;
+}
+
+.connectaccount:hover {
+  color: #9747ff;
+  border: 0.5px solid #9747ff;
+  background: white;
+  text-shadow: none;
+}
+
+.ChainDropdownMain {
+  position: absolute;
+  top: 65px;
+  right: 200px;
+  cursor: pointer;
+  padding: 30px 0px;
+  width: 200px;
+}
+.connectchain {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  padding: 15.5px 20px;
+
+  border-radius: 30px;
+  border: 0.5px solid #00ffff;
+  background: #2b285445;
+
+  /* width: 80px; */
+  font-weight: 700;
+  font-size: 17px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  color: transparent;
+  line-height: none !important;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.connectchain:hover {
+  color: #9747ff;
+  border: 0.5px solid #9747ff;
+  background: white;
+  text-shadow: none;
+  border: 0.5px solid #9747ff;
+}
+
+.connectchain:hover .chainName {
+  color: #9747ff;
+}
+.logo {
+  background: white;
+  border-radius: 15px;
+  width: 22px;
+}
+
+.disconnect {
+  display: flex;
+  padding: 10px 0px;
+  padding-top: 20px;
+  width: 300px;
+  flex-direction: column;
+  color: white;
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 0.5px solid #00ffff;
+  border-radius: 10px;
+  background: #1c1b1b85;
+}
+.disconnectmain {
+  position: absolute;
+  top: 65px;
+  padding: 30px 0px;
+  width: 350px;
+}
+.disconnectBtn {
+  border: none;
+  background: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.dropdown {
+  display: flex;
+  background: #1c1b1b85;
+  backdrop-filter: blur(20px);
+  width: 200px;
+  flex-direction: column;
+  border-radius: 10px;
+  border: 0.5px solid #00ffff;
+}
+.EthBalance {
+  padding: 20px 0px;
+}
+.EthBalance button {
+  background: none;
+  border: none;
+  font-size: 25px;
+  color: white;
+}
+.networkoption {
+  border-bottom: 1px solid #00ffff;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  background: none;
+
+  font-size: 17px;
+  color: white;
+  cursor: pointer;
+  padding: 15px 20px;
+  width: 100%;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.networkoption:hover {
+  background: white;
+  color: #9747ff;
+  border-bottom: 1px solid #9747ff;
+  border-radius: 10px;
+}
+.tooltip {
+  color: #00ffff;
+  background: #1c1b1b85;
+  border-radius: 10px;
+  padding: 5px 15px;
+  backdrop-filter: blur(10px);
+}
+.icon2 {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.iconStyle {
+  width: 20px;
+  margin: 0px 10px;
+  cursor: pointer;
+  height: auto;
+  color: #00ffff;
+}
+.connectchain:hover .iconStyle {
+  color: #9747ff;
+}
+.iconCopy:hover {
+  color: #00ffff;
+}
+.iconCopy {
+  font-size: 16px;
+  margin: 0px 10px;
+  cursor: pointer;
+}
+@media only screen and (max-width: 768px) {
+  .connectchain {
+    width: 95px;
+    font-size: 12px;
+    padding: 13px 10px;
+    justify-content: center;
+  }
+  .connectaccount {
+    width: 150px;
+    font-size: 12px;
+    padding: 10px;
+  }
+  .connectchain span {
+    font-size: 12px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .connectchain {
+    /* visibility: hidden; */
+    width: 105px !important ;
+    font-size: 10px !important;
+    padding: 10px 0px !important;
+  }
+
+  .connectchain span {
+    font-size: 10px !important;
+  }
+
+  .connectaccount {
+    width: 112px;
+    font-size: 10px;
+    padding: 5px;
+  }
+
+  .connectwallet {
+    padding: 10px !important;
+  }
+}
+
+@media only screen and (max-width: 525px) {
+  .connectwallet {
+    font-size: 12px;
+    /* padding: 7px 23px; */
+  }
+  .ChainDropdownMain {
+    right: 30px;
+  }
+  .CMain {
+    position: relative;
+    left: -7px;
+  }
+  .connectaccount span {
+    width: 100px;
+    font-size: 10px;
+    padding: 4px 3px;
+  }
+  .connectchain span {
+    width: 70px;
+    font-size: 10px;
+  }
+  .connectchain {
+    display: none;
+  }
+  .connectaccount {
+    width: 125px !important;
+    font-size: 8px;
+    line-height: 10px !important;
+    border-radius: 15px;
+    padding: 5px;
+  }
+}
+@media only screen and (max-width: 425px) {
+  .connectaccount {
+    width: 120px !important;
+  }
+  .disconnectmain {
+    position: absolute;
+    top: 65px;
+    left: -102px;
+    padding: 0px 0px;
+  }
+  .disconnect {
+    width: 250px;
+  }
+}
+@media only screen and (max-width: 375px) {
+  .connectaccount {
+    width: 120px !important;
+  }
+  .disconnectmain {
+    position: absolute;
+    top: 60px;
+    left: -102px;
+    padding: 0px 0px;
+    width: 200px;
+  }
+}
+@media only screen and (max-width: 320px) {
+  .connectaccount {
+    width: 90px !important;
+  }
+}
