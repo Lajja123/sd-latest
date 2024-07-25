@@ -1,7 +1,7 @@
 .stickyIcon {
   z-index: 1;
   position: fixed;
-  bottom: 53%;
+  bottom: 50%;
   right: 0%;
   width: 200px;
   display: flex;
@@ -13,24 +13,26 @@
   text-align: left;
   margin: 2px;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   align-items: center;
   text-decoration: none;
   text-transform: uppercase;
-  padding: 10px;
+  padding: 10px 20px;
   font-size: 15px;
   font-family: "Oswald", sans-serif;
   transition: all 1.2s;
 }
 .stickyIcon a:hover {
-  color: #8f00ff;
+  color: black;
+  background-color: #00ffff;
   transform: translate(0px, 0px);
+  font-weight: 600;
 }
 
 .stickyIcon2 {
   z-index: 1;
   position: fixed;
-  bottom: 67%;
+  bottom: 64%;
   right: 0%;
   width: 200px;
   display: flex;
@@ -42,24 +44,31 @@
   text-align: left;
   margin: 2px;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   align-items: center;
   text-decoration: none;
   text-transform: uppercase;
-  padding: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
   font-size: 15px;
   font-family: "Oswald", sans-serif;
   transition: all 1.2s;
 }
 .stickyIcon2 a:hover {
-  color: #8f00ff;
+  color: black;
   transform: translate(0px, 0px);
+  background-color: #00ffff;
+  font-weight: 600;
 }
-
+.fontIcon {
+  width: 1em !important;
+  height: 1em !important;
+}
 .stickyIcon1 {
   z-index: 1;
   position: fixed;
-  bottom: 60%;
+  bottom: 57%;
   right: 0%;
   width: 200px;
   display: flex;
@@ -71,27 +80,32 @@
   text-align: left;
   margin: 2px;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   align-items: center;
   text-decoration: none;
   text-transform: uppercase;
-  padding: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
   font-size: 15px;
   font-family: "Oswald", sans-serif;
   transition: all 1.2s;
 }
 .stickyIcon1 a:hover {
-  color: #8f00ff;
+  color: black;
   transform: translate(0px, 0px);
+  background-color: #00ffff;
+  font-weight: 600;
 }
 
 /*.search_icon a:hover i  {
 	transform:rotate(360deg);}*/
 
 .Instagram {
-  background-color: white;
-  color: #8f00ff;
+  background-color: #19153f;
+  color: white;
   margin-left: 10px;
+  font-weight: 600;
 }
 
 .stickyIcon a i {
@@ -108,9 +122,10 @@
 }
 
 .Instagra {
-  background-color: white;
-  color: #8f00ff;
+  background-color: #19153f;
+  color: white;
   margin-left: 10px;
+  font-weight: 600;
 }
 
 .stickyIcon1 a i {

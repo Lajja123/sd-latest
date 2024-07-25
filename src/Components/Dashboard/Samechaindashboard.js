@@ -81,8 +81,6 @@ function Samechaindashboard() {
   const [transactions, setTransactions] = useState(filteredTransactions);
   const [render, setRender] = useState(1);
 
-
-
   // /............sorting label function ............./
   const sortLabels = () => {
     const sortedTransactions = [...filteredTransactions].sort((a, b) => {
@@ -402,17 +400,18 @@ function Samechaindashboard() {
       <div>
         <div className={samechainStyle.stickyIcon}>
           <a href="/cross-chain" className={samechainStyle.Instagra}>
-          <FontAwesomeIcon icon={faShare} /> <div>Cross chain</div>
+            <FontAwesomeIcon icon={faShare} /> <div style={{ marginLeft: "25px" }}>Cross chain</div>
           </a>
         </div>
         <div className={samechainStyle.stickyIcon1}>
           <a href="/same-analysis" className={samechainStyle.Instagra}>
-            <FontAwesomeIcon icon={faMagnifyingGlassChart} /> <div> Spent Analysis</div>
+            <FontAwesomeIcon icon={faMagnifyingGlassChart} />{" "}
+            <div style={{ marginLeft: "25px" }}> Spent Analysis</div>
           </a>
         </div>
         <div className={samechainStyle.stickyIcon2}>
           <a href="/all-user-lists" className={samechainStyle.Instagram}>
-            <FontAwesomeIcon icon={faUser} /> <div>Manage Labels</div>
+            <FontAwesomeIcon icon={faUser} /> <div style={{ marginLeft: "25px" }}>Manage Labels</div>
           </a>
         </div>
       </div>
@@ -423,7 +422,9 @@ function Samechaindashboard() {
       >
         <div className={samechainStyle.titledivdashboard}>
           <div className={samechainStyle.imagesinthis}></div>
-          <h1 className={samechainStyle.headingofsamechain}>Effortless Token Distribution</h1>
+          <h1 className={samechainStyle.headingofsamechain}>
+            Effortless Token Distribution
+          </h1>
           <h3 className={samechainStyle.dashpera}>
             Instant Multi-Account Dispersement – Seamlessly Send Tokens to
             Multiple Accounts in One Click
@@ -432,7 +433,6 @@ function Samechaindashboard() {
         <div className={samechainStyle.maindivforalloptiondashboard}>
           <div className={samechainStyle.menubardashboard}>
             <button
-            
               className={activeTab === "text" ? `${samechainStyle.active}` : ""}
               onClick={() => setActiveTab("text")}
               data-bs-toggle="tooltip"
@@ -479,8 +479,7 @@ function Samechaindashboard() {
           display: "flex",
           justifyContent: "center",
         }}
-      >
-      </div>
+      ></div>
       <Footer />
     </div>
   );

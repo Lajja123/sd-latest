@@ -303,19 +303,29 @@ function Crosschaindashboard() {
       <div>
         <div className={samechainStyle.stickyIcon}>
           <a href="/same-chain" className={samechainStyle.Instagra}>
-            <FontAwesomeIcon icon={faShare} />{" "}
-            <div> &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp; Same Chain</div>
+            <FontAwesomeIcon
+              icon={faShare}
+              className={samechainStyle.fontIcon}
+            />
+            <div style={{ marginLeft: "25px" }}>Same Chain</div>
           </a>
         </div>
         <div className={samechainStyle.stickyIcon1}>
           <a href="/cross-analysis" className={samechainStyle.Instagra}>
-            <FontAwesomeIcon icon={faMagnifyingGlassChart} />{" "}
-            <div> Spent Analysis</div>
+            <FontAwesomeIcon
+              icon={faMagnifyingGlassChart}
+              className={samechainStyle.fontIcon}
+            />
+            <div style={{ marginLeft: "25px" }}> Spent Analysis</div>
           </a>
         </div>
         <div className={samechainStyle.stickyIcon2}>
           <a href="/all-user-lists" className={samechainStyle.Instagram}>
-            <FontAwesomeIcon icon={faUser} /> <div>Manage Labels</div>
+            <FontAwesomeIcon
+              icon={faUser}
+              className={samechainStyle.fontIcon}
+            />
+            <div style={{ marginLeft: "25px" }}>Manage Labels</div>
           </a>
         </div>
       </div>
