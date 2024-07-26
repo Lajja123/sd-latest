@@ -314,6 +314,7 @@ function History() {
           <div className={histroyStyle.tablediv1}>
             <div className={histroyStyle.headingdiv}>Latest Transactions</div>
             <div className={histroyStyle.filterdiv}>
+              <div style={{display: "flex"}}>
               <input
                 type="date"
                 className={histroyStyle.dateInput}
@@ -327,6 +328,7 @@ function History() {
                 value={endDate}
                 onChange={handleEndDateChange}
               />
+              </div>
               <select
                 value={selectedToken}
                 onChange={handleTokenChange}
