@@ -314,7 +314,7 @@ function History() {
           <div className={histroyStyle.tablediv1}>
             <div className={histroyStyle.headingdiv}>Latest Transactions</div>
             <div className={histroyStyle.filterdiv}>
-              <div style={{display: "flex"}}>
+              <div style={{display: "flex", gap: "5px"}}>
               <input
                 type="date"
                 className={histroyStyle.dateInput}
