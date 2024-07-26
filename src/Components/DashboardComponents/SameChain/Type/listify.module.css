@@ -605,21 +605,7 @@ box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0p
     padding: 10px 0px;
   }
 }
-/* @media only screen and (min-width: 425px) {
-  .orrr {
-    margin: 5px 0px;
-  }
-  .importtokendiv {
-    display: flex !important;
-    justify-content: center;
-    align-items: center;
-    /* padding: 30px 20px; */
-/* flex-direction: column !important; */
-/* } */
-/* .sametextmain {
-    font-size: 15px !important;
-  } */
-/* } */
+
 
 @media only screen and (max-width: 770px) {
   .listdropdown {

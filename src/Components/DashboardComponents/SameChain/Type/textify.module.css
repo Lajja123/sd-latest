@@ -671,10 +671,6 @@
   }
 }
 @media only screen and (max-width: 425px) {
-  .divtocoversametextdiv {
-    margin: 0px 10px;
-    margin-bottom: 0px !important;
-  }
   .tableTd {
     font-size: 12px;
   }
@@ -708,7 +704,7 @@
   }
   .sametextmain {
     display: flex !important;
-    font-size: 12px;
+    font-size: 15px;
     flex-direction: column !important;
     align-items: stretch;
   }
@@ -727,15 +723,11 @@
     overflow: scroll;
     margin: 5px 0px;
   }
-  .divtocoversametextdiv {
-    margin: 0px 10px;
-    margin-bottom: 150px;
-  }
+
   .componentcontainerdashboard {
     margin: 20px 20px !important;
   }
   .titleloadtokensametext h2 {
-    color: #8f00ff;
     font-weight: 700;
     letter-spacing: 1.04px;
     margin: 0px;
@@ -857,9 +849,6 @@
     justify-content: center;
   }
 
-  .divtocoversametextdiv {
-    margin: 10px;
-  }
   #backgroundgreen {
     cursor: pointer;
     padding: 10px 25px;

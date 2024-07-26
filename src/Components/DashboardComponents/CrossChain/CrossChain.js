@@ -18,7 +18,7 @@ function CrossChain({ activeTab }) {
   const [selectedToken, setSelectedToken] = useState(null);
   const [tokenAddress, setTokenAddress] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
-  
+
   const chainId = useChainId();
 
   const getChainsForDropDown = () => {
@@ -84,7 +84,6 @@ function CrossChain({ activeTab }) {
       setTokenAddress(selectedToken.address);
       setErrorMessage(""); // Clear error message when a token is selected
     }
- 
   };
 
   return (
@@ -98,7 +97,6 @@ function CrossChain({ activeTab }) {
                 letterSpacing: "1px",
                 fontSize: "20px",
                 margin: "0px",
-                fontWeight: "300",
               }}
             >
               Choose Your Token, Define Your Destination
@@ -117,7 +115,7 @@ function CrossChain({ activeTab }) {
             <div id="send-eth" className={textStyle.sendethdiv}>
               {/* Dropdown of chains */}
               <CustomDropdown
-              className={textStyle.dropdownbtn}
+                className={textStyle.dropdownbtn}
                 options={destinationChainsOptions}
                 onSelect={handleDestinationChainChange}
                 selectedValue={selectedDestinationChain}
@@ -136,11 +134,8 @@ function CrossChain({ activeTab }) {
               />
             </div>
             {errorMessage && (
-  <div className={textStyle.errorMessage}>
-    {errorMessage}
-  </div>
-)}
-
+              <div className={textStyle.errorMessage}>{errorMessage}</div>
+            )}
           </div>
 
           <SendToken
