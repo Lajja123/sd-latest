@@ -527,8 +527,8 @@
   }
   .sametextmain {
     display: flex !important;
-    font-size: 12px;
-    flex-direction: row;
+    font-size: 15px;
+    flex-direction: column;
   }
 
   .importtokendiv button {
@@ -539,7 +539,7 @@
   .importtokendiv {
     font-size: 15px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
   }
   .buttontoaddformdata {
     font-size: 15px;
@@ -575,7 +575,7 @@
   }
   .importtokendiv {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
   }
   .textAccSum,
   .fontsize10px {

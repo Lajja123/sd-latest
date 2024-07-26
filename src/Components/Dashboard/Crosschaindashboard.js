@@ -305,7 +305,7 @@ function Crosschaindashboard() {
           <a href="/same-chain" className={samechainStyle.Instagra}>
             <FontAwesomeIcon
               icon={faShare}
-              className={samechainStyle.fontIcon}
+              width={"1em"} height={"1em"}
             />
             <div style={{ marginLeft: "25px" }}>Same Chain</div>
           </a>
@@ -314,7 +314,7 @@ function Crosschaindashboard() {
           <a href="/cross-analysis" className={samechainStyle.Instagra}>
             <FontAwesomeIcon
               icon={faMagnifyingGlassChart}
-              className={samechainStyle.fontIcon}
+              width={"1em"} height={"1em"}
             />
             <div style={{ marginLeft: "25px" }}> Spent Analysis</div>
           </a>
@@ -323,7 +323,8 @@ function Crosschaindashboard() {
           <a href="/all-user-lists" className={samechainStyle.Instagram}>
             <FontAwesomeIcon
               icon={faUser}
-              className={samechainStyle.fontIcon}
+              width={"1em"}
+              height={"1em"}
             />
             <div style={{ marginLeft: "25px" }}>Manage Labels</div>
           </a>

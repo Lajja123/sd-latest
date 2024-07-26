@@ -400,18 +400,20 @@ function Samechaindashboard() {
       <div>
         <div className={samechainStyle.stickyIcon}>
           <a href="/cross-chain" className={samechainStyle.Instagra}>
-            <FontAwesomeIcon icon={faShare} /> <div style={{ marginLeft: "25px" }}>Cross chain</div>
+            <FontAwesomeIcon icon={faShare} width={"1em"} height={"1em"}/>{" "}
+            <div style={{ marginLeft: "25px" }}>Cross chain</div>
           </a>
         </div>
         <div className={samechainStyle.stickyIcon1}>
           <a href="/same-analysis" className={samechainStyle.Instagra}>
-            <FontAwesomeIcon icon={faMagnifyingGlassChart} />{" "}
+            <FontAwesomeIcon icon={faMagnifyingGlassChart} width={"1em"} height={"1em"}/>{" "}
             <div style={{ marginLeft: "25px" }}> Spent Analysis</div>
           </a>
         </div>
         <div className={samechainStyle.stickyIcon2}>
           <a href="/all-user-lists" className={samechainStyle.Instagram}>
-            <FontAwesomeIcon icon={faUser} /> <div style={{ marginLeft: "25px" }}>Manage Labels</div>
+            <FontAwesomeIcon icon={faUser} width={"1em"} height={"1em"} />{" "}
+            <div style={{ marginLeft: "25px" }}>Manage Labels</div>
           </a>
         </div>
       </div>

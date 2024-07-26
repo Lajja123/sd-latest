@@ -15,28 +15,19 @@ function MainHistory() {
       <div>
         <div className={samechainStyle.stickyIcon}>
           <a href="/same-chain" className={samechainStyle.Instagra}>
-            <FontAwesomeIcon
-              icon={faShare}
-              className={samechainStyle.fontIcon}
-            />
+            <FontAwesomeIcon icon={faShare} width={"1em"} height={"1em"} />
             <div> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cross Chain</div>
           </a>
         </div>
         <div className={samechainStyle.stickyIcon1}>
           <a href="/cross-chain" className={samechainStyle.Instagra}>
-            <FontAwesomeIcon
-              icon={faShare}
-              className={samechainStyle.fontIcon}
-            />
+            <FontAwesomeIcon icon={faShare} width={"1em"} height={"1em"} />
             <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Same Chain</div>
           </a>
         </div>
         <div className={samechainStyle.stickyIcon2}>
           <a href="/all-user-lists" className={samechainStyle.Instagram}>
-            <FontAwesomeIcon
-              icon={faUser}
-              className={samechainStyle.fontIcon}
-            />{" "}
+            <FontAwesomeIcon icon={faUser} width={"1em"} height={"1em"} />{" "}
             <div>Manage Labels</div>
           </a>
         </div>
