@@ -267,6 +267,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-bottom: 50px;
+  padding-top: 20px;
 }
 
 .titleloadtokensametext {
@@ -284,7 +286,7 @@
 
 .titleloadtokensametext h2 {
   /* color: #8f00ff; */
-  font-weight: 700;
+  font-weight: 300;
   letter-spacing: 1.04px;
   margin: 0px;
   font-size: 15px;
@@ -523,7 +525,7 @@
     margin: 10px 20px !important;
   }
   .titleloadtokensametext h2 {
-    font-size: 15px !important;
+    font-size: 14px !important;
   }
   .sametextmain {
     display: flex !important;
@@ -566,7 +568,6 @@
   }
 }
 @media only screen and (max-width: 425px) {
- 
   .tableTd {
     font-size: 12px;
   }
@@ -619,12 +620,12 @@
     overflow: scroll;
     margin: 5px 0px;
   }
-  
+
   .componentcontainerdashboard {
     margin: 20px 20px !important;
   }
   .titleloadtokensametext h2 {
-    font-weight: 700;
+    font-weight: 500;
     letter-spacing: 1.04px;
     margin: 0px;
     font-size: 13px;
@@ -747,7 +748,6 @@
     justify-content: center;
   }
 
- 
   #backgroundgreen {
     cursor: pointer;
     padding: 10px 25px;
