@@ -2,16 +2,27 @@
   width: 70%;
   margin: 0 auto;
   padding-top: 180px;
-
+  overflow-x: hidden;
 }
 
-.searchinputbox:focus {
-  outline: 2px solid transparent;
-  outline-offset: 2px;
+.searchdiv {
+  width: 98%;
+  margin: auto;
+  padding: 10px 0px;
+  color: white;
+  border: 1.16px solid #6e58ae;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(
+    90.16deg,
+    rgba(125, 69, 215, 0.38) 0.06%,
+    rgba(84, 56, 165, 0.38) 98.57%
+  );
+  border-radius: 203px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
-.searchinputbox::placeholder {
-  color: rgba(255, 255, 255, 0.569);
-}
+
 .searchinputbox {
   border: none;
   background: none;
@@ -21,30 +32,12 @@
   font-size: 15px;
 }
 
-.maindiv{
-  background: var(--background);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  color: white;
-  min-height: 100vh;
-
+.searchinputbox:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
 }
-
-.searchdiv {
-  width: 100%;
-  padding: 10px 0px;
-  color: white;
-  border: 1.16px solid #6e58ae;
-  display: flex;
-  justify-content: space-between;
-  background: linear-gradient(
-    90.16deg,
-    rgba(125, 69, 215, 0.38) 0.06%,
-    rgba(84, 56, 165, 0.38) 98.57%
-  );
-  border-radius: 203px;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+.searchinputbox::placeholder {
+  color: rgba(255, 255, 255, 0.569);
 }
 
 .searchicon {
@@ -67,35 +60,46 @@
   margin-right: 7px;
 }
 
-.tableandheadingdiv {
-  border-radius: 20px;
-  margin-top: 30px;
+.maindiv {
+  background: var(--background);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  min-height: 100vh;
+}
+
+.maintablediv {
+  width: 98%;
+  color: white;
+  border: none;
+  margin: 30px auto;
+  padding: 20px 0px;
 }
 
 .tablediv1 {
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.maintablediv {
-  color: white;
-  border: none;
-  margin-top: 30px;
-  padding: 20px;
-}
-.Nodata {
-  display: flex;
-  flex-direction: column;
-  min-height: 50vh;
-  justify-content: center;
-  align-items: center;
-}
 .headingdiv {
   font-weight: 300;
-  font-size: 25px;
+  font-size: 2vw;
   color: #00ffff;
   letter-spacing: 2px;
+}
+
+.filterdiv {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.labeldate {
+  display: flex;
+  flex-direction: column;
 }
 
 .dateInput {
@@ -105,10 +109,47 @@
   background: #694a8c;
   border-radius: 154px;
   padding: 15px;
-  margin: 5px;
+  /* margin: 5px; */
   font-size: 15px;
   font-weight: 400;
   letter-spacing: 2px;
+}
+
+.dateInput::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
+
+.dropdown {
+  border: 1px solid rgba(255, 255, 255, 1);
+  box-shadow: 0px 4px 17.8px 0px rgba(0, 0, 0, 0.18) inset;
+  border-radius: 154px;
+  padding: 12px 25px;
+  background: transparent;
+  color: white;
+  z-index: 2;
+}
+
+.dropdown option {
+  background: #00ffff;
+  color: black;
+}
+
+.dropdown option:focus {
+  background: red;
+  color: black;
+}
+
+.tableandheadingdiv {
+  border-radius: 20px;
+  margin-top: 30px;
+}
+
+.Nodata {
+  display: flex;
+  flex-direction: column;
+  min-height: 50vh;
+  justify-content: center;
+  align-items: center;
 }
 
 .tokenSelect {
@@ -133,17 +174,6 @@
   padding: 5px;
 }
 
-.filterdiv{
-  display: flex;
-  align-items: center;
-
-}
-
-.labeldate{
-  display: flex;
-  flex-direction: column;
-}
-
 .eachtdintable {
   padding: 11px;
   font-weight: 300;
@@ -155,26 +185,77 @@
   width: 100%;
   height: auto;
 }
-.dropdown {
-  border: 1px solid rgba(255, 255, 255, 1);
-  box-shadow: 0px 4px 17.8px 0px rgba(0, 0, 0, 0.18) inset;
-  border-radius: 154px;
-  padding: 12px 25px;
-  background: transparent;
-  color: white;
+
+
+@media screen and (max-width: 1125px) {
+  .dateInput {
+    border-radius: 120px;
+    padding: 9px;
+    font-size: 1rem;
+    width: 150px !important;
+    display: flex;
+    align-items: center !important;
+  }
+
+  .dropdown {
+    border-radius: 120px;
+    padding: 9px;
+  }
 }
 
-.dropdown option {
-  background: #00ffff;
-  color: black;
-}
-
-.dropdown option:focus {
-  background: red;
-  color: black;
-}
 @media only screen and (max-width: 1025px) {
   .maindivofhisotry {
-    margin: 130px 150px;
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 790px) {
+  .maindivofhisotry {
+    width: 90%;
+  }
+
+  .dateInput {
+    border-radius: 100px;
+    padding: 9px 15px;
+    font-size: 10px;
+    width: 100px !important;
+    display: flex;
+    align-items: center !important;
+  }
+
+  .dropdown {
+    border-radius: 120px;
+    padding: 9px;
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-width:526px) {
+  .filterdiv{
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 426px) {
+  .searchdiv {
+    padding: 5px 0px;
+    border: 1px solid #6e58ae;
+    border-radius: 180px;
+  }
+
+  .searchinputbox {
+    padding-left: 10px;
+    font-size: 10px;
+  }
+
+  .searchicon {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+  }
+  .searchbtn {
+    border-radius: 28px;
+    height: 20px;
+    width: 20px;
+    margin-right: 7px;
   }
 }

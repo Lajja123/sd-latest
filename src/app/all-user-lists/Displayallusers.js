@@ -263,7 +263,7 @@ function Displayallusers() {
               </div>
             )
           ) : (
-            <div>
+            <div style={{fontSize:"2.3vw"}}>
               <h2>Please connect your wallet</h2>
             </div>
           )}

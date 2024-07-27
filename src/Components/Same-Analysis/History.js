@@ -290,28 +290,31 @@ function History() {
             />
           </button>
         </div>
+
         <div className={histroyStyle.maintablediv}>
           <div className={histroyStyle.tablediv1}>
             <div className={histroyStyle.headingdiv}>Latest Transactions</div>
             <div className={histroyStyle.filterdiv}>
+              <div>
               <div className={histroyStyle.labeldate}>
-    Start date:
-              <input
-                type="date"
-                className={histroyStyle.dateInput}
-                value={startDate}
-                onChange={handleStartDateChange}
-                placeholder="Start Date"
+                Start date:
+                <input
+                  type="date"
+                  className={histroyStyle.dateInput}
+                  value={startDate}
+                  onChange={handleStartDateChange}
+                  placeholder="Start Date"
                 />
-                </div>
+              </div>
               <div className={histroyStyle.labeldate}>
                 End date:
-              <input
-                type="date"
-                className={histroyStyle.dateInput}
-                value={endDate}
-                onChange={handleEndDateChange}
-              />
+                <input
+                  type="date"
+                  className={histroyStyle.dateInput}
+                  value={endDate}
+                  onChange={handleEndDateChange}
+                />
+              </div>
               </div>
               <select
                 value={selectedToken}

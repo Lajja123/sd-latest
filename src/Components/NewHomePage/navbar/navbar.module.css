@@ -38,7 +38,8 @@
 }
 .navSub {
   display: flex;
-  align-items: flex-start;
+  /* align-items: flex-start; */
+  align-items: center;
   justify-content: space-between;
 }
 .navDiv {
@@ -242,6 +243,10 @@
 }
 
 @media only screen and (max-width: 768px) {
+  .logo {
+    width: 200px;
+    height: auto;
+  }
   .divtoflexlogoconnectwallet {
     margin: 0px !important;
   }
@@ -268,12 +273,28 @@
     align-items: center;
     justify-content: space-around;
   }
+
+  .navFixed2{
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .toggle{
+    --width: 70px;
+  }
+  
+.toggle .labels::after {
+  right: 10px;
+  font-size: 8px;
+
+}
+
+.toggle .labels::before {
+  left: 10px;
+  font-size: 8px;
+
+}
 }
 @media only screen and (max-width: 600px) {
-  .logo {
-    width: 200px;
-    height: auto;
-  }
   .launchapp {
     padding: 10px 20px;
     font-size: 12px;
