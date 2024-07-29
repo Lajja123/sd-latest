@@ -146,11 +146,11 @@
   padding: 0px 10px 0px 0px;
 }
 .toggle {
-  --width: 90px;
-  --height: calc(var(--width) / 3);
+  --width: 100px;
+  --height: calc(var(--width) / 2.7);
   right: 10px;
   position: relative;
-  display: inline-block;
+  /* display: inline-block; */
   width: var(--width);
   height: var(--height);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
@@ -205,7 +205,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  font-size: 12px;
+  font-size: 11px;
   font-family: sans-serif;
   transition: all 0.4s ease-in-out;
 }
@@ -213,6 +213,7 @@
 .toggle .labels::after {
   content: attr(data-off);
   position: absolute;
+  top: 6px;
   right: 12px;
   color: #00ffffb2;
   opacity: 1;
@@ -222,7 +223,8 @@
 .toggle .labels::before {
   content: attr(data-on);
   position: absolute;
-  left: 12px;
+  top: 6px;
+  left: 11px;
   color: #00ffffb2;
   opacity: 0;
   transition: all 0.4s ease-in-out;
@@ -284,11 +286,13 @@
   
 .toggle .labels::after {
   right: 10px;
+  top: 1.2px;
   font-size: 8px;
 
 }
 
 .toggle .labels::before {
+  top: 1.2px;
   left: 10px;
   font-size: 8px;
 
