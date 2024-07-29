@@ -2,21 +2,12 @@
   width: 70%;
   margin: 0 auto;
   padding-top: 180px;
-}
-
-.searchinputbox:focus {
-  outline: 2px solid transparent;
-  outline-offset: 2px;
-}
-.searchinputbox {
-  border: none;
-  background: none;
-  padding-left: 20px;
-  font-size: 15px;
+  overflow-x: hidden;
 }
 
 .searchdiv {
-  width: 100%;
+  width: 98%;
+  margin: auto;
   padding: 10px 0px;
   color: white;
   border: 1.16px solid #6e58ae;
@@ -28,6 +19,21 @@
     rgba(84, 56, 165, 0.38) 98.57%
   );
   border-radius: 203px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.searchinputbox {
+  border: none;
+  background: none;
+  padding-left: 20px;
+  width: 100%;
+  color: white;
+  font-size: 15px;
+}
+
+.searchinputbox:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
 }
 
 .searchicon {
@@ -37,6 +43,7 @@
   border: none;
   border-radius: 70px;
 }
+
 .searchbtn {
   border: none;
   border-radius: 28px;
@@ -56,12 +63,14 @@
 }
 
 .tablediv1 {
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 .maintablediv {
+  width: 98%;
   color: white;
   border: none;
   margin-top: 30px;
@@ -88,7 +97,7 @@
   background: #694a8c;
   border-radius: 154px;
   padding: 15px;
-  margin: 5px;
+  /* margin: 5px; */
   font-size: 15px;
   font-weight: 400;
   letter-spacing: 2px;
@@ -203,8 +212,6 @@
   cursor: pointer;
   color: white;
 }
-
-
 
 /*.maindivofhisotry {
   width: 70%;
@@ -357,4 +364,3 @@
     margin: 130px 150px;
   }
 } */
- 

@@ -4,7 +4,6 @@
   padding-top: 180px;
   overflow-x: hidden;
 }
-
 .searchdiv {
   width: 98%;
   margin: auto;
@@ -35,6 +34,7 @@
 .searchinputbox:focus {
   outline: 2px solid transparent;
   outline-offset: 2px;
+  
 }
 .searchinputbox::placeholder {
   color: rgba(255, 255, 255, 0.569);
@@ -230,11 +230,25 @@
   }
 }
 
-@media screen and (max-width:526px) {
+@media screen and (max-width:560px) {
   .filterdiv{
     flex-direction: column;
+    align-items: flex-end;
+    z-index: 1;
+    gap: 8px;
+  }
+
+  .dropdown{
+    padding: 6px;
+  }
+
+  .headingdiv{
+    width: 50px;
+    font-size: 12px;
+    text-align: left;
   }
 }
+
 @media screen and (max-width: 426px) {
   .searchdiv {
     padding: 5px 0px;
@@ -257,5 +271,16 @@
     height: 20px;
     width: 20px;
     margin-right: 7px;
+  }
+
+  .dateInput {
+    border-radius: 70px;
+    padding: 7px 10px;
+    font-size: 6px;
+    width: 70px !important;
+  }
+
+  .dropdown{
+    font-size: 6px;
   }
 }
