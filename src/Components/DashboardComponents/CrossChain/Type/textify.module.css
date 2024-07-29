@@ -1,7 +1,7 @@
 .textAccSum {
   width: max-content;
   max-width: 900px;
-  font-size: 12px;
+  
   margin: 0 auto;
   background: transparent;
 
@@ -144,6 +144,9 @@
   background: transparent !important;
   cursor: pointer;
   box-shadow: rgb(255 255 255 / 72%) 1px 1px 18px 0px inset;
+}
+.copyicon {
+  padding: 0px 10px;
 }
 .copyicon:hover {
   cursor: pointer;
@@ -362,6 +365,7 @@
 .accountsummaryth {
   letter-spacing: 1px;
   padding: 15px;
+  text-wrap: nowrap;
 }
 .buttontoaddformdata {
   background-color: initial;
@@ -499,7 +503,8 @@
     justify-content: center;
   }
   #tableresponsive {
-    overflow: scroll;
+    overflow: visible;
+    overflow-x: scroll;
   }
   .titleforaccountsummarytextsame h2 {
     font-size: 15px !important;
@@ -562,9 +567,17 @@
   .titlesametexttextarea h2 {
     font-size: 15px !important;
   }
-
+  .tabletextlist .tableTh {
+    text-wrap: nowrap;
+  }
   .titleforlinupsametext h2 {
     font-size: 15px !important;
+  }
+  .tabletextlist .tableTr {
+    font-size: 15px;
+  }
+  .tableTd {
+    align-items: center;
   }
 }
 @media only screen and (max-width: 425px) {
@@ -577,7 +590,7 @@
   }
   .textAccSum,
   .fontsize10px {
-    font-size: 10px !important;
+    font-size: 12px !important;
   }
   .buttontoaddformdata {
     font-size: 15px;
@@ -592,9 +605,11 @@
     margin: 0px 20px;
   }
   #fontsize10px {
-    font-size: 10px !important;
+    font-size: 12px !important;
   }
-
+  .tabletextlist .tableTh {
+    font-size: 12px;
+  }
   .tbodytextifyaccsum,
   .fontsize12px {
     font-size: 10px !important;
@@ -617,8 +632,9 @@
   }
 
   #tableresponsive {
-    overflow: scroll;
-    margin: 5px 0px;
+    overflow: visible;
+    overflow-x: scroll;
+    margin: 25px 10px;
   }
 
   .componentcontainerdashboard {
@@ -690,7 +706,7 @@
     font-size: 15px;
   }
   .scrollabletablecontainer {
-    margin: 5px 0px;
+    margin: 25px 10px;
     max-height: 280px;
   }
   .sendbutton {

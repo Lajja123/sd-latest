@@ -657,7 +657,7 @@ box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0p
     font-size: 15px !important;
   }
   #fontsize10px {
-    font-size: 10px !important;
+    font-size: 12px !important;
   }
 
   #inputtokenload {
@@ -667,8 +667,9 @@ box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0p
 
   #tableresponsive {
     max-height: 400px;
-    overflow: scroll;
-    /* --sb-track-color: linear-gradient(
+    overflow: visible;
+    overflow-x: scroll;
+    --sb-track-color: linear-gradient(
         0deg,
         rgba(0, 0, 0, 0.2) 0%,
         rgba(0, 0, 0, 0.2) 100%
@@ -678,7 +679,7 @@ box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0p
     --sb-size: 1px;
 
     text-align: center !important;
-    scrollbar-color: var(--sb-thumb-color) var(--sb-track-color); */
+    scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
   }
 
   /* #tableresponsive::-webkit-scrollbar {

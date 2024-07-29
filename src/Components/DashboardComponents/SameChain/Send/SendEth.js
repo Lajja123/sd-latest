@@ -298,25 +298,25 @@ function SendEth({ activeTab, listData, setListData }) {
                       <tr className={textStyle.tableTr}>
                         <th
                           className={textStyle.fontsize12px}
-                          style={{ letterSpacing: "1px", padding: "8px" }}
+                          style={{ letterSpacing: "1px", padding: "15px",textWrap:"nowrap" }}
                         >
                           Receiver Address
                         </th>
                         <th
                           className={textStyle.fontsize12px}
-                          style={{ letterSpacing: "1px", padding: "8px" }}
+                          style={{ letterSpacing: "1px", padding: "15px" }}
                         >
                           Label
                         </th>
                         <th
                           className={textStyle.fontsize12px}
-                          style={{ letterSpacing: "1px", padding: "8px" }}
+                          style={{ letterSpacing: "1px", padding: "15px" }}
                         >
                           Amount(ETH)
                         </th>
                         <th
                           className={textStyle.fontsize12px}
-                          style={{ letterSpacing: "1px", padding: "8px" }}
+                          style={{ letterSpacing: "1px", padding: "15px" }}
                         >
                           Amount(USD)
                         </th>
@@ -329,7 +329,7 @@ function SendEth({ activeTab, listData, setListData }) {
                     </th> */}
                         <th
                           className={textStyle.fontsize12px}
-                          style={{ letterSpacing: "1px", padding: "8px" }}
+                          style={{ letterSpacing: "1px", padding: "15px" }}
                         >
                           Action
                         </th>
@@ -345,7 +345,7 @@ function SendEth({ activeTab, listData, setListData }) {
                             >
                               <td
                                 id={textStyle.fontsize10px}
-                                style={{ letterSpacing: "1px", padding: "8px" }}
+                                style={{ letterSpacing: "1px", padding: "15px" }}
                               >
                                 {/* {data.address.toUpperCase()} */}
                                 {data.address.substr(0, 3)}...
@@ -353,7 +353,7 @@ function SendEth({ activeTab, listData, setListData }) {
                               </td>
                               <td
                                 id={textStyle.fontsize10px}
-                                style={{ letterSpacing: "1px", padding: "8px" }}
+                                style={{ letterSpacing: "1px", padding: "15px" }}
                               >
                                 {data.label ? (
                                   data.label

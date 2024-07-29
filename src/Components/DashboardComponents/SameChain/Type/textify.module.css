@@ -61,7 +61,7 @@
 .textAccSum {
   width: max-content;
   max-width: 900px;
-  font-size: 12px;
+
   margin: 0 auto;
   background: transparent;
   color: black;
@@ -449,6 +449,7 @@
 .accountsummaryth {
   letter-spacing: 1px;
   padding: 15px;
+  text-wrap: nowrap;
 }
 .buttontoaddformdata {
   border: none;
@@ -603,7 +604,8 @@
     justify-content: center;
   }
   #tableresponsive {
-    overflow: scroll;
+    overflow: visible;
+    overflow-x: scroll;
   }
   .titleforaccountsummarytextsame h2 {
     font-size: 15px !important;
@@ -680,7 +682,7 @@
   }
   .textAccSum,
   .fontsize10px {
-    font-size: 10px !important;
+    font-size: 12px !important;
   }
   .buttontoaddformdata {
     font-size: 15px;
@@ -695,7 +697,7 @@
     margin: 0px 20px;
   }
   #fontsize10px {
-    font-size: 10px !important;
+    font-size: 12px !important;
   }
 
   .tbodytextifyaccsum,
@@ -720,8 +722,9 @@
   }
 
   #tableresponsive {
-    overflow: scroll;
-    margin: 5px 0px;
+    overflow: visible;
+    overflow-x: scroll;
+    margin: 25px 10px;
   }
 
   .componentcontainerdashboard {
@@ -792,7 +795,7 @@
     font-size: 15px;
   }
   .scrollabletablecontainer {
-    margin: 5px 0px;
+    margin: 25px 10px;
     max-height: 280px;
     overflow: auto;
   }

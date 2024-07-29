@@ -241,10 +241,10 @@ function Listify({
             fontWeight: "700",
             padding: "10px",
             fontSize: "20px",
-            color:"rgb(202, 134, 255)",
+           
             margin: "0px",
             letterSpacing: "1px",
-            fontWeight: "200",
+            fontWeight: "300",
           }}
           className={listStyle.enteraddressdivtitleh2}
         >
@@ -315,7 +315,7 @@ function Listify({
         <div className={listStyle.inputflexlist}>
           <label
             className={listStyle.inputflexlistlabel}
-            style={{ width: "25%" }}
+          
           ></label>
           <button
             id={listStyle.addtolistbuttonid}

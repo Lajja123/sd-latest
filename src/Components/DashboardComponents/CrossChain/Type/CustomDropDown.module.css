@@ -64,3 +64,15 @@
   color: #8d37fb;
   border-radius: 10px;
 }
+@media only screen and (max-width: 768) {
+  .dropdownHeader {
+    min-width: 150px;
+    font-size: 13px;
+  }
+}
+@media only screen and (max-width: 425px) {
+  .dropdownHeader {
+    min-width: 140px;
+    font-size: 13px;
+  }
+}

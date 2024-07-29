@@ -194,7 +194,6 @@
 .downloadbtn button:hover {
   background-color: transparent;
   box-shadow: rgb(255 255 255 / 72%) 1px 1px 18px 0px inset;
-  
 }
 .downloadbtn button {
   border-radius: 63px;
@@ -283,13 +282,17 @@
   /* Any other styles for invalid input */
 }
 
-.downbtn:hover{
+.downbtn:hover {
   box-shadow: rgb(255 255 255 / 72%) 1px 1px 18px 0px inset;
   background-color: transparent;
 }
-.downbtn{
-    background: linear-gradient(90deg, rgba(68, 9, 205, 0.73) 0%, rgba(140, 62, 250, 0.73) 100%) !important;
-    border: none !important;
+.downbtn {
+  background: linear-gradient(
+    90deg,
+    rgba(68, 9, 205, 0.73) 0%,
+    rgba(140, 62, 250, 0.73) 100%
+  ) !important;
+  border: none !important;
 }
 
 #borderpurple {
@@ -301,12 +304,20 @@
   border-bottom: 1px solid #fff;
 }
 .titleforuploadfilecsvsame {
-  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
-  color: #CA86FF;
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
+    rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
+    rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px,
+    rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
+    rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  color: #ca86ff;
 
   padding: 5px 0px;
-  background: rgb(24,26,83);
-background: linear-gradient(160deg, rgba(24,26,83,1) 47%, rgba(46,13,90,1) 100%);
+  background: rgb(24, 26, 83);
+  background: linear-gradient(
+    160deg,
+    rgba(24, 26, 83, 1) 47%,
+    rgba(46, 13, 90, 1) 100%
+  );
 }
 
 .tablewrapper table {
@@ -502,7 +513,8 @@ background: linear-gradient(160deg, rgba(24,26,83,1) 47%, rgba(46,13,90,1) 100%)
 
 @media (max-width: 768px) {
   #tableresponsive {
-    overflow: scroll !important;
+    overflow: visible;
+    overflow-x: scroll;
   }
   .uploadordownload {
     display: flex;
@@ -563,7 +575,8 @@ background: linear-gradient(160deg, rgba(24,26,83,1) 47%, rgba(46,13,90,1) 100%)
     font-size: 12px !important;
   }
   #tableresponsive {
-    overflow: scroll !important;
+    overflow: visible;
+    overflow-x: scroll;
   }
   .sendbutton {
     background: #0000;

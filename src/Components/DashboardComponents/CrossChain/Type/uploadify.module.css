@@ -474,7 +474,8 @@
 
 @media (max-width: 768px) {
   #tableresponsive {
-    overflow: scroll !important;
+    overflow: visible;
+    overflow-x: scroll;
   }
   .uploadordownload {
     display: flex;
@@ -518,6 +519,7 @@
     font-size: 18px;
     margin: 0;
   }
+  
 }
 @media only screen and (max-width: 425px) {
   .orrrr {
@@ -535,7 +537,8 @@
     font-size: 12px !important;
   }
   #tableresponsive {
-    overflow: scroll !important;
+    overflow: visible;
+    overflow-x: scroll;
   }
   .sendbutton {
     background: #0000;

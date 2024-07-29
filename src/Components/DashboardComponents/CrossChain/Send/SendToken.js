@@ -459,7 +459,8 @@ function SendToken({
                         margin: "30px 20px",
                         border: "1px solid #8D37FB",
                         borderRadius: "20px",
-                        overflow: "hidden",
+                        overflow: "visible",
+                        overflowX: "scroll",
                       }}
                     >
                       <table className={textStyle.tabletextlist}>
@@ -506,7 +507,12 @@ function SendToken({
                               {tokenDetails.symbol}
                             </td>
                             <td
-                              style={{ letterSpacing: "1px" }}
+                              style={{
+                                letterSpacing: "1px",
+                                display: "flex",
+                                alignItems: "center",
+                                justifyContent: "center",
+                              }}
                               className={textStyle.tableTd}
                             >
                               {`${tokenAddress.slice(
@@ -564,31 +570,36 @@ function SendToken({
                       <tr>
                         <th
                           className={textStyle.fontsize12px}
-                          style={{ letterSpacing: "1px", padding: "8px" }}
+                          style={{
+                            letterSpacing: "1px",
+                            padding: "15px",
+                            textWrap: "nowrap",
+                          }}
                         >
                           Receiver Address
                         </th>
                         <th
                           className={textStyle.fontsize12px}
-                          style={{ letterSpacing: "1px", padding: "8px" }}
+                          style={{ letterSpacing: "1px", padding: "15px" }}
                         >
                           Label
                         </th>
                         <th
                           className={textStyle.fontsize12px}
-                          style={{ letterSpacing: "1px", padding: "8px" }}
+                          style={{ letterSpacing: "1px", padding: "15px" }}
                         >
                           Amount({tokenDetails.symbol})
                         </th>
                         <th
                           className={textStyle.fontsize12px}
-                          style={{ letterSpacing: "1px", padding: "8px" }}
+                          style={{
+                            letterSpacing: "1px",
+                            padding: "15px",
+                            textWrap: "nowrap",
+                          }}
                         >
                           Destination Chain
-                          <div style={{ fontSize: "10px" }}>
-                            (Select Multiple Destination Chains for Each
-                            Recipient here)
-                          </div>
+                          <div style={{ fontSize: "10px" }}></div>
                         </th>
                         {/* <th
                       className={textStyle.fontsize12px}
@@ -598,7 +609,7 @@ function SendToken({
                     </th> */}
                         <th
                           className={textStyle.fontsize12px}
-                          style={{ letterSpacing: "1px", padding: "8px" }}
+                          style={{ letterSpacing: "1px", padding: "15px" }}
                         >
                           Action
                         </th>
@@ -610,7 +621,10 @@ function SendToken({
                             <tr key={index}>
                               <td
                                 id={textStyle.fontsize10px}
-                                style={{ letterSpacing: "1px", padding: "8px" }}
+                                style={{
+                                  letterSpacing: "1px",
+                                  padding: "15px",
+                                }}
                               >
                                 {`${data.address.slice(
                                   0,
@@ -619,7 +633,10 @@ function SendToken({
                               </td>
                               <td
                                 id={textStyle.fontsize10px}
-                                style={{ letterSpacing: "1px", padding: "8px" }}
+                                style={{
+                                  letterSpacing: "1px",
+                                  padding: "15px",
+                                }}
                               >
                                 {data.label ? (
                                   data.label
@@ -809,7 +826,7 @@ function SendToken({
                             color: "white",
                             borderRadius: "10px",
                             padding: "10px 10px",
-                            fontSize: "12px",
+
                             letterSpacing: "1px",
                           }}
                         >
