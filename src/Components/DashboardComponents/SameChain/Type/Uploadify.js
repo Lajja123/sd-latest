@@ -203,7 +203,7 @@ function Uploadify({
             padding: "10px",
             fontSize: "20px",
             margin: "0px",
-            fontWeight: "200",
+            fontWeight: "300",
             letterSpacing: "1px",
           }}
           className={uploadStyle.sametextmain}
@@ -229,7 +229,10 @@ function Uploadify({
               download="SampleUpload.csv"
               className={uploadStyle.downloadbtn}
             >
-              <button className={uploadStyle.downbtn} style={{ cursor: "pointer" }}>
+              <button
+                className={uploadStyle.downbtn}
+                style={{ cursor: "pointer" }}
+              >
                 Download sample CSV file
               </button>
             </a>

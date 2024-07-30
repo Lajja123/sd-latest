@@ -269,8 +269,8 @@ function Uploadify({
             padding: "10px",
             fontSize: "20px",
             margin: "0px",
-            fontWeight: "200",
-            color:"rgb(202, 134, 255)",
+            fontWeight: "300",
+           
             letterSpacing: "1px",
           }}
           className={uploadStyle.sametextmain}
