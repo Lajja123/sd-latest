@@ -162,19 +162,19 @@
 }
 .buttontoaddformdata {
   cursor: pointer;
-  padding: 10px 25px;
-    /* background: linear-gradient(90deg, rgba(68, 9, 205, 0.73) 0%, rgba(140, 62, 250, 0.73) 100%); */
-    background-color: #49058e91;
+  padding: 15px 40px;
+  /* background: linear-gradient(90deg, rgba(68, 9, 205, 0.73) 0%, rgba(140, 62, 250, 0.73) 100%); */
+  background-color: #49058e91;
   color: white;
   border-radius: 63px;
   margin: 0px 20px;
-  border: none;
+  border: 1px solid white;
   font-size: 17px;
 }
 
 .buttontoaddformdataunload {
   cursor: pointer;
-  padding: 10px 25px;
+  padding: 15px 40px;
   background-color: transparent;
   color: white;
   border: 1px solid white;
@@ -283,19 +283,25 @@
 }
 
 .enteraddressdivtitlee {
-  
   font-size: 12px;
 }
 
 .enteraddressdivtitle {
-  background: rgb(24,26,83);
-background: linear-gradient(160deg, rgba(24,26,83,1) 47%, rgba(46,13,90,1) 100%);
-box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  background: rgb(24, 26, 83);
+  background: linear-gradient(
+    160deg,
+    rgba(24, 26, 83, 1) 47%,
+    rgba(46, 13, 90, 1) 100%
+  );
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
+    rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
+    rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px,
+    rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
+    rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
   font-weight: 700;
   line-height: 154.1%;
   letter-spacing: 1.04px;
   padding: 5px 0px;
-  color: #CA86FF;
 
   /* border-radius: 47px 47px 0px 0px; */
   font-size: 12px;
@@ -321,10 +327,10 @@ box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0p
 }
 
 .scrollabletablecontainer {
-  margin: 25px 0px;
+  margin: 40px 20px;
 
   overflow: auto;
-  /* --sb-track-color: linear-gradient(
+ --sb-track-color: linear-gradient(
       0deg,
       rgba(0, 0, 0, 0.2) 0%,
       rgba(0, 0, 0, 0.2) 100%
@@ -334,10 +340,10 @@ box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0p
   --sb-size: 1px;
 
   text-align: center !important;
-  scrollbar-color: var(--sb-thumb-color) var(--sb-track-color); */
+  scrollbar-color: var(--sb-thumb-color) var(--sb-track-color); 
 }
 
-/* .scrollabletablecontainer::-webkit-scrollbar {
+.scrollabletablecontainer::-webkit-scrollbar {
   width: var(--sb-size);
 }
 
@@ -348,7 +354,7 @@ box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0p
 .scrollabletablecontainer::-webkit-scrollbar-thumb {
   background: var(--sb-thumb-color);
   border-radius: 10px;
-} */
+} 
 
 .sendbutton:hover {
   cursor: pointer;
@@ -479,7 +485,7 @@ box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0p
   animation: spin 2s linear infinite;
 }
 .inputflexlist input {
-  border: 1px solid #9D79FF;
+  border: 1px solid #9d79ff;
   letter-spacing: 1px;
   width: 40%;
 }
@@ -538,6 +544,9 @@ box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0p
   padding: 5px 0px;
   font-size: 12px;
 }
+.addMain{
+  padding: 40px 20px;
+}
 @media (max-width: 768px) {
   .viewaddressdivtitleh2 {
     font-size: 15px !important;
@@ -591,11 +600,11 @@ box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0p
   }
 
   .enteraddressdivtitleh2 {
-    
     font-size: 15px !important;
   }
   .sametextmain {
     color: #8f00ff;
+    padding: 40px 20px;
     font-size: 15px !important;
   }
   .inputflexlist label {
@@ -605,7 +614,6 @@ box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0p
     padding: 10px 0px;
   }
 }
-
 
 @media only screen and (max-width: 770px) {
   .listdropdown {

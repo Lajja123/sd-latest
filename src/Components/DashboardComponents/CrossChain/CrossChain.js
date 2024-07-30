@@ -18,7 +18,7 @@ function CrossChain({ activeTab }) {
   const [selectedToken, setSelectedToken] = useState(null);
   const [tokenAddress, setTokenAddress] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
-
+  const [isMetaMaskConnected, setIsMetaMaskConnected] = useState(false);
   const chainId = useChainId();
 
   const getChainsForDropDown = () => {
@@ -43,7 +43,12 @@ function CrossChain({ activeTab }) {
   };
 
   useEffect(() => {
-    getChainsForDropDown();
+    if (address) {
+      setIsMetaMaskConnected(true);
+      getChainsForDropDown();
+    } else {
+      setIsMetaMaskConnected(false);
+    }
   }, [address, chainId]);
 
   const handleDestinationChainChange = (selectedChain) => {
@@ -105,7 +110,6 @@ function CrossChain({ activeTab }) {
           <div
             id="seend-eth"
             style={{
-              padding: "30px 20px",
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
@@ -120,6 +124,7 @@ function CrossChain({ activeTab }) {
                 onSelect={handleDestinationChainChange}
                 selectedValue={selectedDestinationChain}
                 placeholder="Select destination chain"
+                disabled={!isMetaMaskConnected}
               />
             </div>
 
@@ -131,6 +136,7 @@ function CrossChain({ activeTab }) {
                 onSelect={handleDestinationTokenChange}
                 selectedValue={selectedToken}
                 placeholder="Select token"
+                disabled={!isMetaMaskConnected}
               />
             </div>
             {errorMessage && (

@@ -19,10 +19,10 @@
   font-weight: 500;
   line-height: 37px;
   letter-spacing: 1px;
-  font-size: 12px;
+  font-size: 15px;
   text-align: center;
   width: max-content;
-  padding: 5px 20px;
+  padding: 7px 20px;
   border: none;
   margin-right: 20px;
   margin-left: 10px;
@@ -83,7 +83,7 @@
 }
 .buttontoaddformdata {
   cursor: pointer;
-  padding: 10px 25px;
+  padding: 15px 40px;
   background-color: transparent;
   color: white;
   border: 1px solid white;
@@ -98,6 +98,7 @@
 .sametextmain {
   align-items: center;
   display: flex;
+  padding: 40px 20px;
   justify-content: center;
 }
 .eachinputofcreatelist {
@@ -138,16 +139,7 @@
 .buttontoaddformdataunload:hover {
   box-shadow: rgba(238, 242, 243, 0.553) 0px 5px 15px;
 }
-.buttontoaddformdataunload {
-  cursor: pointer;
-  padding: 10px 25px;
-  background-color: transparent;
-  color: white;
-  border: 1px solid white;
-  border-radius: 63px;
-  margin: 0px 20px;
-  font-size: 17px;
-}
+
 .inputdivforcsv {
   border-radius: 10px;
   margin: 20px 0px;
@@ -195,20 +187,6 @@
   background-color: transparent;
   box-shadow: rgb(255 255 255 / 72%) 1px 1px 18px 0px inset;
 }
-.downloadbtn button {
-  border-radius: 63px;
-  color: white;
-  font-weight: 700;
-  line-height: 37px;
-  letter-spacing: 1px;
-  text-align: center;
-  width: max-content;
-  padding: 5px 20px;
-  border: none;
-  margin-right: 20px;
-  margin-left: 10px;
-  font-size: 15px;
-}
 
 .accoutsummarytablewrappercsv {
   overflow: scroll;
@@ -247,7 +225,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  margin: 20px 0px;
+  margin: 40px 20px;
 }
 
 .titleforaccountsummarycssvame {
@@ -309,7 +287,6 @@
     rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px,
     rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
     rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
-  color: #ca86ff;
 
   padding: 5px 0px;
   background: rgb(24, 26, 83);

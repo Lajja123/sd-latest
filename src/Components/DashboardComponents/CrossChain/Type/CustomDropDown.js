@@ -9,6 +9,7 @@ function CustomDropdown({
   selectedValue,
   placeholder,
   index,
+  disabled,
 }) {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
@@ -51,13 +52,17 @@ function CustomDropdown({
   });
 
   const handleTokendropdown = () => {
-    setIsOpen(true)
-    // driverObj.drive();
-  }
+    if (!disabled) {
+      setIsOpen((prev) => !prev);
+      // driverObj.drive();
+    }
+  };
   return (
     <div className={dropDownStyles.dropdown} ref={dropdownRef}>
       <div
-        className={dropDownStyles.dropdownHeader}
+        className={`${dropDownStyles.dropdownHeader} ${
+          disabled ? dropDownStyles.disabled : ""
+        }`}
         onClick={handleTokendropdown}
       >
         {console.log(selectedValue)}
@@ -76,28 +81,27 @@ function CustomDropdown({
       </div>
       {isOpen && (
         <div className={dropDownStyles.dropdownList}>
-        {options.length === 0 ? (
-          <div className={dropDownStyles.dropdownItem}>
-           Please select destination chain first
-          </div>
-        ) : (
-          options.map((option) => (
-            <div
-              key={option.name}
-              className={dropDownStyles.dropdownItem}
-              onClick={() => handleSelect(option)}
-            >
-              <img
-                src={option.iconUrl}
-                alt={option.name}
-                className={dropDownStyles.icon}
-              />
-              {option.name}
+          {options.length === 0 ? (
+            <div className={dropDownStyles.dropdownItem}>
+              Please select destination chain first
             </div>
-          ))
-        )}
-      </div>
-      
+          ) : (
+            options.map((option) => (
+              <div
+                key={option.name}
+                className={dropDownStyles.dropdownItem}
+                onClick={() => handleSelect(option)}
+              >
+                <img
+                  src={option.iconUrl}
+                  alt={option.name}
+                  className={dropDownStyles.icon}
+                />
+                {option.name}
+              </div>
+            ))
+          )}
+        </div>
       )}
     </div>
   );

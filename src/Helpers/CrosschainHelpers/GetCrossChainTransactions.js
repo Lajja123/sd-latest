@@ -75,6 +75,7 @@ export const getCrossChainTransactions = async (address, chainId) => {
                 });
     
                 return transformedData;
+                console.log(transformedData);
             }
         }
     } 

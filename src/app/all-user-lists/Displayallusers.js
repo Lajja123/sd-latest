@@ -263,8 +263,8 @@ function Displayallusers() {
               </div>
             )
           ) : (
-            <div style={{fontSize:"2.3vw"}}>
-              <h2>Please connect your wallet</h2>
+            <div style={{ textAlign: "center", paddingTop: "10px" }}>
+              Please connect your wallet to proceed
             </div>
           )}
           <div className={displayuser.buttondivgoback}>

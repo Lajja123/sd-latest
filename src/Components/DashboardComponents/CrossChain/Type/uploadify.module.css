@@ -67,7 +67,7 @@
 }
 .buttontoaddformdata {
   cursor: pointer;
-  padding: 10px 25px;
+  padding: 15px 40px;
   background-color: transparent;
   color: white;
   border: 1px solid white;
@@ -82,6 +82,7 @@
 .sametextmain {
   align-items: center;
   display: flex;
+  padding: 40px 20px;
   justify-content: center;
 }
 .eachinputofcreatelist {
@@ -124,7 +125,7 @@
 }
 .buttontoaddformdataunload {
   cursor: pointer;
-  padding: 10px 25px;
+  padding: 15px 40px;
   background-color: transparent;
   color: white;
   border: 1px solid white;
@@ -180,7 +181,11 @@
 }
 .downloadbtn button {
   border-radius: 63px;
-  background: linear-gradient(90deg, rgba(68, 9, 205, 0.73) 0%, rgba(140, 62, 250, 0.73) 100%) !important;
+  background: linear-gradient(
+    90deg,
+    rgba(68, 9, 205, 0.73) 0%,
+    rgba(140, 62, 250, 0.73) 100%
+  ) !important;
   border: none !important;
   color: white;
   font-weight: 700;
@@ -188,7 +193,7 @@
   letter-spacing: 1px;
   text-align: center;
   width: max-content;
-  padding: 5px 20px;
+  padding: 7px 20px;
   border: none;
   margin-right: 20px;
   margin-left: 10px;
@@ -232,7 +237,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  margin: 20px 0px;
+  margin: 40px 20px;
 }
 
 .titleforaccountsummarycssvame {
@@ -276,8 +281,12 @@
   border-bottom: 1px solid #fff;
 }
 .titleforuploadfilecsvsame {
-  background: rgb(24,26,83);
-  background: linear-gradient(160deg, rgba(24,26,83,1) 47%, rgba(46,13,90,1) 100%);
+  background: rgb(24, 26, 83);
+  background: linear-gradient(
+    160deg,
+    rgba(24, 26, 83, 1) 47%,
+    rgba(46, 13, 90, 1) 100%
+  );
   padding: 5px 0px;
 }
 
@@ -519,7 +528,6 @@
     font-size: 18px;
     margin: 0;
   }
-  
 }
 @media only screen and (max-width: 425px) {
   .orrrr {

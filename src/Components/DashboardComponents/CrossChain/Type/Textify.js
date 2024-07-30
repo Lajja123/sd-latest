@@ -228,7 +228,7 @@ function Textify({
                   fontSize: "16px",
                   fontFamily: "Arial, sans-serif",
                   boxSizing: "border-box",
-                  resize: "vertical",
+                  resize: "none",
                 }}
                 className={textStyle.textareaInput}
                 placeholder="@Justin/0xe57f4c84539a6414C4Cf48f135210e01c477EFE0 1.41421"
