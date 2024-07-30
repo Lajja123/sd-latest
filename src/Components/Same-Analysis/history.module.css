@@ -4,6 +4,15 @@
   padding-top: 180px;
   overflow-x: hidden;
 }
+
+.maindiv {
+  background: var(--background);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  min-height: 100vh;
+}
 .searchdiv {
   width: 98%;
   margin: auto;
@@ -60,14 +69,7 @@
   margin-right: 7px;
 }
 
-.maindiv {
-  background: var(--background);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  color: white;
-  min-height: 100vh;
-}
+
 
 .maintablediv {
   width: 98%;

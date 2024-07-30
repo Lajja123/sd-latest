@@ -428,7 +428,7 @@ function Samechaindashboard() {
             Effortless Token Distribution
           </h1>
           <h3 className={samechainStyle.dashpera}>
-            Instant Multi-Account Dispersement – Seamlessly Send Tokens to
+            Instant Multi-Account Dispersement - Seamlessly Send Tokens to
             Multiple Accounts in One Click
           </h3>
         </div>

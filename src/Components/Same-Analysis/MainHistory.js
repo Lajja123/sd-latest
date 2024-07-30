@@ -10,18 +10,18 @@ function MainHistory() {
     <div className={history.maindiv}>
         <div>
         <div className={samechainStyle.stickyIcon}>
-          <a href="/same-chain" className={samechainStyle.Instagra}>
-          <FontAwesomeIcon icon={faShare} /> <div> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cross Chain</div>
+          <a href="/cross-chain" className={samechainStyle.Instagra}>
+          <FontAwesomeIcon icon={faShare} /> <div style={{ marginLeft: "25px" }}>Cross Chain</div>
           </a>
         </div>
         <div className={samechainStyle.stickyIcon1}>
-          <a href="/cross-chain" className={samechainStyle.Instagra}>
-            <FontAwesomeIcon icon={faShare} /> <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Same Chain</div>
+          <a href="/same-chain" className={samechainStyle.Instagra}>
+            <FontAwesomeIcon icon={faShare} /> <div style={{ marginLeft: "25px" }}>Same Chain</div>
           </a>
         </div>
         <div className={samechainStyle.stickyIcon2}>
           <a href="/all-user-lists" className={samechainStyle.Instagram}>
-            <FontAwesomeIcon icon={faUser} /> <div>Manage Labels</div>
+            <FontAwesomeIcon icon={faUser} /> <div style={{ marginLeft: "25px" }}>Manage Labels</div>
           </a>
         </div>
       </div>

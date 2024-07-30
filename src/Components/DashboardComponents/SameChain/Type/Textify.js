@@ -337,7 +337,7 @@ function Textify({
                             className={textStyle.iconintutorial}
                             icon={faDoorOpen}
                           />
-                          <div style={{ color: "#00FBFB", fontWeight: "300" }}>
+                          <div className={textStyle.headingintutorial}>
                             Direct Entry
                           </div>
                           <div className={textStyle.subtextintutorial}>
