@@ -494,7 +494,11 @@ function SendToken({ activeTab, listData, setListData }) {
                           <tr>
                             <th
                               className={textStyle.fontsize12px}
-                              style={{ letterSpacing: "1px", padding: "15px",textWrap:"nowrap" }}
+                              style={{
+                                letterSpacing: "1px",
+                                padding: "15px",
+                                textWrap: "nowrap",
+                              }}
                             >
                               Receiver Address
                             </th>
@@ -829,7 +833,9 @@ function SendToken({ activeTab, listData, setListData }) {
             ) : null}
           </>
         ) : (
-          "Please connect your wallet to proceed"
+          <div style={{ textAlign: "center", paddingTop: "10px" }}>
+            Please connect your wallet to proceed
+          </div>
         )}
       </>
       <>

@@ -315,6 +315,7 @@
   backdrop-filter: blur(30.5px);
   margin: 50px 0px;
   border: 1px solid #fff;
+  padding-bottom: 30px;
 }
 .divtocoversametextdiv {
   border-radius: 47px;
@@ -349,13 +350,9 @@
 }
 .sametextmain {
   display: flex;
+  padding: 40px 20px;
   justify-content: center;
   align-items: center;
-  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
-    rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
-    rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px,
-    rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
-    rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
 }
 
 .titleloadtokensametext {
@@ -394,9 +391,8 @@
   letter-spacing: 1px;
 }
 .titlesametexttextarea {
-  font-weight: 100;
-  color: #ca86ff;
-
+  font-weight: 300;
+  resize: none;
   font-size: 12px;
 }
 .tokeninput::placeholder {
@@ -461,7 +457,7 @@
   text-wrap: nowrap;
 }
 .buttontoaddformdata {
-  border: none;
+  border: 1px solid white;
   background: linear-gradient(
     90deg,
     rgba(102, 43, 187, 0.37) 0%,
@@ -472,7 +468,7 @@
   font-size: 17px;
   cursor: pointer;
   margin: 0 20px;
-  padding: 10px 25px;
+  padding: 15px 40px;
 }
 .buttontoaddformdata:hover {
   box-shadow: rgb(255 255 255 / 72%) 1px 1px 18px 0px inset;
@@ -485,13 +481,13 @@
     rgba(102, 43, 187, 0.37) 0%,
     rgba(62, 18, 124, 0.37) 100%
   ) !important;
-  border: none;
+  border: 1px solid white;
   border-radius: 63px;
   color: #fff;
   cursor: pointer;
   font-size: 17px;
   margin: 0 20px;
-  padding: 10px 25px;
+  padding: 15px 40px;
 }
 .textareaInput {
   outline: none;
@@ -509,7 +505,7 @@
 .scrollabletablecontainer {
   border: 1px solid #8d37fb;
   border-radius: 20px;
-  margin: 25px;
+  margin: 40px 20px;
   max-height: 280px;
   overflow: auto;
 }
@@ -527,7 +523,7 @@
   background: #555;
 }
 #tableresponsive {
-  margin: 25px;
+  margin: 40px 20px;
 }
 .accountsummarycreatetitle,
 .selectloadtoke-title,
@@ -539,11 +535,7 @@
     rgba(46, 13, 90, 1) 100%
   );
   font-size: 12px;
-  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
-    rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
-    rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px,
-    rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
-    rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+
   padding: 5px 0;
 }
 .buttontaddformdataunload {

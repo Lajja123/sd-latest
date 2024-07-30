@@ -1,6 +1,5 @@
 .dropdownHeader:hover {
-  color: #8d37fb;
-  background: white;
+  box-shadow: rgb(255 255 255 / 72%) 1px 1px 18px 0px inset;
   /* border: 1px solid #8d37fb; */
 }
 .dropdown {
@@ -10,18 +9,16 @@
 }
 
 .dropdownHeader {
-  padding: 10px;
+  padding: 15px 20px;
   /* border: 1px solid #9747ff; */
-  background: rgb(141, 55, 251);
-  background: linear-gradient(
-    342deg,
-    rgba(141, 55, 251, 1) 0%,
-    rgba(55, 75, 251, 1) 100%
-  );
+  background-color: #49058e91;
+  color: white;
+  font-size: 17px;
+  border: 1px solid white;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 12px;
+  border-radius: 63px;
   min-width: 200px;
   overflow: hidden; /* Optional: ensures child elements do not overflow the rounded corners */
 }
@@ -42,8 +39,8 @@
   top: 110%;
   left: 0;
   width: -webkit-fill-available;
-  background: #2b2854;
-  border: 0.5px solid #00ffff;
+  background-color: #49058e91;
+  border: 0.5px solid #ffffff;
   z-index: 1000;
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
@@ -52,10 +49,10 @@
 }
 
 .dropdownItem {
-  padding: 10px;
+  padding: 15px;
   display: flex;
   align-items: center;
-  border-bottom: 0.5px solid #00ffff;
+  border-bottom: 0.5px solid #ffffff;
   border-radius: 10px;
 }
 

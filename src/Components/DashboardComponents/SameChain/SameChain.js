@@ -55,7 +55,7 @@ function SameChain({ activeTab }) {
           <div
             id="seend-eth"
             style={{
-              padding: "30px 20px",
+             
               display: "flex",
               justifyContent: "center",
               alignItems: "center",

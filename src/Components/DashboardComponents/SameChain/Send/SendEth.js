@@ -575,8 +575,8 @@ function SendEth({ activeTab, listData, setListData }) {
                                 width: "fit-content",
                                 margin: "0 auto",
                                 background: "transparent",
-                                color: "#00FBFB",
-                                border: "1px solid #00FBFB",
+                                color: "white",
+                                border: "1px solid white",
                                 borderRadius: "10px",
                                 padding: "10px 10px",
                                 fontSize: "12px",
@@ -803,7 +803,9 @@ function SendEth({ activeTab, listData, setListData }) {
           </div>
         </>
       ) : (
-        "Please Connect your Wallet to Proceed"
+        <div style={{ textAlign: "center", paddingTop: "10px" }}>
+          Please connect your wallet to proceed
+        </div>
       )}
     </>
   );

@@ -15,7 +15,6 @@ import {
   faXmark,
   faArrowLeft,
   faArrowRight,
-  faShare,
 } from "@fortawesome/free-solid-svg-icons";
 import loader from "../../Assets/dataloading.webp";
 import notfound from "../../Assets/oops.webp";
@@ -265,36 +264,19 @@ function Displayallusers() {
             )
           ) : (
             <div style={{ fontSize: "18px", fontWeight: "500" }}>
-              Please connect your wallet
+              <h2>Please connect your wallet</h2>
             </div>
           )}
-
-          {/* <div className={displayuser.buttondivgoback}>
+          <div className={displayuser.buttondivgoback}>
             <a className={displayuser.gobackbtn} href="/same-chain">
-              <FontAwesomeIcon icon={faShare} />
+              <FontAwesomeIcon icon={faArrowLeft} />
               &nbsp;&nbsp; Same Chain
             </a>{" "}
             <a className={displayuser.gobackbtn} href={"/cross-chain"}>
               Cross Chain &nbsp;&nbsp;
-              <FontAwesomeIcon icon={faShare} />
+              <FontAwesomeIcon icon={faArrowRight} />
             </a>{" "}
-          </div> */}
-
-          
-          <button className={displayuser.button}>
-            <a href="/cross-chain">
-              <FontAwesomeIcon icon={faShare} />{" "}
-              <div> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cross Chain</div>
-            </a>
-          </button>
-          <button className={displayuser.button}>
-            <a href="/same-chain">
-              <FontAwesomeIcon icon={faShare} />{" "}
-              <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Same Chain</div>
-            </a>
-          </button>
-
-
+          </div>
         </div>
       </div>
       <Footer />

@@ -236,7 +236,6 @@ function Listify({
       <div className={listStyle.enteraddressdivtitle}>
         <h2
           style={{
-            fontWeight: "700",
             padding: "10px",
             fontSize: "20px",
             margin: "0px",
@@ -248,7 +247,7 @@ function Listify({
           Enter the Recipient Address and Token Amount{" "}
         </h2>
       </div>
-      <div style={{ padding: "30px 20px" }}>
+      <div className={listStyle.addMain}>
         <div className={listStyle.inputflexlist}>
           <label>Enter Name </label>
           <input
@@ -318,7 +317,7 @@ function Listify({
             id={listStyle.addtolistbuttonid}
             className={`${listStyle["buttontoaddformdata"]} ${listStyle["maddtolist"]}}`}
             onClick={handleAddClick}
-            style={{ width: "45%" }}
+            style={{ width: "43%" }}
           >
             Add to List
           </button>

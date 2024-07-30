@@ -159,11 +159,11 @@
 }
 .buttontoaddformdata {
   cursor: pointer;
-  padding: 10px 25px;
+  padding: 15px 40px;
   /* background: linear-gradient(90deg, rgba(68, 9, 205, 0.73) 0%, rgba(140, 62, 250, 0.73) 100%); */
   background-color: #49058e91;
   color: white;
-  border: none;
+  border: 1px solid white;
   border-radius: 63px;
   margin: 0px 20px;
   font-size: 17px;
@@ -171,7 +171,7 @@
 
 .buttontoaddformdataunload {
   cursor: pointer;
-  padding: 10px 25px;
+  padding: 15px 40px;
   background-color: transparent;
   color: white;
   border: 1px solid white;
@@ -318,7 +318,7 @@
 }
 
 .scrollabletablecontainer {
-  margin: 25px 0px;
+  margin: 40px 20px;
 
   overflow: auto;
   /* --sb-track-color: linear-gradient(
@@ -533,6 +533,9 @@
   padding: 5px 0px;
   font-size: 12px;
 }
+.addMain{
+  padding: 40px 20px;
+}
 @media only screen and (max-width: 770px) {
   .listdropdown {
     position: absolute;
@@ -598,6 +601,7 @@
   }
   .sametextmain {
     color: #8f00ff;
+    padding: 40px 20px;
     font-size: 15px !important;
   }
   .inputflexlist label {
@@ -652,7 +656,7 @@
     margin: 10px 0px;
   }
   #addtolistbuttonid {
-    width:80% !important;
+    width: 80% !important;
     margin: 10px 0px !important;
   }
 

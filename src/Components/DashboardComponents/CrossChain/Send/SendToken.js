@@ -456,7 +456,7 @@ function SendToken({
                         display: "flex",
                         justifyContent: "space-between",
                         alignItems: "center",
-                        margin: "30px 20px",
+                        margin: "40px 20px",
                         border: "1px solid #8D37FB",
                         borderRadius: "20px",
                         overflow: "visible",
@@ -704,10 +704,10 @@ function SendToken({
                                     width: "fit-content",
                                     margin: "0 auto",
                                     background: "transparent",
-                                    color: "#00FBFB",
+                                    color: "white",
                                     borderRadius: "10px",
                                     padding: "10px 10px",
-                                    border: "1px solid #00FBFB",
+                                    border: "1px solid white",
                                     fontSize: "12px",
                                     letterSpacing: "1px",
                                   }}
@@ -745,6 +745,7 @@ function SendToken({
                                   }
                                   placeholder="Select destination chain"
                                   index={index}
+                                  style={{ fontSize: "12px" }}
                                 />
                               </td>
                               <td
@@ -874,8 +875,8 @@ function SendToken({
                             border:
                               remaining < 0
                                 ? "1px solid red"
-                                : "1px solid  #00FBFB",
-                            color: remaining < 0 ? "red" : "#00FBFB",
+                                : "1px solid  white",
+                            color: remaining < 0 ? "red" : "white",
                             borderRadius: "10px",
                             padding: "10px 10px",
                             fontSize: "12px",
@@ -914,7 +915,7 @@ function SendToken({
           </div>
         </>
       ) : (
-        <div style={{ textAlign: "center", paddingBottom: "30px" }}>
+        <div style={{ textAlign: "center", paddingTop: "10px" }}>
           Please connect your wallet to proceed
         </div>
       )}
