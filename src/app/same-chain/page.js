@@ -9,15 +9,16 @@ function page() {
 }
 
 export default page;
+
 export const metadata = {
   metadataBase: new URL("https://smartdisperse.xyz/same-chain"),
   title: "SameChain Page",
   description:
-    " Instant Multi-Account Dispersement – Seamlessly Send Tokens to Multiple Accounts in One Click",
+    " Instant Multi-Account Dispersement - Seamlessly Send Tokens to Multiple Accounts in One Click",
   openGraph: {
     title: "SameChain Page",
     description:
-      " Instant Multi-Account Dispersement – Seamlessly Send Tokens to Multiple Accounts in One Click",
+      " Instant Multi-Account Dispersement - Seamlessly Send Tokens to Multiple Accounts in One Click",
     url: "https://smartdisperse.xyz/same-chain",
     siteName: "SmartDisperse",
     images: [
