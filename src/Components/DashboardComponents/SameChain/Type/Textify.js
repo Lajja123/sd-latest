@@ -30,7 +30,7 @@ function Textify({
   const textareaRef = useRef(null);
   const [suggestionItemHeight, setSuggestionItemHeight] = useState(0);
   const dropdownRef = useRef(null);
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
   const { address } = useAccount();
 
   useEffect(() => {
@@ -38,9 +38,9 @@ function Textify({
     if (firstVisit === undefined) {
       // First time visiting the site
       setIsOpen(true);
-      Cookies.set("firstVisit", "false", { expires: 365 }); // Set the cookie to expire in 1 year
+      Cookies.set("firstVisit", "true", { expires: 365 }); // Set the cookie to expire in 1 year
     } else {
-      setIsOpen(false);
+      setIsOpen(true);
     }
   }, []);
 
@@ -296,7 +296,7 @@ function Textify({
               )}
             </div>
           </div>
-          <div>
+          {/* <div>
             <div
               className={textStyle.titlesametexttextarea}
               onClick={triggerSlide}
@@ -338,7 +338,7 @@ function Textify({
                             icon={faDoorOpen}
                           />
                           <div className={textStyle.headingintutorial}>
-                            Direct Entry
+                          Direct Entry
                           </div>
                           <div className={textStyle.subtextintutorial}>
                             Enter Ethereum addresses and amounts in Ether or
@@ -399,7 +399,7 @@ function Textify({
                 </div>
               </div>
             ) : null}
-          </div>
+          </div> */}
           <div
             style={{
               display: "flex",

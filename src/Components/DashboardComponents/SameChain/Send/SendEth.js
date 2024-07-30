@@ -7,7 +7,7 @@ import textStyle from "../Type/textify.module.css";
 import { ethers } from "ethers";
 import { useAccount } from "wagmi";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTrashAlt } from "@fortawesome/free-solid-svg-icons";
+import { faChevronDown, faChevronUp, faClipboardList, faDollarSign, faDoorOpen, faTag, faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 import ExecuteEth from "../Execute/ExecuteEth";
 import { faExclamationTriangle } from "@fortawesome/free-solid-svg-icons";
 import { isContractAddress } from "@/Helpers/ValidateInput.js";
@@ -17,6 +17,7 @@ import Image from "next/image";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { fetchUserLabels } from "@/Helpers/FetchUserLabels";
+import Cookies from "js-cookie";
 
 function SendEth({ activeTab, listData, setListData }) {
   const [ethToUsdExchangeRate, setEthToUsdExchangeRate] = useState(null); //store ETH to USD exchange rate
@@ -32,6 +33,23 @@ function SendEth({ activeTab, listData, setListData }) {
   const [errorModalIsOpen, setErrorModalIsOpen] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [suffecientBalance, setSuffecientBalance] = useState(true);
+  const [isOpen, setIsOpen] = useState(true);
+
+  useEffect(() => {
+    const firstVisit = Cookies.get("firstVisit");
+    if (firstVisit === undefined) {
+      // First time visiting the site
+      setIsOpen(true);
+      Cookies.set("firstVisit", "true", { expires: 365 }); // Set the cookie to expire in 1 year
+    } else {
+      setIsOpen(true);
+    }
+  }, []);
+
+  const triggerSlide = () => {
+    setIsOpen(!isOpen);
+  };
+
   const renderComponent = (tab) => {
     switch (tab) {
       case "text":
@@ -104,7 +122,6 @@ function SendEth({ activeTab, listData, setListData }) {
     }
   };
 
-  
   const handleDeleteRow = (index) => {
     const updatedList = [...listData];
     updatedList.splice(index, 1);
@@ -184,18 +201,19 @@ function SendEth({ activeTab, listData, setListData }) {
     const newAddress = e.target.value;
     const updatedListData = [...listData];
     updatedListData[index].address = newAddress;
-  
-    const existingEntry = addressLabelMap.find(entry => entry.address.toLowerCase() === newAddress.toLowerCase());
+
+    const existingEntry = addressLabelMap.find(
+      (entry) => entry.address.toLowerCase() === newAddress.toLowerCase()
+    );
     if (existingEntry) {
       updatedListData[index].label = existingEntry.label;
     } else {
       updatedListData[index].label = "";
     }
-  
+
     setListData(updatedListData);
     console.log("Updated List Data:", updatedListData);
   };
-  
 
   const onAddLabel = async (index, recipientAddress) => {
     const userData = {
@@ -203,13 +221,13 @@ function SendEth({ activeTab, listData, setListData }) {
       name: labels[index],
       address: recipientAddress.toLowerCase(),
     };
-  
+
     try {
       let result = await fetch(`api/all-user-data?address=${address}`, {
         method: "POST",
         body: JSON.stringify(userData),
       });
-  
+
       result = await result.json();
       if (typeof result.error === "string") {
         setErrorModalIsOpen(true);
@@ -224,14 +242,16 @@ function SendEth({ activeTab, listData, setListData }) {
       setErrormsg("Some Internal Error Occured");
       console.error("Error:", error);
     }
-  
+
     const newEntry = {
       address: recipientAddress.toLowerCase(),
       label: labels[index],
     };
-  
-    setAddressLabelMap(prevMap => {
-      const existingIndex = prevMap.findIndex(entry => entry.address === newEntry.address);
+
+    setAddressLabelMap((prevMap) => {
+      const existingIndex = prevMap.findIndex(
+        (entry) => entry.address === newEntry.address
+      );
       if (existingIndex !== -1) {
         const updatedMap = [...prevMap];
         updatedMap[existingIndex] = newEntry;
@@ -240,9 +260,9 @@ function SendEth({ activeTab, listData, setListData }) {
         return [...prevMap, newEntry];
       }
     });
-  
+
     const { allNames, allAddress } = await fetchUserLabels(address);
-  
+
     const updatedListData = await listData.map((item) => {
       if (
         (item.label === undefined || item.label === "") &&
@@ -253,15 +273,14 @@ function SendEth({ activeTab, listData, setListData }) {
       }
       return item;
     });
-  
+
     await fetchUserDetails();
     await setListData(updatedListData);
-  
+
     // Log the updated address-label mapping
     console.log("Address-Label Mapping:", addressLabelMap);
   };
-  
-  
+
   useEffect(() => {
     calculateRemaining();
   });
@@ -298,7 +317,11 @@ function SendEth({ activeTab, listData, setListData }) {
                       <tr className={textStyle.tableTr}>
                         <th
                           className={textStyle.fontsize12px}
-                          style={{ letterSpacing: "1px", padding: "15px",textWrap:"nowrap" }}
+                          style={{
+                            letterSpacing: "1px",
+                            padding: "15px",
+                            textWrap: "nowrap",
+                          }}
                         >
                           Receiver Address
                         </th>
@@ -320,7 +343,7 @@ function SendEth({ activeTab, listData, setListData }) {
                         >
                           Amount(USD)
                         </th>
-                        
+
                         {/* <th
                       className={textStyle.fontsize12px}
                       style={{ letterSpacing: "1px", padding: "8px" }}
@@ -345,7 +368,10 @@ function SendEth({ activeTab, listData, setListData }) {
                             >
                               <td
                                 id={textStyle.fontsize10px}
-                                style={{ letterSpacing: "1px", padding: "15px" }}
+                                style={{
+                                  letterSpacing: "1px",
+                                  padding: "15px",
+                                }}
                               >
                                 {/* {data.address.toUpperCase()} */}
                                 {data.address.substr(0, 3)}...
@@ -353,7 +379,10 @@ function SendEth({ activeTab, listData, setListData }) {
                               </td>
                               <td
                                 id={textStyle.fontsize10px}
-                                style={{ letterSpacing: "1px", padding: "15px" }}
+                                style={{
+                                  letterSpacing: "1px",
+                                  padding: "15px",
+                                }}
                               >
                                 {data.label ? (
                                   data.label
@@ -505,6 +534,7 @@ function SendEth({ activeTab, listData, setListData }) {
                 </div>
                 <div id={textStyle.tableresponsive}>
                   <div
+                  className={textStyle.scrollabletablecontainer}
                     style={{
                       borderRadius: "20px",
                       border: "1px solid #8D37FB",
@@ -666,6 +696,111 @@ function SendEth({ activeTab, listData, setListData }) {
               </div>
             </div>
           ) : null}
+
+          <div>
+            <div
+              className={textStyle.titlesametexttextarea}
+              onClick={triggerSlide}
+            >
+              <h2
+                className={textStyle.tutorialheading}
+                style={{
+                  padding: "10px",
+                  fontSize: "20px",
+                  margin: "0px",
+                  letterSpacing: "1px",
+                  fontWeight: "300",
+                }}
+              >
+                How it works{" "}
+                <FontAwesomeIcon icon={isOpen ? faChevronUp : faChevronDown} />
+              </h2>
+            </div>
+            {isOpen ? (
+              <div
+                id="Slider"
+                className={`${textStyle.slider} ${
+                  isOpen ? textStyle.sliderOpen : ""
+                }`}
+              >
+                <div>
+                  <ui
+                    style={{ listStyleType: "none" }}
+                    className={textStyle.contents}
+                  >
+                    <div
+                      className={textStyle.tutorialcardscontainer}
+                      style={{ textAlign: "left" }}
+                    >
+                      <div className={textStyle.tutorialcards}>
+                        <li className={textStyle.contentincard}>
+                          <FontAwesomeIcon
+                            className={textStyle.iconintutorial}
+                            icon={faDoorOpen}
+                          />
+                          <div className={textStyle.headingintutorial}>
+                            Direct Entry
+                          </div>
+                          <div className={textStyle.subtextintutorial}>
+                            Enter Ethereum addresses and amounts in Ether or
+                            USD.
+                          </div>
+                        </li>
+                      </div>
+                      <div className={textStyle.tutorialcards}>
+                        <li className={textStyle.contentincard}>
+                          <FontAwesomeIcon
+                            className={textStyle.iconintutorial}
+                            icon={faDollarSign}
+                          />
+
+                          <div style={{ color: "#00FBFB", fontWeight: "300" }}>
+                            Currency Indicator
+                          </div>
+                          <div className={textStyle.subtextintutorial}>
+                            Use a dollar sign ($) for USD; Ether amounts without
+                            a symbol.
+                          </div>
+                        </li>
+                      </div>
+                      <div className={textStyle.tutorialcards}>
+                        <li className={textStyle.contentincard}>
+                          <FontAwesomeIcon
+                            className={textStyle.iconintutorial}
+                            icon={faTag}
+                          />
+
+                          <div style={{ color: "#00FBFB", fontWeight: "300" }}>
+                            Label Lookup
+                          </div>
+                          <div className={textStyle.subtextintutorial}>
+                            Type "@" to access assigned labels; select or type
+                            "@labelname".
+                          </div>
+                        </li>
+                      </div>
+                      <div className={textStyle.tutorialcards}>
+                        <li className={textStyle.contentincard}>
+                          <FontAwesomeIcon
+                            className={textStyle.iconintutorial}
+                            icon={faClipboardList}
+                          />
+
+                          <div style={{ color: "#00FBFB", fontWeight: "300" }}>
+                            Label Assignment
+                          </div>
+                          <div className={textStyle.subtextintutorial}>
+                            Input address and amount; assign label in
+                            transaction lineup.
+                          </div>
+                        </li>
+                      </div>
+                    </div>
+                  </ui>
+                </div>
+              </div>
+            ) : null}
+          </div>
         </>
       ) : (
         "Please Connect your Wallet to Proceed"
