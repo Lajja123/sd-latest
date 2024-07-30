@@ -11,17 +11,16 @@
   /* color: white; */
   text-decoration: none;
 }
-.gobackbtn {
-  /* background: linear-gradient(269deg, #0ff 2.32%, #1bff76 98.21%); */
+/* .gobackbtn {
   border: 1px solid white;
   padding: 8px;
   font-weight: 200;
   margin: 5px 10px;
   width: 100%;
   text-decoration: none;
-color: white;
+  color: white;
   border-radius: 10px;
-}
+} */
 
 .refreshbtn:hover {
   cursor: pointer;
@@ -35,13 +34,44 @@ color: white;
   text-decoration: underline;
 }
 
-.buttondivgoback {
+/* .buttondivgoback {
   width: 100%;
   max-width: 1000px;
   margin: 10px auto;
   display: flex;
   justify-content: space-between;
+} */
+
+.button{
+  width: 300px;
+  overflow: hidden;
+  background: none;
+  border: none;
+  outline: none;
+  margin-top: 40px
 }
+
+.button a{
+  background-color: #19153f;
+  color: white;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: "Oswald", sans-serif;
+  font-size: 15px;
+  padding: 10px 20px;
+}
+
+.button a:hover{
+  color: black;
+  background-color: #00ffff;
+  font-weight: 600;
+}
+
 .maindivofdashboard {
   font-family: "poppins" !important;
   background: var(--background);
@@ -100,7 +130,6 @@ color: white;
   margin: 0px;
   font-weight: 300;
   font-family: "poppins" !important;
-  
 }
 .imagesinthis img {
   border-radius: 5px;
@@ -215,13 +244,13 @@ color: white;
   background: #6960ef;
 }
 
-@media screen and (max-width:1150px) {
+@media screen and (max-width: 1150px) {
   .titledivdashboard h1 {
     font-size: 2.6vw;
   }
 }
 
-@media only screen and (max-width: 1032px) {  
+@media only screen and (max-width: 1032px) {
   .samedashmainm {
     min-height: 45vh;
   }
@@ -250,22 +279,31 @@ color: white;
   .maindivforalloptiondashboard {
     max-width: 700px;
   }
-  .buttondivgoback {
+  /* .buttondivgoback {
     justify-content: center;
   }
-  .gobackbtn{
+  .gobackbtn {
     width: 40%;
-  }
+  } */
 }
 @media only screen and (max-width: 778px) {
-  .buttondivgoback {
+  /* .buttondivgoback {
     justify-content: center;
   }
   .gobackbtn {
     padding: 8px;
     margin: 5px 10px;
-    width: 27% ;
+    width: 27%;
     font-size: 10px;
+  } */
+  .button{
+    width: 40%;
+  }
+  
+  .button a{
+    border-radius: 30px;
+    font-size: 12px;
+    padding: 10px 20px;
   }
 }
 @media only screen and (max-width: 778px) {
@@ -288,7 +326,7 @@ color: white;
     position: relative;
   }
 
-  .displaytable{
+  .displaytable {
     width: 90%;
     margin: auto;
   }
@@ -382,5 +420,16 @@ color: white;
   .displayeditbutton,
   .displaydeletebutton {
     font-size: 12px !important;
+  }
+
+  .button{
+    width: 40%;
+  }
+  
+  .button a{
+    border-radius: 30px;
+    gap: 5px;
+    font-size: 8px;
+    padding: 8px 10px;
   }
 }

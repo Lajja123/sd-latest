@@ -14,21 +14,21 @@ function MainHistory() {
     <div className={history.maindiv}>
       <div>
         <div className={samechainStyle.stickyIcon}>
-          <a href="/same-chain" className={samechainStyle.Instagra}>
+          <a href="/cross-chain" className={samechainStyle.Instagra}>
             <FontAwesomeIcon icon={faShare} width={"1em"} height={"1em"} />
             <div> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cross Chain</div>
           </a>
         </div>
         <div className={samechainStyle.stickyIcon1}>
-          <a href="/cross-chain" className={samechainStyle.Instagra}>
+          <a href="/same-chain" className={samechainStyle.Instagra}>
             <FontAwesomeIcon icon={faShare} width={"1em"} height={"1em"} />
             <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Same Chain</div>
           </a>
         </div>
         <div className={samechainStyle.stickyIcon2}>
-          <a href="/all-user-lists" className={samechainStyle.Instagram}>
+          <a href="/all-user-lists" className={samechainStyle.Instagra}>
             <FontAwesomeIcon icon={faUser} width={"1em"} height={"1em"} />{" "}
-            <div>Manage Labels</div>
+            <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Manage Labels</div>
           </a>
         </div>
       </div>
