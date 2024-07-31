@@ -7,7 +7,7 @@ import textStyle from "../Type/textify.module.css";
 import { ethers } from "ethers";
 import { useAccount } from "wagmi";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTrashAlt } from "@fortawesome/free-solid-svg-icons";
+import { faChevronDown, faChevronUp, faClipboardList, faDollarSign, faDoorOpen, faTag, faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 import ExecuteEth from "../Execute/ExecuteEth";
 import { faExclamationTriangle } from "@fortawesome/free-solid-svg-icons";
 import { isContractAddress } from "@/Helpers/ValidateInput.js";
@@ -17,6 +17,7 @@ import Image from "next/image";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { fetchUserLabels } from "@/Helpers/FetchUserLabels";
+import Cookies from "js-cookie";
 
 function SendEth({ activeTab, listData, setListData }) {
   const [ethToUsdExchangeRate, setEthToUsdExchangeRate] = useState(null); //store ETH to USD exchange rate
@@ -32,6 +33,23 @@ function SendEth({ activeTab, listData, setListData }) {
   const [errorModalIsOpen, setErrorModalIsOpen] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [suffecientBalance, setSuffecientBalance] = useState(true);
+  const [isOpen, setIsOpen] = useState(true);
+
+  useEffect(() => {
+    const firstVisit = Cookies.get("firstVisit");
+    if (firstVisit === undefined) {
+      // First time visiting the site
+      setIsOpen(true);
+      Cookies.set("firstVisit", "true", { expires: 365 }); // Set the cookie to expire in 1 year
+    } else {
+      setIsOpen(true);
+    }
+  }, []);
+
+  const triggerSlide = () => {
+    setIsOpen(!isOpen);
+  };
+
   const renderComponent = (tab) => {
     switch (tab) {
       case "text":
@@ -516,6 +534,7 @@ function SendEth({ activeTab, listData, setListData }) {
                 </div>
                 <div id={textStyle.tableresponsive}>
                   <div
+                  className={textStyle.scrollabletablecontainer}
                     style={{
                       borderRadius: "20px",
                       border: "1px solid #8D37FB",
@@ -677,6 +696,111 @@ function SendEth({ activeTab, listData, setListData }) {
               </div>
             </div>
           ) : null}
+
+          <div>
+            <div
+              className={textStyle.titlesametexttextarea}
+              onClick={triggerSlide}
+            >
+              <h2
+                className={textStyle.tutorialheading}
+                style={{
+                  padding: "10px",
+                  fontSize: "20px",
+                  margin: "0px",
+                  letterSpacing: "1px",
+                  fontWeight: "300",
+                }}
+              >
+                How it works{" "}
+                <FontAwesomeIcon icon={isOpen ? faChevronUp : faChevronDown} />
+              </h2>
+            </div>
+            {isOpen ? (
+              <div
+                id="Slider"
+                className={`${textStyle.slider} ${
+                  isOpen ? textStyle.sliderOpen : ""
+                }`}
+              >
+                <div>
+                  <ui
+                    style={{ listStyleType: "none" }}
+                    className={textStyle.contents}
+                  >
+                    <div
+                      className={textStyle.tutorialcardscontainer}
+                      style={{ textAlign: "left" }}
+                    >
+                      <div className={textStyle.tutorialcards}>
+                        <li className={textStyle.contentincard}>
+                          <FontAwesomeIcon
+                            className={textStyle.iconintutorial}
+                            icon={faDoorOpen}
+                          />
+                          <div className={textStyle.headingintutorial}>
+                            Direct Entry
+                          </div>
+                          <div className={textStyle.subtextintutorial}>
+                            Enter Ethereum addresses and amounts in Ether or
+                            USD.
+                          </div>
+                        </li>
+                      </div>
+                      <div className={textStyle.tutorialcards}>
+                        <li className={textStyle.contentincard}>
+                          <FontAwesomeIcon
+                            className={textStyle.iconintutorial}
+                            icon={faDollarSign}
+                          />
+
+                          <div style={{ color: "#00FBFB", fontWeight: "300" }}>
+                            Currency Indicator
+                          </div>
+                          <div className={textStyle.subtextintutorial}>
+                            Use a dollar sign ($) for USD; Ether amounts without
+                            a symbol.
+                          </div>
+                        </li>
+                      </div>
+                      <div className={textStyle.tutorialcards}>
+                        <li className={textStyle.contentincard}>
+                          <FontAwesomeIcon
+                            className={textStyle.iconintutorial}
+                            icon={faTag}
+                          />
+
+                          <div style={{ color: "#00FBFB", fontWeight: "300" }}>
+                            Label Lookup
+                          </div>
+                          <div className={textStyle.subtextintutorial}>
+                            Type "@" to access assigned labels; select or type
+                            "@labelname".
+                          </div>
+                        </li>
+                      </div>
+                      <div className={textStyle.tutorialcards}>
+                        <li className={textStyle.contentincard}>
+                          <FontAwesomeIcon
+                            className={textStyle.iconintutorial}
+                            icon={faClipboardList}
+                          />
+
+                          <div style={{ color: "#00FBFB", fontWeight: "300" }}>
+                            Label Assignment
+                          </div>
+                          <div className={textStyle.subtextintutorial}>
+                            Input address and amount; assign label in
+                            transaction lineup.
+                          </div>
+                        </li>
+                      </div>
+                    </div>
+                  </ui>
+                </div>
+              </div>
+            ) : null}
+          </div>
         </>
       ) : (
         <div style={{ textAlign: "center", paddingTop: "10px" }}>
