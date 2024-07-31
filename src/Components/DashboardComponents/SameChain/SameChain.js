@@ -55,7 +55,6 @@ function SameChain({ activeTab }) {
           <div
             id="seend-eth"
             style={{
-             
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
@@ -77,7 +76,6 @@ function SameChain({ activeTab }) {
 
               <button
                 id={isSendingToken ? textStyle.truee : textStyle.falsee}
-               
                 style={{
                   backgroundColor: isSendingToken ? "" : " white",
                   color: isSendingToken ? "" : "white",

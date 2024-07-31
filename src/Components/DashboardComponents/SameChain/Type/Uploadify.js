@@ -3,9 +3,21 @@
 import React, { useState, useEffect } from "react";
 import uploadStyle from "./uploadify.module.css";
 import { isValidAddress } from "@/Helpers/ValidateInput.js";
+import textStyle from "./textify.module.css";
 import { isValidValue } from "@/Helpers/ValidateInput.js";
 import { isValidTokenValue } from "@/Helpers/ValidateInput.js";
 import { useAccount } from "wagmi";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faChevronDown,
+  faChevronUp,
+  faClipboardList,
+  faDollarSign,
+  faDoorOpen,
+  faPen,
+  faTag,
+  faUserLarge,
+} from "@fortawesome/free-solid-svg-icons";
 
 function Uploadify({
   listData,
@@ -18,6 +30,7 @@ function Uploadify({
   const [allnames, setAllNames] = useState([]);
   const [alladdresses, setAllAddresses] = useState([]);
   const { address } = useAccount();
+  const [isOpen, setIsOpen] = useState(true);
 
   useEffect(() => {
     if (address) {
@@ -60,7 +73,9 @@ function Uploadify({
 
     return data;
   };
-
+  const triggerSlide = () => {
+    setIsOpen(!isOpen);
+  };
   const handleFileUpload = (event) => {
     const file = event.target.files[0];
     const reader = new FileReader();
@@ -239,6 +254,111 @@ function Uploadify({
           </div>
         </div>
       </div>
+      {listData.length > 0 ? null : (
+        <div>
+          <div
+            className={textStyle.titlesametexttextarea}
+            onClick={triggerSlide}
+          >
+            <h2
+              className={textStyle.tutorialheading}
+              style={{
+                padding: "10px",
+                fontSize: "20px",
+                margin: "0px",
+                letterSpacing: "1px",
+                fontWeight: "300",
+              }}
+            >
+              How it works{" "}
+              <FontAwesomeIcon icon={isOpen ? faChevronUp : faChevronDown} />
+            </h2>
+          </div>
+          {isOpen ? (
+            <div
+              id="Slider"
+              className={`${textStyle.slider} ${
+                isOpen ? textStyle.sliderOpen : ""
+              }`}
+            >
+              <div>
+                <ui
+                  style={{ listStyleType: "none" }}
+                  className={textStyle.contents}
+                >
+                  <div
+                    className={textStyle.tutorialcardscontainer}
+                    style={{ textAlign: "left" }}
+                  >
+                    <div className={textStyle.tutorialcards}>
+                      <li className={textStyle.contentincard}>
+                        <FontAwesomeIcon
+                          className={textStyle.iconintutorial}
+                          icon={faDoorOpen}
+                        />
+                        <div className={textStyle.headingintutorial}>
+                          Direct Entry
+                        </div>
+                        <div className={textStyle.subtextintutorial}>
+                          Enter Ethereum addresses and amounts in Ether or USD.
+                        </div>
+                      </li>
+                    </div>
+                    <div className={textStyle.tutorialcards}>
+                      <li className={textStyle.contentincard}>
+                        <FontAwesomeIcon
+                          className={textStyle.iconintutorial}
+                          icon={faDollarSign}
+                        />
+
+                        <div style={{ color: "#00FBFB", fontWeight: "300" }}>
+                          Currency Indicator
+                        </div>
+                        <div className={textStyle.subtextintutorial}>
+                          Use a dollar sign ($) for USD; Ether amounts without a
+                          symbol.
+                        </div>
+                      </li>
+                    </div>
+                    <div className={textStyle.tutorialcards}>
+                      <li className={textStyle.contentincard}>
+                        <FontAwesomeIcon
+                          className={textStyle.iconintutorial}
+                          icon={faTag}
+                        />
+
+                        <div style={{ color: "#00FBFB", fontWeight: "300" }}>
+                          Label Lookup
+                        </div>
+                        <div className={textStyle.subtextintutorial}>
+                          Type "@" to access assigned labels; select or type
+                          "@labelname".
+                        </div>
+                      </li>
+                    </div>
+                    <div className={textStyle.tutorialcards}>
+                      <li className={textStyle.contentincard}>
+                        <FontAwesomeIcon
+                          className={textStyle.iconintutorial}
+                          icon={faClipboardList}
+                        />
+
+                        <div style={{ color: "#00FBFB", fontWeight: "300" }}>
+                          Label Assignment
+                        </div>
+                        <div className={textStyle.subtextintutorial}>
+                          Input address and amount; assign label in transaction
+                          lineup.
+                        </div>
+                      </li>
+                    </div>
+                  </div>
+                </ui>
+              </div>
+            </div>
+          ) : null}
+        </div>
+      )}
     </div>
   );
 }
