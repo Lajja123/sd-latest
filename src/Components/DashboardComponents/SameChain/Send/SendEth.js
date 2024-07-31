@@ -7,7 +7,15 @@ import textStyle from "../Type/textify.module.css";
 import { ethers } from "ethers";
 import { useAccount } from "wagmi";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronDown, faChevronUp, faClipboardList, faDollarSign, faDoorOpen, faTag, faTrashAlt } from "@fortawesome/free-solid-svg-icons";
+import {
+  faChevronDown,
+  faChevronUp,
+  faClipboardList,
+  faDollarSign,
+  faDoorOpen,
+  faTag,
+  faTrashAlt,
+} from "@fortawesome/free-solid-svg-icons";
 import ExecuteEth from "../Execute/ExecuteEth";
 import { faExclamationTriangle } from "@fortawesome/free-solid-svg-icons";
 import { isContractAddress } from "@/Helpers/ValidateInput.js";
@@ -295,7 +303,7 @@ function SendEth({ activeTab, listData, setListData }) {
               <div className={textStyle.tablecontainer}>
                 <div
                   className={textStyle.titleforlinupsametext}
-                  style={{ padding: "5px 0px" }}
+                  // style={{ padding: "5px 0px" }}
                 >
                   <h2
                     style={{
@@ -308,6 +316,7 @@ function SendEth({ activeTab, listData, setListData }) {
                     Your Transaction Lineup
                   </h2>
                 </div>
+
                 <div className={textStyle.scrollabletablecontainer}>
                   <table
                     className={textStyle.tabletextlist}
@@ -519,7 +528,7 @@ function SendEth({ activeTab, listData, setListData }) {
                 </div>
               </div>
 
-              <div style={{ paddingBottom: "30px" }}>
+              <div className={textStyle.tablecontainer}>
                 <div className={textStyle.titleforaccountsummarytextsame}>
                   <h2
                     style={{
@@ -532,13 +541,14 @@ function SendEth({ activeTab, listData, setListData }) {
                     Account Summary
                   </h2>
                 </div>
-                <div id={textStyle.tableresponsive}>
+
                   <div
-                  className={textStyle.scrollabletablecontainer}
-                    style={{
-                      borderRadius: "20px",
-                      border: "1px solid #8D37FB",
-                    }}
+                    id={textStyle.tableresponsive}
+                    className={textStyle.scrollabletablecontainer}
+                    // style={{
+                    //   borderRadius: "20px",
+                    //   border: "1px solid #8D37FB",
+                    // }}
                   >
                     <table
                       className={`${textStyle["showtokentablesametext"]} ${textStyle["tabletextlist"]}`}
@@ -667,7 +677,7 @@ function SendEth({ activeTab, listData, setListData }) {
                       </tbody>
                     </table>
                   </div>
-                </div>
+                  
                 <Modal
                   id={textStyle.popupwarning}
                   className={textStyle.popupforpayment}

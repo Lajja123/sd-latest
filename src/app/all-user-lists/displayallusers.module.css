@@ -11,16 +11,6 @@
   /* color: white; */
   text-decoration: none;
 }
-/* .gobackbtn {
-  border: 1px solid white;
-  padding: 8px;
-  font-weight: 200;
-  margin: 5px 10px;
-  width: 100%;
-  text-decoration: none;
-  color: white;
-  border-radius: 10px;
-} */
 
 .refreshbtn:hover {
   cursor: pointer;
@@ -34,41 +24,52 @@
   text-decoration: underline;
 }
 
-/* .buttondivgoback {
-  width: 100%;
-  max-width: 1000px;
-  margin: 10px auto;
+.button1, .button2 {
+  z-index: 1;
+  position: fixed;
+  /* bottom: 50%; */
+  right: 0%;
+  width: 200px;
   display: flex;
-  justify-content: space-between;
-} */
-
-.button{
-  width: 300px;
-  overflow: hidden;
-  background: none;
-  border: none;
-  outline: none;
-  margin-top: 40px
+  flex-direction: column;
 }
 
-.button a{
-  background-color: #19153f;
-  color: white;
-  border-radius: 50px;
+.button1{
+  bottom: 50%;
+}
+.button2{
+  bottom: 42%;
+}
+
+.button1 a, 
+.button2 a {
+  transform: translate(160px, 0px);
+  border-radius: 50px 0px 0px 50px;
+  text-align: left;
+  margin: 2px;
   display: flex;
+  justify-content: flex-start;
   align-items: center;
-  justify-content: center;
-  gap: 10px;
   text-decoration: none;
   text-transform: uppercase;
-  font-family: "Oswald", sans-serif;
-  font-size: 15px;
   padding: 10px 20px;
+  font-size: 15px;
+  font-family: "Oswald", sans-serif;
+  transition: all 1.2s;
 }
 
-.button a:hover{
+.button1 a:hover,
+.button2 a:hover {
   color: black;
   background-color: #00ffff;
+  transform: translate(0px, 0px);
+  font-weight: 600;
+}
+
+.Instagra{
+  background-color: #19153f;
+  color: white;
+  margin-left: 10px;
   font-weight: 600;
 }
 
@@ -88,6 +89,7 @@
 .samedashmainm {
   min-height: 65vh;
 }
+
 .dashbgImg1 {
   width: 347.141px;
   height: 321.106px;
@@ -98,6 +100,7 @@
   font-family: "poppins" !important;
   font-weight: 100;
   right: 24%;
+  opacity: 0;
 }
 .dashbgImg2 {
   width: 400px;
@@ -106,6 +109,8 @@
   position: absolute;
   bottom: -288px;
   right: 0;
+  opacity: 0;
+
 }
 
 .titledivdashboard {
@@ -115,6 +120,7 @@
   border-radius: 10px;
   margin: 20px 300px;
 }
+
 .titledivdashboard h3 {
   padding-top: -5px;
   padding-bottom: 15px;
@@ -124,6 +130,7 @@
   letter-spacing: 1.5px;
   font-size: 15px;
 }
+
 .titledivdashboard h1 {
   letter-spacing: 1.5px;
   font-size: 2.2rem;
@@ -131,15 +138,18 @@
   font-weight: 300;
   font-family: "poppins" !important;
 }
+
 .imagesinthis img {
   border-radius: 5px;
   width: -webkit-fill-available;
 }
+
 .maindivforalloptiondashboard {
   width: 100%;
   max-width: 1000px;
   margin: 0 auto;
 }
+
 .displaytable {
   /* border-collapse: collapse; */
   width: 100%;
@@ -296,11 +306,11 @@
     width: 27%;
     font-size: 10px;
   } */
-  .button{
+  .button {
     width: 40%;
   }
-  
-  .button a{
+
+  .button a {
     border-radius: 30px;
     font-size: 12px;
     padding: 10px 20px;
@@ -422,11 +432,11 @@
     font-size: 12px !important;
   }
 
-  .button{
+  .button {
     width: 40%;
   }
-  
-  .button a{
+
+  .button a {
     border-radius: 30px;
     gap: 5px;
     font-size: 8px;

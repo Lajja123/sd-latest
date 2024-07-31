@@ -233,7 +233,11 @@
   background-color: #007bff !important;
 }
 
-.titleforlinupsametext h2 {
+.tablecontainer{
+  padding: 20px 0px;
+}
+
+.titleforlinupsametext{
   background: rgb(24, 26, 83);
   background: linear-gradient(
     160deg,
@@ -248,8 +252,6 @@
     rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px,
     rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
     rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
-  font-size: 15px;
-  margin: 0px;
 }
 .sametextmain {
   padding: 40px 20px;
@@ -275,13 +277,56 @@
   font-size: 12px;
 }
 
+.titleforaccountsummarytextsame {
+  background: rgb(24, 26, 83);
+  background: linear-gradient(
+    160deg,
+    rgba(24, 26, 83, 1) 47%,
+    rgba(46, 13, 90, 1) 100%
+  );
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
+    rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
+    rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px,
+    rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
+    rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  font-size: 12px;
+}
+
 .titleloadtokensametext h2 {
-  /* color: #8f00ff; */
   font-weight: 300;
   letter-spacing: 1.04px;
   margin: 0px;
   font-size: 15px;
 }
+.titleforaccountsummarytextsame h2 {
+  font-weight: 700;
+  letter-spacing: 1.04px;
+  margin: 0px;
+  font-size: 15px;
+}
+
+.scrollabletablecontainer {
+  margin: 40px 20px;
+  /* max-height: 280px; */
+  border-radius: 20px;
+  border: 1px solid #8d37fb;
+  overflow-x: scroll;
+}
+
+.scrollabletablecontainer::-webkit-scrollbar {
+  width: 10px;
+  margin-right: 0;
+}
+.scrollabletablecontainer::-webkit-scrollbar {
+  height: 3px; /* Set the height of the horizontal scrollbar */
+}
+.scrollabletablecontainer::-webkit-scrollbar-thumb {
+  background: #ffffff;
+}
+.scrollabletablecontainer::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
 #backgroundgreen:hover {
   box-shadow: rgba(238, 242, 243, 0.553) 0px 5px 15px;
 }
@@ -320,28 +365,8 @@
 .accountsummarycrosschain {
   margin-top: 80px;
 }
-.titleforaccountsummarytextsame {
-  background: rgb(24, 26, 83);
-  background: linear-gradient(
-    160deg,
-    rgba(24, 26, 83, 1) 47%,
-    rgba(46, 13, 90, 1) 100%
-  );
-  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
-    rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
-    rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px,
-    rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
-    rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
-  font-size: 12px;
-}
-.titleforaccountsummarytextsame h2 {
-  /* color: #8f00ff; */
 
-  font-weight: 700;
-  letter-spacing: 1.04px;
-  margin: 0px;
-  font-size: 15px;
-}
+
 #greenbackground:hover {
   background-color: transparent;
 }
@@ -381,19 +406,34 @@
 .textareaInput {
   outline: none;
 }
-.scrollabletablecontainer {
-  margin: 40px 20px;
-  max-height: 280px;
-  border-radius: 20px;
-  border: 1px solid #8d37fb;
-  overflow: visible;
-  overflow-x: scroll;
-}
+
 #tableresponsive {
   margin: 40px 20px;
   border: 1px solid #8d37fb;
   border-radius: 20px;
 }
+
+.tablediv{
+  margin: 40px 20px;
+  border: 1px solid #8d37fb;
+  border-radius: 20px;
+  overflow-x: auto;
+}
+
+.tablediv::-webkit-scrollbar {
+  width: 3px;
+  margin-right: 0;
+}
+.tablediv::-webkit-scrollbar {
+  height: 3px; /* Set the height of the horizontal scrollbar */
+}
+.tablediv::-webkit-scrollbar-thumb {
+  background: #ffffff;
+}
+.tablediv::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
 .accountsummarycreatetitle,
 .selectloadtoke-title,
 .viewaddressdivtitle {

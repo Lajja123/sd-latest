@@ -1,7 +1,4 @@
-.dropdownHeader:hover {
-  box-shadow: rgb(255 255 255 / 72%) 1px 1px 18px 0px inset;
-  /* border: 1px solid #8d37fb; */
-}
+
 .dropdown {
   position: relative;
   display: inline-block;
@@ -21,6 +18,11 @@
   border-radius: 63px;
   min-width: 200px;
   overflow: hidden; /* Optional: ensures child elements do not overflow the rounded corners */
+}
+
+.dropdownHeader:hover {
+  box-shadow: rgb(255 255 255 / 72%) 1px 1px 18px 0px inset;
+  /* border: 1px solid #8d37fb; */
 }
 
 .selectedItem {
