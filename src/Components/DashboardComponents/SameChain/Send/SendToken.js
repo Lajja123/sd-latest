@@ -339,7 +339,7 @@ function SendToken({ activeTab, listData, setListData }) {
           <>
             <div
               className={textStyle.entertokenaddress}
-              style={{ padding: "20px" }}
+              style={{ padding: "40px 20px" }}
             >
               <label style={{ margin: "5px" }}>Enter Token Address: </label>
               <div
@@ -361,7 +361,7 @@ function SendToken({ activeTab, listData, setListData }) {
                     // border: "1px solid #9D79FF",
                     // background:
                     //   "linear-gradient(90deg, rgba(97, 38, 193, 0.58) 0.06%, rgba(63, 47, 110, 0.58) 98.57%)",
-                    padding: "10px 20px",
+                    padding: "15px 30px",
                     margin: "0px 20px",
                     color: "white",
                   }}

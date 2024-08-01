@@ -386,7 +386,7 @@
   padding: 10px 25px;
   background-color: transparent;
   color: white;
-  border: none;
+  border: 1px solid white;
   border-radius: 63px;
   margin: 0px 20px;
   font-size: 15px;
@@ -597,7 +597,6 @@
   background: white;
   color: #b47dfc;
 }
-
 
 @media screen and (max-width: 1260px) {
   .tutorialcards {
