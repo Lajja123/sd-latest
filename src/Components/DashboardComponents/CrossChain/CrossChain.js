@@ -123,7 +123,7 @@ function CrossChain({ activeTab }) {
                 options={destinationChainsOptions}
                 onSelect={handleDestinationChainChange}
                 selectedValue={selectedDestinationChain}
-                placeholder="Select destination chain"
+                placeholder="Select destination chain ▾"
                 disabled={!isMetaMaskConnected}
               />
             </div>
@@ -135,7 +135,7 @@ function CrossChain({ activeTab }) {
                 options={tokenOptions}
                 onSelect={handleDestinationTokenChange}
                 selectedValue={selectedToken}
-                placeholder="Select token"
+                placeholder="Select token ▾"
                 disabled={!isMetaMaskConnected}
               />
             </div>
