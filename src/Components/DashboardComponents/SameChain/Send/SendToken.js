@@ -342,7 +342,6 @@ function SendToken({ activeTab, listData, setListData }) {
               // style={{ padding: "20px" }}
             >
               <label
-              style={{ margin: "5px" }}
               >Enter Token Address: </label>
               <div className={textStyle.rightside}>
               <div

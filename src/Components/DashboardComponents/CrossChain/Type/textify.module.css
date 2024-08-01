@@ -136,7 +136,8 @@
   text-align: center;
 }
 .sendbutton:hover {
-  border: none;
+  /* border: none; */
+  border: 1px solid white;
   background: transparent !important;
   cursor: pointer;
   box-shadow: rgb(255 255 255 / 72%) 1px 1px 18px 0px inset;
@@ -446,6 +447,18 @@
   );
   font-size: 12px;
   padding: 5px 0;
+}
+
+.accountsummarycreatetitle{
+  background: transparent !important;
+}
+
+.accountsummarycreatetitle h2{
+  background: linear-gradient(
+    160deg,
+    rgba(24, 26, 83, 1) 47%,
+    rgba(46, 13, 90, 1) 100%
+  );
 }
 .popupforpayment {
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,

@@ -292,6 +292,11 @@
   gap: 10px;
 }
 
+.entertokenaddress label{
+  margin: 7px;
+}
+
+
 .inputdiv {
   display: flex;
   justify-content: center;
@@ -308,7 +313,7 @@
   color: white;
   border-radius: 5px;
   border: 1px solid #9d79ff;
-  padding: 10px 22px;
+  padding: 12px 22px;
   background: transparent;
 }
 
@@ -321,7 +326,8 @@
 
 .errdiv {
   color: red;
-  font-size: 10px;
+  font-size: 12px;
+  letter-spacing: 1px;
 }
 
 .addbutton {
@@ -336,7 +342,7 @@
   font-size: 17px;
   cursor: pointer;
   margin: 0 20px;
-  padding: 10px 25px;
+  padding: 12px 25px;
 }
 .addbutton:hover {
   box-shadow: rgb(255 255 255 / 72%) 1px 1px 18px 0px inset;
