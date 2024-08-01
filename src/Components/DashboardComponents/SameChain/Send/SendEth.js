@@ -26,6 +26,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { fetchUserLabels } from "@/Helpers/FetchUserLabels";
 import Cookies from "js-cookie";
+import AddLabel from "../Type/Addlabel";
 
 function SendEth({ activeTab, listData, setListData }) {
   const [ethToUsdExchangeRate, setEthToUsdExchangeRate] = useState(null); //store ETH to USD exchange rate
@@ -370,11 +371,7 @@ function SendEth({ activeTab, listData, setListData }) {
                     <tbody>
                       {listData.length > 0
                         ? listData.map((data, index) => (
-                            <tr
-                              className={textStyle.tableTr}
-                              style={{ borderBottom: "1px solid #ffffff61" }}
-                              key={index}
-                            >
+                            <tr className={textStyle.tableTr} key={index}>
                               <td
                                 id={textStyle.fontsize10px}
                                 style={{
@@ -397,45 +394,12 @@ function SendEth({ activeTab, listData, setListData }) {
                                   data.label
                                 ) : (
                                   <>
-                                    <input
-                                      type="text"
-                                      value={labels[index] ? labels[index] : ""}
-                                      style={{
-                                        borderRadius: "8px",
-                                        padding: "10px",
-                                        color: "white",
-                                        border: "1px solid #8D37FB",
-                                        background: "transparent",
-                                      }}
-                                      onChange={(e) => {
-                                        const inputValue = e.target.value;
-                                        if (
-                                          inputValue === "" &&
-                                          e.key !== "Enter"
-                                        ) {
-                                          setErrorMessage("Enter Label");
-                                        } else {
-                                          setErrorMessage(
-                                            "Press Enter to submit"
-                                          );
-                                        }
-
-                                        // Regular expression to allow only alphanumeric characters without spaces
-                                        const regex = /^[a-zA-Z0-9]*$/;
-
-                                        if (
-                                          regex.test(inputValue) &&
-                                          inputValue.length <= 10
-                                        ) {
-                                          setLabelValues(index, inputValue);
-                                        }
-                                      }}
-                                      onKeyDown={(e) => {
-                                        if (e.key === "Enter") {
-                                          onAddLabel(index, data.address);
-                                          setErrorMessage("");
-                                        }
-                                      }}
+                                    <AddLabel
+                                      labels={labels}
+                                      setLabelValues={setLabelValues}
+                                      onAddLabel={onAddLabel}
+                                      index={0} // Example index, you can dynamically pass different indexes
+                                      data={data}
                                     />
                                     {errorMessage && (
                                       <p

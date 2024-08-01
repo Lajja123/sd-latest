@@ -13,10 +13,10 @@ import Image from "next/image";
 import {
   faChevronDown,
   faChevronUp,
-  faClipboardList,
-  faDollarSign,
+  faRotate,
+  faMagnifyingGlass,
   faDoorOpen,
-  faPen,
+  faCirclePlus,
   faTag,
   faUserLarge,
 } from "@fortawesome/free-solid-svg-icons";
@@ -407,7 +407,7 @@ function Listify({
                           className={textStyle.iconintutorial}
                           icon={faDoorOpen}
                         />
-                        <div className={textStyle.headingintutorial}>
+                        <div style={{ color: "#00FBFB", fontWeight: "300" }}>
                           Direct Entry
                         </div>
                         <div className={textStyle.subtextintutorial}>
@@ -419,15 +419,15 @@ function Listify({
                       <li className={textStyle.contentincard}>
                         <FontAwesomeIcon
                           className={textStyle.iconintutorial}
-                          icon={faDollarSign}
+                          icon={faRotate}
                         />
 
                         <div style={{ color: "#00FBFB", fontWeight: "300" }}>
-                          Currency Indicator
+                          Auto-Fill Sync
                         </div>
                         <div className={textStyle.subtextintutorial}>
-                          Use a dollar sign ($) for USD; Ether amounts without a
-                          symbol.
+                          Entering address or label auto-fills the corresponding
+                          assigned field.
                         </div>
                       </li>
                     </div>
@@ -435,15 +435,15 @@ function Listify({
                       <li className={textStyle.contentincard}>
                         <FontAwesomeIcon
                           className={textStyle.iconintutorial}
-                          icon={faTag}
+                          icon={faMagnifyingGlass}
                         />
 
                         <div style={{ color: "#00FBFB", fontWeight: "300" }}>
                           Label Lookup
                         </div>
                         <div className={textStyle.subtextintutorial}>
-                          Type "@" to access assigned labels; select or type
-                          "@labelname".
+                          Type labelname to access assigned labels list; select
+                          or type "labelname".
                         </div>
                       </li>
                     </div>
@@ -451,7 +451,7 @@ function Listify({
                       <li className={textStyle.contentincard}>
                         <FontAwesomeIcon
                           className={textStyle.iconintutorial}
-                          icon={faClipboardList}
+                          icon={faCirclePlus}
                         />
 
                         <div style={{ color: "#00FBFB", fontWeight: "300" }}>

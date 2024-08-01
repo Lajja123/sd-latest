@@ -116,7 +116,6 @@
   color: aliceblue !important;
   background-color: transparent !important;
   border: "none";
- 
 }
 .textlistdiv textarea::placeholder {
   color: rgba(255, 255, 255, 0.45);
@@ -171,7 +170,7 @@
 .tabletextlist .tableTr {
   font-size: 16px;
   margin: 5px 0px;
-  /* border-bottom: 1px solid #dfe9e44e; */
+  border-bottom: 1px solid #8d37fb;
 }
 .tabletextlist .tableTh {
   font-size: 15px;
@@ -233,11 +232,11 @@
   background-color: #007bff !important;
 }
 
-.tablecontainer{
+.tablecontainer {
   padding: 20px 0px;
 }
 
-.titleforlinupsametext{
+.titleforlinupsametext {
   background: rgb(24, 26, 83);
   background: linear-gradient(
     160deg,
@@ -366,7 +365,6 @@
   margin-top: 80px;
 }
 
-
 #greenbackground:hover {
   background-color: transparent;
 }
@@ -413,7 +411,7 @@
   border-radius: 20px;
 }
 
-.tablediv{
+.tablediv {
   margin: 40px 20px;
   border: 1px solid #8d37fb;
   border-radius: 20px;

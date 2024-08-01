@@ -11,10 +11,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faChevronDown,
   faChevronUp,
-  faClipboardList,
-  faDollarSign,
-  faDoorOpen,
-  faPen,
+  faUser,
+  faRotate,
+  faUpload,
+  faCirclePlus,
   faTag,
   faUserLarge,
 } from "@fortawesome/free-solid-svg-icons";
@@ -294,13 +294,13 @@ function Uploadify({
                       <li className={textStyle.contentincard}>
                         <FontAwesomeIcon
                           className={textStyle.iconintutorial}
-                          icon={faDoorOpen}
+                          icon={faUser}
                         />
-                        <div className={textStyle.headingintutorial}>
-                          Direct Entry
+                        <div style={{ color: "#00FBFB", fontWeight: "300" }}>
+                          New Users
                         </div>
                         <div className={textStyle.subtextintutorial}>
-                          Enter Ethereum addresses and amounts in Ether or USD.
+                          Download the sample CSV for data order reference.
                         </div>
                       </li>
                     </div>
@@ -308,15 +308,15 @@ function Uploadify({
                       <li className={textStyle.contentincard}>
                         <FontAwesomeIcon
                           className={textStyle.iconintutorial}
-                          icon={faDollarSign}
+                          icon={faRotate}
                         />
 
                         <div style={{ color: "#00FBFB", fontWeight: "300" }}>
-                          Currency Indicator
+                          Auto-Fill Sync
                         </div>
                         <div className={textStyle.subtextintutorial}>
-                          Use a dollar sign ($) for USD; Ether amounts without a
-                          symbol.
+                          Enter address or label and amount. Auto-fills format,
+                          don't add both.
                         </div>
                       </li>
                     </div>
@@ -324,15 +324,14 @@ function Uploadify({
                       <li className={textStyle.contentincard}>
                         <FontAwesomeIcon
                           className={textStyle.iconintutorial}
-                          icon={faTag}
+                          icon={faUpload}
                         />
 
                         <div style={{ color: "#00FBFB", fontWeight: "300" }}>
-                          Label Lookup
+                          Edit & Upload
                         </div>
                         <div className={textStyle.subtextintutorial}>
-                          Type "@" to access assigned labels; select or type
-                          "@labelname".
+                          You can also edit and upload the sample CSV file.
                         </div>
                       </li>
                     </div>
@@ -340,7 +339,7 @@ function Uploadify({
                       <li className={textStyle.contentincard}>
                         <FontAwesomeIcon
                           className={textStyle.iconintutorial}
-                          icon={faClipboardList}
+                          icon={faCirclePlus}
                         />
 
                         <div style={{ color: "#00FBFB", fontWeight: "300" }}>

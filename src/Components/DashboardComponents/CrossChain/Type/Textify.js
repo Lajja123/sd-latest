@@ -208,8 +208,7 @@ function Textify({
                   lineHeight: "25px",
                 }}
               >
-                Enter Recipients and Amount (enter one address and amount on
-                each line, supports any format)
+                Enter Recipients and Amount 
               </h2>
             </div>
             <div id="tt" style={{ position: "relative", height: "150px" }}>

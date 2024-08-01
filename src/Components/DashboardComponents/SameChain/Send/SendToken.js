@@ -557,45 +557,6 @@ function SendToken({ activeTab, listData, setListData }) {
                                       data.label
                                     ) : (
                                       <>
-                                        <input
-                                          type="text"
-                                          value={
-                                            labels[index] ? labels[index] : ""
-                                          }
-                                          style={{
-                                            borderRadius: "8px",
-                                            padding: "10px",
-                                            color: "white",
-                                            border: "1px solid #8D37FB",
-                                            background: "transparent",
-                                          }}
-                                          onChange={(e) => {
-                                            const inputValue = e.target.value;
-                                            if (
-                                              inputValue === "" &&
-                                              e.key !== "Enter"
-                                            ) {
-                                              setErrorMessage("Enter Label");
-                                            } else {
-                                              setErrorMessage(
-                                                "Press Enter to submit"
-                                              );
-                                            }
-                                            // Regular expression to allow only alphanumeric characters without spaces
-                                            const regex = /^[a-zA-Z0-9]*$/;
-                                            if (
-                                              regex.test(inputValue) &&
-                                              inputValue.length <= 10
-                                            ) {
-                                              setLabelValues(index, inputValue);
-                                            }
-                                          }}
-                                          onKeyDown={(e) => {
-                                            if (e.key === "Enter") {
-                                              onAddLabel(index, data.address);
-                                            }
-                                          }}
-                                        />
                                         {errorMessage && (
                                           <p
                                             style={{
