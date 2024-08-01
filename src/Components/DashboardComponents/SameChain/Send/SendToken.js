@@ -337,12 +337,10 @@ function SendToken({ activeTab, listData, setListData }) {
         </div>
         {address ? (
           <>
-            <div
-              className={textStyle.entertokenaddress}
-              style={{ padding: "20px" }}
-            >
+            <div className={textStyle.entertokenaddress}>
               <label style={{ margin: "5px" }}>Enter Token Address: </label>
               <div
+                className={textStyle.inputdiv}
                 style={{
                   display: "flex",
                   justifyContent: "center",
@@ -367,7 +365,10 @@ function SendToken({ activeTab, listData, setListData }) {
                   }}
                 />
                 {erroroccured && (
-                  <div style={{ color: "red", fontSize: "12px" }}>
+                  <div
+                    className={textStyle.errdiv}
+                    style={{ color: "red", fontSize: "12px" }}
+                  >
                     {errorMessage}
                   </div>
                 )}

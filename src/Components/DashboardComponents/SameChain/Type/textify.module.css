@@ -11,6 +11,12 @@
 .buttontoaddformdataunload button.active {
   background-color: red;
 }
+
+.activeButton {
+  box-shadow: rgb(255 255 255 / 72%) 1px 1px 18px 0px inset;
+  border: 1px solid white;
+}
+
 .tutorialcardscontainer {
   padding: 21px;
   display: flex;
@@ -277,10 +283,41 @@
   letter-spacing: 1px;
   padding: 15px;
 }
+
+
 .entertokenaddress {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
+  padding: 20px;
 }
+
+.inputdiv{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.tokeninput::placeholder {
+  color: rgba(255, 255, 255, 0.45) !important;
+}
+.tokeninput:hover {
+  box-shadow: 0px 0px 29px 0px rgba(255, 255, 255, 0.25);
+}
+
+.errdiv{
+  color: red;
+  font-size: 12px;
+}
+
+.buttontaddformdataunload {
+  background: linear-gradient(
+    90deg,
+    rgba(68, 9, 205, 0.73) 0%,
+    rgba(140, 62, 250, 0.73) 100%
+  );
+  border: none;
+}
+
 .showtokentablesametext {
   width: 100%;
   /* margin: 5px 0px; */
@@ -456,12 +493,7 @@
   resize: none;
   font-size: 12px;
 }
-.tokeninput::placeholder {
-  color: rgba(255, 255, 255, 0.45) !important;
-}
-.tokeninput:hover {
-  box-shadow: 0px 0px 29px 0px rgba(255, 255, 255, 0.25);
-}
+
 .titlesametexttextarea {
   background: rgb(24, 26, 83);
   background: linear-gradient(
@@ -562,14 +594,7 @@
 
   padding: 5px 0;
 }
-.buttontaddformdataunload {
-  background: linear-gradient(
-    90deg,
-    rgba(68, 9, 205, 0.73) 0%,
-    rgba(140, 62, 250, 0.73) 100%
-  );
-  border: none;
-}
+
 .popupforpayment {
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
     rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,

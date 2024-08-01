@@ -34,6 +34,7 @@ import CustomDropdown from "../Type/CustomDropDown";
 import { text } from "@fortawesome/fontawesome-svg-core";
 import { driver } from "driver.js";
 import "driver.js/dist/driver.css";
+import DesCustomDropdown from "../Type/Destinationselect";
 
 function SendToken({
   activeTab,
@@ -723,7 +724,7 @@ function SendToken({
                                   {destinationFinalChainsOptions}
                                 </select> */}
 
-                                <CustomDropdown
+                                <DesCustomDropdown
                                   id="text"
                                   options={destinationFinalChainsOptions}
                                   onSelect={handleDestinationFinalChainChange}

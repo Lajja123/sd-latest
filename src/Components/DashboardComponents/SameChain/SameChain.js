@@ -16,6 +16,7 @@ function SameChain({ activeTab }) {
   const [listData, setListData] = useState([]);
   const [render, setRender] = useState(1);
   const { address } = useAccount();
+  const [activeButton, setActiveButton] = useState('sendEth');
 
   /*
   Funtion : To load SendEth component
@@ -23,6 +24,7 @@ function SameChain({ activeTab }) {
   const handleSendEthbuttonClick = () => {
     setIsSendingEth(true);
     setIsSendingToken(false);
+    setActiveButton('sendEth');
   };
 
   /*
@@ -33,6 +35,7 @@ function SameChain({ activeTab }) {
     setIsSendingToken(true);
     setListData([]);
     setIsSendingEth(false);
+    setActiveButton('importToken');
   };
 
   return (
@@ -64,7 +67,7 @@ function SameChain({ activeTab }) {
             <div id="send-eth" className={textStyle.sendethdiv}>
               <button
                 // id={isSendingEth ? textStyle.truee : textStyle.falsee}
-                className={textStyle.buttontoaddformdata}
+                className={`${textStyle.buttontoaddformdata} ${activeButton === 'sendEth' ? textStyle.activeButton : ''}`}
                 onClick={handleSendEthbuttonClick}
               >
                 Send Eth
@@ -81,7 +84,7 @@ function SameChain({ activeTab }) {
                   color: isSendingToken ? "" : "white",
                   // border: "none",
                 }}
-                className={textStyle.buttontoaddformdataunload}
+                className={`${textStyle.buttontoaddformdataunload} ${activeButton === 'importToken' ? textStyle.activeButton : ''}`}
                 onClick={() => handleImporttokenbuttonClick()}
               >
                 Import Token
