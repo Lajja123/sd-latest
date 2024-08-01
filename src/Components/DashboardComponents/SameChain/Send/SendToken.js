@@ -339,38 +339,42 @@ function SendToken({ activeTab, listData, setListData }) {
           <>
             <div
               className={textStyle.entertokenaddress}
-              style={{ padding: "20px" }}
+              // style={{ padding: "20px" }}
             >
-              <label style={{ margin: "5px" }}>Enter Token Address: </label>
+              <label
+              style={{ margin: "5px" }}
+              >Enter Token Address: </label>
+              <div className={textStyle.rightside}>
               <div
                 className={textStyle.inputdiv}
-                style={{
-                  display: "flex",
-                  justifyContent: "center",
-                  flexDirection: "column",
-                }}
+                // style={{
+                //   display: "flex",
+                //   justifyContent: "center",
+                //   flexDirection: "column",
+                // }}
               >
                 <input
                   id={erroroccured ? textStyle.yeserror : textStyle.noerror}
                   type="text"
-                  className={`${textStyle["eachinputofcreatelist"]} ${textStyle["tokeninput"]}`}
+                  className={textStyle.tokeninput}
+                  // className={`${textStyle["eachinputofcreatelist"]} ${textStyle["tokeninput"]}`}
                   placeholder="Enter token Address"
                   value={customTokenAddress}
                   onChange={(e) => handleInputTokenAddressChange(e)}
-                  style={{
-                    borderRadius: "5px",
-                    // border: "1px solid #9D79FF",
-                    // background:
-                    //   "linear-gradient(90deg, rgba(97, 38, 193, 0.58) 0.06%, rgba(63, 47, 110, 0.58) 98.57%)",
-                    padding: "15px 30px",
-                    margin: "0px 20px",
-                    color: "white",
-                  }}
+                  // style={{
+                  //   borderRadius: "5px",
+                  //   // border: "1px solid #9D79FF",
+                  //   // background:
+                  //   //   "linear-gradient(90deg, rgba(97, 38, 193, 0.58) 0.06%, rgba(63, 47, 110, 0.58) 98.57%)",
+                  //   padding: "15px 30px",
+                  //   margin: "0px 20px",
+                  //   color: "white",
+                  // }}
                 />
                 {erroroccured && (
                   <div
                     className={textStyle.errdiv}
-                    style={{ color: "red", fontSize: "12px" }}
+                    // style={{ color: "red", fontSize: "12px" }}
                   >
                     {errorMessage}
                   </div>
@@ -379,7 +383,7 @@ function SendToken({ activeTab, listData, setListData }) {
               {isTokenLoaded ? (
                 <button
                   id={textStyle.backgroundgreen}
-                  className={textStyle.buttontaddformdataunload}
+                  className={textStyle.unloadbutton}
                   onClick={() => {
                     unloadToken();
                   }}
@@ -389,7 +393,7 @@ function SendToken({ activeTab, listData, setListData }) {
               ) : (
                 <button
                   id={textStyle.backgroundgreen}
-                  className={textStyle.buttontoaddformdata}
+                  className={textStyle.addbutton}
                   onClick={() => {
                     loadToken();
                   }}
@@ -397,6 +401,7 @@ function SendToken({ activeTab, listData, setListData }) {
                   Load Token
                 </button>
               )}
+            </div>
             </div>
             {isTokenLoaded ? (
               <>

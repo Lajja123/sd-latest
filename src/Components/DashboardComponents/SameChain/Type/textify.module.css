@@ -284,17 +284,32 @@
   padding: 15px;
 }
 
-
 .entertokenaddress {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
+  align-items: flex-start;
   padding: 20px;
+  gap: 10px;
 }
 
-.inputdiv{
+.inputdiv {
   display: flex;
   justify-content: center;
   flex-direction: column;
+}
+.rightside{
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 5px;
+}
+
+.tokeninput {
+  color: white;
+  border-radius: 5px;
+  border: 1px solid #9d79ff;
+  padding: 10px 22px;
+  background: transparent;
 }
 
 .tokeninput::placeholder {
@@ -304,12 +319,31 @@
   box-shadow: 0px 0px 29px 0px rgba(255, 255, 255, 0.25);
 }
 
-.errdiv{
+.errdiv {
   color: red;
-  font-size: 12px;
+  font-size: 10px;
 }
 
-.buttontaddformdataunload {
+.addbutton {
+  border: 1px solid white;
+  background: linear-gradient(
+    90deg,
+    rgba(102, 43, 187, 0.37) 0%,
+    rgba(62, 18, 124, 0.37) 100%
+  );
+  border-radius: 63px;
+  color: #fff;
+  font-size: 17px;
+  cursor: pointer;
+  margin: 0 20px;
+  padding: 10px 25px;
+}
+.addbutton:hover {
+  box-shadow: rgb(255 255 255 / 72%) 1px 1px 18px 0px inset;
+  border: 1px solid;
+}
+
+.unloadbutton {
   background: linear-gradient(
     90deg,
     rgba(68, 9, 205, 0.73) 0%,
@@ -328,11 +362,11 @@
 
 /* css for the sendeth file tables */
 
-.tablecontainer{
+.tablecontainer {
   padding: 20px 0px;
 }
 
-.titleforlinupsametext{
+.titleforlinupsametext {
   color: #ca86ff;
   background: rgb(24, 26, 83);
   background: linear-gradient(
@@ -361,6 +395,7 @@
     rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
     rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
 }
+
 
 .scrollabletablecontainer {
   border: 1px solid #8d37fb;
@@ -654,6 +689,22 @@
   .tutorialcardscontainer {
     gap: 25px;
   }
+
+}
+
+@media screen and (max-width:810px) {
+  .tokeninput {
+    padding: 10px 8px !important;
+    margin: 0px 10px !important;
+    font-size: 10px;
+  }
+  
+  .addbutton {
+    font-size: 10px !important;
+    margin: 0 10px !important;
+    padding: 10px 20px !important;
+  }
+  
 }
 
 @media only screen and (max-width: 768px) {
@@ -675,7 +726,7 @@
   .titleforaccountsummarytextsame h2 {
     font-size: 15px !important;
   }
-  #backgroundgreen {
+  /* #backgroundgreen {
     cursor: pointer;
     padding: 10px 25px;
     background-color: transparent;
@@ -685,7 +736,7 @@
     margin: 10px 15px;
     font-size: 15px;
     letter-spacing: 1px;
-  }
+  } */
   .textlistdiv textarea {
     font-size: 15px !important;
   }
@@ -714,7 +765,7 @@
     display: flex;
     flex-direction: row;
   }
-  .buttontoaddformdata {
+  /* .buttontoaddformdata {
     font-size: 15px;
     width: 100%;
     margin: 5px;
@@ -724,7 +775,7 @@
     color: white;
     border-radius: 63px;
     margin: 0px 20px;
-  }
+  } */
   .accountsummarycreatetitle h2 {
     font-size: 15px !important;
   }
@@ -738,9 +789,50 @@
   }
 }
 
+@media screen and (max-width:682px) {
+  .entertokenaddress label{
+    font-size: 12px;
+    text-align: left;
+    margin: 7px;
+  }
+
+  .rightside{
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .tokeninput {
+    padding: 12px  !important;
+    margin: 0px 12px !important;
+    font-size: 12px;
+  }
+  
+  .addbutton {
+    font-size: 12px !important;
+    margin: 0 12px !important;
+    padding: 10px 12px !important;
+  }
+}
+
 @media screen and (max-width: 480px) {
   .tutorialcards {
     width: 60%;
+  }
+  .entertokenaddress label{
+    font-size: 10px;
+    text-align: left;
+  }
+
+  .tokeninput {
+    padding: 10px !important;
+    margin: 0px 10px !important;
+    font-size: 10px;
+  }
+  
+  .addbutton {
+    font-size: 10px !important;
+    margin: 0 10px !important;
+    padding: 8px 10px !important;
   }
 }
 @media only screen and (max-width: 425px) {
@@ -755,7 +847,7 @@
   .fontsize10px {
     font-size: 12px !important;
   }
-  .buttontoaddformdata {
+  /* .buttontoaddformdata {
     font-size: 15px;
     width: 100%;
     margin: 5px;
@@ -766,7 +858,7 @@
     border: 1px solid white !important;
     border-radius: 63px;
     margin: 0px 20px;
-  }
+  } */
   #fontsize10px {
     font-size: 12px !important;
   }
@@ -822,7 +914,7 @@
   .titleforlinupsametext {
     width: 100%;
   }
-  #backgroundgreen {
+  /* #backgroundgreen {
     cursor: pointer;
     padding: 10px 25px;
     background-color: transparent;
@@ -832,7 +924,7 @@
     font-size: 15px;
     width: 70%;
     letter-spacing: 1px;
-  }
+  } */
   .textlistdiv textarea::placeholder {
     color: rgba(255, 255, 255, 0.45);
     font-size: 12px;
@@ -923,7 +1015,7 @@
     justify-content: center;
   }
 
-  #backgroundgreen {
+  /* #backgroundgreen {
     cursor: pointer;
     padding: 10px 25px;
     background-color: transparent;
@@ -933,7 +1025,7 @@
     font-size: 15px;
     width: 85%;
     letter-spacing: 1px;
-  }
+  } */
   .eachinputofcreatelist {
     width: auto;
     margin: 10px 20px !important;
