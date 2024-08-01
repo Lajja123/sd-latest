@@ -1,9 +1,49 @@
 import React, { useState, useEffect, useRef } from "react";
-import dropDownStyles from "./CustomDropDown.module.css";
+import dropDownStyles from "./destination.module.css";
 import { Modal, Button } from "antd";
 // import "antd/dist/antd.css";
 import { driver } from "driver.js";
 import "driver.js/dist/driver.css";
+
+
+function NestedDropdown({ options, onSelect, placeholder }) {
+  const [isNestedOpen, setIsNestedOpen] = useState(false);
+
+  const handleNestedSelect = (value) => {
+    onSelect(value);
+    setIsNestedOpen(false);
+  };
+
+  return (
+    <div className={dropDownStyles.dropdown}>
+      <div
+        className={dropDownStyles.dropdownHeader}
+        onClick={() => setIsNestedOpen(!isNestedOpen)}
+      >
+        <span>{placeholder} ▾</span>
+      </div>
+      {isNestedOpen && (
+        <div className={dropDownStyles.dropdownList}>
+          {options.map((option) => (
+            <div
+              key={option.name}
+              className={dropDownStyles.dropdownItem}
+              onClick={() => handleNestedSelect(option)}
+            >
+              <img
+                src={option.iconUrl}
+                alt={option.name}
+                className={dropDownStyles.icon}
+              />
+              {option.name}
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
 
 function DesCustomDropdown({
   options,
@@ -22,6 +62,7 @@ function DesCustomDropdown({
     setIsOpen(false);
     setIsModalVisible(false); // Close the modal after selection
   };
+  
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -78,12 +119,12 @@ function DesCustomDropdown({
             {selectedValue.name}
           </div>
         ) : (
-          <span>{placeholder}</span>
+          <span>{placeholder} ▾</span>
         )}
       </div>
 
       <Modal
-        title="Select an Option"
+        // title="Select an Option"
         visible={isModalVisible}
         onCancel={() => setIsModalVisible(false)}
         footer={[
@@ -92,28 +133,11 @@ function DesCustomDropdown({
           </Button>,
         ]}
       >
-        <div className={dropDownStyles.dropdownList}>
-          {options.length === 0 ? (
-            <div className={dropDownStyles.dropdownItem}>
-              Please select destination chain first
-            </div>
-          ) : (
-            options.map((option) => (
-              <div
-                key={option.name}
-                className={dropDownStyles.dropdownItem}
-                onClick={() => handleSelect(option)}
-              >
-                <img
-                  src={option.iconUrl}
-                  alt={option.name}
-                  className={dropDownStyles.icon}
-                />
-                {option.name}
-              </div>
-            ))
-          )}
-        </div>
+       <NestedDropdown
+          options={options}
+          onSelect={handleSelect}
+          placeholder="Select Destination Chain"
+        />
       </Modal>
     </div>
   );
