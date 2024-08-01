@@ -35,6 +35,7 @@ import { text } from "@fortawesome/fontawesome-svg-core";
 import { driver } from "driver.js";
 import "driver.js/dist/driver.css";
 import DesCustomDropdown from "../Type/Destinationselect";
+import Addlabel from "../Type/Addlabel";
 
 function SendToken({
   activeTab,
@@ -365,6 +366,7 @@ function SendToken({
     updatedLabels[index] = name; // Update the value at the specified index
     console.log(updatedLabels);
     setLabels(updatedLabels);
+    console.log("set label.....",updatedLabels);
   };
   useEffect(() => {
     calculateRemaining();
@@ -630,7 +632,14 @@ function SendToken({
                                   data.label
                                 ) : (
                                   <>
-                                    <input
+                                    <Addlabel
+                                      labels={labels}
+                                      setLabelValues={setLabelValues}
+                                      onAddLabel={onAddLabel}
+                                      index={0} // Example index, you can dynamically pass different indexes
+                                      data={data}
+                                    />
+                                    {/* <input
                                       type="text"
                                       value={labels[index] ? labels[index] : ""}
                                       style={{
@@ -666,8 +675,8 @@ function SendToken({
                                         if (e.key === "Enter") {
                                           onAddLabel(index, data.address);
                                         }
-                                      }}
-                                    />
+                                      }} */}
+                                    {/* /> */}
                                     {errorMessage && (
                                       <p
                                         style={{
