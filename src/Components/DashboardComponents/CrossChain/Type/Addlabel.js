@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { Modal, Button } from "antd";
-// import "antd/dist/antd.css"; // Importing Ant Design styles
+import "antd/dist/reset.css";
 import { PlusOutlined } from "@ant-design/icons";
+import "../Type/label.css";
 
-const Addlabel = ({ labels, setLabelValues, onAddLabel, index, data }) => {
+const AddLabel = ({ labels, setLabelValues, onAddLabel, index, data }) => {
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
 
@@ -12,7 +13,7 @@ const Addlabel = ({ labels, setLabelValues, onAddLabel, index, data }) => {
     if (inputValue === "") {
       setErrorMessage("Enter Label");
     } else {
-      setErrorMessage("Press Enter to submit");
+      setErrorMessage("");
     }
 
     const regex = /^[a-zA-Z]*$/;
@@ -22,10 +23,12 @@ const Addlabel = ({ labels, setLabelValues, onAddLabel, index, data }) => {
     }
   };
 
-  const handleKeyDown = (e) => {
-    if (e.key === "Enter") {
+  const handleSubmit = () => {
+    if (labels[index] && labels[index].trim() !== "") {
       onAddLabel(index, data.address);
-      setIsModalVisible(false); // Close the modal after submission
+      setIsModalVisible(false);
+    } else {
+      setErrorMessage("Enter Label");
     }
   };
 
@@ -34,7 +37,7 @@ const Addlabel = ({ labels, setLabelValues, onAddLabel, index, data }) => {
       <Button
         type="primary"
         shape="circle"
-        icon={<PlusOutlined />}
+        icon={<PlusOutlined style={{ fill: "black" }} />}
         onClick={() => setIsModalVisible(true)}
       />
       <Modal
@@ -42,8 +45,13 @@ const Addlabel = ({ labels, setLabelValues, onAddLabel, index, data }) => {
         visible={isModalVisible}
         onCancel={() => setIsModalVisible(false)}
         footer={[
-          <Button key="cancel" onClick={() => setIsModalVisible(false)}>
-            Cancel
+          <Button
+            key="submit"
+            type="primary"
+            onClick={handleSubmit}
+            className="submitLable"
+          >
+            Submit
           </Button>,
         ]}
       >
@@ -54,11 +62,11 @@ const Addlabel = ({ labels, setLabelValues, onAddLabel, index, data }) => {
             borderRadius: "8px",
             padding: "10px",
             color: "white",
-            border: "1px solid #8D37FB",
+            width: "60%",
+            border: "1px solid white",
             background: "transparent",
           }}
           onChange={handleInputChange}
-          onKeyDown={handleKeyDown}
         />
         {errorMessage && (
           <p
@@ -76,4 +84,4 @@ const Addlabel = ({ labels, setLabelValues, onAddLabel, index, data }) => {
   );
 };
 
-export default Addlabel;
+export default AddLabel;
