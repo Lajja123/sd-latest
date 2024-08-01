@@ -1,4 +1,5 @@
 import React from "react";
+
 import Home from "../Components/Homepage/Home";
 
 export default function page({ children }) {

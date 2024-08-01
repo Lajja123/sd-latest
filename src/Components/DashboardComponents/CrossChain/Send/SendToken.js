@@ -34,6 +34,7 @@ import CustomDropdown from "../Type/CustomDropDown";
 import { text } from "@fortawesome/fontawesome-svg-core";
 import { driver } from "driver.js";
 import "driver.js/dist/driver.css";
+import DesCustomDropdown from "../Type/Destinationselect";
 
 function SendToken({
   activeTab,
@@ -436,33 +437,20 @@ function SendToken({
             ) : (
               <div>
                 {isTokenLoaded ? (
-                  <div>
-                    <div className={textStyle.accountsummarycreatetitle}>
-                      <h2
-                        style={{
-                          padding: "10px",
-                          fontSize: "20px",
-                          margin: "0px",
-                          textAlign: "center",
-                          letterSpacing: "1px",
-                          fontWeight: "300",
-                        }}
-                      >
-                        Token Details
-                      </h2>
-                    </div>
-                    <div
+                  <div className={textStyle.accountsummarycreatetitle}>
+                    <h2
                       style={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                        alignItems: "center",
-                        margin: "40px 20px",
-                        border: "1px solid #8D37FB",
-                        borderRadius: "20px",
-                        overflow: "visible",
-                        overflowX: "scroll",
+                        padding: "10px",
+                        fontSize: "20px",
+                        margin: "0px",
+                        textAlign: "center",
+                        letterSpacing: "1px",
+                        fontWeight: "300",
                       }}
                     >
+                      Token Details
+                    </h2>
+                    <div className={textStyle.tablediv}>
                       <table className={textStyle.tabletextlist}>
                         <thead className={textStyle.tableheadertextlist}>
                           <tr className={textStyle.tableTr}>
@@ -547,7 +535,7 @@ function SendToken({
               <div className={textStyle.tablecontainer}>
                 <div
                   className={textStyle.titleforlinupsametext}
-                  style={{ padding: "5px 0px" }}
+                  // style={{ padding: "5px 0px" }}
                 >
                   <h2
                     style={{
@@ -736,7 +724,7 @@ function SendToken({
                                   {destinationFinalChainsOptions}
                                 </select> */}
 
-                                <CustomDropdown
+                                <DesCustomDropdown
                                   id="text"
                                   options={destinationFinalChainsOptions}
                                   onSelect={handleDestinationFinalChainChange}
@@ -768,7 +756,7 @@ function SendToken({
             </div>
           ) : null}
           {listData.length > 0 ? (
-            <div style={{ paddingBottom: "30px" }}>
+            <div className={textStyle.tablecontainer}>
               <div className={textStyle.titleforaccountsummarytextsame}>
                 <h2
                   style={{
@@ -782,7 +770,10 @@ function SendToken({
                   Account Summary
                 </h2>
               </div>
-              <div id={textStyle.tableresponsive}>
+              <div
+                id={textStyle.tableresponsive}
+                className={textStyle.scrollabletablecontainer}
+              >
                 <table
                   className={`${textStyle["showtokentablesametext"]} ${textStyle["tabletextlist"]}`}
                 >
