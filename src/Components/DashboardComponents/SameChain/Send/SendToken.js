@@ -403,7 +403,7 @@ function SendToken({ activeTab, listData, setListData }) {
                   <div className={textStyle.accountsummarycreatetitle}>
                     <h2
                       style={{
-                        padding: "10px",
+                        padding: "15px",
                         fontSize: "20px",
                         margin: "0px",
                         letterSpacing: "1px",
@@ -480,7 +480,7 @@ function SendToken({ activeTab, listData, setListData }) {
                       >
                         <h2
                           style={{
-                            padding: "10px",
+                            padding: "15px",
                             letterSpacing: "1px",
                             fontSize: "20px",
                             fontWeight: "300",

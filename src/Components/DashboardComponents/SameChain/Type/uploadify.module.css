@@ -58,10 +58,11 @@
   box-shadow: rgba(238, 242, 243, 0.553) 0px 5px 15px;
 }
 .sendbutton:hover {
-  background-color: white;
   color: #8f00ff;
   cursor: pointer;
-  box-shadow: rgba(238, 242, 243, 0.553) 0px 5px 15px;
+  border: 1px solid white;
+  background: #fff !important;
+  box-shadow: 0 0 14px 0 #fff;
 }
 .eachinputofcreatelist {
   border-radius: 5px;
