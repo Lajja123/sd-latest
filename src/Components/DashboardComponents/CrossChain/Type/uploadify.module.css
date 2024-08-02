@@ -3,6 +3,7 @@
   border: 1px solid #fff;
   border-radius: 40px;
   color: #fff;
+  cursor: pointer;
   font-size: 15px;
   font-weight: 700;
   letter-spacing: 1px;
@@ -81,7 +82,7 @@
 }
 .sametextmain {
   align-items: center;
-  display: flex;
+
   padding: 40px 20px;
   justify-content: center;
 }
@@ -187,7 +188,7 @@
     rgba(140, 62, 250, 0.73) 100%
   ) !important;
   border: none !important;
-  color: white;
+  color: #00ffffb2;
   font-weight: 700;
   line-height: 37px;
   letter-spacing: 1px;
@@ -556,6 +557,7 @@
     font-size: 12px;
     font-weight: 700;
     letter-spacing: 1px;
+    cursor: pointer;
     line-height: 37px;
     margin-bottom: 35px;
     padding: 5px 35px;
@@ -570,7 +572,7 @@
     border-radius: 63px;
     background-color: transparent;
     border: 1px solid white !important;
-    color: white;
+    color: #00ffffb2;
     font-weight: 500;
     line-height: 37px;
     letter-spacing: 1px;

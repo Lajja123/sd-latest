@@ -418,7 +418,7 @@ function SendToken({ activeTab, listData, setListData }) {
                       display: "flex",
                       justifyContent: "space-between",
                       alignItems: "center",
-                      padding: "10px",
+                      padding: "40px 20px",
                       // border: "1px solid #ddd",
                     }}
                   >
@@ -588,7 +588,7 @@ function SendToken({ activeTab, listData, setListData }) {
                                 </td>
                                 <td
                                   id={textStyle.fontsize10px}
-                                  style={{ padding: "8px" }}
+                                  style={{ padding: "15px" }}
                                 >
                                   <div
                                     id={textStyle.fontsize10px}
@@ -599,8 +599,8 @@ function SendToken({ activeTab, listData, setListData }) {
                                       color: "white",
 
                                       borderRadius: "10px",
-                                      padding: "10px 10px",
-                                      fontSize: "12px",
+
+                                      fontSize: "15px",
                                       letterSpacing: "1px",
                                     }}
                                   >
@@ -635,7 +635,7 @@ function SendToken({ activeTab, listData, setListData }) {
                                 <td
                                   style={{
                                     letterSpacing: "1px",
-                                    padding: "8px",
+                                    padding: "15px",
                                   }}
                                 >
                                   <button
@@ -768,14 +768,11 @@ function SendToken({ activeTab, listData, setListData }) {
                                   style={{
                                     width: "fit-content",
                                     margin: "0 auto",
-                                    background:
-                                      remaining < 0
-                                        ? "red"
-                                        : "linear-gradient(269deg, #0FF 2.32%, #1BFF76 98.21%)",
-                                    color: remaining < 0 ? "white" : "black",
+                                    fontWeight: "300",
+                                    color: remaining < 0 ? "red" : "white",
                                     borderRadius: "10px",
-                                    padding: "10px 10px",
-                                    fontSize: "12px",
+
+                                    fontSize: "15px",
                                   }}
                                 >
                                   {remaining === null

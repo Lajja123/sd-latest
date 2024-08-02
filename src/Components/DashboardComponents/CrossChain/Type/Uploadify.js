@@ -24,7 +24,7 @@ function Uploadify({
   const [matchedData, setMatchedData] = useState([]);
   const [labels, setLabels] = useState([]);
 
-  const {address} = useAccount();
+  const { address } = useAccount();
   const isValidEthereumAddress = (str) => {
     return str.startsWith("0x");
   };
@@ -270,13 +270,20 @@ function Uploadify({
             fontSize: "20px",
             margin: "0px",
             fontWeight: "300",
-           
+            lineHeight: "28px",
             letterSpacing: "1px",
           }}
           className={uploadStyle.sametextmain}
         >
           Upload your Csv file which contains recipient Address and Token Amount
-          or Download Sample CSV file
+          or <br />
+          <a
+            href="/SampleUpload.csv"
+            download="SampleUpload.csv"
+            className={uploadStyle.downloadbtn}
+          >
+            Download Sample CSV file
+          </a>
         </h2>
       </div>
       <div className={uploadStyle.uploadordownload}>
@@ -289,7 +296,7 @@ function Uploadify({
             onChange={handleFileUpload}
           />
         </div>
-        <div>
+        {/* <div>
           <div>
             <a
               href="/SampleUpload.csv"
@@ -301,7 +308,7 @@ function Uploadify({
               </button>
             </a>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );

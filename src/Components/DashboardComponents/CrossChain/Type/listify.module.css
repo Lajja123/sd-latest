@@ -349,6 +349,7 @@
 
 .sendbutton:hover {
   cursor: pointer;
+  border: 1px solid white;
   background-color: rgba(20, 187, 216, 0);
   box-shadow: rgba(16, 162, 206, 0.12) 0px 2px 4px 0px,
     rgba(12, 156, 218, 0.32) 0px 2px 16px 0px;
@@ -365,7 +366,7 @@
   text-align: center;
   margin: 50px 0px;
   color: white;
-
+  cursor: pointer;
   border-radius: 40px;
 }
 .sendbutton:hover {
@@ -533,7 +534,7 @@
   padding: 5px 0px;
   font-size: 12px;
 }
-.addMain{
+.addMain {
   padding: 40px 20px;
 }
 @media only screen and (max-width: 770px) {

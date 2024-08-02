@@ -239,7 +239,7 @@
   color: red;
 }
 .sendbutton:hover {
-  border: none;
+  border: 1px solid white;
   color: #8d37fb;
   background: #fff !important;
   box-shadow: 0px 0px 14px 0px #fff;
@@ -427,6 +427,8 @@
 }
 #tableresponsive {
   margin: 40px 20px;
+  border: 1px solid #8d37fb;
+  border-radius: 20px;
 }
 
 .tablecontainer table {

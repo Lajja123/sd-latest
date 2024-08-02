@@ -217,6 +217,7 @@ function Uploadify({
           style={{
             padding: "10px",
             fontSize: "20px",
+            lineHeight: "28px",
             margin: "0px",
             fontWeight: "300",
             letterSpacing: "1px",
@@ -224,7 +225,14 @@ function Uploadify({
           className={uploadStyle.sametextmain}
         >
           Upload your Csv file which contains recipient Address and Token Amount
-          or Download Sample CSV file
+          or <br />
+          <a
+            href="/SampleUpload.csv"
+            download="SampleUpload.csv"
+            className={uploadStyle.downloadbtn}
+          >
+            Download Sample CSV file
+          </a>
         </h2>
       </div>
       <div className={uploadStyle.uploadordownload}>
@@ -237,7 +245,7 @@ function Uploadify({
             onChange={handleFileUpload}
           />
         </div>
-        <div>
+        {/* <div>
           <div>
             <a
               href="/SampleUpload.csv"
@@ -252,7 +260,7 @@ function Uploadify({
               </button>
             </a>
           </div>
-        </div>
+        </div> */}
       </div>
       {listData.length > 0 ? null : (
         <div>
