@@ -41,7 +41,6 @@ const AddLabel = ({ labels, setLabelValues, onAddLabel, index, data }) => {
         onClick={() => setIsModalVisible(true)}
       />
       <Modal
-        title="Add Label"
         visible={isModalVisible}
         onCancel={() => setIsModalVisible(false)}
         footer={[
@@ -55,30 +54,45 @@ const AddLabel = ({ labels, setLabelValues, onAddLabel, index, data }) => {
           </Button>,
         ]}
       >
-        <input
-          type="text"
-          value={labels[index] ? labels[index] : ""}
+        <div>
+          <strong>Receiver Address:</strong> {data.address.substr(0, 5)}...
+          {data.address.substr(-8)}
+        </div>
+        <div
           style={{
-            borderRadius: "8px",
-            padding: "10px",
-            color: "white",
-            width: "60%",
-            border: "1px solid white",
-            background: "transparent",
+            display: "flex",
+            margin: "0 auto",
+            alignItems: "center",
+            width: "85%",
+            justifyContent: "space-evenly",
           }}
-          onChange={handleInputChange}
-        />
-        {errorMessage && (
-          <p
+        >
+          <div style={{ fontSize: "15px" }}>Add Label</div>
+          <input
+            type="text"
+            value={labels[index] ? labels[index] : ""}
             style={{
-              color: "red",
-              margin: "0px",
-              fontSize: "13px",
+              borderRadius: "8px",
+              padding: "10px",
+              color: "white",
+              width: "65%",
+              border: "1px solid white",
+              background: "transparent",
             }}
-          >
-            {errorMessage}
-          </p>
-        )}
+            onChange={handleInputChange}
+          />
+          {errorMessage && (
+            <p
+              style={{
+                color: "red",
+                margin: "0px",
+                fontSize: "13px",
+              }}
+            >
+              {errorMessage}
+            </p>
+          )}
+        </div>
       </Modal>
     </>
   );
