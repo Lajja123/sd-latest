@@ -73,6 +73,10 @@ function SwitchChain({ isMainnet, closeAccountModal }) {
     setDropdownVisible(true);
     closeAccountModal();
   };
+  const handleMouseLeave = () => {
+    setDropdownVisible(true);
+    closeAccountModal();
+  };
 
   return (
     <div
@@ -85,8 +89,9 @@ function SwitchChain({ isMainnet, closeAccountModal }) {
         className={connectStyle.connectchain}
         type="button"
         onMouseEnter={handleMouseEnter}
-        onMouseLeave={() => setDropdownVisible(false)}
+        onMouseLeave={handleMouseLeave}
         onClick={handleButtonClick}
+     
       >
         {chain && displayChains?.some((network) => network.id === chain.id) ? (
           <>
