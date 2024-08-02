@@ -263,14 +263,14 @@
 }
 .tabletextlist {
   width: 100%;
-  border: 1px solid #8d37fb;
+ 
   border-radius: 20px;
   overflow: hidden;
 }
 .tabletextlist .tableTr {
   font-size: 16px;
   margin: 5px 0px;
-  border-bottom: 1px solid #8d37fb;
+
 }
 .tabletextlist .tableTh {
   font-size: 15px;

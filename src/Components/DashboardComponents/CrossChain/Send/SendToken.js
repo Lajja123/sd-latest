@@ -771,7 +771,7 @@ function SendToken({
               <div className={textStyle.titleforaccountsummarytextsame}>
                 <h2
                   style={{
-                    padding: "10px",
+                    padding: "15px",
                     letterSpacing: "1px",
                     fontSize: "20px",
                     fontWeight: "300",
