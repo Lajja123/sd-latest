@@ -41,7 +41,7 @@ const AddLabel = ({ labels, setLabelValues, onAddLabel, index, data }) => {
         onClick={() => setIsModalVisible(true)}
       />
       <Modal
-        title="Add Label"
+        // title="Add Label"
         visible={isModalVisible}
         onCancel={() => setIsModalVisible(false)}
         footer={[
@@ -51,34 +51,68 @@ const AddLabel = ({ labels, setLabelValues, onAddLabel, index, data }) => {
             onClick={handleSubmit}
             className="submitLable"
           >
-            Submit
+            Save
           </Button>,
         ]}
       >
-        <input
-          type="text"
-          value={labels[index] ? labels[index] : ""}
+        <div
           style={{
-            borderRadius: "8px",
-            padding: "10px",
+            display: "flex",
+            margin: "20px auto",
+            alignItems: "center",
+            width: "85%",
+            gap: "19px",
             color: "white",
-            width: "60%",
-            border: "1px solid white",
-            background: "transparent",
           }}
-          onChange={handleInputChange}
-        />
-        {errorMessage && (
-          <p
+        >
+          <strong>Receiver Address:</strong>
+          <div
             style={{
-              color: "red",
-              margin: "0px",
-              fontSize: "13px",
+              color: "white",
+              fontSize: "15px",
+              fontWeight: "500",
             }}
           >
-            {errorMessage}
-          </p>
-        )}
+            {data.address.substr(0, 10)}...
+            {data.address.substr(-10)}
+          </div>
+        </div>
+        <div
+          style={{
+            display: "flex",
+            margin: "0 auto",
+            alignItems: "center",
+            width: "85%",
+            justifyContent: "space-between",
+            color: "white",
+          }}
+        >
+          <strong>Add Label: </strong>{" "}
+          <input
+            type="text"
+            value={labels[index] ? labels[index] : ""}
+            style={{
+              borderRadius: "8px",
+              padding: "10px",
+              color: "white",
+              width: "66%",
+              border: "1px solid white",
+              background: "transparent",
+            }}
+            onChange={handleInputChange}
+          />
+          {errorMessage && (
+            <p
+              style={{
+                color: "red",
+                margin: "0px",
+                fontSize: "13px",
+              }}
+            >
+              {errorMessage}
+            </p>
+          )}
+        </div>
       </Modal>
     </>
   );
