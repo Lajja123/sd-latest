@@ -22,7 +22,7 @@ function History() {
   const { address } = useAccount();
   const chainId = useChainId();
   const [render, setRender] = useState(1);
-  const [selectedToken, setSelectedToken] = useState("Eth");
+  const [selectedToken, setSelectedToken] = useState("Select");
   const [tokenListOfUser, setTokenListOfUser] = useState([]);
   const [transactionData, setTransactionData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -46,6 +46,11 @@ function History() {
   // const [selectedToken, setSelectedToken] = useState("");
   const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
+
+  const [selectedTokenSymbol, setSelectedTokenSymbol] = useState("ETH");
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const dropdownRef = useRef(null);
+
 
   // /............sorting label function ............./
   const sortLabels = () => {
@@ -148,23 +153,49 @@ function History() {
     setEndDate(newEndDate);
   };
 
-  const handleTokenChange = async (event) => {
-    const selectedToken = event.target.value;
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
+  const handleTokenChange = async (tokenAddress, tokenSymbol) => {
     setIsLoading(true); // Set loading state to true
     try {
-      const selectedTokenObject = tokenListOfUser.find(
-        (token) => token.tokenAddress === selectedToken
-      );
-      setSelectedToken(selectedToken);
-      setSelectedTokenSymbol(
-        selectedTokenObject ? selectedTokenObject.symbol : "ETH"
-      );
+      setSelectedToken(tokenAddress);
+      setSelectedTokenSymbol(tokenSymbol);
+      setIsDropdownOpen(false); // Close the dropdown
     } catch (error) {
       console.error("Error fetching token data:", error);
     } finally {
       setIsLoading(false); // Reset loading state
     }
   };
+
+  // const handleTokenChange = async (event) => {
+  //   const selectedToken = event.target.value;
+  //   setIsLoading(true); // Set loading state to true
+  //   try {
+  //     const selectedTokenObject = tokenListOfUser.find(
+  //       (token) => token.tokenAddress === selectedToken
+  //     );
+  //     setSelectedToken(selectedToken);
+  //     setSelectedTokenSymbol(
+  //       selectedTokenObject ? selectedTokenObject.symbol : "ETH"
+  //     );
+  //   } catch (error) {
+  //     console.error("Error fetching token data:", error);
+  //   } finally {
+  //     setIsLoading(false); // Reset loading state
+  //   }
+  // };
   const handleSearch = (searchQuery) => {
     var filtered = transactionData;
     filtered = transactionData.filter(
@@ -295,34 +326,34 @@ function History() {
           <div className={histroyStyle.tablediv1}>
             <div className={histroyStyle.headingdiv}>Latest Transactions</div>
             <div className={histroyStyle.filterdiv}>
-              <div style={{display: "flex", gap: "5px"}}>
-              <div className={histroyStyle.labeldate}>
-                {/* Start date: */}
-                <input
-                  type="date"
-                  className={histroyStyle.dateInput}
-                  value={startDate}
-                  onChange={handleStartDateChange}
-                  placeholder="Start Date"
-                />
+              <div style={{ display: "flex", gap: "5px" }}>
+                <div className={histroyStyle.labeldate}>
+                  {/* Start date: */}
+                  <input
+                    type="date"
+                    className={histroyStyle.dateInput}
+                    value={startDate}
+                    onChange={handleStartDateChange}
+                    placeholder="Start Date"
+                  />
+                </div>
+                <div className={histroyStyle.labeldate}>
+                  {/* End date: */}
+                  <input
+                    type="date"
+                    className={histroyStyle.dateInput}
+                    value={endDate}
+                    onChange={handleEndDateChange}
+                  />
+                </div>
               </div>
-              <div className={histroyStyle.labeldate}>
-                {/* End date: */}
-                <input
-                  type="date"
-                  className={histroyStyle.dateInput}
-                  value={endDate}
-                  onChange={handleEndDateChange}
-                />
-              </div>
-              </div>
-              <select
+              {/* <select
                 value={selectedToken}
                 onChange={handleTokenChange}
                 className={histroyStyle.dropdown}
-              >
-                {/* DROP DOWN FOR SHOWING TOKENS */}
-                <option value="Select" className={histroyStyle.chainOptions}>
+              > */}
+              {/* DROP DOWN FOR SHOWING TOKENS */}
+              {/* <option value="Select" className={histroyStyle.chainOptions}>
                   Select
                 </option>
                 <option value="Eth" className={histroyStyle.chainOptions}>
@@ -340,7 +371,44 @@ function History() {
                       </option>
                     ))
                   : null}
-              </select>
+              </select> */}
+
+              <div className={histroyStyle.dropdownWrapper} ref={dropdownRef}>
+                <div
+                  onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                  className={histroyStyle.dropdown}
+                >
+                  {selectedToken || "Select"}
+                </div>
+                {isDropdownOpen && (
+                  <div className={histroyStyle.dropdownMenu}>
+                    <div
+                      onClick={() => handleTokenChange("Select", "Select")}
+                      className={histroyStyle.chainOptions}
+                    >
+                      Select
+                    </div>
+                    <div
+                      onClick={() => handleTokenChange("Eth", "ETH")}
+                      className={histroyStyle.chainOptions}
+                    >
+                      ETH
+                    </div>
+                    {tokenListOfUser.length > 0 &&
+                      tokenListOfUser.map((token, index) => (
+                        <div
+                          key={index}
+                          onClick={() =>
+                            handleTokenChange(token.tokenAddress, token.symbol)
+                          }
+                          className={histroyStyle.chainOptions}
+                        >
+                          {token.symbol}
+                        </div>
+                      ))}
+                  </div>
+                )}
+              </div>
             </div>
           </div>
           <div className={histroyStyle.tableandheadingdiv}>
