@@ -6,43 +6,43 @@ import { driver } from "driver.js";
 import "driver.js/dist/driver.css";
 
 
-function NestedDropdown({ options, onSelect, placeholder }) {
-  const [isNestedOpen, setIsNestedOpen] = useState(false);
+// function NestedDropdown({ options, onSelect, placeholder }) {
+//   const [isNestedOpen, setIsNestedOpen] = useState(false);
 
-  const handleNestedSelect = (value) => {
-    onSelect(value);
-    setIsNestedOpen(false);
-  };
+//   const handleNestedSelect = (value) => {
+//     onSelect(value);
+//     setIsNestedOpen(false);
+//   };
 
-  return (
-    <div className={dropDownStyles.dropdown}>
-      <div
-        className={dropDownStyles.dropdownHeader}
-        onClick={() => setIsNestedOpen(!isNestedOpen)}
-      >
-        <span>{placeholder} ▾</span>
-      </div>
-      {isNestedOpen && (
-        <div className={dropDownStyles.dropdownList}>
-          {options.map((option) => (
-            <div
-              key={option.name}
-              className={dropDownStyles.dropdownItem}
-              onClick={() => handleNestedSelect(option)}
-            >
-              <img
-                src={option.iconUrl}
-                alt={option.name}
-                className={dropDownStyles.icon}
-              />
-              {option.name}
-            </div>
-          ))}
-        </div>
-      )}
-    </div>
-  );
-}
+//   return (
+//     <div className={dropDownStyles.dropdown}>
+//       <div
+//         className={dropDownStyles.dropdownHeader}
+//         onClick={() => setIsNestedOpen(!isNestedOpen)}
+//       >
+//         <span>{placeholder} ▾</span>
+//       </div>
+//       {isNestedOpen && (
+//         <div className={dropDownStyles.dropdownList}>
+//           {options.map((option) => (
+//             <div
+//               key={option.name}
+//               className={dropDownStyles.dropdownItem}
+//               onClick={() => handleNestedSelect(option)}
+//             >
+//               <img
+//                 src={option.iconUrl}
+//                 alt={option.name}
+//                 className={dropDownStyles.icon}
+//               />
+//               {option.name}
+//             </div>
+//           ))}
+//         </div>
+//       )}
+//     </div>
+//   );
+// }
 
 
 function DesCustomDropdown({
@@ -124,20 +124,42 @@ function DesCustomDropdown({
       </div>
 
       <Modal
-        // title="Select an Option"
+        title="Select Destination Chain"
         visible={isModalVisible}
         onCancel={() => setIsModalVisible(false)}
         footer={[
-          <Button key="cancel" onClick={() => setIsModalVisible(false)}>
-            Cancel
-          </Button>,
+          // <Button key="cancel" onClick={() => setIsModalVisible(false)}>
+          //   Cancel
+          // </Button>,
         ]}
       >
-       <NestedDropdown
+                <div className={dropDownStyles.dropdownList}>
+          {options.length === 0 ? (
+            <div className={dropDownStyles.dropdownItem}>
+              Please select destination chain first
+            </div>
+          ) : (
+            options.map((option) => (
+              <div
+                key={option.name}
+                className={dropDownStyles.dropdownItem}
+                onClick={() => handleSelect(option)}
+              >
+                <img
+                  src={option.iconUrl}
+                  alt={option.name}
+                  className={dropDownStyles.icon}
+                />
+                {option.name}
+              </div>
+            ))
+          )}
+        </div>
+       {/* <NestedDropdown
           options={options}
           onSelect={handleSelect}
           placeholder="Select Destination Chain"
-        />
+        /> */}
       </Modal>
     </div>
   );
