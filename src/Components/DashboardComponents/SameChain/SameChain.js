@@ -45,7 +45,7 @@ function SameChain({ activeTab }) {
           <div className={textStyle.titleloadtokensametext}>
             <h2
               style={{
-                padding: "10px",
+                padding: "15px",
                 letterSpacing: "1px",
                 fontSize: "20px",
                 margin: "0px",

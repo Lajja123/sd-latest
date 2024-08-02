@@ -251,7 +251,7 @@ function Listify({
       <div className={listStyle.enteraddressdivtitle}>
         <h2
           style={{
-            padding: "10px",
+            padding: "15px",
             fontSize: "20px",
             margin: "0px",
             letterSpacing: "1px",
@@ -377,7 +377,7 @@ function Listify({
             <h2
               className={textStyle.tutorialheading}
               style={{
-                padding: "10px",
+                padding: "15px",
                 fontSize: "20px",
                 margin: "0px",
                 letterSpacing: "1px",

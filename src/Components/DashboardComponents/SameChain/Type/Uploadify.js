@@ -215,7 +215,7 @@ function Uploadify({
       <div className={uploadStyle.titleforuploadfilecsvsame}>
         <h2
           style={{
-            padding: "10px",
+            padding: "15px",
             fontSize: "20px",
             lineHeight: "28px",
             margin: "0px",
@@ -271,7 +271,7 @@ function Uploadify({
             <h2
               className={textStyle.tutorialheading}
               style={{
-                padding: "10px",
+                padding: "15px",
                 fontSize: "20px",
                 margin: "0px",
                 letterSpacing: "1px",
