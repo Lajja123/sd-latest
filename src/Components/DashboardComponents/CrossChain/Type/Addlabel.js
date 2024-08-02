@@ -50,13 +50,31 @@ const AddLabel = ({ labels, setLabelValues, onAddLabel, index, data }) => {
             onClick={handleSubmit}
             className="submitLable"
           >
-            Submit
+            Save
           </Button>,
         ]}
       >
-        <div>
-          <strong>Receiver Address:</strong> {data.address.substr(0, 5)}...
-          {data.address.substr(-8)}
+        <div
+          style={{
+            display: "flex",
+            margin: "20px auto",
+            alignItems: "center",
+            width: "85%",
+            gap: "19px",
+            color: "white",
+          }}
+        >
+          <strong>Receiver Address:</strong>
+          <div
+            style={{
+              color: "white",
+              fontSize: "15px",
+              fontWeight: "500"
+            }}
+          >
+            {data.address.substr(0, 10)}...
+            {data.address.substr(-10)}
+          </div>
         </div>
         <div
           style={{
@@ -64,10 +82,11 @@ const AddLabel = ({ labels, setLabelValues, onAddLabel, index, data }) => {
             margin: "0 auto",
             alignItems: "center",
             width: "85%",
-            justifyContent: "space-evenly",
+            justifyContent: "space-between",
+            color: "white",
           }}
         >
-          <div style={{ fontSize: "15px" }}>Add Label</div>
+          <strong>Add Label: </strong>{" "}
           <input
             type="text"
             value={labels[index] ? labels[index] : ""}
@@ -75,7 +94,7 @@ const AddLabel = ({ labels, setLabelValues, onAddLabel, index, data }) => {
               borderRadius: "8px",
               padding: "10px",
               color: "white",
-              width: "65%",
+              width: "66%",
               border: "1px solid white",
               background: "transparent",
             }}
