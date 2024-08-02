@@ -442,7 +442,7 @@ function SendToken({
                   <div className={textStyle.accountsummarycreatetitle}>
                     <h2
                       style={{
-                        padding: "10px",
+                        padding: "15px",
                         fontSize: "20px",
                         margin: "0px",
                         textAlign: "center",
@@ -541,7 +541,7 @@ function SendToken({
                 >
                   <h2
                     style={{
-                      padding: "10px",
+                      padding: "15px",
                       letterSpacing: "1px",
                       fontSize: "20px",
                       fontWeight: "300",
@@ -693,7 +693,7 @@ function SendToken({
                               </td>
                               <td
                                 id={textStyle.fontsize10px}
-                                style={{ padding: "8px" }}
+                                style={{ padding: "15px" }}
                               >
                                 <div
                                   id={textStyle.fontsize10px}
@@ -703,9 +703,9 @@ function SendToken({
                                     background: "transparent",
                                     color: "white",
                                     borderRadius: "10px",
-                                    padding: "10px 10px",
+                                    fontWeight: "300",
 
-                                    fontSize: "12px",
+                                    fontSize: "15px",
                                     letterSpacing: "1px",
                                   }}
                                 >
@@ -717,7 +717,7 @@ function SendToken({
                               </td>
                               <td
                                 id={textStyle.fontsize10px}
-                                style={{ padding: "8px" }}
+                                style={{ padding: "15px" }}
                               >
                                 {/* <select
                                   id={textStyle.blockchainChains}
@@ -741,11 +741,14 @@ function SendToken({
                                   }
                                   placeholder="Select destination chain"
                                   index={index}
-                                  style={{ fontSize: "12px" }}
+                                  style={{ fontSize: "15px" }}
                                 />
                               </td>
                               <td
-                                style={{ letterSpacing: "1px", padding: "8px" }}
+                                style={{
+                                  letterSpacing: "1px",
+                                  padding: "15px",
+                                }}
                               >
                                 <button
                                   className={textStyle.deletebutton}
@@ -825,8 +828,9 @@ function SendToken({
                             margin: "0 auto",
                             color: "white",
                             borderRadius: "10px",
-                            padding: "10px 10px",
-
+                            fontWeight: "300",
+                            fontSize: "15px",
+                            opacity: "0.4",
                             letterSpacing: "1px",
                           }}
                         >
@@ -845,7 +849,7 @@ function SendToken({
                             margin: "0 auto",
                             color: "white",
                             borderRadius: "10px",
-
+                            opacity: "0.4",
                             letterSpacing: "1px",
                           }}
                         >
@@ -871,14 +875,11 @@ function SendToken({
                           style={{
                             width: "fit-content",
                             margin: "0 auto",
-                            border:
-                              remaining < 0
-                                ? "1px solid red"
-                                : "1px solid  white",
+
                             color: remaining < 0 ? "red" : "white",
                             borderRadius: "10px",
-                            padding: "10px 10px",
-                            fontSize: "12px",
+
+                            fontSize: "15px",
                           }}
                         >
                           {remaining === null

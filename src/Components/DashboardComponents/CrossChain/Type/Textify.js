@@ -200,7 +200,7 @@ function Textify({
             <div className={textStyle.titlesametexttextarea}>
               <h2
                 style={{
-                  padding: "10px",
+                  padding: "15px",
                   fontSize: "20px",
                   margin: "0px",
                   letterSpacing: "1px",

@@ -137,9 +137,10 @@
 .sendbutton:hover {
   /* border: none; */
   border: 1px solid white;
-  background: transparent !important;
   cursor: pointer;
-  box-shadow: rgb(255 255 255 / 72%) 1px 1px 18px 0px inset;
+  color: #8d37fb;
+  background: #fff !important;
+  box-shadow: 0 0 14px 0 #fff;
 }
 .copyicon {
   padding: 0px 10px;
@@ -272,7 +273,7 @@
     rgba(24, 26, 83, 1) 47%,
     rgba(46, 13, 90, 1) 100%
   );
-  /* padding: 5px 0px; */
+
   text-align: center;
   font-size: 12px;
 }
@@ -360,7 +361,6 @@
   font-weight: 200;
   line-height: 154.1%;
   letter-spacing: 1.04px;
-  padding: 5px 0px;
 }
 .accountsummarycrosschain {
   margin-top: 80px;
@@ -447,11 +447,11 @@
   padding: 5px 0;
 }
 
-.accountsummarycreatetitle{
+.accountsummarycreatetitle {
   background: transparent !important;
 }
 
-.accountsummarycreatetitle h2{
+.accountsummarycreatetitle h2 {
   background: linear-gradient(
     160deg,
     rgba(24, 26, 83, 1) 47%,
