@@ -133,11 +133,11 @@
 
 .content .table {
   width: 100%;
-  background: linear-gradient(
+  /* background: linear-gradient(
     100.72deg,
     rgba(255, 255, 255, 0.21) 1.58%,
     rgba(255, 255, 255, 0.07) 98.15%
-  );
+  ); */
   border-collapse: separate;
   border-spacing: 0 6px;
   font-size: 2vw;
@@ -186,6 +186,7 @@
   font-weight: 400;
   font-size: 13px;
   letter-spacing: 1px;
+  text-wrap: nowrap;
 }
 
 .column1,
@@ -197,9 +198,10 @@
 .column7 {
   margin: 0;
   padding: 13px;
-  vertical-align: top;
+  vertical-align: center;
   font-weight: 300;
   font-size: 12px;
+  text-align: center;
 }
 
 .column1 {
@@ -207,6 +209,7 @@
   border-radius: 5px 0 0 0;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .column2 {
@@ -234,6 +237,7 @@
   display: flex;
   align-items: center;
   border-radius: 0 5px 0 0;
+  justify-content: center;
 }
 
 .row:hover {

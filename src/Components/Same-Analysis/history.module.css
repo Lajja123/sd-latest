@@ -43,7 +43,6 @@
 .searchinputbox:focus {
   outline: 2px solid transparent;
   outline-offset: 2px;
-  
 }
 .searchinputbox::placeholder {
   color: rgba(255, 255, 255, 0.569);
@@ -68,8 +67,6 @@
   justify-content: center;
   margin-right: 7px;
 }
-
-
 
 .maintablediv {
   width: 98%;
@@ -121,24 +118,46 @@
   filter: invert(1);
 }
 
+.dropdownWrapper {
+  position: relative;
+  display: inline-block;
+}
+
 .dropdown {
-  border: 1px solid rgba(255, 255, 255, 1);
+  border: 0.5px solid #00ffff;
   box-shadow: 0px 4px 17.8px 0px rgba(0, 0, 0, 0.18) inset;
   border-radius: 154px;
+  min-width: 60px;
   padding: 12px 25px;
   background: transparent;
-  color: white;
+  color: #00ffff;
   z-index: 2;
 }
 
-.dropdown option {
-  background: #00ffff;
-  color: black;
+.dropdownMenu {
+  position: absolute;
+  background-color: transparent;
+  color: #00ffff;
+  width: 100%;
+  z-index: 1;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  margin-top: 4px;
 }
 
-.dropdown option:focus {
-  background: red;
-  color: black;
+.chainOptions {
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 10px;
+  border: 0.5px solid #00ffff;
+  background-color: #694a8c;
+  backdrop-filter: blur(5px);
+  font-size: 12px;
+}
+
+.chainOptions:hover {
+  border: 1.16px solid #6e58ae;
+  background-color: white;
+  color: #6e58ae;
 }
 
 .tableandheadingdiv {
@@ -188,7 +207,6 @@
   height: auto;
 }
 
-
 @media screen and (max-width: 1125px) {
   .dateInput {
     border-radius: 120px;
@@ -216,12 +234,12 @@
     width: 85%;
   }
 
-  .tablediv1{
+  .tablediv1 {
     flex-direction: column;
     gap: 8px;
   }
 
-  .headingdiv{
+  .headingdiv {
     font-size: 15px;
   }
 
@@ -241,7 +259,7 @@
   }
 }
 
-@media screen and (max-width:560px) {
+@media screen and (max-width: 560px) {
   .dateInput {
     border-radius: 100px;
     padding: 9px 15px;
@@ -249,11 +267,11 @@
     width: 100px !important;
   }
 
-  .dropdown{
+  .dropdown {
     padding: 6px;
   }
 
-  .headingdiv{
+  .headingdiv {
     font-size: 14px;
   }
 }
@@ -289,7 +307,7 @@
     width: 70px !important;
   }
 
-  .dropdown{
+  .dropdown {
     font-size: 6px;
   }
 }

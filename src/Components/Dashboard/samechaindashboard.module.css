@@ -16,6 +16,7 @@
   background: -webkit-linear-gradient(#00ffff, #5fffbc);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .samedashmainm {
@@ -308,13 +309,16 @@
   bottom: 10px;
 }
 .stickyIcon {
-  z-index: 1;
+  z-index: 0;
   position: fixed;
   bottom: 50%;
   right: 0%;
   width: 200px;
   display: flex;
   flex-direction: column;
+}
+.stickyIcon a:hover .stickyIcon{
+z-index: 444;
 }
 .stickyIcon a {
   transform: translate(160px, 0px);
@@ -405,6 +409,7 @@
   transform: translate(0px, 0px);
   background-color: #00ffff;
   font-weight: 600;
+  z-index: 10;
 }
 .Instagram {
   background-color: #19153f;
