@@ -14,7 +14,9 @@ import contracts from "./ContractAddresses";
 // }
 
 export const getEthTransactions = async (address, chainId) => {
+  console.log("get tnzx")
   if (chainId in contracts) {
+    console.log(chainId)
     const chainAPIurl = contracts[chainId].APIURL;
     const chainname = contracts[chainId].chainDisplayName;
 
@@ -39,8 +41,9 @@ export const getEthTransactions = async (address, chainId) => {
       });
 
       const data = await client.query(EthQuery).toPromise();
-
+console.log(data)
       if (data.data !== undefined) {
+        
         const transactions = data.data.etherDisperseds.map((transaction) => ({
           sender: transaction._sender,
           recipients: transaction._recipients,
@@ -69,6 +72,7 @@ export const getEthTransactions = async (address, chainId) => {
         });
 
         return transformedData;
+        console.log(transformedData)
       }
     } else {
       console.log("Api URL not found");

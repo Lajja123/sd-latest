@@ -366,7 +366,7 @@ function SendToken({
     updatedLabels[index] = name; // Update the value at the specified index
     console.log(updatedLabels);
     setLabels(updatedLabels);
-    console.log("set label.....",updatedLabels);
+    console.log("set label.....", updatedLabels);
   };
   useEffect(() => {
     calculateRemaining();
@@ -704,7 +704,7 @@ function SendToken({
                                     color: "white",
                                     borderRadius: "10px",
                                     padding: "10px 10px",
-                                    border: "1px solid white",
+
                                     fontSize: "12px",
                                     letterSpacing: "1px",
                                   }}
@@ -712,8 +712,7 @@ function SendToken({
                                   {(+ethers.utils.formatUnits(
                                     data.value,
                                     tokenDetails.decimal
-                                  )).toFixed(4)}{" "}
-                                  {tokenDetails.symbol}
+                                  )).toFixed(4)}
                                 </div>
                               </td>
                               <td

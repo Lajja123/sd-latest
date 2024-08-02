@@ -5,7 +5,6 @@
   margin: 0 auto;
   background: transparent;
 
-  padding: 10px 10px;
   transform: translate(-50%, -50%);
   animation: zoomAnimation 10s infinite alternate;
 }

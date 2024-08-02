@@ -417,7 +417,7 @@ function SendEth({ activeTab, listData, setListData }) {
                               </td>
                               <td
                                 id={textStyle.fontsize10px}
-                                style={{ padding: "8px" }}
+                                style={{ padding: "15px" }}
                               >
                                 <div
                                   id={textStyle.fontsize10px}
@@ -425,22 +425,22 @@ function SendEth({ activeTab, listData, setListData }) {
                                     width: "fit-content",
                                     margin: "0 auto",
                                     background: "transparent",
-                                    color: "#00FBFB",
-                                    border: "1px solid #00FBFB",
+                                    color: "white",
                                     borderRadius: "10px",
-                                    padding: "10px 10px",
-                                    fontSize: "12px",
+
+                                    fontWeight: "300",
+                                    fontSize: "15px",
                                     letterSpacing: "1px",
                                   }}
                                 >
                                   {`${(+ethers.utils.formatEther(
                                     data.value
-                                  )).toFixed(9)} ETH`}
+                                  )).toFixed(5)} `}
                                 </div>
                               </td>
                               <td
                                 id="font-size-10px"
-                                style={{ padding: "8px" }}
+                                style={{ padding: "15px" }}
                               >
                                 <div
                                   id="font-size-10px"
@@ -448,11 +448,12 @@ function SendEth({ activeTab, listData, setListData }) {
                                     width: "fit-content",
                                     margin: "0 auto",
                                     background: "transparent",
-                                    color: "#19F26F",
-                                    border: "1px solid #19F26F",
+                                    color: "white",
+
                                     borderRadius: "10px",
-                                    padding: "10px 10px",
-                                    fontSize: "12px",
+                                    opacity: "0.4",
+                                    fontSize: "15px",
+                                    fontWeight: "300",
                                     letterSpacing: "1px",
                                   }}
                                 >
@@ -475,7 +476,10 @@ function SendEth({ activeTab, listData, setListData }) {
                           </td> */}
 
                               <td
-                                style={{ letterSpacing: "1px", padding: "8px" }}
+                                style={{
+                                  letterSpacing: "1px",
+                                  padding: "15px",
+                                }}
                               >
                                 <button
                                   className={textStyle.deletebutton}
@@ -550,17 +554,17 @@ function SendEth({ activeTab, listData, setListData }) {
                               margin: "0 auto",
                               background: "transparent",
                               color: "white",
-                              border: "1px solid white",
+                              fontWeight: "300",
                               borderRadius: "10px",
-                              padding: "10px 10px",
-                              fontSize: "12px",
+
+                              fontSize: "15px",
                               letterSpacing: "1px",
                             }}
                           >
                             {totalEth
                               ? `${(+ethers.utils.formatEther(
                                   totalEth
-                                )).toFixed(9)} ETH`
+                                )).toFixed(5)} `
                               : null}
                           </div>
                         </td>
@@ -572,11 +576,11 @@ function SendEth({ activeTab, listData, setListData }) {
                               width: "fit-content",
                               margin: "0 auto",
                               background: "transparent",
-                              color: "#19F26F",
-                              border: "1px solid #19F26F",
+                              color: "white",
+                              fontWeight: "300",
                               borderRadius: "10px",
-                              padding: "10px 10px",
-                              fontSize: "12px",
+                              opacity: "0.4",
+                              fontSize: "15px",
                               letterSpacing: "1px",
                             }}
                           >
@@ -595,6 +599,8 @@ function SendEth({ activeTab, listData, setListData }) {
                               width: "fit-content",
                               margin: "0 auto",
                               color: "white",
+                              opacity: "0.4",
+                              fontWeight: "300",
                               borderRadius: "10px",
                               letterSpacing: "1px",
                             }}
@@ -602,7 +608,7 @@ function SendEth({ activeTab, listData, setListData }) {
                             {ethBalance
                               ? `${(+ethers.utils.formatEther(
                                   ethBalance
-                                )).toFixed(9)} ETH`
+                                )).toFixed(5)} `
                               : null}
                           </div>
                         </td>
@@ -620,19 +626,16 @@ function SendEth({ activeTab, listData, setListData }) {
                               margin: "0 auto",
                               background:
                                 remaining < 0 ? "transparent" : "transparent",
-                              color: remaining < 0 ? "red" : "#19F26F",
+                              color: remaining < 0 ? "red" : "white",
                               borderRadius: "10px",
-                              padding: "10px 10px",
-                              fontSize: "12px",
-                              border:
-                                remaining < 0
-                                  ? "1px solid red"
-                                  : "1px solid #19F26F",
+
+                              fontSize: "15px",
+                              fontWeight: "400",
                             }}
                           >
                             {remaining === null
                               ? null
-                              : `${(+remaining).toFixed(9)} ETH`}{" "}
+                              : `${(+remaining).toFixed(5)} `}
                           </div>
                         </td>
                       </tr>
