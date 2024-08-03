@@ -56,14 +56,7 @@
   text-shadow: none;
 }
 
-.ChainDropdownMain {
-  position: absolute;
-  top: 65px;
-  right: 200px;
-  /* cursor: pointer; */
-  padding: 30px 0px;
-  width: 200px;
-}
+
 .connectchain {
   position: relative;
   overflow: hidden;
@@ -127,6 +120,16 @@
   align-items: center;
   justify-content: center;
 }
+
+.ChainDropdownMain {
+  position: absolute;
+  top: 65px;
+  right: 200px;
+  /* cursor: pointer; */
+  padding: 30px 0px;
+  width: 200px;
+}
+
 .dropdown {
   display: flex;
   background: #1c1b1b85;
@@ -153,7 +156,7 @@
   border-right: none;
   background: none;
 
-  font-size: 17px;
+  font-size: 15px;
   color: white;
   cursor: pointer;
   padding: 15px 20px;
@@ -218,6 +221,16 @@
     right: 2%;
     font-size: 8px !important;
   }
+
+  .ChainDropdownMain{
+    top: 50px;
+    right: 12%;
+    width: 150px;
+  }
+
+  .networkoption{
+    font-size: 10px;
+  }
 }
 
 @media screen and (max-width:600px) {
@@ -229,24 +242,29 @@
 }
 
 @media only screen and (max-width: 525px) {
-  .ChainDropdownMain {
-    right: 30px;
-  }
+
+
+.networkoption{
+  padding: 10px;
+
+}
 
   .connectaccount{
     padding: 4px 10px;
   }
-  /* .CMain {
-    position: relative;
-    left: -7px;
-  } */
 
-  .connectchain span {
-    width: 70px;
-    font-size: 10px;
-  }
   .connectchain {
-    display: none;
+    font-size: 8px;
+    padding: 9px 5px;
+    justify-content: center;
+  }
+
+  .logo{
+    width: 8px;
+  }
+
+  .dropdown{
+    width: 150px;
   }
 }
 
@@ -259,13 +277,9 @@
 
   .connectchain {
     /* visibility: hidden; */
-    width: 105px !important ;
-    font-size: 10px !important;
-    padding: 10px 0px !important;
   }
 
   .connectchain span {
-    font-size: 10px !important;
   }
 }
 
@@ -284,6 +298,20 @@
     padding: 5px 12px;
     border-radius: 18px;
     font-size: 8px;
+  }
+
+  .connectchain {
+    font-size: 6px;
+    padding: 9px 3px;
+    justify-content: center;
+  }
+
+  .logo{
+    width: 5px;
+  }
+  .connectaccount{
+    font-size: 6px;
+    padding: 8px 8px;
   }
 }
 

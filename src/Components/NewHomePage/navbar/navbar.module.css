@@ -276,27 +276,25 @@
     justify-content: space-around;
   }
 
-  .navFixed2{
+  .navFixed2 {
     padding-left: 1rem;
     padding-right: 1rem;
   }
-  .toggle{
-    --width: 70px;
+  .toggle {
+    --width: 90px;
   }
-  
-.toggle .labels::after {
-  right: 10px;
-  top: 1.2px;
-  font-size: 8px;
 
-}
+  .toggle .labels::after {
+    right: 16px;
+    top: 3.2px;
+    font-size: 10px;
+  }
 
-.toggle .labels::before {
-  top: 1.2px;
-  left: 10px;
-  font-size: 8px;
-
-}
+  .toggle .labels::before {
+    right: 39px;
+    top: 2.2px;
+    font-size: 10px;
+  }
 }
 @media only screen and (max-width: 600px) {
   .launchapp {
@@ -346,9 +344,6 @@
     margin: 0px !important;
     justify-content: space-between;
   }
-  .toggle {
-    display: none;
-  }
   .smartlogportal {
     height: auto;
     width: 200px;
@@ -361,6 +356,22 @@
   .connectwallet {
     padding: 12px 27px;
     font-size: 10px;
+  }
+  .toggle {
+    --width: 70px;
+    display: none;
+  }
+
+  .toggle .labels::after {
+    right: 10px;
+    top: 1px;
+    font-size: 8px;
+  }
+
+  .toggle .labels::before {
+    right: 39px;
+    top: 1px;
+    font-size: 8px;
   }
 }
 
@@ -400,9 +411,7 @@
     height: 60px !important;
     width: 180px !important;
   }
-  .toggle {
-    display: none;
-  }
+
   .divtoflexlogoconnectwallet {
     margin: 10px !important;
   }
@@ -412,12 +421,13 @@
     cursor: pointer;
     margin-left: 1rem;
   }
+
+  .logo{
+    margin-left: -15px;
+  }
 }
 @media only screen and (max-width: 325px) {
   #changeMode {
     margin-left: 0rem !important;
-  }
-  .toggle {
-    display: none;
   }
 }
