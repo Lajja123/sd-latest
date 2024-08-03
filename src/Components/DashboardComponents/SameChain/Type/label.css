@@ -10,7 +10,7 @@
 }
 .ant-modal .ant-modal-content {
   background: rgba(80, 3, 132, 0.61) !important;
-  padding: 60px 25px !important;
+  /* padding: 60px 25px !important; */
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;
   backdrop-filter: blur(30.5px) !important;
 }
@@ -25,6 +25,11 @@
 }
 .ant-modal .ant-modal-title {
   color: white;
+  background: linear-gradient(
+    160deg,
+    rgba(24, 26, 83, 1) 47%,
+    rgba(46, 13, 90, 1) 100%
+  );
   font-size: 20px !important;
   letter-spacing: 1px;
   margin-bottom: 15px !important;

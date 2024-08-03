@@ -409,14 +409,7 @@ function Textify({
               ) : null}
             </div>
           )}
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "right",
-              paddingRight: "25px",
-              paddingBottom: "10px",
-            }}
-          ></div>
+         
         </div>
       </div>
     </div>

@@ -345,13 +345,13 @@ function SendEth({ activeTab, listData, setListData }) {
                           className={textStyle.fontsize12px}
                           style={{ letterSpacing: "1px", padding: "15px" }}
                         >
-                          Amount(ETH)
+                          Amount
                         </th>
                         <th
                           className={textStyle.fontsize12px}
                           style={{ letterSpacing: "1px", padding: "15px" }}
                         >
-                          Amount(USD)
+                          Amount
                         </th>
 
                         {/* <th
@@ -435,7 +435,7 @@ function SendEth({ activeTab, listData, setListData }) {
                                 >
                                   {`${(+ethers.utils.formatEther(
                                     data.value
-                                  )).toFixed(5)} `}
+                                  )).toFixed(5)} ETH`}
                                 </div>
                               </td>
                               <td
@@ -457,10 +457,11 @@ function SendEth({ activeTab, listData, setListData }) {
                                     letterSpacing: "1px",
                                   }}
                                 >
-                                  {`${(
-                                    ethers.utils.formatUnits(data.value, 18) *
-                                    ethToUsdExchangeRate
-                                  ).toFixed(2)} $`}
+                                  {`~$${(
+    ethers.utils.formatUnits(data.value, 18) * 
+    ethToUsdExchangeRate
+).toFixed(2)}`}
+
                                 </div>
                               </td>
 
@@ -530,10 +531,10 @@ function SendEth({ activeTab, listData, setListData }) {
                         }}
                       >
                         <th className={textStyle.accountsummaryth}>
-                          Total Amount(ETH)
+                          Total Amount
                         </th>
                         <th className={textStyle.accountsummaryth}>
-                          Total Amount(USD)
+                          Total Amount
                         </th>
                         <th className={textStyle.accountsummaryth}>
                           Your Balance
@@ -545,7 +546,7 @@ function SendEth({ activeTab, listData, setListData }) {
                     </thead>
                     <tbody className={textStyle.tbodytextifyaccsum}>
                       <tr style={{ borderBottom: "1px solid #ffffff61" }}>
-                        <td id={textStyle.fontsize10px}>
+                        <td id={textStyle.fontsize10px} style={{ padding: "15px",}}>
                           <div
                             id="font-size-10px"
                             className={textStyle.textAccSum}
@@ -564,11 +565,11 @@ function SendEth({ activeTab, listData, setListData }) {
                             {totalEth
                               ? `${(+ethers.utils.formatEther(
                                   totalEth
-                                )).toFixed(5)} `
+                                )).toFixed(5)} ETH `
                               : null}
                           </div>
                         </td>
-                        <td id={textStyle.fontsize10px}>
+                        <td id={textStyle.fontsize10px} style={{ padding: "15px",}}>
                           {" "}
                           <div
                             id={textStyle.fontsize10px}
@@ -585,14 +586,14 @@ function SendEth({ activeTab, listData, setListData }) {
                             }}
                           >
                             {totalEth
-                              ? `${(
+                              ? `~$${(
                                   ethers.utils.formatUnits(totalEth, 18) *
                                   ethToUsdExchangeRate
-                                ).toFixed(2)} $`
+                                ).toFixed(2)} `
                               : null}
                           </div>
                         </td>
-                        <td id={textStyle.fontsize10px}>
+                        <td id={textStyle.fontsize10px} style={{ padding: "15px",}}>
                           <div
                             id="font-size-10px"
                             style={{
@@ -608,12 +609,13 @@ function SendEth({ activeTab, listData, setListData }) {
                             {ethBalance
                               ? `${(+ethers.utils.formatEther(
                                   ethBalance
-                                )).toFixed(5)} `
+                                )).toFixed(5)} ETH `
                               : null}
                           </div>
                         </td>
                         <td
                           id={textStyle.fontsize10px}
+                          style={{ padding: "15px",}}
                           className={`showtoken-remaining-balance ${
                             remaining < 0 ? "showtoken-remaining-negative" : ""
                           }`}
@@ -635,7 +637,7 @@ function SendEth({ activeTab, listData, setListData }) {
                           >
                             {remaining === null
                               ? null
-                              : `${(+remaining).toFixed(5)} `}
+                              : `${(+remaining).toFixed(5)}ETH `}
                           </div>
                         </td>
                       </tr>

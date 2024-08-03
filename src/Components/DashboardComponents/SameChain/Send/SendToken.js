@@ -522,7 +522,7 @@ function SendToken({ activeTab, listData, setListData }) {
                                   padding: "15px",
                                 }}
                               >
-                                Amount({tokenDetails.symbol})
+                                Amount
                               </th>
                               {/* <th
                       className={textStyle.fontsize12px}
@@ -597,41 +597,17 @@ function SendToken({ activeTab, listData, setListData }) {
                                       margin: "0 auto",
                                       background: "transparent",
                                       color: "white",
-
                                       borderRadius: "10px",
-
+                                      opacity: "0.4",
                                       fontSize: "15px",
                                       letterSpacing: "1px",
                                     }}
                                   >
-                                    {(+ethers.utils.formatUnits(
-                                      data.value,
-                                      tokenDetails.decimal
-                                    )).toFixed(4)}
+                                    {`${(+ethers.utils.formatUnits(
+                                      data.value
+                                    )).toFixed(4)} HIVE`}
                                   </div>
                                 </td>
-                                {/* <td id="font-size-10px" style={{ padding: "8px" }}>
-                            <div
-                              id="font-size-10px"
-                              style={{
-                                width: "fit-content",
-                                margin: "0 auto",
-                                background:
-                                  "linear-gradient(90deg, #00d2ff 0%, #3a47d5 100%)",
-                                color: "white",
-                                borderRadius: "10px",
-                                padding: "10px 10px",
-                                fontSize: "12px",
-                                letterSpacing: "1px",
-                              }}
-                            >
-                              {`${(
-                                ethers.utils.formatUnits(data.value, 18) *
-                                ethToUsdExchangeRate
-                              ).toFixed(2)} $`}
-                            </div>
-                          </td> */}
-
                                 <td
                                   style={{
                                     letterSpacing: "1px",
@@ -671,7 +647,7 @@ function SendToken({ activeTab, listData, setListData }) {
                           <thead className={textStyle.tableheadertextlist}>
                             <tr style={{ width: "100%", margin: "0 auto" }}>
                               <th className={textStyle.accountsummaryth}>
-                                Total Amount({tokenDetails.symbol})
+                                Total Amount
                               </th>
                               {/* <th className={textStyle.accountsummaryth}>
                      Total Amount(USD)
@@ -693,17 +669,18 @@ function SendToken({ activeTab, listData, setListData }) {
                                     width: "fit-content",
                                     margin: "0 auto",
                                     color: "white",
+                                    padding: "15px",
                                     borderRadius: "10px",
-
+                                    opacity: "0.4",
                                     letterSpacing: "1px",
                                   }}
                                   // className={textStyle.textAccSum}
                                 >
                                   {totalERC20
-                                    ? (+ethers.utils.formatUnits(
+                                    ? `${(+ethers.utils.formatUnits(
                                         totalERC20,
                                         tokenDetails.decimal
-                                      )).toFixed(4)
+                                      )).toFixed(4)} HIVE`
                                     : null}{" "}
                                 </div>
                               </td>
@@ -740,7 +717,7 @@ function SendToken({ activeTab, listData, setListData }) {
                                     margin: "0 auto",
                                     color: "white",
                                     borderRadius: "10px",
-
+                                    padding: "15px",
                                     letterSpacing: "1px",
                                   }}
                                 >
@@ -771,7 +748,7 @@ function SendToken({ activeTab, listData, setListData }) {
                                     fontWeight: "300",
                                     color: remaining < 0 ? "red" : "white",
                                     borderRadius: "10px",
-
+                                    padding: "15px",
                                     fontSize: "15px",
                                   }}
                                 >

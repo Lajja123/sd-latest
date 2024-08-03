@@ -54,12 +54,14 @@
 
 .deletebutton:hover {
   cursor: pointer;
+  opacity: 1;
   /* border-color: red; */
   /* background-color: rgba(0, 213, 255, 0.019); */
 }
 
 .deletebutton {
   color: white;
+  opacity: 0.4;
   font-size: 20px;
   background-color: transparent;
   border: none;

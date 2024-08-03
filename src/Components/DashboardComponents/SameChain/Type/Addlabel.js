@@ -41,7 +41,7 @@ const AddLabel = ({ labels, setLabelValues, onAddLabel, index, data }) => {
         onClick={() => setIsModalVisible(true)}
       />
       <Modal
-        // title="Add Label"
+        title="Enter Label"
         visible={isModalVisible}
         onCancel={() => setIsModalVisible(false)}
         footer={[

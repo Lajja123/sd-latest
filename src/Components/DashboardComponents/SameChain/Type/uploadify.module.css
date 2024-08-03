@@ -123,6 +123,10 @@
   color: #fff;
   font-size: 20px;
   margin-left: 20px;
+  opacity: 0.4;
+}
+.deletebutton:hover{
+  opacity: 1;
 }
 .eachinputofcreatelist {
   border-radius: 5px;
