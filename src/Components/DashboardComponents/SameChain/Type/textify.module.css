@@ -266,8 +266,7 @@
 .tabletextlist {
   width: 100%;
  
-  border-radius: 20px;
-  overflow: hidden;
+
 }
 .tabletextlist .tableTr {
   font-size: 16px;
@@ -404,25 +403,30 @@
     rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
     rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
 }
-
 .scrollabletablecontainer {
   border: 1px solid #8d37fb;
-  border-radius: 20px;
+border-radius: 20px ;
   margin: 50px 20px;
-  max-height: 280px;
   overflow: auto;
 }
-.scrollabletablecontainer::-webkit-scrollbar {
+.scrollabletablecontainerTbody {
+
+  
+ max-height: 315px;
+  overflow: auto;
+  scrollbar-width: none;
+}
+.scrollabletablecontainerTbody::-webkit-scrollbar {
   width: 3px;
   margin-right: 0;
 }
-.scrollabletablecontainer::-webkit-scrollbar {
+.scrollabletablecontainerTbody::-webkit-scrollbar {
   height: 3px; /* Set the height of the horizontal scrollbar */
 }
-.scrollabletablecontainer::-webkit-scrollbar-thumb {
+.scrollabletablecontainerTbody::-webkit-scrollbar-thumb {
   background: #ffffff;
 }
-.scrollabletablecontainer::-webkit-scrollbar-thumb:hover {
+.scrollabletablecontainerTbody::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
 #tableresponsive {

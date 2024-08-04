@@ -328,7 +328,7 @@
   overflow: auto;
 }
 
-.scrollabletablecontainer {
+.scrollabletablecontainerTbody {
   margin: 50px 20px;
 
   overflow: auto;
@@ -345,15 +345,15 @@
   scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
 }
 
-.scrollabletablecontainer::-webkit-scrollbar {
+.scrollabletablecontainerTbody::-webkit-scrollbar {
   width: var(--sb-size);
 }
 
-.scrollabletablecontainer::-webkit-scrollbar-track {
+.scrollabletablecontainerTbody::-webkit-scrollbar-track {
   background: var(--sb-track-color);
 }
 
-.scrollabletablecontainer::-webkit-scrollbar-thumb {
+.scrollabletablecontainerTbody::-webkit-scrollbar-thumb {
   background: var(--sb-thumb-color);
   border-radius: 10px;
 }

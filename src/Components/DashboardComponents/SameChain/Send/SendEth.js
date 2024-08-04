@@ -319,9 +319,14 @@ function SendEth({ activeTab, listData, setListData }) {
                 </div>
 
                 <div className={textStyle.scrollabletablecontainer}>
+               
                   <table
                     className={textStyle.tabletextlist}
-                    style={{ padding: "30px 20px" }}
+                    style={{
+                      padding: "30px 20px",
+                      borderCollapse: "collapse",
+                      width: "100%",
+                    }}
                   >
                     <thead className={textStyle.tableheadertextlist}>
                       <tr className={textStyle.tableTr}>
@@ -368,104 +373,113 @@ function SendEth({ activeTab, listData, setListData }) {
                         </th>
                       </tr>
                     </thead>
-                    <tbody>
-                      {listData.length > 0
-                        ? listData.map((data, index) => (
-                            <tr className={textStyle.tableTr} key={index}>
-                              <td
-                                id={textStyle.fontsize10px}
-                                style={{
-                                  letterSpacing: "1px",
-                                  padding: "15px",
-                                }}
-                              >
-                                {/* {data.address.toUpperCase()} */}
-                                {data.address.substr(0, 3)}...
-                                {data.address.substr(-5)}
-                              </td>
-                              <td
-                                id={textStyle.fontsize10px}
-                                style={{
-                                  letterSpacing: "1px",
-                                  padding: "15px",
-                                }}
-                              >
-                                {data.label ? (
-                                  data.label
-                                ) : (
-                                  <>
-                                    <AddLabel
-                                      labels={labels}
-                                      setLabelValues={setLabelValues}
-                                      onAddLabel={onAddLabel}
-                                      index={0} // Example index, you can dynamically pass different indexes
-                                      data={data}
-                                    />
-                                    {errorMessage && (
-                                      <p
-                                        style={{
-                                          color: "red",
-                                          margin: "0px",
-                                          fontSize: "13px",
-                                        }}
-                                      >
-                                        {errorMessage}
-                                      </p>
-                                    )}
-                                  </>
-                                )}
-                              </td>
-                              <td
-                                id={textStyle.fontsize10px}
-                                style={{ padding: "15px" }}
-                              >
-                                <div
+                  </table>
+                  <div className={textStyle.scrollabletablecontainerTbody}>
+                    <table
+                      className={textStyle.tabletextlist}
+                      style={{
+                        padding: "30px 20px",
+                        borderCollapse: "collapse",
+                        width: "100%",
+                      }}
+                    >
+                      <tbody>
+                        {listData.length > 0
+                          ? listData.map((data, index) => (
+                              <tr className={textStyle.tableTr} key={index} style={{borderBottom:"1px solid #8d37fb"}}>
+                                <td
                                   id={textStyle.fontsize10px}
                                   style={{
-                                    width: "fit-content",
-                                    margin: "0 auto",
-                                    background: "transparent",
-                                    color: "white",
-                                    borderRadius: "10px",
-
-                                    fontWeight: "300",
-                                    fontSize: "15px",
                                     letterSpacing: "1px",
+                                    padding: "15px",
                                   }}
                                 >
-                                  {`${(+ethers.utils.formatEther(
-                                    data.value
-                                  )).toFixed(5)} ETH`}
-                                </div>
-                              </td>
-                              <td
-                                id="font-size-10px"
-                                style={{ padding: "15px" }}
-                              >
-                                <div
-                                  id="font-size-10px"
+                                  {/* {data.address.toUpperCase()} */}
+                                  {data.address.substr(0, 3)}...
+                                  {data.address.substr(-5)}
+                                </td>
+                                <td
+                                  id={textStyle.fontsize10px}
                                   style={{
-                                    width: "fit-content",
-                                    margin: "0 auto",
-                                    background: "transparent",
-                                    color: "white",
-
-                                    borderRadius: "10px",
-                                    opacity: "0.4",
-                                    fontSize: "15px",
-                                    fontWeight: "300",
                                     letterSpacing: "1px",
+                                    padding: "15px",
                                   }}
                                 >
-                                  {`~$${(
-    ethers.utils.formatUnits(data.value, 18) * 
-    ethToUsdExchangeRate
-).toFixed(2)}`}
+                                  {data.label ? (
+                                    data.label
+                                  ) : (
+                                    <>
+                                      <AddLabel
+                                        labels={labels}
+                                        setLabelValues={setLabelValues}
+                                        onAddLabel={onAddLabel}
+                                        index={0} // Example index, you can dynamically pass different indexes
+                                        data={data}
+                                      />
+                                      {errorMessage && (
+                                        <p
+                                          style={{
+                                            color: "red",
+                                            margin: "0px",
+                                            fontSize: "13px",
+                                          }}
+                                        >
+                                          {errorMessage}
+                                        </p>
+                                      )}
+                                    </>
+                                  )}
+                                </td>
+                                <td
+                                  id={textStyle.fontsize10px}
+                                  style={{ padding: "15px" }}
+                                >
+                                  <div
+                                    id={textStyle.fontsize10px}
+                                    style={{
+                                      width: "fit-content",
+                                      margin: "0 auto",
+                                      background: "transparent",
+                                      color: "white",
+                                      borderRadius: "10px",
 
-                                </div>
-                              </td>
+                                      fontWeight: "300",
+                                      fontSize: "15px",
+                                      letterSpacing: "1px",
+                                    }}
+                                  >
+                                    {`${(+ethers.utils.formatEther(
+                                      data.value
+                                    )).toFixed(5)} ETH`}
+                                  </div>
+                                </td>
+                                <td
+                                  id="font-size-10px"
+                                  style={{ padding: "15px" }}
+                                >
+                                  <div
+                                    id="font-size-10px"
+                                    style={{
+                                      width: "fit-content",
+                                      margin: "0 auto",
+                                      background: "transparent",
+                                      color: "white",
 
-                              {/* <td style={{ letterSpacing: "1px", padding: "8px" }}>
+                                      borderRadius: "10px",
+                                      opacity: "0.4",
+                                      fontSize: "15px",
+                                      fontWeight: "300",
+                                      letterSpacing: "1px",
+                                    }}
+                                  >
+                                    {`~$${(
+                                      ethers.utils.formatUnits(data.value, 18) *
+                                      ethToUsdExchangeRate
+                                    ).toFixed(2)}`}
+                                  </div>
+                                </td>
+
+                                {/* <td style={{ letterSpacing: "1px", padding: "8px" }}>
                             <span
                               className={textStyle.warningIcon}
                               title="This is a contract address"
@@ -476,24 +490,26 @@ function SendEth({ activeTab, listData, setListData }) {
                             </span>
                           </td> */}
 
-                              <td
-                                style={{
-                                  letterSpacing: "1px",
-                                  padding: "15px",
-                                }}
-                              >
-                                <button
-                                  className={textStyle.deletebutton}
-                                  onClick={() => handleDeleteRow(index)}
+                                <td
+                                  style={{
+                                    letterSpacing: "1px",
+                                    padding: "15px",
+                                  }}
                                 >
-                                  <FontAwesomeIcon icon={faTrashAlt} />
-                                </button>
-                              </td>
-                            </tr>
-                          ))
-                        : null}
-                    </tbody>
-                  </table>
+                                  <button
+                                    className={textStyle.deletebutton}
+                                    onClick={() => handleDeleteRow(index)}
+                                  >
+                                    <FontAwesomeIcon icon={faTrashAlt} />
+                                  </button>
+                                </td>
+                              </tr>
+                            ))
+                          : null}
+                      </tbody>
+                    </table>
+                  </div>
+               
                 </div>
               </div>
 

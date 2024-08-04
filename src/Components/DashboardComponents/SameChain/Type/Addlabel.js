@@ -2,11 +2,38 @@ import React, { useState } from "react";
 import { Modal, Button } from "antd";
 import "antd/dist/reset.css";
 import { PlusOutlined } from "@ant-design/icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../Type/label.css";
+import {
+  faArrowDown,
+  faArrowUp,
+  faCopy,
+  faMagnifyingGlass,
+  faCircleCheck,
+} from "@fortawesome/free-solid-svg-icons";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const AddLabel = ({ labels, setLabelValues, onAddLabel, index, data }) => {
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
+  const [isCopied, setIsCopied] = useState(false);
+
+
+  const copyToClipboard = (text) => {
+    navigator.clipboard.writeText(text).then(
+      () => {
+        setIsCopied(true);
+        setTimeout(() => {
+          setIsCopied(false);
+        }, 2000); // Reset the copy status after 2 seconds
+        toast.success("Token Address Copied Successfully!");
+      },
+      (err) => {
+        console.error("Unable to copy to clipboard:", err);
+      }
+    );
+  };
 
   const handleInputChange = (e) => {
     const inputValue = e.target.value;
@@ -65,7 +92,7 @@ const AddLabel = ({ labels, setLabelValues, onAddLabel, index, data }) => {
             color: "white",
           }}
         >
-          <strong>Receiver Address:</strong>
+          <strong style={{fontSize:"15px"}}>Receiver Address:</strong>
           <div
             style={{
               color: "white",
@@ -73,8 +100,13 @@ const AddLabel = ({ labels, setLabelValues, onAddLabel, index, data }) => {
               fontWeight: "500",
             }}
           >
-            {data.address.substr(0, 10)}...
-            {data.address.substr(-10)}
+            {data.address.substr(0, 15)}...
+            {data.address.substr(-15)}
+            <FontAwesomeIcon
+                                className="copyicon"
+                                onClick={() => copyToClipboard(data.address)}
+                                icon={faCopy}
+                              />
           </div>
         </div>
         <div
@@ -87,7 +119,7 @@ const AddLabel = ({ labels, setLabelValues, onAddLabel, index, data }) => {
             color: "white",
           }}
         >
-          <strong>Add Label: </strong>{" "}
+          <strong style={{fontSize:"15px"}}>Add Label: </strong>{" "}
           <input
             type="text"
             value={labels[index] ? labels[index] : ""}
@@ -95,7 +127,7 @@ const AddLabel = ({ labels, setLabelValues, onAddLabel, index, data }) => {
               borderRadius: "8px",
               padding: "10px",
               color: "white",
-              width: "66%",
+              width: "67%",
               border: "1px solid white",
               background: "transparent",
             }}
