@@ -176,7 +176,7 @@ function SendToken({ activeTab, listData, setListData }) {
   const closeErrorModal = () => {
     // console.log("clicked");
     setErrorModalIsOpen(false);
-    setErrorMessage("");
+    setErrorMessage(false);
     // console.log("modal open");
   };
 
@@ -197,6 +197,8 @@ function SendToken({ activeTab, listData, setListData }) {
     if (isValidInput || inputValue === "") {
       setCustomTokenAddress(inputValue);
     }
+    setErrorMessage("");
+  setErroroccured(false);
   };
 
   const onAddLabel = async (index, recipientAddress) => {
@@ -415,39 +417,38 @@ function SendToken({ activeTab, listData, setListData }) {
                   </div>
                   <div className={textStyle.scrollabletablecontainer}>
                     <table className={textStyle.tabletextlist}>
-                     
                       <thead className={textStyle.tableheadertextlist}>
-                            <tr>
-                              <th
-                                className={textStyle.fontsize12px}
-                                style={{
-                                  letterSpacing: "1px",
-                                  padding: "15px",
-                                  textWrap: "nowrap",
-                                }}
-                              >
-                                Name
-                              </th>
-                              <th
-                                className={textStyle.fontsize12px}
-                                style={{
-                                  letterSpacing: "1px",
-                                  padding: "15px",
-                                }}
-                              >
-                                Symbol
-                              </th>
-                              <th
-                                className={textStyle.fontsize12px}
-                                style={{
-                                  letterSpacing: "1px",
-                                  padding: "15px",
-                                }}
-                              >
-                                Balance
-                             </th>  
-                            </tr>
-                          </thead>
+                        <tr>
+                          <th
+                            className={textStyle.fontsize12px}
+                            style={{
+                              letterSpacing: "1px",
+                              padding: "15px",
+                              textWrap: "nowrap",
+                            }}
+                          >
+                            Name
+                          </th>
+                          <th
+                            className={textStyle.fontsize12px}
+                            style={{
+                              letterSpacing: "1px",
+                              padding: "15px",
+                            }}
+                          >
+                            Symbol
+                          </th>
+                          <th
+                            className={textStyle.fontsize12px}
+                            style={{
+                              letterSpacing: "1px",
+                              padding: "15px",
+                            }}
+                          >
+                            Balance
+                          </th>
+                        </tr>
+                      </thead>
                       <tbody>
                         <tr className={textStyle.tableTr}>
                           <td
@@ -493,145 +494,143 @@ function SendToken({ activeTab, listData, setListData }) {
                         </h2>
                       </div>
                       <div className={textStyle.tableWrapper}>
-
-                      <div className={textStyle.scrollabletablecontainer}>
-                        <table
-                          className={textStyle.tabletextlist}
-                          style={{ padding: "30px 20px" }}
-                        >
-                          <thead className={textStyle.tableheadertextlist}>
-                            <tr>
-                              <th
-                                className={textStyle.fontsize12px}
-                                style={{
-                                  letterSpacing: "1px",
-                                  padding: "15px",
-                                  textWrap: "nowrap",
-                                }}
-                              >
-                                Receiver Address
-                              </th>
-                              <th
-                                className={textStyle.fontsize12px}
-                                style={{
-                                  letterSpacing: "1px",
-                                  padding: "15px",
-                                }}
-                              >
-                                Label
-                              </th>
-                              <th
-                                className={textStyle.fontsize12px}
-                                style={{
-                                  letterSpacing: "1px",
-                                  padding: "15px",
-                                }}
-                              >
-                                Amount
-                              </th>
-                              {/* <th
+                        <div className={textStyle.scrollabletablecontainer}>
+                          <table
+                            className={textStyle.tabletextlist}
+                            style={{ padding: "30px 20px" }}
+                          >
+                            <thead className={textStyle.tableheadertextlist}>
+                              <tr>
+                                <th
+                                  className={textStyle.fontsize12px}
+                                  style={{
+                                    letterSpacing: "1px",
+                                    padding: "15px",
+                                    textWrap: "nowrap",
+                                  }}
+                                >
+                                  Receiver Address
+                                </th>
+                                <th
+                                  className={textStyle.fontsize12px}
+                                  style={{
+                                    letterSpacing: "1px",
+                                    padding: "15px",
+                                  }}
+                                >
+                                  Label
+                                </th>
+                                <th
+                                  className={textStyle.fontsize12px}
+                                  style={{
+                                    letterSpacing: "1px",
+                                    padding: "15px",
+                                  }}
+                                >
+                                  Amount
+                                </th>
+                                {/* <th
                       className={textStyle.fontsize12px}
                       style={{ letterSpacing: "1px", padding: "8px" }}
                     >
                       Amount(USD)
                     </th> */}
-                              <th
-                                className={textStyle.fontsize12px}
-                                style={{
-                                  letterSpacing: "1px",
-                                  padding: "15px",
-                                }}
-                              >
-                                Action
-                              </th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            {listData.map((data, index) => (
-                              <tr key={index}>
-                                <td
-                                  id={textStyle.fontsize10px}
+                                <th
+                                  className={textStyle.fontsize12px}
                                   style={{
                                     letterSpacing: "1px",
                                     padding: "15px",
                                   }}
                                 >
-                                  {data.address.substr(0, 3)}...
-                                  {data.address.substr(-5)}
-                                </td>
-                                <td
-                                  id={textStyle.fontsize10px}
-                                  style={{
-                                    letterSpacing: "1px",
-                                    padding: "15px",
-                                  }}
-                                >
-                                  {data.label ? (
-                                    data.label
-                                  ) : (
-                                    <>
-                                      <AddLabel
-                                        labels={labels}
-                                        setLabelValues={setLabelValues}
-                                        onAddLabel={onAddLabel}
-                                        index={0} // Example index, you can dynamically pass different indexes
-                                        data={data}
-                                      />
-                                      {errorMessage && (
-                                        <p
-                                          style={{
-                                            color: "red",
-                                            margin: "0px",
-                                            fontSize: "13px",
-                                          }}
-                                        >
-                                          {errorMessage}
-                                        </p>
-                                      )}
-                                    </>
-                                  )}
-                                </td>
-                                <td
-                                  id={textStyle.fontsize10px}
-                                  style={{ padding: "15px" }}
-                                >
-                                  <div
+                                  Action
+                                </th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              {listData.map((data, index) => (
+                                <tr key={index}>
+                                  <td
                                     id={textStyle.fontsize10px}
                                     style={{
-                                      width: "fit-content",
-                                      margin: "0 auto",
-                                      background: "transparent",
-                                      color: "white",
-                                      borderRadius: "10px",
-                                      opacity: "0.4",
-                                      fontSize: "15px",
                                       letterSpacing: "1px",
+                                      padding: "15px",
                                     }}
                                   >
-                                    {`${(+ethers.utils.formatUnits(
-                                      data.value
-                                    )).toFixed(4)} HIVE`}
-                                  </div>
-                                </td>
-                                <td
-                                  style={{
-                                    letterSpacing: "1px",
-                                    padding: "15px",
-                                  }}
-                                >
-                                  <button
-                                    className={textStyle.deletebutton}
-                                    onClick={() => handleDeleteRow(index)}
+                                    {data.address.substr(0, 3)}...
+                                    {data.address.substr(-5)}
+                                  </td>
+                                  <td
+                                    id={textStyle.fontsize10px}
+                                    style={{
+                                      letterSpacing: "1px",
+                                      padding: "15px",
+                                    }}
                                   >
-                                    <FontAwesomeIcon icon={faTrashAlt} />
-                                  </button>
-                                </td>
-                              </tr>
-                            ))}
-                          </tbody>
-                        </table>
-                      </div>
-
+                                    {data.label ? (
+                                      data.label
+                                    ) : (
+                                      <>
+                                        <AddLabel
+                                          labels={labels}
+                                          setLabelValues={setLabelValues}
+                                          onAddLabel={onAddLabel}
+                                          index={0} // Example index, you can dynamically pass different indexes
+                                          data={data}
+                                        />
+                                        {errorMessage && (
+                                          <p
+                                            style={{
+                                              color: "red",
+                                              margin: "0px",
+                                              fontSize: "13px",
+                                            }}
+                                          >
+                                            {errorMessage}
+                                          </p>
+                                        )}
+                                      </>
+                                    )}
+                                  </td>
+                                  <td
+                                    id={textStyle.fontsize10px}
+                                    style={{ padding: "15px" }}
+                                  >
+                                    <div
+                                      id={textStyle.fontsize10px}
+                                      style={{
+                                        width: "fit-content",
+                                        margin: "0 auto",
+                                        background: "transparent",
+                                        color: "white",
+                                        borderRadius: "10px",
+                                        opacity: "0.4",
+                                        fontSize: "15px",
+                                        letterSpacing: "1px",
+                                      }}
+                                    >
+                                      {`${(+ethers.utils.formatUnits(
+                                        data.value
+                                      )).toFixed(4)} HIVE`}
+                                    </div>
+                                  </td>
+                                  <td
+                                    style={{
+                                      letterSpacing: "1px",
+                                      padding: "15px",
+                                    }}
+                                  >
+                                    <button
+                                      className={textStyle.deletebutton}
+                                      onClick={() => handleDeleteRow(index)}
+                                    >
+                                      <FontAwesomeIcon icon={faTrashAlt} />
+                                    </button>
+                                  </td>
+                                </tr>
+                              ))}
+                            </tbody>
+                          </table>
+                        </div>
                       </div>
                     </div>
                     <div style={{ paddingBottom: "30px" }}>
@@ -647,7 +646,10 @@ function SendToken({ activeTab, listData, setListData }) {
                           Account Summary
                         </h2>
                       </div>
-                      <div id={textStyle.tableresponsive}>
+                      <div
+                        id={textStyle.tableresponsive}
+                        className={textStyle.scrollabletablecontainer}
+                      >
                         <table
                           className={`${textStyle["showtokentablesametext"]} ${textStyle["tabletextlist"]}`}
                         >

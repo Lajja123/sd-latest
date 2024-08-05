@@ -307,6 +307,7 @@
   border-radius: 20px;
   margin: 50px 20px;
   overflow: auto;
+  scrollbar-width: none;
 }
 .scrollabletablecontainerTbody {
   max-height: 315px;
