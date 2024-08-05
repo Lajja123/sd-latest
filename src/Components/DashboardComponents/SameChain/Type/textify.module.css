@@ -405,10 +405,21 @@
     rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
 }
 
-.scrollabletablecontainer {
-  border: 1px solid #8d37fb;
-  border-radius: 20px;
+.tableWrapper {
+  border-radius: 20px; /* Adjust border-radius as needed */
+  overflow: hidden;
+  position: relative;
   margin: 50px 20px;
+  border: 1px solid #8d37fb;
+
+
+}
+
+
+.scrollabletablecontainer {
+  /* border: 1px solid #8d37fb; */
+  /* border-radius: 20px; */
+  /* margin: 50px 20px; */
   max-height: 280px;
   overflow: auto;
 }
@@ -425,11 +436,11 @@
 .scrollabletablecontainer::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
-#tableresponsive {
+/* #tableresponsive {
   margin: 50px 20px;
   border: 1px solid #8d37fb;
   border-radius: 20px;
-}
+} */
 
 .tablecontainer table {
   width: 100%;
@@ -637,7 +648,7 @@
   );
   font-size: 12px;
 
-  padding: 5px 0;
+  /* padding: 5px 0; */
 }
 
 .popupforpayment {
@@ -727,10 +738,10 @@
     display: flex;
     justify-content: center;
   }
-  #tableresponsive {
+  /* #tableresponsive {
     overflow: visible;
     overflow-x: scroll;
-  }
+  } */
   .titleforaccountsummarytextsame h2 {
     font-size: 15px !important;
   }
@@ -892,11 +903,11 @@
     font-size: 12px !important;
   }
 
-  #tableresponsive {
+  /* #tableresponsive {
     overflow: visible;
     overflow-x: scroll;
     margin: 25px 10px;
-  }
+  } */
 
   .componentcontainerdashboard {
     margin: 20px 20px !important;
@@ -965,10 +976,14 @@
     padding: 10px 7px;
     font-size: 15px;
   }
-  .scrollabletablecontainer {
+  /* .scrollabletablecontainer {
     margin: 25px 10px;
     max-height: 280px;
     overflow: auto;
+  } */
+
+  .tableWrapper{
+    margin: 25px 10px;
   }
   .sendbutton {
     background: #0000;

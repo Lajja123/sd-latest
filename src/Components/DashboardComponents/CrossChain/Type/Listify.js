@@ -251,6 +251,7 @@ function Listify({
           Enter the Recipient Address and Token Amount{" "}
         </h2>
       </div>
+      
       <div className={listStyle.addMain}>
         <div className={listStyle.inputflexlist}>
           <label>Enter Name </label>

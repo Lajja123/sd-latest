@@ -320,7 +320,7 @@ function SendToken({ activeTab, listData, setListData }) {
           <div className={textStyle.accountsummarycreatetitle}>
             <h2
               style={{
-                padding: "10px",
+                padding: "15px",
                 fontSize: "20px",
                 margin: "0px",
                 letterSpacing: "1px",
@@ -489,6 +489,8 @@ function SendToken({ activeTab, listData, setListData }) {
                           Your Transaction Lineup
                         </h2>
                       </div>
+                      <div className={textStyle.tableWrapper}>
+
                       <div className={textStyle.scrollabletablecontainer}>
                         <table
                           className={textStyle.tabletextlist}
@@ -625,6 +627,8 @@ function SendToken({ activeTab, listData, setListData }) {
                             ))}
                           </tbody>
                         </table>
+                      </div>
+
                       </div>
                     </div>
                     <div style={{ paddingBottom: "30px" }}>

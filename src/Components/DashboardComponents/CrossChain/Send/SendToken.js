@@ -551,6 +551,8 @@ function SendToken({
                     Your Transaction Lineup
                   </h2>
                 </div>
+                <div className={textStyle.tableWrapper}>
+
                 <div className={textStyle.scrollabletablecontainer}>
                   <table
                     className={textStyle.tabletextlist}
@@ -763,6 +765,7 @@ function SendToken({
                     </tbody>
                   </table>
                 </div>
+                </div>
               </div>
             </div>
           ) : null}
@@ -781,6 +784,8 @@ function SendToken({
                   Account Summary
                 </h2>
               </div>
+              <div className={textStyle.tableWrapper}>
+
               <div
                 id={textStyle.tableresponsive}
                 className={textStyle.scrollabletablecontainer}
@@ -895,6 +900,7 @@ function SendToken({
                     </tr>
                   </tbody>
                 </table>
+              </div>
               </div>
             </div>
           ) : null}
