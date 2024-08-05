@@ -111,7 +111,6 @@
 }
 #fontsize10px {
   letter-spacing: 1px;
-
 }
 .textlistdiv textarea {
   color: aliceblue !important;
@@ -174,7 +173,6 @@
 .tabletextlist .tableTr {
   font-size: 16px;
   margin: 5px 0px;
- 
 }
 .tabletextlist .tableTh {
   font-size: 15px;
@@ -235,8 +233,6 @@
 .Overlay {
   background-color: #007bff !important;
 }
-
-
 
 .titleforlinupsametext {
   background: rgb(24, 26, 83);
@@ -308,14 +304,12 @@
 
 .scrollabletablecontainer {
   border: 1px solid #8d37fb;
-border-radius: 20px ;
+  border-radius: 20px;
   margin: 50px 20px;
   overflow: auto;
 }
 .scrollabletablecontainerTbody {
-
-  
- max-height: 315px;
+  max-height: 315px;
   overflow: auto;
   scrollbar-width: none;
 }
@@ -407,8 +401,19 @@ border-radius: 20px ;
   margin: 0 20px;
   padding: 15px 40px;
 }
+
 .textareaInput {
   outline: none;
+}
+.textareaInput::-webkit-scrollbar {
+  width: 2px;
+  margin-right: 0;
+}
+.textareaInput::-webkit-scrollbar-thumb {
+  background: #9657eb;
+}
+.textareaInput::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 
 #tableresponsive {
