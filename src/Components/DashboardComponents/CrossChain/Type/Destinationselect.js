@@ -5,6 +5,7 @@ import { Modal, Button } from "antd";
 import { driver } from "driver.js";
 import "driver.js/dist/driver.css";
 
+import { FaChevronDown } from "react-icons/fa"; 
 
 // function NestedDropdown({ options, onSelect, placeholder }) {
 //   const [isNestedOpen, setIsNestedOpen] = useState(false);
@@ -44,7 +45,6 @@ import "driver.js/dist/driver.css";
 //   );
 // }
 
-
 function DesCustomDropdown({
   options,
   onSelect,
@@ -62,7 +62,6 @@ function DesCustomDropdown({
     setIsOpen(false);
     setIsModalVisible(false); // Close the modal after selection
   };
-  
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -121,19 +120,16 @@ function DesCustomDropdown({
         ) : (
           <span>{placeholder} ▾</span>
         )}
+        <FaChevronDown className={dropDownStyles.dropdownIcon} ></FaChevronDown>
       </div>
 
       <Modal
         title="Select Destination Chain"
         visible={isModalVisible}
         onCancel={() => setIsModalVisible(false)}
-        footer={[
-          // <Button key="cancel" onClick={() => setIsModalVisible(false)}>
-          //   Cancel
-          // </Button>,
-        ]}
+        footer={[]}
       >
-                <div className={dropDownStyles.dropdownList}>
+        <div className={dropDownStyles.dropdownList}>
           {options.length === 0 ? (
             <div className={dropDownStyles.dropdownItem}>
               Please select destination chain first
@@ -142,7 +138,11 @@ function DesCustomDropdown({
             options.map((option) => (
               <div
                 key={option.name}
-                className={dropDownStyles.dropdownItem}
+                className={`${dropDownStyles.dropdownItem} ${
+                  selectedValue && selectedValue.name === option.name
+                    ? dropDownStyles.dropdownItemSelected
+                    : ""
+                }`}
                 onClick={() => handleSelect(option)}
               >
                 <img
@@ -151,15 +151,16 @@ function DesCustomDropdown({
                   className={dropDownStyles.icon}
                 />
                 {option.name}
+                {selectedValue && selectedValue.name === option.name && (
+                  <span className={dropDownStyles.dropdownItemSelectedText}>
+                    {" "}
+                    (selected)
+                  </span>
+                )}
               </div>
             ))
           )}
         </div>
-       {/* <NestedDropdown
-          options={options}
-          onSelect={handleSelect}
-          placeholder="Select Destination Chain"
-        /> */}
       </Modal>
     </div>
   );

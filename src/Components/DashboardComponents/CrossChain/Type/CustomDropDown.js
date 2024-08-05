@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import dropDownStyles from "./CustomDropDown.module.css";
 import { driver } from "driver.js";
 import "driver.js/dist/driver.css";
+import { FaChevronDown } from "react-icons/fa"; 
 
 function CustomDropdown({
   options,
@@ -78,6 +79,7 @@ function CustomDropdown({
         ) : (
           <span>{placeholder}</span>
         )}
+        <FaChevronDown className={dropDownStyles.dropdownIcon} />
       </div>
       {isOpen && (
         <div className={dropDownStyles.dropdownList}>

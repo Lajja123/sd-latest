@@ -4,8 +4,13 @@ import textStyle from "./Type/textify.module.css";
 import SendToken from "./Send/SendToken";
 import allchains from "@/Helpers/CrosschainHelpers/ChainSelector";
 import { useAccount, useChainId } from "wagmi";
-import connectStyle from "@/Components/ConnectButton/connect.module.css";
 import CustomDropdown from "./Type/CustomDropDown";
+import {
+  faCaretDown
+} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import select from "../../../Assets/select.png"
+import Image from "next/image";
 
 function CrossChain({ activeTab }) {
   const [listData, setListData] = useState([]);
@@ -120,14 +125,16 @@ function CrossChain({ activeTab }) {
               {/* Dropdown of chains */}
               <CustomDropdown
                 className={textStyle.dropdownbtn}
+              
                 options={destinationChainsOptions}
                 onSelect={handleDestinationChainChange}
                 selectedValue={selectedDestinationChain}
-                placeholder="Select destination chain ▾"
+                placeholder="Select destination chain "
                 disabled={!isMetaMaskConnected}
-              />
+              /> 
+              {/* <Image src={select} style={{position:"absolute", left:"10%"}}/> */}
             </div>
-
+            
             <div className={textStyle.importtokendiv}>
               <div style={{ margin: "10px 10px" }}>⇨</div>
               {/* Dropdown of tokens */}
@@ -135,9 +142,10 @@ function CrossChain({ activeTab }) {
                 options={tokenOptions}
                 onSelect={handleDestinationTokenChange}
                 selectedValue={selectedToken}
-                placeholder="Select token ▾"
+                placeholder="Select token "
                 disabled={!isMetaMaskConnected}
               />
+              {/* <Image src={select} style={{position:"relative", right:"20%"}}/> */}
             </div>
             {errorMessage && (
               <div className={textStyle.errorMessage}>{errorMessage}</div>

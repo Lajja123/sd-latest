@@ -111,7 +111,7 @@
 }
 #fontsize10px {
   letter-spacing: 1px;
-  padding: 15px;
+
 }
 .textlistdiv textarea {
   color: aliceblue !important;
@@ -236,9 +236,7 @@
   background-color: #007bff !important;
 }
 
-.tablecontainer {
-  padding: 20px 0px;
-}
+
 
 .titleforlinupsametext {
   background: rgb(24, 26, 83);
@@ -308,35 +306,30 @@
   font-size: 15px;
 }
 
-.tableWrapper {
-  border-radius: 20px; /* Adjust border-radius as needed */
-  overflow: hidden;
-  position: relative;
-  margin: 40px 20px;
-  border: 1px solid #8d37fb;
-
-}
-
-
 .scrollabletablecontainer {
-  /* max-height: 280px; */
-  /* border-radius: 20px; */
-  /* border: 1px solid #8d37fb; */
-  overflow-x: scroll;
-  padding-bottom: 5px;
+  border: 1px solid #8d37fb;
+border-radius: 20px ;
+  margin: 50px 20px;
+  overflow: auto;
 }
+.scrollabletablecontainerTbody {
 
-.scrollabletablecontainer::-webkit-scrollbar {
-  width: 10px;
+  
+ max-height: 315px;
+  overflow: auto;
+  scrollbar-width: none;
+}
+.scrollabletablecontainerTbody::-webkit-scrollbar {
+  width: 3px;
   margin-right: 0;
 }
-.scrollabletablecontainer::-webkit-scrollbar {
+.scrollabletablecontainerTbody::-webkit-scrollbar {
   height: 3px; /* Set the height of the horizontal scrollbar */
 }
-.scrollabletablecontainer::-webkit-scrollbar-thumb {
+.scrollabletablecontainerTbody::-webkit-scrollbar-thumb {
   background: #ffffff;
 }
-.scrollabletablecontainer::-webkit-scrollbar-thumb:hover {
+.scrollabletablecontainerTbody::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
 
@@ -765,7 +758,7 @@
     margin: 25px 10px;
   }
   .scrollabletablecontainer {
-    /* margin: 25px 10px; */
+    margin: 25px 10px;
     max-height: 280px;
   }
   .sendbutton {

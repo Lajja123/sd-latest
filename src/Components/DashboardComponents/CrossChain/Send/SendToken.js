@@ -781,7 +781,7 @@ function SendToken({
                     textAlign: "center",
                   }}
                 >
-                  Account Summary
+                  Account Summary ({tokenDetails.symbol})
                 </h2>
               </div>
               <div className={textStyle.tableWrapper}>
@@ -790,13 +790,14 @@ function SendToken({
                 id={textStyle.tableresponsive}
                 className={textStyle.scrollabletablecontainer}
               >
+                
                 <table
                   className={`${textStyle["showtokentablesametext"]} ${textStyle["tabletextlist"]}`}
                 >
                   <thead className={textStyle.tableheadertextlist}>
                     <tr style={{ width: "100%", margin: "0 auto" }}>
                       <th className={textStyle.accountsummaryth}>
-                        Total Amount({tokenDetails.symbol})
+                        Total Amount
                       </th>
                       <th className={textStyle.accountsummaryth}>
                         Estimated Gas Price <FontAwesomeIcon icon={faGasPump} />
@@ -811,7 +812,7 @@ function SendToken({
                   </thead>
                   <tbody className={textStyle.tbodytextifyaccsum}>
                     <tr>
-                      <td id={textStyle.fontsize10px}>
+                      <td id={textStyle.fontsize10px} style={{padding:"15px"}}>
                         <div
                           id="font-size-10px"
                           className={textStyle.textAccSum}
@@ -824,7 +825,7 @@ function SendToken({
                             : null}{" "}
                         </div>
                       </td>
-                      <td id={textStyle.fontsize10px}>
+                      <td id={textStyle.fontsize10px} style={{padding:"15px"}}>
                         {" "}
                         <div
                           id={textStyle.fontsize10px}
@@ -846,7 +847,7 @@ function SendToken({
                             : null}
                         </div>
                       </td>
-                      <td id={textStyle.fontsize10px}>
+                      <td id={textStyle.fontsize10px} style={{padding:"15px"}}>
                         <div
                           id="font-size-10px"
                           style={{
@@ -863,13 +864,14 @@ function SendToken({
                                 ERC20Balance,
                                 tokenDetails.decimal
                               )).toFixed(4) +
-                              " " +
-                              tokenDetails.symbol
+                              " " 
+                              
                             : null}
                         </div>
                       </td>
                       <td
                         id={textStyle.fontsize10px}
+                        style={{padding:"15px"}}
                         className={`showtoken-remaining-balance ${
                           remaining < 0 ? "showtoken-remaining-negative" : ""
                         }`}
@@ -893,8 +895,7 @@ function SendToken({
                                 remaining,
                                 tokenDetails.decimal
                               )).toFixed(4) +
-                              " " +
-                              tokenDetails.symbol}
+                              " " }
                         </div>
                       </td>
                     </tr>

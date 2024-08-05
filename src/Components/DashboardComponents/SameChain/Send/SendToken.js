@@ -413,38 +413,41 @@ function SendToken({ activeTab, listData, setListData }) {
                       Token Details
                     </h2>
                   </div>
-                  <div
-                    style={{
-                      display: "flex",
-                      justifyContent: "space-between",
-                      alignItems: "center",
-                      padding: "40px 20px",
-                      // border: "1px solid #ddd",
-                    }}
-                  >
+                  <div className={textStyle.scrollabletablecontainer}>
                     <table className={textStyle.tabletextlist}>
+                     
                       <thead className={textStyle.tableheadertextlist}>
-                        <tr className={textStyle.tableTr}>
-                          <th
-                            style={{ letterSpacing: "1px" }}
-                            className={textStyle.tableTh}
-                          >
-                            Name
-                          </th>
-                          <th
-                            style={{ letterSpacing: "1px" }}
-                            className={textStyle.tableTh}
-                          >
-                            Symbol
-                          </th>
-                          <th
-                            style={{ letterSpacing: "1px" }}
-                            className={textStyle.tableTh}
-                          >
-                            Balance
-                          </th>
-                        </tr>
-                      </thead>
+                            <tr>
+                              <th
+                                className={textStyle.fontsize12px}
+                                style={{
+                                  letterSpacing: "1px",
+                                  padding: "15px",
+                                  textWrap: "nowrap",
+                                }}
+                              >
+                                Name
+                              </th>
+                              <th
+                                className={textStyle.fontsize12px}
+                                style={{
+                                  letterSpacing: "1px",
+                                  padding: "15px",
+                                }}
+                              >
+                                Symbol
+                              </th>
+                              <th
+                                className={textStyle.fontsize12px}
+                                style={{
+                                  letterSpacing: "1px",
+                                  padding: "15px",
+                                }}
+                              >
+                                Balance
+                             </th>  
+                            </tr>
+                          </thead>
                       <tbody>
                         <tr className={textStyle.tableTr}>
                           <td

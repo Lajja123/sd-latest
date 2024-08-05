@@ -318,42 +318,46 @@ function SendEth({ activeTab, listData, setListData }) {
                   </h2>
                 </div>
 
-                <div className={textStyle.tableWrapper}>
-                  <div className={textStyle.scrollabletablecontainer}>
-                    <table
-                      className={textStyle.tabletextlist}
-                      style={{ padding: "30px 20px" }}
-                    >
-                      <thead className={textStyle.tableheadertextlist}>
-                        <tr className={textStyle.tableTr}>
-                          <th
-                            className={textStyle.fontsize12px}
-                            style={{
-                              letterSpacing: "1px",
-                              padding: "15px",
-                              textWrap: "nowrap",
-                            }}
-                          >
-                            Receiver Address
-                          </th>
-                          <th
-                            className={textStyle.fontsize12px}
-                            style={{ letterSpacing: "1px", padding: "15px" }}
-                          >
-                            Label
-                          </th>
-                          <th
-                            className={textStyle.fontsize12px}
-                            style={{ letterSpacing: "1px", padding: "15px" }}
-                          >
-                            Amount
-                          </th>
-                          <th
-                            className={textStyle.fontsize12px}
-                            style={{ letterSpacing: "1px", padding: "15px" }}
-                          >
-                            Amount
-                          </th>
+                <div className={textStyle.scrollabletablecontainer}>
+               
+                  <table
+                    className={textStyle.tabletextlist}
+                    style={{
+                      padding: "30px 20px",
+                      borderCollapse: "collapse",
+                      width: "100%",
+                    }}
+                  >
+                    <thead className={textStyle.tableheadertextlist}>
+                      <tr className={textStyle.tableTr}>
+                        <th
+                          className={textStyle.fontsize12px}
+                          style={{
+                            letterSpacing: "1px",
+                            padding: "15px",
+                            textWrap: "nowrap",
+                          }}
+                        >
+                          Receiver Address
+                        </th>
+                        <th
+                          className={textStyle.fontsize12px}
+                          style={{ letterSpacing: "1px", padding: "15px" }}
+                        >
+                          Label
+                        </th>
+                        <th
+                          className={textStyle.fontsize12px}
+                          style={{ letterSpacing: "1px", padding: "15px" }}
+                        >
+                          Amount
+                        </th>
+                        <th
+                          className={textStyle.fontsize12px}
+                          style={{ letterSpacing: "1px", padding: "15px" }}
+                        >
+                          Amount
+                        </th>
 
                           {/* <th
                       className={textStyle.fontsize12px}
@@ -361,18 +365,28 @@ function SendEth({ activeTab, listData, setListData }) {
                     >
                       Warnings
                     </th> */}
-                          <th
-                            className={textStyle.fontsize12px}
-                            style={{ letterSpacing: "1px", padding: "15px" }}
-                          >
-                            Action
-                          </th>
-                        </tr>
-                      </thead>
+                        <th
+                          className={textStyle.fontsize12px}
+                          style={{ letterSpacing: "1px", padding: "15px" }}
+                        >
+                          Action
+                        </th>
+                      </tr>
+                    </thead>
+                  </table>
+                  <div className={textStyle.scrollabletablecontainerTbody}>
+                    <table
+                      className={textStyle.tabletextlist}
+                      style={{
+                        padding: "30px 20px",
+                        borderCollapse: "collapse",
+                        width: "100%",
+                      }}
+                    >
                       <tbody>
                         {listData.length > 0
                           ? listData.map((data, index) => (
-                              <tr className={textStyle.tableTr} key={index}>
+                              <tr className={textStyle.tableTr} key={index} style={{borderBottom:"1px solid #8d37fb"}}>
                                 <td
                                   id={textStyle.fontsize10px}
                                   style={{
@@ -495,6 +509,7 @@ function SendEth({ activeTab, listData, setListData }) {
                       </tbody>
                     </table>
                   </div>
+               
                 </div>
               </div>
 
