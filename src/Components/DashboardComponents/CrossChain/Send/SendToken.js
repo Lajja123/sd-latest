@@ -552,110 +552,116 @@ function SendToken({
                   </h2>
                 </div>
                 <div className={textStyle.tableWrapper}>
-
-                <div className={textStyle.scrollabletablecontainer}>
-                  <table
-                    className={textStyle.tabletextlist}
-                    style={{
-                      padding: "30px 20px",
-                      borderCollapse: "collapse",
-                      width: "100%",
-                    }}
-                  >
-                    <thead className={textStyle.tableheadertextlist}>
-                      <tr>
-                        <th
-                          className={textStyle.fontsize12px}
-                          style={{
-                            letterSpacing: "1px",
-                            padding: "15px",
-                            textWrap: "nowrap",
-                          }}
-                        >
-                          Receiver Address
-                        </th>
-                        <th
-                          className={textStyle.fontsize12px}
-                          style={{ letterSpacing: "1px", padding: "15px" }}
-                        >
-                          Label
-                        </th>
-                        <th
-                          className={textStyle.fontsize12px}
-                          style={{ letterSpacing: "1px", padding: "15px" }}
-                        >
-                          Amount({tokenDetails.symbol})
-                        </th>
-                        <th
-                          className={textStyle.fontsize12px}
-                          style={{
-                            letterSpacing: "1px",
-                            padding: "15px",
-                            textWrap: "nowrap",
-                          }}
-                        >
-                          Destination Chain
-                          <div style={{ fontSize: "10px" }}></div>
-                        </th>
-                        {/* <th
+                  <div className={textStyle.scroll}>
+                    <div className={textStyle.scrollabletablecontainer}>
+                      <table
+                        className={textStyle.tabletextlist}
+                        style={{
+                          padding: "30px 20px",
+                          borderCollapse: "collapse",
+                          width: "100%",
+                        }}
+                      >
+                        <thead className={textStyle.tableheadertextlist}>
+                          <tr>
+                            <th
+                              className={textStyle.fontsize12px}
+                              style={{
+                                letterSpacing: "1px",
+                                padding: "15px",
+                                textWrap: "nowrap",
+                              }}
+                            >
+                              <p className={textStyle.c1}>Receiver Address</p>
+                            </th>
+                            <th
+                              className={textStyle.fontsize12px}
+                              style={{ letterSpacing: "1px", padding: "15px" }}
+                            >
+                              <p className={textStyle.c2}>Label</p>
+                            </th>
+                            <th
+                              className={textStyle.fontsize12px}
+                              style={{ letterSpacing: "1px", padding: "15px" }}
+                            >
+                              <p className={textStyle.c3}>
+                                Amount({tokenDetails.symbol})
+                              </p>
+                            </th>
+                            <th
+                              className={textStyle.fontsize12px}
+                              style={{
+                                letterSpacing: "1px",
+                                padding: "15px",
+                                textWrap: "nowrap",
+                              }}
+                            >
+                              <p className={textStyle.c4}>Destination Chain</p>
+                              <div style={{ fontSize: "10px" }}></div>
+                            </th>
+                            {/* <th
                       className={textStyle.fontsize12px}
                       style={{ letterSpacing: "1px", padding: "8px" }}
                     >
                       Amount(USD)
                     </th> */}
-                        <th
-                          className={textStyle.fontsize12px}
-                          style={{ letterSpacing: "1px", padding: "15px" }}
-                        >
-                          Action
-                        </th>
-                      </tr>
-                    </thead>
-                  </table>
-                  <div className={textStyle.scrollabletablecontainerTbody}>
-                    <table
-                      className={textStyle.tabletextlist}
-                      style={{
-                        padding: "30px 20px",
-                        borderCollapse: "collapse",
-                        width: "100%",
-                      }}
-                    >
-                      <tbody>
-                        {listData.length > 0
-                          ? listData.map((data, index) => (
-                              <tr key={index}>
-                                <td
-                                  id={textStyle.fontsize10px}
-                                  style={{
-                                    letterSpacing: "1px",
-                                    padding: "15px",
-                                  }}
-                                >
-                                  {`${data.address.slice(
-                                    0,
-                                    7
-                                  )}...${data.address.slice(-4)}`}
-                                </td>
-                                <td
-                                  id={textStyle.fontsize10px}
-                                  style={{
-                                    letterSpacing: "1px",
-                                    padding: "15px",
-                                  }}
-                                >
-                                  {data.label ? (
-                                    data.label
-                                  ) : (
-                                    <>
-                                      <Addlabel
-                                        labels={labels}
-                                        setLabelValues={setLabelValues}
-                                        onAddLabel={onAddLabel}
-                                        index={0} // Example index, you can dynamically pass different indexes
-                                        data={data}
-                                      />
-                                      {/* <input
+                            <th
+                              className={textStyle.fontsize12px}
+                              style={{ letterSpacing: "1px", padding: "15px" }}
+                            >
+                              <p className={textStyle.c5}>Action</p>
+                            </th>
+                          </tr>
+                        </thead>
+                      </table>
+                    </div>
+                    <div className={textStyle.scrollabletablecontainerTbody}>
+                      <table
+                        className={textStyle.tabletextlist}
+                        style={{
+                          padding: "30px 20px",
+                          borderCollapse: "collapse",
+                          width: "100%",
+                        }}
+                      >
+                        <tbody>
+                          {listData.length > 0
+                            ? listData.map((data, index) => (
+                                <tr key={index} style={{ borderBottom: "1px solid rgb(141, 55, 251)"}}>
+                                  <td
+                                    id={textStyle.fontsize10px}
+                                    style={{
+                                      letterSpacing: "1px",
+                                      padding: "15px",
+                                    }}
+                                  >
+                                    <div className={textStyle.c1}>
+                                      {`${data.address.slice(
+                                        0,
+                                        7
+                                      )}...${data.address.slice(-4)}`}
+                                    </div>
+                                  </td>
+                                  <td
+                                    id={textStyle.fontsize10px}
+                                    style={{
+                                      letterSpacing: "1px",
+                                      padding: "15px",
+                                    }}
+                                  >
+                                    <div className={textStyle.c2}>
+                                      {data.label ? (
+                                        data.label
+                                      ) : (
+                                        <>
+                                          <Addlabel
+                                            labels={labels}
+                                            setLabelValues={setLabelValues}
+                                            onAddLabel={onAddLabel}
+                                            index={0} // Example index, you can dynamically pass different indexes
+                                            data={data}
+                                          />
+                                          {/* <input
                                       type="text"
                                       value={labels[index] ? labels[index] : ""}
                                       style={{
@@ -692,50 +698,51 @@ function SendToken({
                                           onAddLabel(index, data.address);
                                         }
                                       }} */}
-                                      {/* /> */}
-                                      {errorMessage && (
-                                        <p
-                                          style={{
-                                            color: "red",
-                                            margin: "0px",
-                                            fontSize: "13px",
-                                          }}
-                                        >
-                                          {errorMessage}
-                                        </p>
+                                          {/* /> */}
+                                          {errorMessage && (
+                                            <p
+                                              style={{
+                                                color: "red",
+                                                margin: "0px",
+                                                fontSize: "13px",
+                                              }}
+                                            >
+                                              {errorMessage}
+                                            </p>
+                                          )}
+                                        </>
                                       )}
-                                    </>
-                                  )}
-                                </td>
-                                <td
-                                  id={textStyle.fontsize10px}
-                                  style={{ padding: "15px" }}
-                                >
-                                  <div
+                                    </div>
+                                  </td>
+                                  <td
                                     id={textStyle.fontsize10px}
-                                    style={{
-                                      width: "fit-content",
-                                      margin: "0 auto",
-                                      background: "transparent",
-                                      color: "white",
-                                      borderRadius: "10px",
-                                      fontWeight: "300",
-
-                                      fontSize: "15px",
-                                      letterSpacing: "1px",
-                                    }}
+                                    style={{ padding: "15px" }}
                                   >
-                                    {(+ethers.utils.formatUnits(
-                                      data.value,
-                                      tokenDetails.decimal
-                                    )).toFixed(4)}
-                                  </div>
-                                </td>
-                                <td
-                                  id={textStyle.fontsize10px}
-                                  style={{ padding: "15px" }}
-                                >
-                                  {/* <select
+                                    <div
+                                      className={textStyle.c3}
+                                      id={textStyle.fontsize10px}
+                                      style={{
+                                        margin: "0 auto",
+                                        background: "transparent",
+                                        color: "white",
+                                        borderRadius: "10px",
+                                        fontWeight: "300",
+
+                                        fontSize: "15px",
+                                        letterSpacing: "1px",
+                                      }}
+                                    >
+                                      {(+ethers.utils.formatUnits(
+                                        data.value,
+                                        tokenDetails.decimal
+                                      )).toFixed(4)}
+                                    </div>
+                                  </td>
+                                  <td
+                                    id={textStyle.fontsize10px}
+                                    style={{ padding: "15px" }}
+                                  >
+                                    {/* <select
                                   id={textStyle.blockchainChains}
                                   onChange={handleDestinationFinalChainChange(
                                     index
@@ -747,43 +754,51 @@ function SendToken({
                                   </option>
                                   {destinationFinalChainsOptions}
                                 </select> */}
-
-                                  <DesCustomDropdown
-                                    id="text"
-                                    options={destinationFinalChainsOptions}
-                                    onSelect={handleDestinationFinalChainChange}
-                                    selectedValue={
-                                      selectedDestinationfinalChains[index]
-                                    }
-                                    placeholder="Select destination chain"
-                                    index={index}
-                                    style={{ fontSize: "15px" }}
-                                  />
-                                </td>
-                                <td
-                                  style={{
-                                    letterSpacing: "1px",
-                                    padding: "15px",
-                                  }}
-                                >
-                                  <button
-                                    className={textStyle.deletebutton}
-                                    onClick={() => handleDeleteRow(index)}
+                                    <div className={textStyle.c4}>
+                                      <DesCustomDropdown
+                                        id="text"
+                                        options={destinationFinalChainsOptions}
+                                        onSelect={
+                                          handleDestinationFinalChainChange
+                                        }
+                                        selectedValue={
+                                          selectedDestinationfinalChains[index]
+                                        }
+                                        placeholder="Select destination chain"
+                                        index={index}
+                                        style={{ fontSize: "15px" }}
+                                      />
+                                    </div>
+                                  </td>
+                                  <td
+                                    style={{
+                                      letterSpacing: "1px",
+                                      padding: "15px",
+                                    }}
                                   >
-                                    <FontAwesomeIcon icon={faTrashAlt} />
-                                  </button>
-                                </td>
-                              </tr>
-                            ))
-                          : null}
-                      </tbody>
-                    </table>
+                                    <div className={textStyle.c5}>
+                                      <button
+                                        className={textStyle.deletebutton}
+                                        onClick={() => handleDeleteRow(index)}
+                                      >
+                                        <FontAwesomeIcon icon={faTrashAlt} />
+                                      </button>
+                                    </div>
+                                  </td>
+                                </tr>
+                              ))
+                            : null}
+                        </tbody>
+                      </table>
+                    </div>
                   </div>
                 </div>
-                </div>
+                
               </div>
             </div>
-          ) : null}
+          ) : // </div>
+          null}
+
           {listData.length > 0 ? (
             <div className={textStyle.tablecontainer}>
               <div className={textStyle.titleforaccountsummarytextsame}>
@@ -800,128 +815,128 @@ function SendToken({
                 </h2>
               </div>
               <div className={textStyle.tableWrapper}>
-
-              <div
-                id={textStyle.tableresponsive}
-                className={textStyle.scrollabletablecontainer}
-              >
-                <table
-                  className={`${textStyle["showtokentablesametext"]} ${textStyle["tabletextlist"]}`}
+                <div
+                  id={textStyle.tableresponsive}
+                  className={textStyle.scrollabletablecontainer}
                 >
-                  <thead className={textStyle.tableheadertextlist}>
-                    <tr style={{ width: "100%", margin: "0 auto" }}>
-                      <th className={textStyle.accountsummaryth}>
-                        Total Amount
-                      </th>
-                      <th className={textStyle.accountsummaryth}>
-                        Estimated Gas Price <FontAwesomeIcon icon={faGasPump} />
-                      </th>
-                      <th className={textStyle.accountsummaryth}>
-                        Your Balance
-                      </th>
-                      <th className={textStyle.accountsummaryth}>
-                        Remaining Balance
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody className={textStyle.tbodytextifyaccsum}>
-                    <tr>
-                      <td
-                        id={textStyle.fontsize10px}
-                        style={{ padding: "20px" }}
-                      >
-                        <div
-                          id="font-size-10px"
-                          className={textStyle.textAccSum}
-                        >
-                          {totalERC20
-                            ? (+ethers.utils.formatUnits(
-                                totalERC20,
-                                tokenDetails.decimal
-                              )).toFixed(4)
-                            : null}{" "}
-                        </div>
-                      </td>
-                      <td
-                        id={textStyle.fontsize10px}
-                        style={{ padding: "20px" }}
-                      >
-                        {" "}
-                        <div
+                  <table
+                    className={`${textStyle["showtokentablesametext"]} ${textStyle["tabletextlist"]}`}
+                  >
+                    <thead className={textStyle.tableheadertextlist}>
+                      <tr style={{ width: "100%", margin: "0 auto" }}>
+                        <th className={textStyle.accountsummaryth}>
+                          Total Amount
+                        </th>
+                        <th className={textStyle.accountsummaryth}>
+                          Estimated Gas Price{" "}
+                          <FontAwesomeIcon icon={faGasPump} />
+                        </th>
+                        <th className={textStyle.accountsummaryth}>
+                          Your Balance
+                        </th>
+                        <th className={textStyle.accountsummaryth}>
+                          Remaining Balance
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody className={textStyle.tbodytextifyaccsum}>
+                      <tr>
+                        <td
                           id={textStyle.fontsize10px}
-                          style={{
-                            width: "fit-content",
-                            margin: "0 auto",
-                            color: "white",
-                            borderRadius: "10px",
-                            fontWeight: "300",
-                            fontSize: "15px",
-                            opacity: "0.4",
-                            letterSpacing: "1px",
-                          }}
+                          style={{ padding: "20px" }}
                         >
-                          {showestimatedgasprice
-                            ? (+ethers.utils.formatEther(
-                                showestimatedgasprice
-                              )).toFixed(6)
-                            : null}
-                        </div>
-                      </td>
-                      <td
-                        id={textStyle.fontsize10px}
-                        style={{ padding: "20px" }}
-                      >
-                        <div
-                          id="font-size-10px"
-                          style={{
-                            width: "fit-content",
-                            margin: "0 auto",
-                            color: "white",
-                            borderRadius: "10px",
-                            opacity: "0.4",
-                            letterSpacing: "1px",
-                          }}
-                        >
-                          {ERC20Balance
-                            ? (+ethers.utils.formatUnits(
-                                ERC20Balance,
-                                tokenDetails.decimal
-                              )).toFixed(4) + " "
-                            : null}
-                        </div>
-                      </td>
-                      <td
-                        id={textStyle.fontsize10px}
-                        style={{ padding: "20px" }}
-                        className={`showtoken-remaining-balance ${
-                          remaining < 0 ? "showtoken-remaining-negative" : ""
-                        }`}
-                      >
-                        <div
+                          <div
+                            id="font-size-10px"
+                            className={textStyle.textAccSum}
+                          >
+                            {totalERC20
+                              ? (+ethers.utils.formatUnits(
+                                  totalERC20,
+                                  tokenDetails.decimal
+                                )).toFixed(4)
+                              : null}{" "}
+                          </div>
+                        </td>
+                        <td
                           id={textStyle.fontsize10px}
-                          // className="font-size-12px"
-                          style={{
-                            width: "fit-content",
-                            margin: "0 auto",
-
-                            color: remaining < 0 ? "red" : "white",
-                            borderRadius: "10px",
-
-                            fontSize: "15px",
-                          }}
+                          style={{ padding: "20px" }}
                         >
-                          {remaining === null
-                            ? null
-                            : (+ethers.utils.formatUnits(
-                                remaining,
-                                tokenDetails.decimal
-                              )).toFixed(4) + " "}
-                        </div>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
+                          {" "}
+                          <div
+                            id={textStyle.fontsize10px}
+                            style={{
+                              width: "fit-content",
+                              margin: "0 auto",
+                              color: "white",
+                              borderRadius: "10px",
+                              fontWeight: "300",
+                              fontSize: "15px",
+                              opacity: "0.4",
+                              letterSpacing: "1px",
+                            }}
+                          >
+                            {showestimatedgasprice
+                              ? (+ethers.utils.formatEther(
+                                  showestimatedgasprice
+                                )).toFixed(6)
+                              : null}
+                          </div>
+                        </td>
+                        <td
+                          id={textStyle.fontsize10px}
+                          style={{ padding: "20px" }}
+                        >
+                          <div
+                            id="font-size-10px"
+                            style={{
+                              width: "fit-content",
+                              margin: "0 auto",
+                              color: "white",
+                              borderRadius: "10px",
+                              opacity: "0.4",
+                              letterSpacing: "1px",
+                            }}
+                          >
+                            {ERC20Balance
+                              ? (+ethers.utils.formatUnits(
+                                  ERC20Balance,
+                                  tokenDetails.decimal
+                                )).toFixed(4) + " "
+                              : null}
+                          </div>
+                        </td>
+                        <td
+                          id={textStyle.fontsize10px}
+                          style={{ padding: "20px" }}
+                          className={`showtoken-remaining-balance ${
+                            remaining < 0 ? "showtoken-remaining-negative" : ""
+                          }`}
+                        >
+                          <div
+                            id={textStyle.fontsize10px}
+                            // className="font-size-12px"
+                            style={{
+                              width: "fit-content",
+                              margin: "0 auto",
+
+                              color: remaining < 0 ? "red" : "white",
+                              borderRadius: "10px",
+
+                              fontSize: "15px",
+                            }}
+                          >
+                            {remaining === null
+                              ? null
+                              : (+ethers.utils.formatUnits(
+                                  remaining,
+                                  tokenDetails.decimal
+                                )).toFixed(4) + " "}
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
               </div>
             </div>
           ) : null}

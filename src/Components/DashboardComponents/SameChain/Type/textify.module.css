@@ -21,7 +21,6 @@
 .tutorialcardscontainer {
   padding: 21px;
   display: flex;
-  /* align-items: stretch; */
   align-items: center;
   justify-content: space-around;
   flex-wrap: wrap;
@@ -154,7 +153,6 @@
   background-color: transparent;
   border: none;
   border-radius: 15px;
-  margin-left: 20px;
 }
 
 #truee {
@@ -403,32 +401,46 @@
     rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
     rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
 }
-.scrollabletablecontainer {
-  border: 1px solid #8d37fb;
-border-radius: 20px ;
-  margin: 50px 20px;
-  overflow: auto;
-}
-.scrollabletablecontainerTbody {
 
-  
- max-height: 315px;
-  overflow: auto;
+.tableWrapper {
+  border: 1px solid #8d37fb;
+  border-radius: 20px;
+  margin: 50px 20px;
+  overflow: hidden;
+}
+
+.scroll {
+  width: 100%;
+  overflow-x: scroll;
+  overflow-y: auto;
+  max-height: 300px;
   scrollbar-width: none;
 }
-.scrollabletablecontainerTbody::-webkit-scrollbar {
+
+
+.scrollabletablecontainer {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  scrollbar-width: none;
+}
+.scrollabletablecontainerTbody{
+  scrollbar-width: none;
+
+}
+/* .scrollabletablecontainerTbody::-webkit-scrollbar {
   width: 3px;
   margin-right: 0;
 }
 .scrollabletablecontainerTbody::-webkit-scrollbar {
-  height: 3px; /* Set the height of the horizontal scrollbar */
+  height: 3px; 
 }
 .scrollabletablecontainerTbody::-webkit-scrollbar-thumb {
   background: #ffffff;
 }
 .scrollabletablecontainerTbody::-webkit-scrollbar-thumb:hover {
   background: #555;
-}
+} */
 /* #tableresponsive {
   margin: 50px 20px;
   border: 1px solid #8d37fb;
@@ -695,6 +707,32 @@ border-radius: 20px ;
   color: #b47dfc;
 }
 
+.c1 {
+  width: 160px;
+  margin-bottom: 0 !important;
+}
+
+.c2 {
+  width: 140px;
+  margin-bottom: 0 !important;
+
+}
+.c3 {
+  width: 150px;
+  margin-bottom: 0 !important;
+
+}
+.c4 {
+  width: 200px;
+  margin-bottom: 0 !important;
+
+}
+.c5 {
+  width: 200px;
+  margin-bottom: 0 !important;
+
+}
+
 @media screen and (max-width: 1260px) {
   .tutorialcards {
     width: 30%;
@@ -798,6 +836,21 @@ border-radius: 20px ;
 
   .titleforlinupsametext h2 {
     font-size: 15px !important;
+  }
+  .c1 {
+    width: 140px;
+  }
+  .c2 {
+    width: 100px;
+  }
+  .c3 {
+    width: 140px;  
+  }
+  .c4 {
+    width: 200px;  
+  }
+  .c5 {
+    width: 140px; 
   }
 }
 
@@ -1024,6 +1077,7 @@ border-radius: 20px ;
     cursor: pointer;
     margin: 10px 0px;
   }
+  
 }
 @media only screen and (max-width: 375px) {
   .sendethdiv {

@@ -302,30 +302,46 @@
   font-size: 15px;
 }
 
-.scrollabletablecontainer {
+.tableWrapper {
   border: 1px solid #8d37fb;
   border-radius: 20px;
   margin: 50px 20px;
-  overflow: auto;
+  /* max-width: 1000px; */
+  /* max-height: 400px; */
+  overflow: hidden;
 }
-.scrollabletablecontainerTbody {
-  max-height: 315px;
-  overflow: auto;
+
+.scroll {
+  width: 100%;
+  overflow-x: scroll;
+  overflow-y: auto;
+  max-height: 385px;
   scrollbar-width: none;
 }
-.scrollabletablecontainerTbody::-webkit-scrollbar {
+
+.scrollabletablecontainer {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  scrollbar-width: none;
+}
+.scrollabletablecontainerTbody{
+  scrollbar-width: none;
+
+}
+ /* .scrollabletablecontainerTbody::-webkit-scrollbar {
   width: 3px;
   margin-right: 0;
 }
 .scrollabletablecontainerTbody::-webkit-scrollbar {
-  height: 3px; /* Set the height of the horizontal scrollbar */
+  height: 3px; 
 }
 .scrollabletablecontainerTbody::-webkit-scrollbar-thumb {
   background: #ffffff;
 }
 .scrollabletablecontainerTbody::-webkit-scrollbar-thumb:hover {
   background: #555;
-}
+}  */
 
 #backgroundgreen:hover {
   box-shadow: rgba(238, 242, 243, 0.553) 0px 5px 15px;
@@ -422,7 +438,7 @@
   /* border-radius: 20px; */
 }
 
-.tbody{
+.tbody {
   max-height: 200px;
   overflow-y: auto;
 }
@@ -432,6 +448,7 @@
   border: 1px solid #8d37fb;
   border-radius: 20px;
   overflow-x: auto;
+  scrollbar-width: none;
 }
 
 .tablediv::-webkit-scrollbar {
@@ -551,6 +568,32 @@
   background-color: #0f042c; /* Adjust the color as needed */
   color: white;
 }
+
+.c1 {
+  width: 160px;
+  margin-bottom: 0 !important;
+}
+
+.c2 {
+  width: 140px;
+  margin-bottom: 0 !important;
+
+}
+.c3 {
+  width: 150px;
+  margin-bottom: 0 !important;
+
+}
+.c4 {
+  width: 200px;
+  margin-bottom: 0 !important;
+
+}
+.c5 {
+  width: 200px;
+  margin-bottom: 0 !important;
+
+}
 @media only screen and (max-width: 768px) {
   .sendethdiv {
     display: flex;
@@ -632,6 +675,21 @@
   }
   .tableTd {
     align-items: center;
+  }
+  .c1 {
+    width: 140px;
+  }
+  .c2 {
+    width: 100px;
+  }
+  .c3 {
+    width: 140px;  
+  }
+  .c4 {
+    width: 200px;  
+  }
+  .c5 {
+    width: 140px; 
   }
 }
 @media only screen and (max-width: 425px) {
@@ -759,12 +817,18 @@
     font-size: 15px;
   }
 
-  .tableWrapper{
+  .tableWrapper {
     margin: 25px 10px;
   }
-  .scrollabletablecontainer {
+  /* .scrollabletablecontainer,
+  .scrollabletablecontainerTbody {
     margin: 25px 10px;
     max-height: 280px;
+  } */
+
+  .tableWrapper{
+    margin: 25px 10px;
+
   }
   .sendbutton {
     background: linear-gradient(
