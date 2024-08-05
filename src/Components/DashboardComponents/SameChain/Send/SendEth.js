@@ -359,7 +359,7 @@ function SendEth({ activeTab, listData, setListData }) {
                           Amount
                         </th>
 
-                        {/* <th
+                          {/* <th
                       className={textStyle.fontsize12px}
                       style={{ letterSpacing: "1px", padding: "8px" }}
                     >
@@ -527,138 +527,151 @@ function SendEth({ activeTab, listData, setListData }) {
                   </h2>
                 </div>
 
-                <div
-                  id={textStyle.tableresponsive}
-                  className={textStyle.scrollabletablecontainer}
-                  // style={{
-                  //   borderRadius: "20px",
-                  //   border: "1px solid #8D37FB",
-                  // }}
-                >
-                  <table
-                    className={`${textStyle["showtokentablesametext"]} ${textStyle["tabletextlist"]}`}
+                <div className={textStyle.tableWrapper}>
+                  <div
+                    id={textStyle.tableresponsive}
+                    className={textStyle.scrollabletablecontainer}
+                    // style={{
+                    //   borderRadius: "20px",
+                    //   border: "1px solid #8D37FB",
+                    // }}
                   >
-                    <thead className={textStyle.tableheadertextlist}>
-                      <tr
-                        style={{
-                          width: "100%",
-                          margin: "0 auto",
-                          borderRadius: "20px",
-                        }}
-                      >
-                        <th className={textStyle.accountsummaryth}>
-                          Total Amount
-                        </th>
-                        <th className={textStyle.accountsummaryth}>
-                          Total Amount
-                        </th>
-                        <th className={textStyle.accountsummaryth}>
-                          Your Balance
-                        </th>
-                        <th className={textStyle.accountsummaryth}>
-                          Remaining Balance
-                        </th>
-                      </tr>
-                    </thead>
-                    <tbody className={textStyle.tbodytextifyaccsum}>
-                      <tr style={{ borderBottom: "1px solid #ffffff61" }}>
-                        <td id={textStyle.fontsize10px} style={{ padding: "15px",}}>
-                          <div
-                            id="font-size-10px"
-                            className={textStyle.textAccSum}
-                            style={{
-                              width: "fit-content",
-                              margin: "0 auto",
-                              background: "transparent",
-                              color: "white",
-                              fontWeight: "300",
-                              borderRadius: "10px",
-
-                              fontSize: "15px",
-                              letterSpacing: "1px",
-                            }}
-                          >
-                            {totalEth
-                              ? `${(+ethers.utils.formatEther(
-                                  totalEth
-                                )).toFixed(5)} ETH `
-                              : null}
-                          </div>
-                        </td>
-                        <td id={textStyle.fontsize10px} style={{ padding: "15px",}}>
-                          {" "}
-                          <div
-                            id={textStyle.fontsize10px}
-                            style={{
-                              width: "fit-content",
-                              margin: "0 auto",
-                              background: "transparent",
-                              color: "white",
-                              fontWeight: "300",
-                              borderRadius: "10px",
-                              opacity: "0.4",
-                              fontSize: "15px",
-                              letterSpacing: "1px",
-                            }}
-                          >
-                            {totalEth
-                              ? `~$${(
-                                  ethers.utils.formatUnits(totalEth, 18) *
-                                  ethToUsdExchangeRate
-                                ).toFixed(2)} `
-                              : null}
-                          </div>
-                        </td>
-                        <td id={textStyle.fontsize10px} style={{ padding: "15px",}}>
-                          <div
-                            id="font-size-10px"
-                            style={{
-                              width: "fit-content",
-                              margin: "0 auto",
-                              color: "white",
-                              opacity: "0.4",
-                              fontWeight: "300",
-                              borderRadius: "10px",
-                              letterSpacing: "1px",
-                            }}
-                          >
-                            {ethBalance
-                              ? `${(+ethers.utils.formatEther(
-                                  ethBalance
-                                )).toFixed(5)} ETH `
-                              : null}
-                          </div>
-                        </td>
-                        <td
-                          id={textStyle.fontsize10px}
-                          style={{ padding: "15px",}}
-                          className={`showtoken-remaining-balance ${
-                            remaining < 0 ? "showtoken-remaining-negative" : ""
-                          }`}
+                    <table
+                      className={`${textStyle["showtokentablesametext"]} ${textStyle["tabletextlist"]}`}
+                    >
+                      <thead className={textStyle.tableheadertextlist}>
+                        <tr
+                          style={{
+                            width: "100%",
+                            margin: "0 auto",
+                            borderRadius: "20px",
+                          }}
                         >
-                          <div
+                          <th className={textStyle.accountsummaryth}>
+                            Total Amount
+                          </th>
+                          <th className={textStyle.accountsummaryth}>
+                            Total Amount
+                          </th>
+                          <th className={textStyle.accountsummaryth}>
+                            Your Balance
+                          </th>
+                          <th className={textStyle.accountsummaryth}>
+                            Remaining Balance
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody className={textStyle.tbodytextifyaccsum}>
+                        <tr style={{ borderBottom: "1px solid #ffffff61" }}>
+                          <td
                             id={textStyle.fontsize10px}
-                            // className="font-size-12px"
-                            style={{
-                              width: "fit-content",
-                              margin: "0 auto",
-                              background:
-                                remaining < 0 ? "transparent" : "transparent",
-                              color: remaining < 0 ? "red" : "white",
-                              borderRadius: "10px",
-
-                              fontSize: "15px",
-                              fontWeight: "400",
-                            }}
+                            style={{ padding: "15px" }}
                           >
-                            {remaining === null
-                              ? null
-                              : `${(+remaining).toFixed(5)}ETH `}
-                          </div>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
+                            <div
+                              id="font-size-10px"
+                              className={textStyle.textAccSum}
+                              style={{
+                                width: "fit-content",
+                                margin: "0 auto",
+                                background: "transparent",
+                                color: "white",
+                                fontWeight: "300",
+                                borderRadius: "10px",
+
+                                fontSize: "15px",
+                                letterSpacing: "1px",
+                              }}
+                            >
+                              {totalEth
+                                ? `${(+ethers.utils.formatEther(
+                                    totalEth
+                                  )).toFixed(5)} ETH `
+                                : null}
+                            </div>
+                          </td>
+                          <td
+                            id={textStyle.fontsize10px}
+                            style={{ padding: "15px" }}
+                          >
+                            {" "}
+                            <div
+                              id={textStyle.fontsize10px}
+                              style={{
+                                width: "fit-content",
+                                margin: "0 auto",
+                                background: "transparent",
+                                color: "white",
+                                fontWeight: "300",
+                                borderRadius: "10px",
+                                opacity: "0.4",
+                                fontSize: "15px",
+                                letterSpacing: "1px",
+                              }}
+                            >
+                              {totalEth
+                                ? `~$${(
+                                    ethers.utils.formatUnits(totalEth, 18) *
+                                    ethToUsdExchangeRate
+                                  ).toFixed(2)} `
+                                : null}
+                            </div>
+                          </td>
+                          <td
+                            id={textStyle.fontsize10px}
+                            style={{ padding: "15px" }}
+                          >
+                            <div
+                              id="font-size-10px"
+                              style={{
+                                width: "fit-content",
+                                margin: "0 auto",
+                                color: "white",
+                                opacity: "0.4",
+                                fontWeight: "300",
+                                borderRadius: "10px",
+                                letterSpacing: "1px",
+                              }}
+                            >
+                              {ethBalance
+                                ? `${(+ethers.utils.formatEther(
+                                    ethBalance
+                                  )).toFixed(5)} ETH `
+                                : null}
+                            </div>
+                          </td>
+                          <td
+                            id={textStyle.fontsize10px}
+                            style={{ padding: "15px" }}
+                            className={`showtoken-remaining-balance ${
+                              remaining < 0
+                                ? "showtoken-remaining-negative"
+                                : ""
+                            }`}
+                          >
+                            <div
+                              id={textStyle.fontsize10px}
+                              // className="font-size-12px"
+                              style={{
+                                width: "fit-content",
+                                margin: "0 auto",
+                                background:
+                                  remaining < 0 ? "transparent" : "transparent",
+                                color: remaining < 0 ? "red" : "white",
+                                borderRadius: "10px",
+
+                                fontSize: "15px",
+                                fontWeight: "400",
+                              }}
+                            >
+                              {remaining === null
+                                ? null
+                                : `${(+remaining).toFixed(5)}ETH `}
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
                 </div>
 
                 <Modal

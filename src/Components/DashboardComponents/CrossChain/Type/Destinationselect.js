@@ -5,6 +5,7 @@ import { Modal, Button } from "antd";
 import { driver } from "driver.js";
 import "driver.js/dist/driver.css";
 
+import { FaChevronDown } from "react-icons/fa"; 
 
 // function NestedDropdown({ options, onSelect, placeholder }) {
 //   const [isNestedOpen, setIsNestedOpen] = useState(false);
@@ -43,7 +44,6 @@ import "driver.js/dist/driver.css";
 //     </div>
 //   );
 // }
-
 
 function DesCustomDropdown({
   options,
@@ -120,6 +120,7 @@ function DesCustomDropdown({
         ) : (
           <span>{placeholder} ▾</span>
         )}
+        <FaChevronDown className={dropDownStyles.dropdownIcon} ></FaChevronDown>
       </div>
 
       <Modal
@@ -152,11 +153,11 @@ function DesCustomDropdown({
                 {option.name}
                 {selectedValue && selectedValue.name === option.name && (
                   <span className={dropDownStyles.dropdownItemSelectedText}>
-                    {" "}  (selected)
+                    {" "}
+                    (selected)
                   </span>
                 )}
-              </div> 
-             
+              </div>
             ))
           )}
         </div>

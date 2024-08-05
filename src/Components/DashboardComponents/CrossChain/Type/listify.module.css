@@ -634,10 +634,10 @@ border-radius: 20px ;
     width: 100%;
   }
   .eachinputofcreatelist {
-    width: 70% !important;
+    width: 100% !important;
   }
   .buttontoaddformdata {
-    width: 85% !important;
+    width: 55% !important;
   }
 }
 @media only screen and (max-width: 425px) {

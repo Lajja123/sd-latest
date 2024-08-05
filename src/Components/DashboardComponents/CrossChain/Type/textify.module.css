@@ -417,9 +417,14 @@
 }
 
 #tableresponsive {
-  margin: 40px 20px;
-  border: 1px solid #8d37fb;
-  border-radius: 20px;
+  /* margin: 40px 20px; */
+  /* border: 1px solid #8d37fb; */
+  /* border-radius: 20px; */
+}
+
+.tbody{
+  max-height: 200px;
+  overflow-y: auto;
 }
 
 .tablediv {
@@ -680,11 +685,11 @@
     font-size: 12px !important;
   }
 
-  #tableresponsive {
+  /* #tableresponsive {
     overflow: visible;
     overflow-x: scroll;
     margin: 25px 10px;
-  }
+  } */
 
   .componentcontainerdashboard {
     margin: 20px 20px !important;
@@ -704,7 +709,6 @@
   }
   .tablecontainer th,
   .tablecontainer td {
-    padding: 6px;
     font-size: 14px;
   }
   .titleforlinupsametext {
@@ -753,6 +757,10 @@
   .menubardashboard button {
     padding: 10px 7px;
     font-size: 15px;
+  }
+
+  .tableWrapper{
+    margin: 25px 10px;
   }
   .scrollabletablecontainer {
     margin: 25px 10px;

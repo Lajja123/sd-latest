@@ -131,7 +131,8 @@ function CrossChain({ activeTab }) {
                 selectedValue={selectedDestinationChain}
                 placeholder="Select destination chain "
                 disabled={!isMetaMaskConnected}
-              /> <Image src={select} style={{position:"absolute", left:"10%"}}/>
+              /> 
+              {/* <Image src={select} style={{position:"absolute", left:"10%"}}/> */}
             </div>
             
             <div className={textStyle.importtokendiv}>
@@ -144,7 +145,7 @@ function CrossChain({ activeTab }) {
                 placeholder="Select token "
                 disabled={!isMetaMaskConnected}
               />
-              <Image src={select} style={{position:"relative", right:"20%"}}/>
+              {/* <Image src={select} style={{position:"relative", right:"20%"}}/> */}
             </div>
             {errorMessage && (
               <div className={textStyle.errorMessage}>{errorMessage}</div>
