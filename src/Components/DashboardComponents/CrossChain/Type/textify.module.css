@@ -303,13 +303,20 @@
 }
 
 .scrollabletablecontainer {
-  border: 1px solid #8d37fb;
-  border-radius: 20px;
   margin: 50px 20px;
   overflow: auto;
   scrollbar-width: none;
+  border: 1px solid #8d37fb;
+  border-radius: 20px;
 }
 .scrollabletablecontainerTbody {
+  max-height: 315px;
+  overflow: auto;
+  scrollbar-width: none;
+  border: 1px solid #8d37fb;
+  border-radius: 20px;
+  margin: 50px 20px;
+
   max-height: 315px;
   overflow: auto;
   scrollbar-width: none;
@@ -433,6 +440,7 @@
   border: 1px solid #8d37fb;
   border-radius: 20px;
   overflow-x: auto;
+  scrollbar-width: none;
 }
 
 .tablediv::-webkit-scrollbar {

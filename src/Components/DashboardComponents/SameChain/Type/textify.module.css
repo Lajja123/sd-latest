@@ -210,7 +210,6 @@
 }
 #fontsize10px {
   letter-spacing: 1px;
-
 }
 .textlistdiv textarea {
   color: aliceblue !important;
@@ -265,13 +264,10 @@
 }
 .tabletextlist {
   width: 100%;
- 
-
 }
 .tabletextlist .tableTr {
   font-size: 16px;
   margin: 5px 0px;
-
 }
 .tabletextlist .tableTh {
   font-size: 15px;
@@ -374,8 +370,6 @@
 
 /* css for the sendeth file tables */
 
-
-
 .titleforlinupsametext {
   background: rgb(24, 26, 83);
   background: linear-gradient(
@@ -404,16 +398,21 @@
     rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
 }
 .scrollabletablecontainer {
-  border: 1px solid #8d37fb;
-border-radius: 20px ;
-  margin: 50px 20px;
   overflow: auto;
   scrollbar-width: none;
+  margin: 50px 20px;
+  border: 1px solid #8d37fb;
+  border-radius: 20px;
 }
 .scrollabletablecontainerTbody {
-
-  
- max-height: 315px;
+  border: 1px solid #8d37fb;
+  border-radius: 20px;
+  margin: 50px 20px;
+  max-height: 315px;
+  overflow: auto;
+  scrollbar-width: none;
+  margin: 50px 20px;
+  max-height: 315px;
   overflow: auto;
   scrollbar-width: none;
 }
@@ -976,7 +975,7 @@ border-radius: 20px ;
     overflow: auto;
   } */
 
-  .tableWrapper{
+  .tableWrapper {
     margin: 25px 10px;
   }
   .sendbutton {

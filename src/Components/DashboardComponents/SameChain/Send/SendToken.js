@@ -198,7 +198,7 @@ function SendToken({ activeTab, listData, setListData }) {
       setCustomTokenAddress(inputValue);
     }
     setErrorMessage("");
-  setErroroccured(false);
+    setErroroccured(false);
   };
 
   const onAddLabel = async (index, recipientAddress) => {
@@ -478,10 +478,7 @@ function SendToken({ activeTab, listData, setListData }) {
                 {listData.length > 0 ? (
                   <div>
                     <div className={textStyle.tablecontainer}>
-                      <div
-                        className={textStyle.titleforlinupsametext}
-                        style={{ padding: "5px 0px" }}
-                      >
+                      <div className={textStyle.titleforlinupsametext}>
                         <h2
                           style={{
                             padding: "15px",
@@ -494,7 +491,9 @@ function SendToken({ activeTab, listData, setListData }) {
                         </h2>
                       </div>
                       <div className={textStyle.tableWrapper}>
-                        <div className={textStyle.scrollabletablecontainer}>
+                        <div
+                          className={textStyle.scrollabletablecontainerTbody}
+                        >
                           <table
                             className={textStyle.tabletextlist}
                             style={{ padding: "30px 20px" }}
@@ -548,7 +547,10 @@ function SendToken({ activeTab, listData, setListData }) {
                             </thead>
                             <tbody>
                               {listData.map((data, index) => (
-                                <tr key={index}>
+                                <tr
+                                  key={index}
+                                  style={{ borderBottom: "1px solid #8d37fb" }}
+                                >
                                   <td
                                     id={textStyle.fontsize10px}
                                     style={{
