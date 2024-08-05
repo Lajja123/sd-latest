@@ -115,6 +115,7 @@
   border-radius: 20px;
   overflow: hidden;
   min-height: 50vh;
+  scrollbar-width: none;
 }
 
 .head .table {

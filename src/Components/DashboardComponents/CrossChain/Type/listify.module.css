@@ -320,15 +320,18 @@
 }
 
 .scrollabletablecontainer {
-  border: 1px solid #8d37fb;
-border-radius: 20px ;
-  margin: 50px 20px;
   overflow: auto;
+  scrollbar-width: none;
+  margin: 50px 20px;
+  border: 1px solid #8d37fb;
+  border-radius: 20px;
 }
 .scrollabletablecontainerTbody {
+  border: 1px solid #8d37fb;
+  border-radius: 20px;
 
-  
- max-height: 315px;
+
+  max-height: 315px;
   overflow: auto;
   scrollbar-width: none;
 }
@@ -368,7 +371,6 @@ border-radius: 20px ;
   cursor: pointer;
   border-radius: 40px;
 }
-
 
 .blurredbackground {
   filter: blur(1px);

@@ -275,14 +275,14 @@ function Uploadify({
           }}
           className={uploadStyle.sametextmain}
         >
-          Upload your Csv file which contains recipient Address and Token Amount
-          or <br />
+          Upload your Csv file or
           <a
             href="/SampleUpload.csv"
             download="SampleUpload.csv"
             className={uploadStyle.downloadbtn}
+            style={{ fontSize: "12px", marginLeft: "10px", color: "#00FFFF" }}
           >
-            Download Sample CSV file
+            (Download Sample CSV file)
           </a>
         </h2>
       </div>

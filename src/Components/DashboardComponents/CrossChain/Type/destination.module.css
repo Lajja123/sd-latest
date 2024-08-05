@@ -6,7 +6,7 @@
 }
 
 .dropdownHeader {
-  padding: 10px 15px;
+  padding: 15px 15px;
   /* border: 1px solid #9747ff; */
   background-color: #49058e91;
   color: white;
@@ -73,12 +73,11 @@
   font-size: 8px;
 }
 
-@media screen and (max-width:1200px){
-
-  .dropdown{
+@media screen and (max-width: 1200px) {
+  .dropdown {
     width: 100%;
   }
-  .dropdownHeader{
+  .dropdownHeader {
     font-size: px;
     padding: 10px 6px;
   }

@@ -56,7 +56,6 @@
   text-shadow: none;
 }
 
-
 .connectchain {
   position: relative;
   overflow: hidden;
@@ -97,7 +96,7 @@
 .disconnectmain {
   position: absolute;
   top: 65px;
-  padding: 30px 0px 0px 0px; 
+  padding: 30px 0px 0px 0px;
   /* width: 350px; */
 }
 
@@ -123,8 +122,8 @@
 
 .ChainDropdownMain {
   position: absolute;
-  top: 65px;
-  right: 200px;
+  top: 41px;
+  right: 130px;
   /* cursor: pointer; */
   padding: 30px 0px;
   width: 200px;
@@ -203,7 +202,7 @@
 
 @media only screen and (max-width: 768px) {
   .connectwallet {
-    padding: 8px 30px;
+    padding: 10px 30px;
   }
   .connectchain {
     font-size: 8px;
@@ -222,34 +221,31 @@
     font-size: 8px !important;
   }
 
-  .ChainDropdownMain{
+  .ChainDropdownMain {
     top: 50px;
     right: 12%;
     width: 150px;
   }
 
-  .networkoption{
+  .networkoption {
     font-size: 10px;
   }
 }
 
-@media screen and (max-width:600px) {
+@media screen and (max-width: 600px) {
   .connectwallet {
-    padding: 8px 30px;
+    padding: 10px 30px;
     border-radius: 25px;
     font-size: 12px;
   }
 }
 
 @media only screen and (max-width: 525px) {
+  .networkoption {
+    padding: 10px;
+  }
 
-
-.networkoption{
-  padding: 10px;
-
-}
-
-  .connectaccount{
+  .connectaccount {
     padding: 4px 10px;
   }
 
@@ -259,11 +255,11 @@
     justify-content: center;
   }
 
-  .logo{
+  .logo {
     width: 8px;
   }
 
-  .dropdown{
+  .dropdown {
     width: 150px;
   }
 }
@@ -284,7 +280,7 @@
 }
 
 @media only screen and (max-width: 425px) {
-  .disconnectmain{
+  .disconnectmain {
     width: 250px;
     right: 4%;
   }
@@ -306,10 +302,10 @@
     justify-content: center;
   }
 
-  .logo{
+  .logo {
     width: 5px;
   }
-  .connectaccount{
+  .connectaccount {
     font-size: 6px;
     padding: 8px 8px;
   }

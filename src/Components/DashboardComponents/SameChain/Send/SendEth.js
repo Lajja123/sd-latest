@@ -547,7 +547,7 @@ function SendEth({ activeTab, listData, setListData }) {
                 <div className={textStyle.tableWrapper}>
                   <div
                     id={textStyle.tableresponsive}
-                    className={textStyle.scrollabletablecontainer}
+                    className={textStyle.scrollabletablecontainerTbody}
                     // style={{
                     //   borderRadius: "20px",
                     //   border: "1px solid #8D37FB",

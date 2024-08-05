@@ -815,6 +815,7 @@ function SendToken({
                 </h2>
               </div>
               <div className={textStyle.tableWrapper}>
+                <div className={textStyle.scroll}>
                 <div
                   id={textStyle.tableresponsive}
                   className={textStyle.scrollabletablecontainer}
@@ -936,6 +937,7 @@ function SendToken({
                       </tr>
                     </tbody>
                   </table>
+                </div>
                 </div>
               </div>
             </div>
