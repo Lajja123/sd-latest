@@ -6,13 +6,15 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { faL, faTriangleExclamation } from "@fortawesome/free-solid-svg-icons";
 import { usePathname } from "next/navigation";
+import Cookies from "universal-cookie";
 
-function SwitchChain({ isMainnet, closeAccountModal }) {
+function SwitchChain({ closeAccountModal }) {
   // useChainChangeReload(); // Call this hook on every render to ensure the page reloads when chain changes
   const { chain } = useAccount();
   const path = usePathname();
-
+  const [isMainnet, setIsMainnet] = useState(true);
   const [isMounted, setIsMounted] = useState(false);
+  const cookie = new Cookies();
   const [errorModalIsOpen, setErrorModalIsOpen] = useState(false); // State for modal visibility
 
   const { chains, error, isLoading, pendingChainId, switchChain } =
@@ -63,6 +65,27 @@ function SwitchChain({ isMainnet, closeAccountModal }) {
     }
   };
 
+  const handleNetworkChange = (isMainnet) => {
+    setIsMainnet(isMainnet);
+    console.log("is mainnet");
+
+    cookie.set("isMainnet", !isMainnet);
+  };
+
+  useEffect(() => {
+    const getIsMainnetFromCookies = () => {
+      const isMainnetCookie = cookie.get("isMainnet");
+
+      if (isMainnetCookie !== undefined) {
+        setIsMainnet(isMainnetCookie);
+      }
+    };
+
+    getIsMainnetFromCookies();
+
+    // Clean up function to avoid memory leaks
+    return () => {};
+  }, []);
   useEffect(() => {
     if (error && error.code !== "UNSUPPORTED_CHAIN") {
       toast.error("Failed to change Network: User rejected the Request");
@@ -116,6 +139,24 @@ function SwitchChain({ isMainnet, closeAccountModal }) {
       >
         {dropdownVisible && (
           <div className={connectStyle.dropdown} style={{}}>
+            <div style={{ display: "flex" }}>
+              <button
+                className={`${connectStyle.networkButton} ${
+                  isMainnet ? connectStyle.active : ""
+                }`}
+                onClick={() => handleNetworkChange(true)}
+              >
+                Mainnet
+              </button>
+              <button
+                className={`${connectStyle.networkButton} ${
+                  !isMainnet ? connectStyle.active : ""
+                }`}
+                onClick={() => handleNetworkChange(false)}
+              >
+                Testnet
+              </button>
+            </div>
             {displayChains.map((network) => (
               <button
                 key={network.id}

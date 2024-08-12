@@ -13,36 +13,15 @@ import { createSign } from "@/Utils/UserSignatureAPIAuthentication";
 
 function Navbar() {
   const { isConnected, address } = useAccount();
-  const { theme, setTheme } = useTheme();
   const cookie = new Cookies();
   const [isMainnet, setIsMainnet] = useState(true);
   const { signMessageAsync } = useSignMessage();
-
   const path = usePathname();
   const chainId = useChainId();
 
   const isHome = path === "/";
   const isMilestone = path === "/milestone";
 
-  const handelMainnet = () => {
-    setIsMainnet(!isMainnet);
-    cookie.set("isMainnet", !isMainnet);
-  };
-
-  useEffect(() => {
-    const getIsMainnetFromCookies = () => {
-      const isMainnetCookie = cookie.get("isMainnet");
-
-      if (isMainnetCookie !== undefined) {
-        setIsMainnet(isMainnetCookie);
-      }
-    };
-
-    getIsMainnetFromCookies();
-
-    // Clean up function to avoid memory leaks
-    return () => {};
-  }, []);
 
   useEffect(() => {
     const handleAuth = async () => {
@@ -75,21 +54,6 @@ function Navbar() {
             <></>
           ) : (
             <div className={navStyle.connectwalletbuttondiv}>
-              {isConnected && (
-                <label className={navStyle.toggle}>
-                  <input
-                    type="checkbox"
-                    onChange={handelMainnet}
-                    checked={isMainnet}
-                  />
-                  <span className={navStyle.slider}></span>
-                  <span
-                    className={navStyle.labels}
-                    data-on="Mainnet"
-                    data-off="TestNet"
-                  ></span>
-                </label>
-              )}
               <ConnectButtonCustom isMainnet={isMainnet} />
             </div>
           )}
@@ -100,4 +64,3 @@ function Navbar() {
 }
 
 export default Navbar;
-
