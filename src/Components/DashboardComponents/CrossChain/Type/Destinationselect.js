@@ -118,7 +118,7 @@ function DesCustomDropdown({
             {selectedValue.name}
           </div>
         ) : (
-          <span>{placeholder} ▾</span>
+          <span>{placeholder}</span>
         )}
         <FaChevronDown className={dropDownStyles.dropdownIcon} ></FaChevronDown>
       </div>
@@ -148,7 +148,7 @@ function DesCustomDropdown({
                 <img
                   src={option.iconUrl}
                   alt={option.name}
-                  className={dropDownStyles.icon}
+                  className={dropDownStyles.iconp}
                 />
                 {option.name}
                 {selectedValue && selectedValue.name === option.name && (

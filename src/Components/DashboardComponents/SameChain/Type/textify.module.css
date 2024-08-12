@@ -219,7 +219,11 @@
   font-size: 15px;
 }
 .sendbutton {
-  background: #0000;
+  background: linear-gradient(
+    90deg,
+    rgba(39, 37, 62, 0.73) 0%,
+    rgba(50, 37, 67, 0.73) 100%
+  );
   border: 0.5px solid #00ffff;
   border-radius: 40px;
   color: #00ffff;
@@ -243,6 +247,22 @@
   background: #fff !important;
   box-shadow: 0 0 14px 0 #fff;
 }
+.disabledButton {
+  background: #0000;
+  border: 1px solid #00ffff;
+  border-radius: 40px;
+  color: #00ffff;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  line-height: 37px;
+  cursor: not-allowed;
+  margin-bottom: 50px;
+  padding: 5px 35px;
+  text-align: center;
+  opacity: 0.3;
+}
+
 .buttontoaddformdataunload:hover {
   box-shadow: rgb(255 255 255 / 72%) 1px 1px 18px 0px inset;
   border: 1px solid white;
@@ -326,7 +346,8 @@
   padding-top: 10px;
 }
 
-.addbutton, .unloadbutton {
+.addbutton,
+.unloadbutton {
   border: 1px solid white;
   background: linear-gradient(
     90deg,
@@ -407,10 +428,9 @@
   width: 100%;
   overflow-x: scroll;
   overflow-y: auto;
-  max-height: 300px;
+  max-height: 385px;
   scrollbar-width: none;
 }
-
 
 .scrollabletablecontainer {
   position: sticky;
@@ -418,9 +438,8 @@
   z-index: 999;
   scrollbar-width: none;
 }
-.scrollabletablecontainerTbody{
+.scrollabletablecontainerTbody {
   scrollbar-width: none;
-
 }
 /* .scrollabletablecontainerTbody::-webkit-scrollbar {
   width: 3px;
@@ -709,22 +728,18 @@
 .c2 {
   width: 140px;
   margin-bottom: 0 !important;
-
 }
 .c3 {
   width: 150px;
   margin-bottom: 0 !important;
-
 }
 .c4 {
   width: 200px;
   margin-bottom: 0 !important;
-
 }
 .c5 {
   width: 200px;
   margin-bottom: 0 !important;
-
 }
 
 @media screen and (max-width: 1260px) {
@@ -744,7 +759,8 @@
     font-size: 10px;
   }
 
-  .addbutton, .unloadbutton {
+  .addbutton,
+  .unloadbutton {
     font-size: 10px !important;
     margin: 0 10px !important;
     padding: 10px 20px !important;
@@ -838,13 +854,13 @@
     width: 100px;
   }
   .c3 {
-    width: 140px;  
+    width: 140px;
   }
   .c4 {
-    width: 200px;  
+    width: 200px;
   }
   .c5 {
-    width: 140px; 
+    width: 140px;
   }
 }
 
@@ -866,7 +882,8 @@
     font-size: 12px;
   }
 
-  .addbutton, .unloadbutton {
+  .addbutton,
+  .unloadbutton {
     font-size: 12px !important;
     margin: 0 12px !important;
     padding: 10px 12px !important;
@@ -888,7 +905,8 @@
     font-size: 10px;
   }
 
-  .addbutton, .unloadbutton {
+  .addbutton,
+  .unloadbutton {
     font-size: 10px !important;
     margin: 0 10px !important;
     padding: 8px 10px !important;
@@ -904,7 +922,7 @@
   }
   .textAccSum,
   .fontsize10px {
-    font-size: 12px !important;
+    font-size: 10px !important;
   }
   /* .buttontoaddformdata {
     font-size: 15px;
@@ -919,7 +937,7 @@
     margin: 0px 20px;
   } */
   #fontsize10px {
-    font-size: 12px !important;
+    font-size: 10px !important;
   }
 
   .tbodytextifyaccsum,
@@ -1026,19 +1044,10 @@
     margin: 25px 10px;
   }
   .sendbutton {
-    background: #0000;
     border: 0.5px solid #00ffff;
-    border-radius: 40px;
-    color: #00ffff;
     font-size: 12px;
-    font-weight: 700;
-    cursor: pointer;
-    letter-spacing: 1px;
-    line-height: 37px;
     margin-bottom: 35px;
     margin-top: 10px;
-    padding: 5px 35px;
-    text-align: center;
   }
   .popupforpayment {
     /* From https://css.glass */
@@ -1071,7 +1080,6 @@
     cursor: pointer;
     margin: 10px 0px;
   }
-  
 }
 @media only screen and (max-width: 375px) {
   .sendethdiv {

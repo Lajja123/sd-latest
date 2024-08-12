@@ -144,7 +144,7 @@ function ExecuteEth(props) {
       {" "}
       <button
         id={textStyle.greenbackground}
-        className={`${textStyle.sendbutton} `}
+        className={`${!props.suffecientBalance ? textStyle.disabledButton : textStyle.sendbutton}`}
         onClick={() => {
           execute();
         }}

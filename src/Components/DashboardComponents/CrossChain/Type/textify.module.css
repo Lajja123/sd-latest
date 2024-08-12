@@ -1,14 +1,11 @@
 .textAccSum {
   width: max-content;
   max-width: 900px;
-
   margin: 0 auto;
   background: transparent;
-
   transform: translate(-50%, -50%);
   animation: zoomAnimation 10s infinite alternate;
 }
-
 .dropdownItem {
   padding: 8px 12px;
   cursor: pointer;
@@ -20,7 +17,6 @@
   text-align: left;
   border-bottom: 1px solid #8f00ff;
 }
-
 .dropdown {
   position: absolute;
   left: 32px;
@@ -32,33 +28,27 @@
   max-height: 200px;
   overflow-y: auto;
 }
-
 .dropdown::-webkit-scrollbar {
   width: 1px;
 }
-
 .dropdown::-webkit-scrollbar-thumb {
   background-color: #5007e3;
   border-radius: 1px;
 }
-
 .divtocenter {
   display: flex;
 }
-
 .errormessagep {
   font-weight: 900;
   transform: translate(-50%, -50%);
   animation: zoomAnimation 1.5s infinite alternate;
 }
-
 .deletebutton:hover {
   cursor: pointer;
   opacity: 1;
   /* border-color: red; */
   /* background-color: rgba(0, 213, 255, 0.019); */
 }
-
 .deletebutton {
   color: white;
   opacity: 0.4;
@@ -68,12 +58,10 @@
   border-radius: 15px;
   margin-left: 20px;
 }
-
 #truee {
   background: white !important;
   color: #924afc;
 }
-
 .driverpopover01 {
   color: white !important;
   background: linear-gradient(103deg, #6126c1 5.04%, #384cff 97.86%) !important;
@@ -86,7 +74,6 @@
     transform: scale(1.002);
   }
 }
-
 .eachinputofcreatelist {
   border-radius: 5px;
   /* border: 1px solid #fff; */
@@ -122,7 +109,11 @@
   font-size: 15px;
 }
 .sendbutton {
-  background: #0000;
+  background: linear-gradient(
+    90deg,
+    rgba(39, 37, 62, 0.73) 0%,
+    rgba(50, 37, 67, 0.73) 100%
+  );
   border: 1px solid #00ffff;
   border-radius: 40px;
   color: #00ffff;
@@ -138,10 +129,24 @@
 .sendbutton:hover {
   /* border: none; */
   border: 1px solid white;
-  cursor: pointer;
   color: #8d37fb;
   background: #fff !important;
   box-shadow: 0 0 14px 0 #fff;
+}
+.disabledButton {
+  background: #0000;
+  border: 1px solid #00ffff;
+  border-radius: 40px;
+  color: #00ffff;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  line-height: 37px;
+  cursor: not-allowed;
+  margin-bottom: 50px;
+  padding: 5px 35px;
+  text-align: center;
+  opacity: 0.3;
 }
 .copyicon {
   padding: 0px 10px;
@@ -159,7 +164,6 @@
   color: white;
   border-radius: 5px;
 }
-
 .tableheadertextlist {
   background-color: #8d37fb;
 }
@@ -179,43 +183,36 @@
   letter-spacing: 1px;
   padding: 15px;
 }
-
 .tabletextlist .tableTh,
 .tableTd {
   text-align: center;
   letter-spacing: 1px;
   padding: 15px;
 }
-
 .showtokentablesametext {
   overflow: hidden;
   border-radius: inherit;
   width: 100%;
   border-collapse: collapse;
 }
-
 .tablecontainer table {
   width: 100%;
   border-collapse: collapse;
   padding: 10px;
 }
-
 .tablecontainer .tableTh,
 .tablecontainer .tableTd {
   /* border: 1px solid #ddd; */
   padding: 15px;
   text-align: center;
 }
-
 #sametextbtnpay:hover {
   background-color: #173bc5;
 }
-
 #sametextbtnpay {
   margin: 15px 0px;
   border-color: greenyellow;
 }
-
 .divtocoversametextdiv {
   border-radius: 47px;
   /* background:linear-gradient(
@@ -229,11 +226,9 @@
     rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px 0px 0px inset;
   margin: 50px 0px;
 }
-
 .Overlay {
   background-color: #007bff !important;
 }
-
 .titleforlinupsametext {
   background: rgb(24, 26, 83);
   background: linear-gradient(
@@ -260,7 +255,6 @@
   padding-bottom: 50px;
   padding-top: 20px;
 }
-
 .titleloadtokensametext {
   border-radius: 47px 47px 0px 0px;
   background: rgb(24, 26, 83);
@@ -269,11 +263,9 @@
     rgba(24, 26, 83, 1) 47%,
     rgba(46, 13, 90, 1) 100%
   );
-
   text-align: center;
   font-size: 12px;
 }
-
 .titleforaccountsummarytextsame {
   background: rgb(24, 26, 83);
   background: linear-gradient(
@@ -288,7 +280,6 @@
     rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
   font-size: 12px;
 }
-
 .titleloadtokensametext h2 {
   font-weight: 300;
   letter-spacing: 1.04px;
@@ -301,7 +292,6 @@
   margin: 0px;
   font-size: 15px;
 }
-
 .tableWrapper {
   border: 1px solid #8d37fb;
   border-radius: 20px;
@@ -310,7 +300,6 @@
   /* max-height: 400px; */
   overflow: hidden;
 }
-
 .scroll {
   width: 100%;
   overflow-x: scroll;
@@ -318,18 +307,16 @@
   max-height: 385px;
   scrollbar-width: none;
 }
-
 .scrollabletablecontainer {
   position: sticky;
   top: 0;
   z-index: 999;
   scrollbar-width: none;
 }
-.scrollabletablecontainerTbody{
+.scrollabletablecontainerTbody {
   scrollbar-width: none;
-
 }
- /* .scrollabletablecontainerTbody::-webkit-scrollbar {
+/* .scrollabletablecontainerTbody::-webkit-scrollbar {
   width: 3px;
   margin-right: 0;
 }
@@ -342,7 +329,6 @@
 .scrollabletablecontainerTbody::-webkit-scrollbar-thumb:hover {
   background: #555;
 }  */
-
 #backgroundgreen:hover {
   box-shadow: rgba(238, 242, 243, 0.553) 0px 5px 15px;
 }
@@ -380,11 +366,9 @@
 .accountsummarycrosschain {
   margin-top: 80px;
 }
-
 #greenbackground:hover {
   background-color: transparent;
 }
-
 .importtokendiv {
   display: flex;
   align-items: center;
@@ -417,7 +401,6 @@
   margin: 0 20px;
   padding: 15px 40px;
 }
-
 .textareaInput {
   outline: none;
 }
@@ -431,18 +414,15 @@
 .textareaInput::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
-
 #tableresponsive {
   /* margin: 40px 20px; */
   /* border: 1px solid #8d37fb; */
   /* border-radius: 20px; */
 }
-
 .tbody {
   max-height: 200px;
   overflow-y: auto;
 }
-
 .tablediv {
   margin: 40px 20px;
   border: 1px solid #8d37fb;
@@ -450,7 +430,6 @@
   overflow-x: auto;
   scrollbar-width: none;
 }
-
 .tablediv::-webkit-scrollbar {
   width: 3px;
   margin-right: 0;
@@ -464,7 +443,6 @@
 .tablediv::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
-
 .accountsummarycreatetitle,
 .selectloadtoke-title,
 .viewaddressdivtitle {
@@ -478,11 +456,9 @@
   font-size: 12px;
   padding: 5px 0;
 }
-
 .accountsummarycreatetitle {
   background: transparent !important;
 }
-
 .accountsummarycreatetitle h2 {
   background: linear-gradient(
     160deg,
@@ -537,7 +513,6 @@
   background: white;
   color: #b47dfc;
 }
-
 /* ....cross chain */
 #blockchainChains {
   width: 200px; /* Adjust width as needed */
@@ -548,7 +523,6 @@
   border-radius: 15px;
   background: #8d37fb;
 }
-
 /* Style for select options */
 #blockchainChains option {
   font-size: 16px;
@@ -557,7 +531,6 @@
   background-color: #0f042c;
   color: white;
 }
-
 /* Style for when the select input is focused */
 #blockchainChains:focus {
   outline: none;
@@ -568,31 +541,25 @@
   background-color: #0f042c; /* Adjust the color as needed */
   color: white;
 }
-
 .c1 {
   width: 160px;
   margin-bottom: 0 !important;
 }
-
 .c2 {
   width: 140px;
   margin-bottom: 0 !important;
-
 }
 .c3 {
   width: 150px;
   margin-bottom: 0 !important;
-
 }
 .c4 {
   width: 200px;
   margin-bottom: 0 !important;
-
 }
 .c5 {
   width: 200px;
   margin-bottom: 0 !important;
-
 }
 @media only screen and (max-width: 768px) {
   .sendethdiv {
@@ -634,7 +601,6 @@
     font-size: 15px;
     flex-direction: column;
   }
-
   .importtokendiv button {
     /* margin: 5px; */
     font-size: 15px;
@@ -660,7 +626,6 @@
   .accountsummarycreatetitle h2 {
     font-size: 15px !important;
   }
-
   .titlesametexttextarea h2 {
     font-size: 15px !important;
   }
@@ -683,13 +648,13 @@
     width: 100px;
   }
   .c3 {
-    width: 140px;  
+    width: 140px;
   }
   .c4 {
-    width: 200px;  
+    width: 200px;
   }
   .c5 {
-    width: 140px; 
+    width: 140px;
   }
 }
 @media only screen and (max-width: 425px) {
@@ -742,13 +707,11 @@
   .fontsize12px {
     font-size: 12px !important;
   }
-
   /* #tableresponsive {
     overflow: visible;
     overflow-x: scroll;
     margin: 25px 10px;
   } */
-
   .componentcontainerdashboard {
     margin: 20px 20px !important;
   }
@@ -816,7 +779,6 @@
     padding: 10px 7px;
     font-size: 15px;
   }
-
   .tableWrapper {
     margin: 25px 10px;
   }
@@ -825,29 +787,16 @@
     margin: 25px 10px;
     max-height: 280px;
   } */
-
-  .tableWrapper{
+  .tableWrapper {
     margin: 25px 10px;
-
   }
   .sendbutton {
-    background: linear-gradient(
-      90deg,
-      rgba(39, 37, 62, 0.73) 0%,
-      rgba(50, 37, 67, 0.73) 100%
-    );
-    border: none;
-    border-radius: 40px;
-    color: #fff;
+    border: 0.5px solid #00ffff;
     font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    line-height: 37px;
     margin-bottom: 35px;
     margin-top: 10px;
-    padding: 5px 35px;
-    text-align: center;
   }
+
   .popupforpayment {
     background: linear-gradient(
       94.24deg,
@@ -865,7 +814,6 @@
     transform: translate(-50%, -50%);
     z-index: 9999;
   }
-
   .popupforpayment button {
     background: #0000;
     border: 1px solid #1bff76;
@@ -884,7 +832,6 @@
     display: flex;
     justify-content: center;
   }
-
   #backgroundgreen {
     cursor: pointer;
     padding: 10px 25px;
@@ -902,7 +849,6 @@
     margin: 10px 20px !important;
   }
 }
-
 /* HTML: <div class="loader"></div> */
 .loader {
   --d: 22px;

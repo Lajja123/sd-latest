@@ -632,9 +632,11 @@ function SendToken({ activeTab, listData, setListData }) {
                                           letterSpacing: "1px",
                                         }}
                                       >
-                                        {`${(+ethers.utils.formatUnits(
+                                        {(+ethers.utils.formatUnits(
                                           data.value
-                                        )).toFixed(4)} HIVE`}
+                                        )).toFixed(4) +
+                                          " " +
+                                          tokenDetails.symbol}
                                       </div>
                                     </td>
                                     <td
@@ -671,7 +673,10 @@ function SendToken({ activeTab, listData, setListData }) {
                             fontWeight: "300",
                           }}
                         >
-                          Account Summary
+                          Account Summary{" "}
+                          <span style={{ opacity: "0.5", fontSize: "14px" }}>
+                            ({tokenDetails.symbol})
+                          </span>{" "}
                         </h2>
                       </div>
                       <div className={textStyle.tableWrapper}>
@@ -716,10 +721,10 @@ function SendToken({ activeTab, listData, setListData }) {
                                       // className={textStyle.textAccSum}
                                     >
                                       {totalERC20
-                                        ? `${(+ethers.utils.formatUnits(
+                                        ? (+ethers.utils.formatUnits(
                                             totalERC20,
                                             tokenDetails.decimal
-                                          )).toFixed(4)} HIVE`
+                                          )).toFixed(4)
                                         : null}{" "}
                                     </div>
                                   </td>
@@ -764,9 +769,7 @@ function SendToken({ activeTab, listData, setListData }) {
                                         ? (+ethers.utils.formatUnits(
                                             ERC20Balance,
                                             tokenDetails.decimal
-                                          )).toFixed(4) +
-                                          " " +
-                                          tokenDetails.symbol
+                                          )).toFixed(4)
                                         : null}
                                     </div>
                                   </td>
@@ -796,9 +799,7 @@ function SendToken({ activeTab, listData, setListData }) {
                                         : (+ethers.utils.formatUnits(
                                             remaining,
                                             tokenDetails.decimal
-                                          )).toFixed(4) +
-                                          " " +
-                                          tokenDetails.symbol}
+                                          )).toFixed(4)}
                                     </div>
                                   </td>
                                 </tr>

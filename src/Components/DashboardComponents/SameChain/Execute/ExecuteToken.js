@@ -17,7 +17,7 @@ import {
   faPaperPlane,
   faRightLong,
   faX,
-  faXTwitter
+  faXTwitter,
 } from "@fortawesome/free-solid-svg-icons";
 import { useAccount, useChainId, useNetwork } from "wagmi";
 
@@ -159,7 +159,11 @@ function ExecuteToken(props) {
       {" "}
       <button
         id={textStyle.greenbackground}
-        className={`${textStyle.sendbutton} `}
+        className={`${
+          !props.suffecientBalance
+            ? textStyle.disabledButton
+            : textStyle.sendbutton
+        }`}
         onClick={() => {
           execute();
         }}
@@ -171,11 +175,11 @@ function ExecuteToken(props) {
       </button>
       <div>
         <Modal
-         style={{
-          overlay: {
-            backgroundColor: "transparent"
-          },
-        }}
+          style={{
+            overlay: {
+              backgroundColor: "transparent",
+            },
+          }}
           className={textStyle.popupforpayment}
           isOpen={loaderModal}
           onRequestClose={() => setLoadermodal(false)}
@@ -187,11 +191,11 @@ function ExecuteToken(props) {
         </Modal>
       </div>
       <Modal
-       style={{
-        overlay: {
-          backgroundColor: "transparent"
-        },
-      }}
+        style={{
+          overlay: {
+            backgroundColor: "transparent",
+          },
+        }}
         className={textStyle.popupforpayment}
         isOpen={executionStatusmodal}
         onRequestClose={() => setExecutionStatusmodal(false)}

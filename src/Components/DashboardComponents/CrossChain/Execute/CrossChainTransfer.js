@@ -307,7 +307,11 @@ function CrossChainTransfer(props) {
       {" "}
       <button
         id={textStyle.greenbackground}
-        className={`${textStyle.sendbutton} `}
+        className={`${
+          !props.suffecientBalance
+            ? textStyle.disabledButton
+            : textStyle.sendbutton
+        }`}
         onClick={() => {
           execute();
         }}
@@ -319,11 +323,11 @@ function CrossChainTransfer(props) {
       </button>
       <div>
         <Modal
-         style={{
-          overlay: {
-            backgroundColor: "transparent"
-          },
-        }}
+          style={{
+            overlay: {
+              backgroundColor: "transparent",
+            },
+          }}
           className={textStyle.popupforpayment}
           isOpen={loaderModal}
           onRequestClose={() => setLoadermodal(false)}
@@ -335,11 +339,11 @@ function CrossChainTransfer(props) {
         </Modal>
       </div>
       <Modal
-       style={{
-        overlay: {
-          backgroundColor: "transparent"
-        },
-      }}
+        style={{
+          overlay: {
+            backgroundColor: "transparent",
+          },
+        }}
         className={textStyle.popupforpayment}
         isOpen={executionStatusmodal}
         onRequestClose={() => setExecutionStatusmodal(false)}

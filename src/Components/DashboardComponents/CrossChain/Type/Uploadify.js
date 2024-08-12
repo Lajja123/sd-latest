@@ -275,7 +275,7 @@ function Uploadify({
           }}
           className={uploadStyle.sametextmain}
         >
-          Upload your Csv file or
+          Upload your CSV file
           <a
             href="/SampleUpload.csv"
             download="SampleUpload.csv"

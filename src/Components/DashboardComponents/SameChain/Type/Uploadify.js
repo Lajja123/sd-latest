@@ -224,13 +224,12 @@ function Uploadify({
           }}
           className={uploadStyle.sametextmain}
         >
-          Upload your Csv file 
-          or  
+          Upload your CSV file
           <a
             href="/SampleUpload.csv"
             download="SampleUpload.csv"
             className={uploadStyle.downloadbtn}
-            style={{fontSize:"12px", marginLeft:"10px", color:"#00FFFF"}}
+            style={{ fontSize: "12px", marginLeft: "10px", color: "#00FFFF" }}
           >
             (Download Sample CSV file)
           </a>

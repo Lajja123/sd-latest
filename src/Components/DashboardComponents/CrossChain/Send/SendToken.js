@@ -548,7 +548,10 @@ function SendToken({
                       textAlign: "center",
                     }}
                   >
-                    Your Transaction Lineup
+                    Your Transaction Lineup{" "}
+                    <span style={{ opacity: "0.5", fontSize: "14px" }}>
+                      ({listData.length})
+                    </span>
                   </h2>
                 </div>
                 <div className={textStyle.tableWrapper}>
@@ -627,7 +630,12 @@ function SendToken({
                         <tbody>
                           {listData.length > 0
                             ? listData.map((data, index) => (
-                                <tr key={index} style={{ borderBottom: "1px solid rgb(141, 55, 251)"}}>
+                                <tr
+                                  key={index}
+                                  style={{
+                                    borderBottom: "1px solid rgb(141, 55, 251)",
+                                  }}
+                                >
                                   <td
                                     id={textStyle.fontsize10px}
                                     style={{
@@ -683,9 +691,7 @@ function SendToken({
                                             "Press Enter to submit"
                                           );
                                         }
-
                                         const regex = /^[a-zA-Z]*$/;
-
                                         if (
                                           regex.test(inputValue) &&
                                           inputValue.length <= 10
@@ -793,7 +799,6 @@ function SendToken({
                     </div>
                   </div>
                 </div>
-                
               </div>
             </div>
           ) : // </div>
@@ -811,133 +816,137 @@ function SendToken({
                     textAlign: "center",
                   }}
                 >
-                  Account Summary ({tokenDetails.symbol})
+                  Account Summary{" "}
+                  <span style={{ opacity: "0.5", fontSize: "14px" }}>
+                    ({tokenDetails.symbol})
+                  </span>
                 </h2>
               </div>
               <div className={textStyle.tableWrapper}>
                 <div className={textStyle.scroll}>
-                <div
-                  id={textStyle.tableresponsive}
-                  className={textStyle.scrollabletablecontainer}
-                >
-                  <table
-                    className={`${textStyle["showtokentablesametext"]} ${textStyle["tabletextlist"]}`}
+                  <div
+                    id={textStyle.tableresponsive}
+                    className={textStyle.scrollabletablecontainer}
                   >
-                    <thead className={textStyle.tableheadertextlist}>
-                      <tr style={{ width: "100%", margin: "0 auto" }}>
-                        <th className={textStyle.accountsummaryth}>
-                          Total Amount
-                        </th>
-                        <th className={textStyle.accountsummaryth}>
-                          Estimated Gas Price{" "}
-                          <FontAwesomeIcon icon={faGasPump} />
-                        </th>
-                        <th className={textStyle.accountsummaryth}>
-                          Your Balance
-                        </th>
-                        <th className={textStyle.accountsummaryth}>
-                          Remaining Balance
-                        </th>
-                      </tr>
-                    </thead>
-                    <tbody className={textStyle.tbodytextifyaccsum}>
-                      <tr>
-                        <td
-                          id={textStyle.fontsize10px}
-                          style={{ padding: "20px" }}
-                        >
-                          <div
-                            id="font-size-10px"
-                            className={textStyle.textAccSum}
-                          >
-                            {totalERC20
-                              ? (+ethers.utils.formatUnits(
-                                  totalERC20,
-                                  tokenDetails.decimal
-                                )).toFixed(4)
-                              : null}{" "}
-                          </div>
-                        </td>
-                        <td
-                          id={textStyle.fontsize10px}
-                          style={{ padding: "20px" }}
-                        >
-                          {" "}
-                          <div
+                    <table
+                      className={`${textStyle["showtokentablesametext"]} ${textStyle["tabletextlist"]}`}
+                    >
+                      <thead className={textStyle.tableheadertextlist}>
+                        <tr style={{ width: "100%", margin: "0 auto" }}>
+                          <th className={textStyle.accountsummaryth}>
+                            Total Amount
+                          </th>
+                          <th className={textStyle.accountsummaryth}>
+                            Estimated Gas Price
+                            <FontAwesomeIcon icon={faGasPump} />
+                          </th>
+                          <th className={textStyle.accountsummaryth}>
+                            Your Balance
+                          </th>
+                          <th className={textStyle.accountsummaryth}>
+                            Remaining Balance
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody className={textStyle.tbodytextifyaccsum}>
+                        <tr>
+                          <td
                             id={textStyle.fontsize10px}
-                            style={{
-                              width: "fit-content",
-                              margin: "0 auto",
-                              color: "white",
-                              borderRadius: "10px",
-                              fontWeight: "300",
-                              fontSize: "15px",
-                              opacity: "0.4",
-                              letterSpacing: "1px",
-                            }}
+                            style={{ padding: "20px" }}
                           >
-                            {showestimatedgasprice
-                              ? (+ethers.utils.formatEther(
-                                  showestimatedgasprice
-                                )).toFixed(6)
-                              : null}
-                          </div>
-                        </td>
-                        <td
-                          id={textStyle.fontsize10px}
-                          style={{ padding: "20px" }}
-                        >
-                          <div
-                            id="font-size-10px"
-                            style={{
-                              width: "fit-content",
-                              margin: "0 auto",
-                              color: "white",
-                              borderRadius: "10px",
-                              opacity: "0.4",
-                              letterSpacing: "1px",
-                            }}
-                          >
-                            {ERC20Balance
-                              ? (+ethers.utils.formatUnits(
-                                  ERC20Balance,
-                                  tokenDetails.decimal
-                                )).toFixed(4) + " "
-                              : null}
-                          </div>
-                        </td>
-                        <td
-                          id={textStyle.fontsize10px}
-                          style={{ padding: "20px" }}
-                          className={`showtoken-remaining-balance ${
-                            remaining < 0 ? "showtoken-remaining-negative" : ""
-                          }`}
-                        >
-                          <div
+                            <div
+                              id="font-size-10px"
+                              className={textStyle.textAccSum}
+                            >
+                              {totalERC20
+                                ? (+ethers.utils.formatUnits(
+                                    totalERC20,
+                                    tokenDetails.decimal
+                                  )).toFixed(4)
+                                : null}{" "}
+                            </div>
+                          </td>
+                          <td
                             id={textStyle.fontsize10px}
-                            // className="font-size-12px"
-                            style={{
-                              width: "fit-content",
-                              margin: "0 auto",
-
-                              color: remaining < 0 ? "red" : "white",
-                              borderRadius: "10px",
-
-                              fontSize: "15px",
-                            }}
+                            style={{ padding: "20px" }}
                           >
-                            {remaining === null
-                              ? null
-                              : (+ethers.utils.formatUnits(
-                                  remaining,
-                                  tokenDetails.decimal
-                                )).toFixed(4) + " "}
-                          </div>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
+                            <div
+                              id={textStyle.fontsize10px}
+                              style={{
+                                width: "fit-content",
+                                margin: "0 auto",
+                                color: "white",
+                                borderRadius: "10px",
+                                fontWeight: "300",
+                                fontSize: "15px",
+                                opacity: "0.4",
+                                letterSpacing: "1px",
+                              }}
+                            >
+                              {showestimatedgasprice
+                                ? (+ethers.utils.formatEther(
+                                    showestimatedgasprice
+                                  )).toFixed(4)
+                                : null}
+                            </div>
+                          </td>
+                          <td
+                            id={textStyle.fontsize10px}
+                            style={{ padding: "20px" }}
+                          >
+                            <div
+                              id="font-size-10px"
+                              style={{
+                                width: "fit-content",
+                                margin: "0 auto",
+                                color: "white",
+                                borderRadius: "10px",
+                                opacity: "0.4",
+                                letterSpacing: "1px",
+                              }}
+                            >
+                              {ERC20Balance
+                                ? (+ethers.utils.formatUnits(
+                                    ERC20Balance,
+                                    tokenDetails.decimal
+                                  )).toFixed(4) + " "
+                                : null}
+                            </div>
+                          </td>
+                          <td
+                            id={textStyle.fontsize10px}
+                            style={{ padding: "20px" }}
+                            className={`showtoken-remaining-balance ${
+                              remaining < 0
+                                ? "showtoken-remaining-negative"
+                                : ""
+                            }`}
+                          >
+                            <div
+                              id={textStyle.fontsize10px}
+                              // className="font-size-12px"
+                              style={{
+                                width: "fit-content",
+                                margin: "0 auto",
+
+                                color: remaining < 0 ? "red" : "white",
+                                borderRadius: "10px",
+
+                                fontSize: "15px",
+                              }}
+                            >
+                              {remaining === null
+                                ? null
+                                : (+ethers.utils.formatUnits(
+                                    remaining,
+                                    tokenDetails.decimal
+                                  )).toFixed(4) + " "}
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
                 </div>
               </div>
             </div>
