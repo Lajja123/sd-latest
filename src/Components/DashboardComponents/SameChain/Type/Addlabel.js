@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { Modal, Button } from "antd";
+import { Modal, Button, Tooltip } from "antd";
 import "antd/dist/reset.css";
-import { PlusOutlined } from "@ant-design/icons";
+import { PlusOutlined, InfoCircleOutlined } from "@ant-design/icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../Type/label.css";
 import {
@@ -14,12 +14,10 @@ import {
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-
 const AddLabel = ({ labels, setLabelValues, onAddLabel, index, data }) => {
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [isCopied, setIsCopied] = useState(false);
-
 
   const copyToClipboard = (text) => {
     navigator.clipboard.writeText(text).then(
@@ -62,65 +60,114 @@ const AddLabel = ({ labels, setLabelValues, onAddLabel, index, data }) => {
 
   return (
     <>
-      <Button
-        type="primary"
-        shape="circle"
-        icon={<PlusOutlined style={{ fill: "black" }} />}
-        onClick={() => setIsModalVisible(true)}
-      />
+      <Tooltip
+        title={
+          <span style={{ color: "white", fontSize: "10px" }}>
+            Assign Label to <br /> Transaction Lineup
+          </span>
+        }
+        placement="bottom"
+        color="linear-gradient(160deg, rgba(24, 26, 83, 1) 47%, rgba(46, 13, 90, 1) 100%)"
+        overlayInnerStyle={{
+          opacity: 0.9,
+          borderRadius: "8px",
+          lineHeight: "12px",
+        }}
+      >
+        <Button
+          type="primary"
+          shape="circle"
+          icon={<PlusOutlined style={{ fill: "black" }} />}
+          onClick={() => setIsModalVisible(true)}
+        />
+      </Tooltip>
       <Modal
-        title="Enter Label"
+        title={
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: "8px",
+              justifyContent: "center",
+            }}
+          >
+            Enter Label
+            <Tooltip
+              title="You can add a label from here to identify the transaction."
+              placement="bottom"
+              color="linear-gradient(160deg, rgba(24, 26, 83, 1) 47%, rgba(46, 13, 90, 1) 100%)"
+              overlayInnerStyle={{
+                marginTop: "10px",
+                marginLeft: "40px",
+                opacity: 0.6,
+                borderRadius: "8px",
+              }}
+            >
+              <InfoCircleOutlined
+                style={{ opacity: 0.6, fontSize: "16px", marginTop: "2px" }}
+              />
+            </Tooltip>
+          </div>
+        }
         visible={isModalVisible}
         onCancel={() => setIsModalVisible(false)}
-        footer={[
-          <Button
-            key="submit"
-            type="primary"
-            onClick={handleSubmit}
-            className="submitLable"
-          >
-            Save
-          </Button>,
-        ]}
+        // footer={[
+        //   <Button
+        //     key="submit"
+        //     type="primary"
+        //     onClick={handleSubmit}
+        //     className="submitLable"
+        //   >
+        //     Save
+        //   </Button>,
+        // ]}
+        footer={null}
       >
         <div
           style={{
             display: "flex",
+            flexDirection: "column",
             margin: "20px auto",
-            alignItems: "center",
-            width: "85%",
-            gap: "19px",
+            alignItems: "flex-start",
+            width: "75%",
+            gap: "10px",
             color: "white",
           }}
         >
-          <strong style={{fontSize:"15px"}}>Receiver Address:</strong>
+          <strong style={{ fontSize: "17px" }}>Receiver Address:</strong>
           <div
             style={{
+              width: "100%",
               color: "white",
-              fontSize: "15px",
+              fontSize: "14px",
+              textAlign: "left",
               fontWeight: "500",
+              textWrap: "wrap",
+              // padding: "0px 15px",
             }}
           >
-            {data.address.substr(0, 15)}...
-            {data.address.substr(-15)}
-            <FontAwesomeIcon
-                                className="copyicon"
-                                onClick={() => copyToClipboard(data.address)}
-                                icon={faCopy}
-                              />
+            {data.address}
+            <span>
+              <FontAwesomeIcon
+                className="copyicon"
+                onClick={() => copyToClipboard(data.address)}
+                icon={faCopy}
+              />
+            </span>
           </div>
         </div>
         <div
           style={{
             display: "flex",
-            margin: "0 auto",
-            alignItems: "center",
-            width: "85%",
-            justifyContent: "space-between",
+            flexDirection: "column",
+            margin: "20px auto",
+            alignItems: "flex-start",
+            width: "75%",
+            gap: "10px",
             color: "white",
           }}
         >
-          <strong style={{fontSize:"15px"}}>Add Label: </strong>{" "}
+          <strong style={{ fontSize: "17px" }}>Add Label: </strong>
           <input
             type="text"
             value={labels[index] ? labels[index] : ""}
@@ -128,9 +175,10 @@ const AddLabel = ({ labels, setLabelValues, onAddLabel, index, data }) => {
               borderRadius: "8px",
               padding: "10px",
               color: "white",
-              width: "67%",
+              width: "90%",
               border: "1px solid white",
               background: "transparent",
+              // margin: "0px 10px",
             }}
             onChange={handleInputChange}
           />
@@ -138,13 +186,30 @@ const AddLabel = ({ labels, setLabelValues, onAddLabel, index, data }) => {
             <p
               style={{
                 color: "red",
-                margin: "0px",
+                margin: "-5px 20px",
                 fontSize: "13px",
               }}
             >
               {errorMessage}
             </p>
           )}
+        </div>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "flex-start",
+            width: "75%",
+            margin: "30px auto 20px",
+          }}
+        >
+          <Button
+            key="submit"
+            type="primary"
+            onClick={handleSubmit}
+            className="submitLable"
+          >
+            Save
+          </Button>
         </div>
       </Modal>
     </>
