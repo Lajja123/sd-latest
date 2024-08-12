@@ -105,7 +105,7 @@ function SwitchChain({ closeAccountModal }) {
     <div
       className={connectStyle.switchchaincontainer}
       // onMouseEnter={() => setDropdownVisible(true)}
-      onMouseLeave={() => setDropdownVisible(false)}
+      onMouseLeave={() => setDropdownVisible(true)}
     >
       <button
         ref={buttonRef}
@@ -139,7 +139,13 @@ function SwitchChain({ closeAccountModal }) {
       >
         {dropdownVisible && (
           <div className={connectStyle.dropdown} style={{}}>
-            <div style={{ display: "flex" }}>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                margin: "10px 0px",
+              }}
+            >
               <button
                 className={`${connectStyle.networkButton} ${
                   isMainnet ? connectStyle.active : ""
@@ -187,9 +193,7 @@ function SwitchChain({ closeAccountModal }) {
               <>
                 <button className={connectStyle.networkoption}>
                   <div className={connectStyle.icon2}>
-                    <div className={connectStyle.netName}>
-                      Mainnet will be available soon
-                    </div>
+                    <div className={connectStyle.netName}>Available soon</div>
                   </div>
                 </button>
               </>
