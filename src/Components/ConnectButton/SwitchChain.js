@@ -32,7 +32,8 @@ function SwitchChain({ closeAccountModal }) {
   const sameCahinAvailableChains = [
     11155111, 534351, 11155420, 919, 84532, 10, 8453, 534352, 34443,
   ];
-
+  const sameChainAvailableMainnet = [10, 8453, 534352, 34443];
+  const sameChainAvailableTestnet = [11155111, 534351, 11155420, 919, 84532];
   let displayChains = isMainnet
     ? chains.filter((chain) => mainnetChains.includes(chain.id))
     : chains.filter(
@@ -47,9 +48,13 @@ function SwitchChain({ closeAccountModal }) {
     );
   }
   if (isSamePage) {
-    displayChains = displayChains.filter((chain) =>
-      sameCahinAvailableChains.includes(chain.id)
-    );
+    displayChains = isMainnet
+      ? displayChains.filter((chain) =>
+          sameChainAvailableMainnet.includes(chain.id)
+        )
+      : displayChains.filter((chain) =>
+          sameChainAvailableTestnet.includes(chain.id)
+        );
   }
   const [dropdownVisible, setDropdownVisible] = useState(false);
 
@@ -180,7 +185,6 @@ function SwitchChain({ closeAccountModal }) {
                 className={connectStyle.networkoption}
                 disabled={isLoading || pendingChainId === network.id}
                 onClick={() => handleOptionClick(network.id)}
-                style={{}}
               >
                 <div className={connectStyle.icon2}>
                   {network.iconUrl && (
@@ -188,15 +192,17 @@ function SwitchChain({ closeAccountModal }) {
                       src={network.iconUrl}
                       alt={network.name}
                       style={{
-                        width: "20px", // Adjust the width according to your design
+                        width: "20px",
                         marginRight: "10px",
                         background: "white",
-                        borderRadius: "50%", // Make the icon round if needed
+                        borderRadius: "50%",
                       }}
                     />
                   )}
-
                   <div className={connectStyle.netName}>{network.name}</div>
+                  {chain && chain.id === network.id && (
+                    <div className={connectStyle.selectedDot}></div>
+                  )}
                 </div>
               </button>
             ))}
