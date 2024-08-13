@@ -34,7 +34,11 @@ function SwitchChain({ closeAccountModal }) {
 
   let displayChains = isMainnet
     ? chains.filter((chain) => mainnetChains.includes(chain.id))
-    : chains.filter((chain) => !mainnetChains.includes(chain.id));
+    : chains.filter(
+        (chain) =>
+          crossChainAvailableChains.includes(chain.id) ||
+          sameCahinAvailableChains.includes(chain.id)
+      );
 
   if (isCrosschainPage) {
     displayChains = displayChains.filter((chain) =>
@@ -46,7 +50,6 @@ function SwitchChain({ closeAccountModal }) {
       sameCahinAvailableChains.includes(chain.id)
     );
   }
-
   const [dropdownVisible, setDropdownVisible] = useState(false);
 
   const buttonRef = useRef(null);
@@ -100,12 +103,19 @@ function SwitchChain({ closeAccountModal }) {
     setDropdownVisible(true);
     closeAccountModal();
   };
-
+  const isChainAvailable = (chainId) => {
+    const allAvailableChains = [
+      ...mainnetChains,
+      ...crossChainAvailableChains,
+      ...sameCahinAvailableChains,
+    ];
+    return allAvailableChains.includes(chainId);
+  };
   return (
     <div
       className={connectStyle.switchchaincontainer}
       // onMouseEnter={() => setDropdownVisible(true)}
-      onMouseLeave={() => setDropdownVisible(true)}
+      onMouseLeave={() => setDropdownVisible(false)}
     >
       <button
         ref={buttonRef}
@@ -115,7 +125,7 @@ function SwitchChain({ closeAccountModal }) {
         onMouseLeave={handleMouseLeave}
         onClick={handleButtonClick}
       >
-        {chain && displayChains?.some((network) => network.id === chain.id) ? (
+        {chain && isChainAvailable(chain.id) ? (
           <>
             <img
               src={chain.iconUrl}
@@ -125,10 +135,9 @@ function SwitchChain({ closeAccountModal }) {
             <span className={connectStyle.chainName}>{chain.name}</span>
           </>
         ) : (
-          <FontAwesomeIcon
-            icon={faTriangleExclamation}
-            className={connectStyle.iconStyle}
-          />
+          <div className={connectStyle.chainName} style={{ color: "red" }}>
+            Wrong Network
+          </div>
         )}
       </button>
 

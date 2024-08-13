@@ -145,10 +145,7 @@ const ConnectButtonCustom = ({ isMainnet }) => {
                   >
                     <span>
                       {account.displayName}
-                      <br />
-                      {account.displayBalance
-                        ? account.displayBalance
-                        : "Loading..."}
+                     
                     </span>
                   </button>
 
