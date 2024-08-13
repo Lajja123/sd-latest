@@ -13,7 +13,7 @@ import AnalysisNav from "./AnalysisNav";
 function MainHistory() {
   return (
     <div className={history.maindiv}>
-      {/* <div>
+      <div>
         <div className={samechainStyle.stickyIcon}>
           <a href="/cross-chain" className={samechainStyle.Instagra}>
             <FontAwesomeIcon icon={faShare} width={"1em"} height={"1em"} />
@@ -32,8 +32,8 @@ function MainHistory() {
             <div style={{ marginLeft: "25px" }}>Manage Labels</div>
           </a>
         </div>
-      </div> */}
-      <AnalysisNav />
+      </div>
+      {/* <AnalysisNav /> */}
       <History />
     </div>
   );

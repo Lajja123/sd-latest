@@ -280,7 +280,7 @@ function Displayallusers() {
               <FontAwesomeIcon icon={faArrowRight} />
             </a>{" "}
           </div> */}
-          {/* <div>
+          <div>
             <div className={displayuser.button1}>
               <a href="/same-chain" className={displayuser.Instagra}>
                 <FontAwesomeIcon icon={faShare} width={"1em"} height={"1em"} />
@@ -293,8 +293,8 @@ function Displayallusers() {
                 <div style={{ marginLeft: "25px" }}> Cross Chain</div>
               </a>
             </div>
-          </div> */}
-          <FloatNav />
+          </div>
+          {/* <FloatNav /> */}
         </div>
       </div>
       <Footer />
