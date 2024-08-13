@@ -144,15 +144,16 @@ const AddLabel = ({ labels, setLabelValues, onAddLabel, index, data }) => {
             Receiver Address:
           </strong>
           <div className="recAdd1">
-            {data.address}
-            <FontAwesomeIcon
-              className="copyicon"
-              onClick={() => copyToClipboard(data.address)}
-              icon={faCopy}
-            />
-          </div>
-          <div className="recAdd2">
-            {truncateAddress(data.address)}
+            <span
+              style={{
+                width: "85%",
+                fontSize: "15px",
+                textOverflow: "ellipsis",
+                opacity: "0.5",
+              }}
+            >
+              {data.address}
+            </span>
             <FontAwesomeIcon
               className="copyicon"
               onClick={() => copyToClipboard(data.address)}

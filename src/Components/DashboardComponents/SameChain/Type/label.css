@@ -74,6 +74,7 @@
 }
 .copyicon {
   padding: 0px 10px;
+  width: 15px;
 }
 .copyicon:hover {
   cursor: pointer;
@@ -82,9 +83,10 @@
 .recAdd1 {
   width: 100%;
   color: white;
-  font-size: 1vw;
+  overflow: hidden;
   text-align: left;
   font-weight: 500;
+  text-overflow: ellipsis;
   text-wrap: wrap;
   border: 1px solid white;
   border-radius: 8px;
@@ -94,11 +96,8 @@
   cursor: not-allowed;
   padding: 10px;
 }
-.recAdd2 {
-  display: none;
-}
 
-@media only screen and (max-width: 425px) {
+/* @media only screen and (max-width: 425px) {
   .recAdd2 {
     width: 100%;
     color: white;
@@ -117,4 +116,4 @@
   .recAdd1 {
     display: none;
   }
-}
+} */
