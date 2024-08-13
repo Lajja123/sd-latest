@@ -22,6 +22,7 @@ import notfound from "../../Assets/oops.webp";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Link from "next/link";
+import FloatNav from "./FloatNav";
 
 function Displayallusers() {
   const [usersData, setUsersData] = useState([]);
@@ -279,27 +280,21 @@ function Displayallusers() {
               <FontAwesomeIcon icon={faArrowRight} />
             </a>{" "}
           </div> */}
-          <div>
-        <div className={displayuser.button1}>
-          <a href="/same-chain" className={displayuser.Instagra}>
-            <FontAwesomeIcon
-              icon={faShare}
-              width={"1em"} height={"1em"}
-            />
-            <div style={{ marginLeft: "25px" }}>Same Chain</div>
-          </a>
-        </div>
-        <div className={displayuser.button2}>
-          <a href="/cross-chain" className={displayuser.Instagra}>
-            <FontAwesomeIcon
-              icon={faShare}
-              width={"1em"} height={"1em"}
-            />
-            <div style={{ marginLeft: "25px" }}> Cross Chain</div>
-          </a>
-        </div>
-      </div>
-
+          {/* <div>
+            <div className={displayuser.button1}>
+              <a href="/same-chain" className={displayuser.Instagra}>
+                <FontAwesomeIcon icon={faShare} width={"1em"} height={"1em"} />
+                <div style={{ marginLeft: "25px" }}>Same Chain</div>
+              </a>
+            </div>
+            <div className={displayuser.button2}>
+              <a href="/cross-chain" className={displayuser.Instagra}>
+                <FontAwesomeIcon icon={faShare} width={"1em"} height={"1em"} />
+                <div style={{ marginLeft: "25px" }}> Cross Chain</div>
+              </a>
+            </div>
+          </div> */}
+          <FloatNav />
         </div>
       </div>
       <Footer />
