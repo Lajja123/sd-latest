@@ -57,13 +57,19 @@ const AddLabel = ({ labels, setLabelValues, onAddLabel, index, data }) => {
       setErrorMessage("Enter Label");
     }
   };
-
+  const truncateAddress = (address) => {
+    if (!address) return "";
+    const start = address.slice(0, 10);
+    const end = address.slice(-15);
+    return `${start}...${end}`;
+  };
   return (
     <>
       <Tooltip
         title={
           <span style={{ color: "white", fontSize: "10px" }}>
-            Assign Label to <br /> Transaction Lineup
+            Assign a label to this
+            <br /> receiver's address
           </span>
         }
         placement="bottom"
@@ -93,7 +99,7 @@ const AddLabel = ({ labels, setLabelValues, onAddLabel, index, data }) => {
           >
             Enter Label
             <Tooltip
-              title="Assign a label to this receiver's address."
+              title="You can add a label from here to identify the transaction."
               placement="bottom"
               color="linear-gradient(160deg, rgba(24, 26, 83, 1) 47%, rgba(46, 13, 90, 1) 100%)"
               overlayInnerStyle={{
@@ -129,31 +135,29 @@ const AddLabel = ({ labels, setLabelValues, onAddLabel, index, data }) => {
             flexDirection: "column",
             margin: "20px auto",
             alignItems: "flex-start",
-            width: "75%",
+            // width: "75%",
             gap: "10px",
             color: "white",
           }}
         >
-          <strong style={{ fontSize: "17px" }}>Receiver Address:</strong>
-          <div
-            style={{
-              width: "100%",
-              color: "white",
-              fontSize: "14px",
-              textAlign: "left",
-              fontWeight: "500",
-              textWrap: "wrap",
-              // padding: "0px 15px",
-            }}
-          >
+          <strong style={{ fontSize: "14px", letterSpacing: "0.5px" }}>
+            Receiver Address:
+          </strong>
+          <div className="recAdd1">
             {data.address}
-            <span>
-              <FontAwesomeIcon
-                className="copyicon"
-                onClick={() => copyToClipboard(data.address)}
-                icon={faCopy}
-              />
-            </span>
+            <FontAwesomeIcon
+              className="copyicon"
+              onClick={() => copyToClipboard(data.address)}
+              icon={faCopy}
+            />
+          </div>
+          <div className="recAdd2">
+            {truncateAddress(data.address)}
+            <FontAwesomeIcon
+              className="copyicon"
+              onClick={() => copyToClipboard(data.address)}
+              icon={faCopy}
+            />
           </div>
         </div>
         <div
@@ -162,12 +166,14 @@ const AddLabel = ({ labels, setLabelValues, onAddLabel, index, data }) => {
             flexDirection: "column",
             margin: "20px auto",
             alignItems: "flex-start",
-            width: "75%",
+            // width: "75%",
             gap: "10px",
             color: "white",
           }}
         >
-          <strong style={{ fontSize: "17px" }}>Add Label: </strong>
+          <strong style={{ fontSize: "14px", letterSpacing: "0.5px" }}>
+            Add Label:{" "}
+          </strong>
           <input
             type="text"
             value={labels[index] ? labels[index] : ""}
@@ -175,9 +181,10 @@ const AddLabel = ({ labels, setLabelValues, onAddLabel, index, data }) => {
               borderRadius: "8px",
               padding: "10px",
               color: "white",
-              width: "90%",
+              width: "100%",
               border: "1px solid white",
               background: "transparent",
+              fontSize: "17px",
               // margin: "0px 10px",
             }}
             onChange={handleInputChange}
@@ -186,6 +193,7 @@ const AddLabel = ({ labels, setLabelValues, onAddLabel, index, data }) => {
             <p
               style={{
                 color: "red",
+                fontWeight: "600",
                 margin: "-5px 20px",
                 fontSize: "13px",
               }}
@@ -198,7 +206,7 @@ const AddLabel = ({ labels, setLabelValues, onAddLabel, index, data }) => {
           style={{
             display: "flex",
             justifyContent: "flex-start",
-            width: "75%",
+            // width: "75%",
             margin: "30px auto 20px",
           }}
         >

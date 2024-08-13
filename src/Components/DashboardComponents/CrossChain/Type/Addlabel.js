@@ -63,7 +63,8 @@ const AddLabel = ({ labels, setLabelValues, onAddLabel, index, data }) => {
       <Tooltip
         title={
           <span style={{ color: "white", fontSize: "10px" }}>
-            Assign Label to <br /> Transaction Lineup
+            Assign a label to this
+            <br /> receiver's address
           </span>
         }
         placement="bottom"
@@ -93,7 +94,7 @@ const AddLabel = ({ labels, setLabelValues, onAddLabel, index, data }) => {
           >
             Enter Label
             <Tooltip
-              title="Assign a label to this receiver's address."
+              title="You can add a label from here to identify the transaction."
               placement="bottom"
               color="linear-gradient(160deg, rgba(24, 26, 83, 1) 47%, rgba(46, 13, 90, 1) 100%)"
               overlayInnerStyle={{
@@ -129,12 +130,14 @@ const AddLabel = ({ labels, setLabelValues, onAddLabel, index, data }) => {
             flexDirection: "column",
             margin: "20px auto",
             alignItems: "flex-start",
-            width: "75%",
+            // width: "75%",
             gap: "10px",
             color: "white",
           }}
         >
-          <strong style={{ fontSize: "17px" }}>Receiver Address:</strong>
+          <strong style={{ fontSize: "17px", letterSpacing: "1px" }}>
+            Receiver Address:
+          </strong>
           <div
             style={{
               width: "100%",
@@ -143,7 +146,13 @@ const AddLabel = ({ labels, setLabelValues, onAddLabel, index, data }) => {
               textAlign: "left",
               fontWeight: "500",
               textWrap: "wrap",
-              // padding: "0px 15px",
+              border: "1px solid white",
+              borderRadius: "8px",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+              cursor: "not-allowed",
+              padding: "10px",
             }}
           >
             {data.address}
@@ -160,12 +169,14 @@ const AddLabel = ({ labels, setLabelValues, onAddLabel, index, data }) => {
             flexDirection: "column",
             margin: "20px auto",
             alignItems: "flex-start",
-            width: "75%",
+            // width: "75%",
             gap: "10px",
             color: "white",
           }}
         >
-          <strong style={{ fontSize: "17px" }}>Add Label: </strong>
+          <strong style={{ fontSize: "17px", letterSpacing: "1px" }}>
+            Add Label:{" "}
+          </strong>
           <input
             type="text"
             value={labels[index] ? labels[index] : ""}
@@ -173,7 +184,7 @@ const AddLabel = ({ labels, setLabelValues, onAddLabel, index, data }) => {
               borderRadius: "8px",
               padding: "10px",
               color: "white",
-              width: "90%",
+              width: "100%",
               border: "1px solid white",
               background: "transparent",
               // margin: "0px 10px",
@@ -196,7 +207,7 @@ const AddLabel = ({ labels, setLabelValues, onAddLabel, index, data }) => {
           style={{
             display: "flex",
             justifyContent: "flex-start",
-            width: "75%",
+            // width: "75%",
             margin: "30px auto 20px",
           }}
         >
