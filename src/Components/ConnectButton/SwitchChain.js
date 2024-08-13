@@ -4,6 +4,7 @@ import connectStyle from "../ConnectButton/connect.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { FaChevronDown } from "react-icons/fa";
 import { faL, faTriangleExclamation } from "@fortawesome/free-solid-svg-icons";
 import { usePathname } from "next/navigation";
 import Cookies from "universal-cookie";
@@ -139,6 +140,7 @@ function SwitchChain({ closeAccountModal }) {
             Wrong Network
           </div>
         )}
+        <FaChevronDown className={connectStyle.chainName} />
       </button>
 
       <div

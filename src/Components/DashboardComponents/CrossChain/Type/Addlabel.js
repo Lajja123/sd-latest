@@ -93,7 +93,7 @@ const AddLabel = ({ labels, setLabelValues, onAddLabel, index, data }) => {
           >
             Enter Label
             <Tooltip
-              title="You can add a label from here to identify the transaction."
+              title="Assign a label to this receiver's address."
               placement="bottom"
               color="linear-gradient(160deg, rgba(24, 26, 83, 1) 47%, rgba(46, 13, 90, 1) 100%)"
               overlayInnerStyle={{
