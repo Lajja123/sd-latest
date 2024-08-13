@@ -82,7 +82,7 @@
 .recAdd1 {
   width: 100%;
   color: white;
-  font-size: 17px;
+  font-size: 1vw;
   text-align: left;
   font-weight: 500;
   text-wrap: wrap;
@@ -102,7 +102,7 @@
   .recAdd2 {
     width: 100%;
     color: white;
-    font-size: 17px;
+
     text-align: left;
     font-weight: 500;
     text-wrap: wrap;

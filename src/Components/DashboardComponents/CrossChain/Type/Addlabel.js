@@ -57,7 +57,12 @@ const AddLabel = ({ labels, setLabelValues, onAddLabel, index, data }) => {
       setErrorMessage("Enter Label");
     }
   };
-
+  const truncateAddress = (address) => {
+    if (!address) return "";
+    const start = address.slice(0, 10);
+    const end = address.slice(-15);
+    return `${start}...${end}`;
+  };
   return (
     <>
       <Tooltip
@@ -135,27 +140,19 @@ const AddLabel = ({ labels, setLabelValues, onAddLabel, index, data }) => {
             color: "white",
           }}
         >
-          <strong style={{ fontSize: "17px", letterSpacing: "1px" }}>
+          <strong style={{ fontSize: "14px", letterSpacing: "0.5px" }}>
             Receiver Address:
           </strong>
-          <div
-            style={{
-              width: "100%",
-              color: "white",
-              fontSize: "14px",
-              textAlign: "left",
-              fontWeight: "500",
-              textWrap: "wrap",
-              border: "1px solid white",
-              borderRadius: "8px",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "space-between",
-              cursor: "not-allowed",
-              padding: "10px",
-            }}
-          >
+          <div className="recAdd1">
             {data.address}
+            <FontAwesomeIcon
+              className="copyicon"
+              onClick={() => copyToClipboard(data.address)}
+              icon={faCopy}
+            />
+          </div>
+          <div className="recAdd2">
+            {truncateAddress(data.address)}
             <FontAwesomeIcon
               className="copyicon"
               onClick={() => copyToClipboard(data.address)}
@@ -174,7 +171,7 @@ const AddLabel = ({ labels, setLabelValues, onAddLabel, index, data }) => {
             color: "white",
           }}
         >
-          <strong style={{ fontSize: "17px", letterSpacing: "1px" }}>
+          <strong style={{ fontSize: "14px", letterSpacing: "0.5px" }}>
             Add Label:{" "}
           </strong>
           <input
@@ -187,6 +184,7 @@ const AddLabel = ({ labels, setLabelValues, onAddLabel, index, data }) => {
               width: "100%",
               border: "1px solid white",
               background: "transparent",
+              fontSize: "17px",
               // margin: "0px 10px",
             }}
             onChange={handleInputChange}
@@ -195,6 +193,7 @@ const AddLabel = ({ labels, setLabelValues, onAddLabel, index, data }) => {
             <p
               style={{
                 color: "red",
+                fontWeight: "600",
                 margin: "-5px 20px",
                 fontSize: "13px",
               }}
