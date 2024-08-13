@@ -17,44 +17,33 @@ function SwitchChain({ closeAccountModal }) {
   const [isMounted, setIsMounted] = useState(false);
   const cookie = new Cookies();
   const [errorModalIsOpen, setErrorModalIsOpen] = useState(false); // State for modal visibility
-
   const { chains, error, isLoading, pendingChainId, switchChain } =
     useSwitchChain();
 
-  const mainnetChains = [34443, 534352, 8453, 10];
-
   const isCrosschainPage = path === "/cross-chain";
-
   const isSamePage = path === "/same-chain";
 
-  const crossChainAvailableChains = [11155111, 11155420, 84532, 421614, 80002];
+  const mainnetChains = [34443, 534352, 8453, 10];
+  const testnetChains = [11155111, 534351, 11155420, 919, 84532];
+  const crossChainMainnet = [10, 8453, 534352, 34443];
+  const crossChainTestnet = [11155111, 11155420, 84532, 421614, 80002];
+  const sameChainMainnet = [10, 8453, 534352, 34443];
+  const sameChainTestnet = [11155111, 534351, 11155420, 919, 84532];
 
-  const sameCahinAvailableChains = [
-    11155111, 534351, 11155420, 919, 84532, 10, 8453, 534352, 34443,
-  ];
-  const sameChainAvailableMainnet = [10, 8453, 534352, 34443];
-  const sameChainAvailableTestnet = [11155111, 534351, 11155420, 919, 84532];
   let displayChains = isMainnet
     ? chains.filter((chain) => mainnetChains.includes(chain.id))
-    : chains.filter(
-        (chain) =>
-          crossChainAvailableChains.includes(chain.id) ||
-          sameCahinAvailableChains.includes(chain.id)
-      );
+    : chains.filter((chain) => testnetChains.includes(chain.id));
 
   if (isCrosschainPage) {
-    displayChains = displayChains.filter((chain) =>
-      crossChainAvailableChains.includes(chain.id)
-    );
+    displayChains = isMainnet
+      ? displayChains.filter((chain) => crossChainMainnet.includes(chain.id))
+      : displayChains.filter((chain) => crossChainTestnet.includes(chain.id));
   }
+
   if (isSamePage) {
     displayChains = isMainnet
-      ? displayChains.filter((chain) =>
-          sameChainAvailableMainnet.includes(chain.id)
-        )
-      : displayChains.filter((chain) =>
-          sameChainAvailableTestnet.includes(chain.id)
-        );
+      ? displayChains.filter((chain) => sameChainMainnet.includes(chain.id))
+      : displayChains.filter((chain) => sameChainTestnet.includes(chain.id));
   }
   const [dropdownVisible, setDropdownVisible] = useState(false);
 
@@ -112,8 +101,11 @@ function SwitchChain({ closeAccountModal }) {
   const isChainAvailable = (chainId) => {
     const allAvailableChains = [
       ...mainnetChains,
-      ...crossChainAvailableChains,
-      ...sameCahinAvailableChains,
+      ...testnetChains,
+      ...crossChainMainnet,
+      ...crossChainTestnet,
+      ...sameChainMainnet,
+      ...sameChainTestnet,
     ];
     return allAvailableChains.includes(chainId);
   };
