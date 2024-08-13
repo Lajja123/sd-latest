@@ -315,12 +315,12 @@ function Listify({
         </div>
 
         <div className={listStyle.inputflexlist}>
-          <label></label>
+          {/* <label></label> */}
           <button
             id={listStyle.addtolistbuttonid}
-            className={`${listStyle["buttontoaddformdata"]} ${listStyle["maddtolist"]}}`}
+            // className={`${listStyle["buttontoaddformdata"]} ${listStyle["maddtolist"]}}`}
             onClick={handleAddClick}
-            style={{ width: "180px", borderRadius: "10px", marginTop: "3px" }}
+            style={{ width: "180px", borderRadius: "63px", marginTop: "3px" }}
           >
             Add to List
           </button>
