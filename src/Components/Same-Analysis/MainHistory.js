@@ -9,7 +9,7 @@ import AnalysisNav from '../Cross-Analysis/AnalysisNav';
 function MainHistory() {
   return (
     <div className={history.maindiv}>
-        {/* <div>
+        <div>
         <div className={samechainStyle.stickyIcon}>
           <a href="/cross-chain" className={samechainStyle.Instagra}>
           <FontAwesomeIcon icon={faShare} /> <div style={{ marginLeft: "25px" }}>Cross Chain</div>
@@ -25,8 +25,8 @@ function MainHistory() {
             <FontAwesomeIcon icon={faUser} /> <div style={{ marginLeft: "25px" }}>Manage Labels</div>
           </a>
         </div>
-      </div> */}
-      <AnalysisNav />
+      </div>
+      {/* <AnalysisNav /> */}
      <History/>
     </div>
   )
