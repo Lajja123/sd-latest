@@ -225,18 +225,37 @@
   cursor: pointer;
 }
 
+@media screen and (max-width:1180px) {
+  .connectchain{
+    padding: 12px 25px;
+    font-size: 13px;
+  }
+
+  .chainName{
+    font-size: 13px;
+  }
+  .connectaccount{
+    padding: 12px 30px;
+    font-size: 13px;
+  }
+}
+
 @media only screen and (max-width: 768px) {
   .connectwallet {
     padding: 10px 30px;
   }
   .connectchain {
-    font-size: 8px;
+    font-size: 10px;
     padding: 9px 10px;
     justify-content: center;
   }
   .connectaccount {
-    font-size: 8px;
-    padding: 8px 12px;
+    font-size: 10px;
+    padding: 9px 12px;
+  }
+
+  .logo{
+    width: 11px;
   }
   .connectchain span {
     font-size: 8px;
@@ -271,12 +290,13 @@
   }
 
   .connectaccount {
-    padding: 4px 10px;
+    padding: 9px 10px;
+    font-size: 8px;
   }
 
   .connectchain {
     font-size: 8px;
-    padding: 9px 5px;
+    padding: 9px 6px;
     justify-content: center;
   }
 
@@ -291,17 +311,11 @@
 
 @media only screen and (max-width: 500px) {
   .connectwallet {
-    padding: 5px 15px;
+    padding: 8px 15px;
     border-radius: 22px;
     font-size: 10px;
   }
 
-  .connectchain {
-    /* visibility: hidden; */
-  }
-
-  .connectchain span {
-  }
 }
 
 @media only screen and (max-width: 425px) {
@@ -316,14 +330,14 @@
 
 @media only screen and (max-width: 375px) {
   .connectwallet {
-    padding: 5px 12px;
+    padding: 8px 12px;
     border-radius: 18px;
     font-size: 8px;
   }
 
   .connectchain {
-    font-size: 6px;
-    padding: 9px 3px;
+    font-size: 5px;
+    padding: 9px 4px;
     justify-content: center;
   }
 
@@ -331,8 +345,8 @@
     width: 5px;
   }
   .connectaccount {
-    font-size: 6px;
-    padding: 8px 8px;
+    font-size: 5px;
+    padding: 9px 4px;
   }
 }
 

@@ -10,6 +10,7 @@ import Cookies from "universal-cookie";
 import { useAccount, useChainId, useSignMessage } from "wagmi";
 import { usePathname } from "next/navigation";
 import { createSign } from "@/Utils/UserSignatureAPIAuthentication";
+import NavLinks from "../Navlinks";
 
 function Navbar() {
   const { isConnected, address } = useAccount();
@@ -21,7 +22,6 @@ function Navbar() {
 
   const isHome = path === "/";
   const isMilestone = path === "/milestone";
-
 
   useEffect(() => {
     const handleAuth = async () => {
@@ -42,6 +42,31 @@ function Navbar() {
     }
   }, [isConnected]);
 
+  const crosschainItems = [
+    { name: 'Manage Labels', route: '/all-user-lists' },
+    { name: 'Spent Analysis', route: '/cross-analysis' },
+    { name: 'Same Chain', route: '/same-chain' },
+  ];
+
+  const samechainItems = [
+    { name: 'Manage Labels', route: '/all-user-lists' },
+    { name: 'Spent Analysis', route: '/same-analysis' },
+    { name: 'Cross Chain', route: '/cross-chain' },
+  ];
+
+  const alluserItems = [
+    { name: 'Same Chain', route: '/same-chain' },
+    { name: 'Cross Chain', route: '/cross-chain' },
+  ];
+
+  const analysisItems = [
+    { name: 'Manage Labels', route: '/all-user-lists' },
+    { name: 'Same Chain', route: '/same-chain' },
+    { name: 'Cross Chain', route: '/cross-chain' },
+  ];
+
+
+
   return (
     <div className={navStyle.navMainDash}>
       <div className={navStyle.navFixed2}>
@@ -49,6 +74,12 @@ function Navbar() {
           <Link href="/">
             <Image className={navStyle.logo} src={smartlogo} alt="not foundd" />
           </Link>
+
+          {path.includes("/cross-chain")? <NavLinks navItems={crosschainItems} /> : <></>}
+          {path.includes("/same-chain")? <NavLinks navItems={samechainItems} /> : <></>}
+          {path.includes("/all-user-lists")? <NavLinks navItems={alluserItems} /> : <></>}
+          {path.includes("/same-analysis") || path.includes("/cross-analysis") ? <NavLinks navItems={analysisItems} /> : <></>}
+
 
           {isHome || isMilestone ? (
             <></>

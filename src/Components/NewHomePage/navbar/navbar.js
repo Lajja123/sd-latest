@@ -4,6 +4,7 @@ import navStyle from "./navbar.module.css";
 import Link from "next/link";
 import Image from "next/image";
 
+
 function Navbar() {
   const [scrolled, setScrolled] = useState(false);
 

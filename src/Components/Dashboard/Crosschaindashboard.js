@@ -34,6 +34,7 @@ import {
   faShuffle,
 } from "@fortawesome/free-solid-svg-icons";
 import CrosschainNav from "../DashboardComponents/CrossChain/CrosschainNav";
+import NavLinks from "../Navlinks";
 
 function Crosschaindashboard() {
   const [activeTab, setActiveTab] = useState("text"); //default tab is textify
@@ -299,11 +300,11 @@ function Crosschaindashboard() {
     fetchUserDetails();
   }, []);
 
+
+
   return (
-    <div className={samechainStyle.maindivofdashboard}>
-      {/* <CrosschainNav /> */}
-      
-      <div>
+    <div className={samechainStyle.maindivofdashboard}>      
+      {/* <div>
         <div className={samechainStyle.stickyIcon}>
           <a href="/same-chain" className={samechainStyle.Instagra}>
             <FontAwesomeIcon
@@ -332,7 +333,7 @@ function Crosschaindashboard() {
             <div style={{ marginLeft: "25px" }}>Manage Labels</div>
           </a>
         </div>
-      </div>
+      </div> */}
 
       <div
         className={`${samechainStyle["samedashmainm"]} ${

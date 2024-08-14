@@ -1,0 +1,77 @@
+.navlinks {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: center;
+}
+
+.navlinks a {
+  text-decoration: none;
+  color: white;
+  padding: 12px;
+  transition: 0.5s;
+  position: relative;
+}
+
+.navlinks a::after {
+    background: none repeat scroll 0 0 transparent;
+    content: "";
+    bottom: 5px;
+    display: block;
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    background: #00ffff;
+    transition: width 0.5s ease 0s, left 0.5s ease 0s;
+    width: 0;
+  }
+  .navlinks a:hover::after {
+    left: 0;
+    width: 100%;
+  }
+
+  .navlinks a:hover {
+    color: #00ffff;
+  }
+
+.text {
+  margin-bottom: 0;
+}
+
+@media screen and (max-width:1280px) {
+  .navlinks{
+    gap: 4px;
+  }
+  .navlinks a{
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width:1100px) {
+  .navlinks a{
+    padding: 10px 8px;
+  }
+}
+
+@media screen and (max-width:1024px) {
+    .navlinks {
+        background: linear-gradient(160deg, rgba(24, 26, 83, 1) 47%, rgba(46, 13, 90, 1) 100%);
+        width: 100vw;
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        justify-content: space-around;
+        backdrop-filter: blur(50px);
+        padding: 10px;
+        margin:  0px auto;
+      }
+       
+}
+
+@media screen and (max-width:530px) {
+ 
+    .navlinks a{
+        font-size: 3vw;
+    }
+}
