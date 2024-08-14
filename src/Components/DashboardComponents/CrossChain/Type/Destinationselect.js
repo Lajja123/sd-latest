@@ -1,11 +1,12 @@
 import React, { useState, useEffect, useRef } from "react";
 import dropDownStyles from "./destination.module.css";
-import { Modal, Button } from "antd";
+import { Modal, Button, Tooltip } from "antd";
 // import "antd/dist/antd.css";
+import { PlusOutlined, InfoCircleOutlined } from "@ant-design/icons";
 import { driver } from "driver.js";
 import "driver.js/dist/driver.css";
 
-import { FaChevronDown } from "react-icons/fa"; 
+import { FaChevronDown } from "react-icons/fa";
 
 // function NestedDropdown({ options, onSelect, placeholder }) {
 //   const [isNestedOpen, setIsNestedOpen] = useState(false);
@@ -120,11 +121,37 @@ function DesCustomDropdown({
         ) : (
           <span>{placeholder}</span>
         )}
-        <FaChevronDown className={dropDownStyles.dropdownIcon} ></FaChevronDown>
+        <FaChevronDown className={dropDownStyles.dropdownIcon}></FaChevronDown>
       </div>
 
       <Modal
-        title="Select Destination Chain"
+        title={
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: "8px",
+              justifyContent: "center",
+            }}
+          >
+            Select Destination Chain
+            <Tooltip
+              title="You can select chain from below options"
+              placement="bottom"
+              color="linear-gradient(160deg, rgba(24, 26, 83, 1) 47%, rgba(46, 13, 90, 1) 100%)"
+              overlayInnerStyle={{
+                marginTop: "10px",
+                marginLeft: "40px",
+                opacity: 0.6,
+                borderRadius: "8px",
+              }}
+            >
+              <InfoCircleOutlined
+                style={{ opacity: 0.6, fontSize: "16px", marginTop: "2px" }}
+              />
+            </Tooltip>
+          </div>
+        }
         visible={isModalVisible}
         onCancel={() => setIsModalVisible(false)}
         footer={[]}

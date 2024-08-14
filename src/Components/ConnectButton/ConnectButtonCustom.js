@@ -143,10 +143,7 @@ const ConnectButtonCustom = ({ isMainnet }) => {
                     type="button"
                     className={connectStyle.connectaccount}
                   >
-                    <span>
-                      {account.displayName}
-                     
-                    </span>
+                    <span>{account.displayName}</span>
                   </button>
 
                   {isAccountModalOpen && (
@@ -167,7 +164,7 @@ const ConnectButtonCustom = ({ isMainnet }) => {
                           ></Image>
                           <span
                             style={{
-                              fontSize: "16px",
+                              fontSize: "14px",
                               color: "white",
                               position: "relative",
                             }}

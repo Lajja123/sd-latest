@@ -17,8 +17,7 @@
   /* padding: 60px 25px !important; */
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;
   backdrop-filter: blur(30.5px) !important;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
+  border-radius: 20px !important;
   padding: 0px !important;
 }
 .ant-btn.ant-btn-icon-only .anticon {
@@ -29,11 +28,11 @@
   top: 10px !important;
 }
 .ant-modal .ant-modal-body {
-  padding: 10px 0px;
+  padding: 30px;
 }
 .ant-modal .ant-modal-footer {
   /* padding-top: 25px !important; */
-  padding-bottom: 30px !important;
+  /* padding-bottom: 30px !important; */
 }
 .ant-modal .ant-modal-title {
   color: white;
@@ -74,9 +73,47 @@
   border: 1px solid white !important;
 }
 .copyicon {
-  padding: 0px 4px;
+  padding: 0px 10px;
+  width: 15px;
 }
 .copyicon:hover {
   cursor: pointer;
   color: #643bdc;
 }
+.recAdd1 {
+  width: 100%;
+  color: white;
+  overflow: hidden;
+  text-align: left;
+  font-weight: 500;
+  text-overflow: ellipsis;
+  text-wrap: wrap;
+  border: 1px solid white;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: not-allowed;
+  padding: 10px;
+}
+
+/* @media only screen and (max-width: 425px) {
+  .recAdd2 {
+    width: 100%;
+    color: white;
+
+    text-align: left;
+    font-weight: 500;
+    text-wrap: wrap;
+    border: 1px solid white;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: not-allowed;
+    padding: 10px;
+  }
+  .recAdd1 {
+    display: none;
+  }
+} */

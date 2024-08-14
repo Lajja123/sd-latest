@@ -46,11 +46,12 @@
 }
 
 .dropdownList {
-  width: 60%;
+  width: 80%;
   margin: 0 auto;
-  margin-top: 30px;
+  /* margin-top: 30px; */
   z-index: 1000;
   /* border-radius: 10px; */
+  cursor: pointer;
 }
 
 .dropdownItemSelected {
