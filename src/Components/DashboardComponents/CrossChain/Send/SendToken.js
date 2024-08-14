@@ -36,6 +36,7 @@ import { driver } from "driver.js";
 import "driver.js/dist/driver.css";
 import DesCustomDropdown from "../Type/Destinationselect";
 import Addlabel from "../Type/Addlabel";
+import { TbH5 } from "react-icons/tb";
 
 function SendToken({
   activeTab,
@@ -452,7 +453,7 @@ function SendToken({
                     >
                       Token Details
                     </h2>
-                    <div className={textStyle.tablediv}>
+                    {/* <div className={textStyle.tablediv}>
                       <table className={textStyle.tabletextlist}>
                         <thead className={textStyle.tableheadertextlist}>
                           <tr className={textStyle.tableTr}>
@@ -524,8 +525,43 @@ function SendToken({
                           </tr>
                         </tbody>
                       </table>
+                    </div> */}
+
+                    <div className={textStyle.tableWrapper}>
+                      <table>
+                        <thead>
+                          <tr className={textStyle.sticky}>
+                            <th>Name</th>
+                            <th>Symbol</th>
+                            <th>Token Address</th>
+                            <th>Balance</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>{tokenDetails.name}</td>
+                            <td>{tokenDetails.symbol}</td>
+                            <td>
+                              {`${tokenAddress.slice(
+                                0,
+                                7
+                              )}...${tokenAddress.slice(-4)}`}{" "}
+                              <FontAwesomeIcon
+                                className={textStyle.copyicon}
+                                onClick={() => copyToClipboard(tokenAddress)}
+                                icon={faCopy}
+                              />
+                            </td>
+                            <td>
+                              {ethers.utils.formatUnits(
+                                tokenDetails.balance,
+                                tokenDetails.decimal
+                              )}{" "}
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
                     </div>
-                    {/* </div> */}
                   </div>
                 ) : null}
               </div>
@@ -554,7 +590,7 @@ function SendToken({
                     </span>
                   </h2>
                 </div>
-                <div className={textStyle.tableWrapper}>
+                {/* <div className={textStyle.tableWrapper}>
                   <div className={textStyle.scroll}>
                     <div className={textStyle.scrollabletablecontainer}>
                       <table
@@ -602,12 +638,6 @@ function SendToken({
                               <p className={textStyle.c4}>Destination Chain</p>
                               <div style={{ fontSize: "10px" }}></div>
                             </th>
-                            {/* <th
-                      className={textStyle.fontsize12px}
-                      style={{ letterSpacing: "1px", padding: "8px" }}
-                    >
-                      Amount(USD)
-                    </th> */}
                             <th
                               className={textStyle.fontsize12px}
                               style={{ letterSpacing: "1px", padding: "15px" }}
@@ -669,42 +699,6 @@ function SendToken({
                                             index={0} // Example index, you can dynamically pass different indexes
                                             data={data}
                                           />
-                                          {/* <input
-                                      type="text"
-                                      value={labels[index] ? labels[index] : ""}
-                                      style={{
-                                        borderRadius: "8px",
-                                        padding: "10px",
-                                        color: "white",
-                                        border: "1px solid #8D37FB",
-                                        background: "transparent",
-                                      }}
-                                      onChange={(e) => {
-                                        const inputValue = e.target.value;
-                                        if (
-                                          inputValue === "" &&
-                                          e.key !== "Enter"
-                                        ) {
-                                          setErrorMessage("Enter Label");
-                                        } else {
-                                          setErrorMessage(
-                                            "Press Enter to submit"
-                                          );
-                                        }
-                                        const regex = /^[a-zA-Z]*$/;
-                                        if (
-                                          regex.test(inputValue) &&
-                                          inputValue.length <= 10
-                                        ) {
-                                          setLabelValues(index, inputValue);
-                                        }
-                                      }}
-                                      onKeyDown={(e) => {
-                                        if (e.key === "Enter") {
-                                          onAddLabel(index, data.address);
-                                        }
-                                      }} */}
-                                          {/* /> */}
                                           {errorMessage && (
                                             <p
                                               style={{
@@ -748,18 +742,6 @@ function SendToken({
                                     id={textStyle.fontsize10px}
                                     style={{ padding: "15px" }}
                                   >
-                                    {/* <select
-                                  id={textStyle.blockchainChains}
-                                  onChange={handleDestinationFinalChainChange(
-                                    index
-                                  )}
-                                  value={selectedDestinationfinalChains[index]}
-                                >
-                                  <option value="">
-                                    Select destination chain
-                                  </option>
-                                  {destinationFinalChainsOptions}
-                                </select> */}
                                     <div className={textStyle.c4}>
                                       <DesCustomDropdown
                                         id="text"
@@ -798,6 +780,87 @@ function SendToken({
                       </table>
                     </div>
                   </div>
+                </div> */}
+
+                <div className={textStyle.tableWrapper}>
+                  <table>
+                    <thead>
+                      <tr className={textStyle.sticky}>
+                        <th>Receiver Address</th>
+                        <th>Label</th>
+                        <th>Amount({tokenDetails.symbol})</th>
+                        <th>Destination Chain</th>
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {listData.length > 0
+                        ? listData.map((data, index) => (
+                            <tr key={index}>
+                              <td>
+                                {`${data.address.slice(
+                                  0,
+                                  7
+                                )}...${data.address.slice(-4)}`}
+                              </td>
+                              <td>
+                                {data.label ? (
+                                  data.label
+                                ) : (
+                                  <>
+                                    <Addlabel
+                                      labels={labels}
+                                      setLabelValues={setLabelValues}
+                                      onAddLabel={onAddLabel}
+                                      index={0} // Example index, you can dynamically pass different indexes
+                                      data={data}
+                                    />
+                                    {errorMessage && (
+                                      <p
+                                        style={{
+                                          color: "red",
+                                          margin: "0px",
+                                          fontSize: "13px",
+                                        }}
+                                      >
+                                        {errorMessage}
+                                      </p>
+                                    )}
+                                  </>
+                                )}
+                              </td>
+                              <td>
+                                {(+ethers.utils.formatUnits(
+                                  data.value,
+                                  tokenDetails.decimal
+                                )).toFixed(4)}
+                              </td>
+                              <td>
+                                <DesCustomDropdown
+                                  id="text"
+                                  options={destinationFinalChainsOptions}
+                                  onSelect={handleDestinationFinalChainChange}
+                                  selectedValue={
+                                    selectedDestinationfinalChains[index]
+                                  }
+                                  placeholder="Select destination chain"
+                                  index={index}
+                                  style={{ fontSize: "15px" }}
+                                />
+                              </td>
+                              <td>
+                                <button
+                                  className={textStyle.deletebutton}
+                                  onClick={() => handleDeleteRow(index)}
+                                >
+                                  <FontAwesomeIcon icon={faTrashAlt} />
+                                </button>
+                              </td>
+                            </tr>
+                          ))
+                        : null}
+                    </tbody>
+                  </table>
                 </div>
               </div>
             </div>
@@ -822,7 +885,7 @@ function SendToken({
                   </span>
                 </h2>
               </div>
-              <div className={textStyle.tableWrapper}>
+              {/* <div className={textStyle.tableWrapper}>
                 <div className={textStyle.scroll}>
                   <div
                     id={textStyle.tableresponsive}
@@ -948,6 +1011,70 @@ function SendToken({
                     </table>
                   </div>
                 </div>
+              </div> */}
+
+              <div className={textStyle.tableWrapper}>
+                <table>
+                  <thead>
+                    <tr className={textStyle.sticky}>
+                      <th>Total Amount</th>
+                      <th>
+                        Estimated Gas Price
+                        <FontAwesomeIcon icon={faGasPump} />
+                      </th>
+                      <th>Your Balance</th>
+                      <th>Remaining Balance</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        {totalERC20
+                          ? (+ethers.utils.formatUnits(
+                              totalERC20,
+                              tokenDetails.decimal
+                            )).toFixed(4)
+                          : null}{" "}
+                      </td>
+                      <td
+                        style={{
+                          opacity: "0.6",
+                          width: "200px"
+                        }}
+                      >
+                        {showestimatedgasprice
+                          ? (+ethers.utils.formatEther(
+                              showestimatedgasprice
+                            )).toFixed(4)
+                          : null}
+                      </td>
+                      <td
+                        style={{
+                          opacity: "0.6",
+                        }}
+                      >
+                        {ERC20Balance
+                          ? (+ethers.utils.formatUnits(
+                              ERC20Balance,
+                              tokenDetails.decimal
+                            )).toFixed(4) + " "
+                          : null}
+                      </td>
+                      <td
+                        style={{
+                          color: remaining < 0 ? "red" : "white",
+                        }}
+                      >
+                        {remaining === null
+                          ? null
+                          : (+ethers.utils.formatUnits(
+                              remaining,
+                              tokenDetails.decimal
+                            )).toFixed(4) + " "}
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
             </div>
           ) : null}
