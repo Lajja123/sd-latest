@@ -1,14 +1,47 @@
-import Link from 'next/link';
-import styles from './navlinks.module.css'
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import styles from "./navlinks.module.css";
 
-const NavLinks = ({ navItems }) => {
+const NavLinks = () => {
+  const pathname = usePathname();
+
   return (
     <nav className={styles.navlinks}>
-        {navItems.map((item, index) => (
-            <Link href={item.route} key={index}>
-              <p className={styles.text}>{item.name}</p>
-            </Link>
-        ))}
+      <Link href="/cross-chain">
+        <p
+          className={pathname === "/cross-chain" ? styles.active : styles.text}
+        >
+          Cross Chain
+        </p>
+      </Link>
+      <Link href="/same-chain">
+        <p
+          className={pathname === "/same-chain" ? styles.active : styles.text}
+        >
+          same Chain
+        </p>
+      </Link>
+      <Link href="/all-user-lists">
+        <p
+          className={pathname === "/all-user-lists" ? styles.active : styles.text}
+        >
+          Manage Label
+        </p>
+      </Link>
+      <Link href="/cross-analysis">
+        <p
+          className={pathname === "/cross-analysis" ? styles.active : styles.text}
+        >
+          Cross Analysis
+        </p>
+      </Link>
+      <Link href="/same-analysis">
+        <p
+          className={pathname === "/same-analysis" ? styles.active : styles.text}
+        >
+          Same Analysis
+        </p>
+      </Link>
     </nav>
   );
 };

@@ -1039,7 +1039,6 @@ function SendToken({
                       <td
                         style={{
                           opacity: "0.6",
-                          width: "200px"
                         }}
                       >
                         {showestimatedgasprice
