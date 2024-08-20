@@ -320,7 +320,7 @@ function SendEth({ activeTab, listData, setListData }) {
                     </span>
                   </h2>
                 </div>
-                <div className={textStyle.tableWrapper}>
+                {/* <div className={textStyle.tablewrapper}>
                   <div className={textStyle.scroll}>
                     <div className={textStyle.scrollabletablecontainer}>
                       <table
@@ -355,19 +355,7 @@ function SendEth({ activeTab, listData, setListData }) {
                             >
                               <p className={textStyle.c3}>Amount</p>
                             </th>
-                            {/* <th
-                              className={textStyle.fontsize12px}
-                              style={{ letterSpacing: "1px", padding: "15px" }}
-                            >
-                              <p className={textStyle.c4}>Amount</p>
-                            </th> */}
-
-                            {/* <th
-                              className={textStyle.fontsize12px}
-                              style={{ letterSpacing: "1px", padding: "8px" }}
-                            >
-                             Warnings
-                            </th> */}
+                           
 
                             <th
                               className={textStyle.fontsize12px}
@@ -406,7 +394,6 @@ function SendEth({ activeTab, listData, setListData }) {
                                     }}
                                   >
                                     <div className={textStyle.c1}>
-                                      {/* {data.address.toUpperCase()} */}
                                       {data.address.substr(0, 3)}...
                                       {data.address.substr(-5)}
                                     </div>
@@ -427,7 +414,7 @@ function SendEth({ activeTab, listData, setListData }) {
                                             labels={labels}
                                             setLabelValues={setLabelValues}
                                             onAddLabel={onAddLabel}
-                                            index={0} // Example index, you can dynamically pass different indexes
+                                            index={0}
                                             data={data}
                                           />
                                           {errorMessage && (
@@ -486,44 +473,6 @@ function SendEth({ activeTab, listData, setListData }) {
                                       </p>
                                     </div>
                                   </td>
-                                  {/* <td
-                                    id="font-size-10px"
-                                    style={{ padding: "15px" }}
-                                  >
-                                    <div
-                                    className={textStyle.c4}
-                                      id="font-size-10px"
-                                      style={{
-                                        // width: "fit-content",
-                                        margin: "0 auto",
-                                        background: "transparent",
-                                        color: "white",
-                                        borderRadius: "10px",
-                                        opacity: "0.4",
-                                        fontSize: "15px",
-                                        fontWeight: "300",
-                                        letterSpacing: "1px",
-                                      }}
-                                    >
-                                      {`~$${(
-                                        ethers.utils.formatUnits(
-                                          data.value,
-                                          18
-                                        ) * ethToUsdExchangeRate
-                                      ).toFixed(2)}`}
-                                    </div>
-                                  </td> */}
-
-                                  {/* <td style={{ letterSpacing: "1px", padding: "8px" }}>
-                            <span
-                              className={textStyle.warningIcon}
-                              title="This is a contract address"
-                            >
-                              {data.isContract ? (
-                                <FontAwesomeIcon icon={faExclamationTriangle} />
-                              ) : null}
-                            </span>
-                          </td> */}
 
                                   <td
                                     style={{
@@ -547,6 +496,84 @@ function SendEth({ activeTab, listData, setListData }) {
                       </table>
                     </div>
                   </div>
+                </div> */}
+
+                <div className={textStyle.tableWrapper}>
+                  <table>
+                    <thead>
+                      <tr className={textStyle.sticky}>
+                        <th>Receiver Address</th>
+                        <th>Label</th>
+                        <th>Amount</th>
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {listData.length > 0
+                        ? listData.map((data, index) => (
+                            <tr key={index}>
+                              <td>
+                                {data.address.substr(0, 7)}...
+                                {data.address.substr(-5)}
+                              </td>
+                              <td>
+                                {data.label ? (
+                                  data.label
+                                ) : (
+                                  <>
+                                    <AddLabel
+                                      labels={labels}
+                                      setLabelValues={setLabelValues}
+                                      onAddLabel={onAddLabel}
+                                      index={0}
+                                      data={data}
+                                    />
+                                    {errorMessage && (
+                                      <p
+                                        style={{
+                                          color: "red",
+                                          margin: "0px",
+                                          fontSize: "13px",
+                                        }}
+                                      >
+                                        {errorMessage}
+                                      </p>
+                                    )}
+                                  </>
+                                )}
+                              </td>
+                              <td>
+                                <p style={{ marginBottom: "2px" }}>
+                                  {`${(+ethers.utils.formatEther(
+                                    data.value
+                                  )).toFixed(4)} ETH`}
+                                </p>
+                                <p
+                                  style={{
+                                    opacity: "0.6",
+                                    marginBottom: "0",
+                                  }}
+                                >
+                                  {`~ $${(
+                                    ethers.utils.formatUnits(data.value, 18) *
+                                    ethToUsdExchangeRate
+                                  ).toFixed(2)}`}
+                                </p>
+                              </td>
+
+                              <td>
+                                <button
+                                  className={textStyle.deletebutton}
+                                  onClick={() => handleDeleteRow(index)}
+                                >
+                                  <FontAwesomeIcon icon={faTrashAlt} />
+                                </button>
+                              </td>
+                            </tr>
+                          ))
+                        : null}
+                    </tbody>
+                  </table>
                 </div>
               </div>
 
@@ -561,21 +588,17 @@ function SendEth({ activeTab, listData, setListData }) {
                     }}
                   >
                     Account Summary{" "}
-                    {/* <span style={{ opacity: "0.5", fontSize: "14px" }}>
-                      ({tokenDetails.symbol})
-                    </span> */}
+                    <span style={{ opacity: "0.5", fontSize: "14px" }}>
+                      (ETH)
+                    </span>
                   </h2>
                 </div>
 
-                <div className={textStyle.tableWrapper}>
+                {/* <div className={textStyle.tablewrapper}>
                   <div className={textStyle.scroll}>
                     <div
                       id={textStyle.tableresponsive}
                       className={textStyle.scrollabletablecontainerTbody}
-                      // style={{
-                      //   borderRadius: "20px",
-                      //   border: "1px solid #8D37FB",
-                      // }}
                     >
                       <table
                         className={`${textStyle["showtokentablesametext"]} ${textStyle["tabletextlist"]}`}
@@ -591,9 +614,6 @@ function SendEth({ activeTab, listData, setListData }) {
                             <th className={textStyle.accountsummaryth}>
                               Total Amount
                             </th>
-                            {/* <th className={textStyle.accountsummaryth}>
-                            Total Amount
-                          </th> */}
                             <th className={textStyle.accountsummaryth}>
                               Your Balance
                             </th>
@@ -649,33 +669,6 @@ function SendEth({ activeTab, listData, setListData }) {
                                 </p>
                               </div>
                             </td>
-                            {/* <td
-                            id={textStyle.fontsize10px}
-                            style={{ padding: "15px" }}
-                          >
-                            {" "}
-                            <div
-                              id={textStyle.fontsize10px}
-                              style={{
-                                width: "fit-content",
-                                margin: "0 auto",
-                                background: "transparent",
-                                color: "white",
-                                fontWeight: "300",
-                                borderRadius: "10px",
-                                opacity: "0.4",
-                                fontSize: "15px",
-                                letterSpacing: "1px",
-                              }}
-                            >
-                              {totalEth
-                                ? `~$${(
-                                    ethers.utils.formatUnits(totalEth, 18) *
-                                    ethToUsdExchangeRate
-                                  ).toFixed(2)} `
-                                : null}
-                            </div>
-                          </td> */}
                             <td
                               id={textStyle.fontsize10px}
                               style={{ padding: "15px" }}
@@ -710,7 +703,6 @@ function SendEth({ activeTab, listData, setListData }) {
                             >
                               <div
                                 id={textStyle.fontsize10px}
-                                // className="font-size-12px"
                                 style={{
                                   width: "fit-content",
                                   margin: "0 auto",
@@ -735,6 +727,65 @@ function SendEth({ activeTab, listData, setListData }) {
                       </table>
                     </div>
                   </div>
+                </div> */}
+
+                <div className={textStyle.tableWrapper}>
+                  <table>
+                    <thead>
+                      <tr className={textStyle.sticky}>
+                        <th>Total Amount</th>
+                        <th>Your Balance</th>
+                        <th>Remaining Balance</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          <p style={{ marginBottom: "1px" }}>
+                            {totalEth
+                              ? `${(+ethers.utils.formatEther(
+                                  totalEth
+                                )).toFixed(4)}  `
+                              : null}
+                          </p>
+                          <p
+                            style={{
+                              opacity: "0.6",
+                              marginBottom: "0",
+                            }}
+                          >
+                            {totalEth
+                              ? `~ $${(
+                                  ethers.utils.formatUnits(totalEth, 18) *
+                                  ethToUsdExchangeRate
+                                ).toFixed(2)}`
+                              : null}
+                          </p>
+                        </td>
+                        <td style={{ opacity: "0.6" }}>
+                          {ethBalance
+                            ? `${(+ethers.utils.formatEther(
+                                ethBalance
+                              )).toFixed(4)}  `
+                            : null}
+                        </td>
+                        <td
+                          style={{
+                            background:
+                              remaining < 0 ? "transparent" : "transparent",
+                            color: remaining < 0 ? "red" : "white",
+                          }}
+                          className={`showtoken-remaining-balance ${
+                            remaining < 0 ? "showtoken-remaining-negative" : ""
+                          }`}
+                        >
+                          {remaining === null
+                            ? null
+                            : `${(+remaining).toFixed(4)}  `}
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </div>
 
                 <Modal

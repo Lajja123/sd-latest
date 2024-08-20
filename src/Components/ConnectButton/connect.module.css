@@ -33,7 +33,7 @@
 }
 .connectaccount {
   z-index: 1;
-  padding: 10px 20px;
+  padding: 11px 20px;
   border-radius: 30px;
   border: 0.5px solid #00ffff;
   background: #2b285445;
@@ -254,7 +254,7 @@
   }
   .connectchain {
     font-size: 10px;
-    padding: 8px 10px;
+    padding: 9px 10px;
     justify-content: center;
   }
   .connectaccount {
@@ -278,8 +278,8 @@
 
   .ChainDropdownMain {
     top: 50px;
-    right: 12%;
-    width: 150px;
+    right: 15%;
+    /* width: 150px; */
   }
 
   .networkoption {
@@ -301,7 +301,7 @@
   }
 
   .connectaccount {
-    padding: 7px 10px;
+    padding: 10px 10px;
     font-size: 8px;
   }
 
@@ -312,12 +312,12 @@
   }
 
   .logo {
-    width: 12px;
+    width: 10px;
   }
 
-  .dropdown {
+  /* .dropdown {
     width: 150px;
-  }
+  } */
 }
 
 @media only screen and (max-width: 500px) {

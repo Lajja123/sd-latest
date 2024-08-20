@@ -30,6 +30,7 @@
   color: #00fbfb;
   font-weight: 300;
 }
+
 .subtextintutorial {
   font-weight: 300;
   font-size: 12px;
@@ -63,7 +64,7 @@
 }
 
 .sliderOpen {
-  height: auto; /* This will be set dynamically with JavaScript */
+  height: auto; 
 }
 
 .contents {
@@ -417,12 +418,62 @@
     rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
 }
 
-.tableWrapper {
+.tablewrapper {
   border: 1px solid #8d37fb;
   border-radius: 20px;
   margin: 50px 20px;
   overflow: hidden;
 }
+
+.tableWrapper {
+  border: 1px solid #8d37fb;
+  border-radius: 20px;
+  margin: 50px 20px;
+  max-height: 320px;
+  overflow: auto;
+  scrollbar-width: none;
+}
+
+.tableWrapper table {
+  border-spacing: 0;
+  width: 100%;
+}
+
+.tableWrapper thead {
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.tableWrapper tbody {
+  font-size: 14px;
+}
+
+.tableWrapper td {
+  padding: 18px 12px;
+  white-space: nowrap;
+  border-bottom: 1px solid;
+}
+
+.tableWrapper th{
+  padding: 18px 12px;
+  white-space: nowrap;
+  background-color: #8d37fb;
+}
+
+
+.tableWrapper tr:last-child td {
+  border-bottom: none;
+}
+
+.sticky {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  box-shadow: 0 0 6px rgba(0,0,0,0.25);
+}
+
 
 .scroll {
   width: 100%;

@@ -415,7 +415,7 @@ function SendToken({ activeTab, listData, setListData }) {
                       Token Details
                     </h2>
                   </div>
-                  <div className={textStyle.tableWrapper}>
+                  {/* <div className={textStyle.tableWrapper}>
                     <div className={textStyle.scrollabletablecontainerTbody}>
                       <table className={textStyle.tabletextlist}>
                         <thead className={textStyle.tableheadertextlist}>
@@ -474,6 +474,30 @@ function SendToken({ activeTab, listData, setListData }) {
                         </tbody>
                       </table>
                     </div>
+                  </div>  */}
+
+                  <div className={textStyle.tableWrapper}>
+                    <table>
+                      <thead>
+                        <tr className={textStyle.sticky}>
+                          <th>Name</th>
+                          <th>Symbol</th>
+                          <th>Balance</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>{tokenDetails.name}</td>
+                          <td>{tokenDetails.symbol}</td>
+                          <td>
+                            {ethers.utils.formatUnits(
+                              tokenDetails.balance,
+                              tokenDetails.decimal
+                            )}
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
                   </div>
                 </div>
                 {renderComponent(activeTab)}{" "}
@@ -492,7 +516,7 @@ function SendToken({ activeTab, listData, setListData }) {
                           Your Transaction Lineup
                         </h2>
                       </div>
-                      <div className={textStyle.tableWrapper}>
+                      {/* <div className={textStyle.tablewrapper}>
                         <div className={textStyle.scroll}>
                           <div className={textStyle.scrollabletablecontainer}>
                             <table
@@ -531,12 +555,7 @@ function SendToken({ activeTab, listData, setListData }) {
                                   >
                                     <p className={textStyle.c3}>Amount</p>
                                   </th>
-                                  {/* <th
-                      className={textStyle.fontsize12px}
-                      style={{ letterSpacing: "1px", padding: "8px" }}
-                    >
-                      Amount(USD)
-                    </th> */}
+                                 
                                   <th
                                     className={textStyle.fontsize12px}
                                     style={{
@@ -660,6 +679,70 @@ function SendToken({ activeTab, listData, setListData }) {
                             </table>
                           </div>
                         </div>
+                      </div> */}
+
+                      <div className={textStyle.tableWrapper}>
+                        <table>
+                          <thead>
+                            <tr className={textStyle.sticky}>
+                              <th>Receiver Address</th>
+                              <th>Label</th>
+                              <th>Amount</th>
+                              <th>Action</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {listData.map((data, index) => (
+                              <tr key={index}>
+                                <td>
+                                  {data.address.substr(0, 6)}...
+                                  {data.address.substr(-5)}
+                                </td>
+                                <td>
+                                  {data.label ? (
+                                    data.label
+                                  ) : (
+                                    <>
+                                      <AddLabel
+                                        labels={labels}
+                                        setLabelValues={setLabelValues}
+                                        onAddLabel={onAddLabel}
+                                        index={0} // Example index, you can dynamically pass different indexes
+                                        data={data}
+                                      />
+                                      {errorMessage && (
+                                        <p
+                                          style={{
+                                            color: "red",
+                                            margin: "0px",
+                                            fontSize: "13px",
+                                          }}
+                                        >
+                                          {errorMessage}
+                                        </p>
+                                      )}
+                                    </>
+                                  )}
+                                </td>
+                                <td style={{ opacity: "0.6" }}>
+                                  {(+ethers.utils.formatUnits(
+                                    data.value
+                                  )).toFixed(4) +
+                                    " " +
+                                    tokenDetails.symbol}
+                                </td>
+                                <td>
+                                  <button
+                                    className={textStyle.deletebutton}
+                                    onClick={() => handleDeleteRow(index)}
+                                  >
+                                    <FontAwesomeIcon icon={faTrashAlt} />
+                                  </button>
+                                </td>
+                              </tr>
+                            ))}
+                          </tbody>
+                        </table>
                       </div>
                     </div>
 
@@ -676,10 +759,11 @@ function SendToken({ activeTab, listData, setListData }) {
                           Account Summary{" "}
                           <span style={{ opacity: "0.5", fontSize: "14px" }}>
                             ({tokenDetails.symbol})
-                          </span>{" "}
+                          </span>
                         </h2>
                       </div>
-                      <div className={textStyle.tableWrapper}>
+
+                      {/* <div className={textStyle.tablewrapper}>
                         <div className={textStyle.scroll}>
                           <div
                             id={textStyle.tableresponsive}
@@ -693,9 +777,6 @@ function SendToken({ activeTab, listData, setListData }) {
                                   <th className={textStyle.accountsummaryth}>
                                     Total Amount
                                   </th>
-                                  {/* <th className={textStyle.accountsummaryth}>
-                     Total Amount(USD)
-                   </th> */}
                                   <th className={textStyle.accountsummaryth}>
                                     Your Balance
                                   </th>
@@ -718,7 +799,6 @@ function SendToken({ activeTab, listData, setListData }) {
                                         opacity: "0.4",
                                         letterSpacing: "1px",
                                       }}
-                                      // className={textStyle.textAccSum}
                                     >
                                       {totalERC20
                                         ? (+ethers.utils.formatUnits(
@@ -728,31 +808,6 @@ function SendToken({ activeTab, listData, setListData }) {
                                         : null}{" "}
                                     </div>
                                   </td>
-                                  {/* <td id={textStyle.fontsize10px}>
-                     {" "}
-                     <div
-                       id={textStyle.fontsize10px}
-                       style={{
-                         width: "fit-content",
-                         margin: "0 auto",
- 
-                         background:
-                           "linear-gradient(90deg, #00d2ff 0%, #3a47d5 100%)",
-                         color: "white",
-                         borderRadius: "10px",
-                         padding: "10px 10px",
-                         fontSize: "12px",
-                         letterSpacing: "1px",
-                       }}
-                     >
-                       {totalERC20
-                         ? `${(
-                             ethers.utils.formatUnits(totalERC20, 18) *
-                             ethToUsdExchangeRate
-                           ).toFixed(2)} $`
-                         : null}
-                     </div>
-                   </td> */}
                                   <td id={textStyle.fontsize10px}>
                                     <div
                                       id="font-size-10px"
@@ -783,7 +838,6 @@ function SendToken({ activeTab, listData, setListData }) {
                                   >
                                     <div
                                       id={textStyle.fontsize10px}
-                                      // className="font-size-12px"
                                       style={{
                                         width: "fit-content",
                                         margin: "0 auto",
@@ -807,6 +861,53 @@ function SendToken({ activeTab, listData, setListData }) {
                             </table>
                           </div>
                         </div>
+                      </div> */}
+
+                      <div className={textStyle.tableWrapper}>
+                        <table>
+                          <thead>
+                            <tr className={textStyle.sticky}>
+                              <th>Total Amount</th>
+                              <th>Your Balance</th>
+                              <th>Remaining Balance</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td style={{ opacity: "0.6" }}>
+                                {totalERC20
+                                  ? (+ethers.utils.formatUnits(
+                                      totalERC20,
+                                      tokenDetails.decimal
+                                    )).toFixed(4)
+                                  : null}{" "}
+                              </td>
+
+                              <td>
+                                {ERC20Balance
+                                  ? (+ethers.utils.formatUnits(
+                                      ERC20Balance,
+                                      tokenDetails.decimal
+                                    )).toFixed(4)
+                                  : null}
+                              </td>
+                              <td
+                                className={`showtoken-remaining-balance ${
+                                  remaining < 0
+                                    ? "showtoken-remaining-negative"
+                                    : ""
+                                }`}
+                              >
+                                {remaining === null
+                                  ? null
+                                  : (+ethers.utils.formatUnits(
+                                      remaining,
+                                      tokenDetails.decimal
+                                    )).toFixed(4)}
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </div>
                   </div>
