@@ -22,7 +22,6 @@ import notfound from "../../Assets/oops.webp";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Link from "next/link";
-import FloatNav from "./FloatNav";
 
 function Displayallusers() {
   const [usersData, setUsersData] = useState([]);
